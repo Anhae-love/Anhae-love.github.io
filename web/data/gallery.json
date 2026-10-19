@@ -1,0 +1,313 @@
+{
+  "site": {
+    "title": "HCI 인스타 쇼케이스",
+    "subtitle": "매일 새벽, 연구 한 편을 카드 여섯 장으로",
+    "description": "HCI·인간-AI 상호작용 연구를 인스타그램 카드뉴스로 옮긴 아카이브입니다."
+  },
+  "items": [
+    {
+      "id": "20261019",
+      "date": "2026-10-19",
+      "title": "AI가 알아서 했다고 본 단계들",
+      "category": "인간과 AI의 협업, 신뢰, 의존, 판단",
+      "source_title": "What Did the AI Take On? Characterizing Cognitive Delegation in LLM Reasoning",
+      "source_url": "https://arxiv.org/abs/2610.06328",
+      "accent": "#C4581A",
+      "cover": "assets/content/20261019/slide_1.png",
+      "slides": [
+        "assets/content/20261019/slide_1.png",
+        "assets/content/20261019/slide_2.png",
+        "assets/content/20261019/slide_3.png",
+        "assets/content/20261019/slide_4.png",
+        "assets/content/20261019/slide_5.png",
+        "assets/content/20261019/slide_6.png"
+      ],
+      "caption": "예를 들어 AI에게 '피치 슬라이드 만들어 줘'라고 부탁하면, 답이 나오기 전 화면에는 여러 추론 단계가 기록된다. 그중 내가 시킨 것은 어디까지일까."
+    },
+    {
+      "id": "20261018",
+      "date": "2026-10-18",
+      "title": "그만 쓸까 물었을 때와 실제 사용",
+      "category": "일상에서 발견할 수 있는 흥미로운 디지털 행동",
+      "source_title": "To Stop or Not to Stop: Exploring the Intention-Behavior Gaps in Smartphone Usage",
+      "source_url": "https://arxiv.org/abs/2609.08909",
+      "accent": "#3D7A45",
+      "cover": "assets/content/20261018/slide_1.png",
+      "slides": [
+        "assets/content/20261018/slide_1.png",
+        "assets/content/20261018/slide_2.png",
+        "assets/content/20261018/slide_3.png",
+        "assets/content/20261018/slide_4.png",
+        "assets/content/20261018/slide_5.png",
+        "assets/content/20261018/slide_6.png"
+      ],
+      "caption": "'이제 그만 봐야지.' 그렇게 생각한 순간과 실제로 화면을 끈 순간은 얼마나 맞아떨어질까."
+    },
+    {
+      "id": "20261017",
+      "date": "2026-10-17",
+      "title": "방해받으며 메일에 답한 실험",
+      "category": "최근 자료가 아니어도 좋은 고전 또는 재발견 HCI 연구",
+      "source_title": "The Cost of Interrupted Work: More Speed and Stress",
+      "source_url": "https://ics.uci.edu/~gmark/chi08-mark.pdf",
+      "accent": "#2E5EAA",
+      "cover": "assets/content/20261017/slide_1.png",
+      "slides": [
+        "assets/content/20261017/slide_1.png",
+        "assets/content/20261017/slide_2.png",
+        "assets/content/20261017/slide_3.png",
+        "assets/content/20261017/slide_4.png",
+        "assets/content/20261017/slide_5.png",
+        "assets/content/20261017/slide_6.png"
+      ],
+      "caption": "메일에 답하는 중에 전화가 울린다. 흐름이 끊기면 일은 당연히 늦어질 것 같다."
+    },
+    {
+      "id": "20261016",
+      "date": "2026-10-16",
+      "title": "기본 비밀번호를 바꾸라는 조언을 따라 해 보니",
+      "category": "인터페이스, UX 실패, 다크패턴, 주의와 기억",
+      "source_title": "\"Am I Just Dumb?\": Applicability, Action and Verification in Consumer IoT Security Advice",
+      "source_url": "https://arxiv.org/abs/2608.25225",
+      "accent": "#B07D1A",
+      "cover": "assets/content/20261016/slide_1.png",
+      "slides": [
+        "assets/content/20261016/slide_1.png",
+        "assets/content/20261016/slide_2.png",
+        "assets/content/20261016/slide_3.png",
+        "assets/content/20261016/slide_4.png",
+        "assets/content/20261016/slide_5.png",
+        "assets/content/20261016/slide_6.png"
+      ],
+      "caption": "'기본 비밀번호를 바꾸세요.' 스마트 기기 보안 수칙으로 흔히 듣는 말이다. 그대로 따라 하면 어떻게 될까."
+    },
+    {
+      "id": "20261013",
+      "date": "2026-10-13",
+      "title": "비서 이름을 바꾼 사람들의 말투",
+      "category": "챗봇, 의인화, 감정, 사회적 상호작용",
+      "source_title": "How Anthropomorphic Attitudes Toward Agents Divide User Behavior, and How Design Should Change",
+      "source_url": "https://arxiv.org/abs/2610.13156",
+      "accent": "#16878C",
+      "cover": "assets/content/20261013/slide_1.png",
+      "slides": [
+        "assets/content/20261013/slide_1.png",
+        "assets/content/20261013/slide_2.png",
+        "assets/content/20261013/slide_3.png",
+        "assets/content/20261013/slide_4.png",
+        "assets/content/20261013/slide_5.png",
+        "assets/content/20261013/slide_6.png"
+      ],
+      "caption": "AI 비서 설정의 '이름' 칸을 바꾸는 사람과 그대로 두는 사람은 말 거는 방식도 다를까."
+    },
+    {
+      "id": "20261009",
+      "date": "2026-10-09",
+      "title": "숏폼 무한 스크롤, 어떤 신호 뒤 더 빨리 멈췄나",
+      "category": "인터페이스, UX 실패, 다크패턴, 주의와 기억",
+      "source_title": "Can't Stop: How Context and Individual Traits Influence Effectiveness of Different Gradual Interventions for Infinite Scrolling on Short-Form Video Platforms",
+      "source_url": "https://arxiv.org/abs/2607.15818",
+      "accent": "#6B7F1E",
+      "cover": "assets/content/20261009/slide_1.png",
+      "slides": [
+        "assets/content/20261009/slide_1.png",
+        "assets/content/20261009/slide_2.png",
+        "assets/content/20261009/slide_3.png",
+        "assets/content/20261009/slide_4.png",
+        "assets/content/20261009/slide_5.png",
+        "assets/content/20261009/slide_6.png"
+      ],
+      "caption": "숏폼을 넘기다 보면 '이제 그만 보라'는 신호가 뜬다. 어떤 신호 뒤에 더 빨리 멈출까."
+    },
+    {
+      "id": "20261008",
+      "date": "2026-10-08",
+      "title": "자라는 영상을 올린 새벽 피드 실험",
+      "category": "추천 시스템, 알고리즘, 소비자행동, 선택",
+      "source_title": "Unintended Consequences of Recommender System Interventions: Evidence from a Field Experiment",
+      "source_url": "https://arxiv.org/abs/2606.08265",
+      "accent": "#5B3F8C",
+      "cover": "assets/content/20261008/slide_1.png",
+      "slides": [
+        "assets/content/20261008/slide_1.png",
+        "assets/content/20261008/slide_2.png",
+        "assets/content/20261008/slide_3.png",
+        "assets/content/20261008/slide_4.png",
+        "assets/content/20261008/slide_5.png",
+        "assets/content/20261008/slide_6.png"
+      ],
+      "caption": "새벽 1시, 피드에 연예인이 나와 말한다. \"늦었어요, 이제 자요.\" 이 영상은 사람들을 재웠을까."
+    },
+    {
+      "id": "20261007",
+      "date": "2026-10-07",
+      "title": "VR 비밀번호, 풍경 속 방향과 숫자",
+      "category": "공간, XR, AR·VR, 프레즌스, 현실감, 온오프라인 전환",
+      "source_title": "Context or Digits? Balancing Memorability and Efficiency in Virtual Reality Authentication",
+      "source_url": "https://arxiv.org/abs/2608.29531",
+      "accent": "#B23A7A",
+      "cover": "assets/content/20261007/slide_1.png",
+      "slides": [
+        "assets/content/20261007/slide_1.png",
+        "assets/content/20261007/slide_2.png",
+        "assets/content/20261007/slide_3.png",
+        "assets/content/20261007/slide_4.png",
+        "assets/content/20261007/slide_5.png",
+        "assets/content/20261007/slide_6.png"
+      ],
+      "caption": "VR 헤드셋 속 잠금 화면. 숫자 대신 풍경 속 '방향'을 비밀번호로 쓰면 어떨까."
+    },
+    {
+      "id": "20261006",
+      "date": "2026-10-06",
+      "title": "산타 핫라인 AI 음성 실험",
+      "category": "챗봇, 의인화, 감정, 사회적 상호작용",
+      "source_title": "Persona and Persuasive Framing in AI Voice Agents: A 2×2 Field Experiment with Children",
+      "source_url": "https://arxiv.org/abs/2609.38782",
+      "accent": "#B03A2E",
+      "cover": "assets/content/20261006/slide_1.png",
+      "slides": [
+        "assets/content/20261006/slide_1.png",
+        "assets/content/20261006/slide_2.png",
+        "assets/content/20261006/slide_3.png",
+        "assets/content/20261006/slide_4.png",
+        "assets/content/20261006/slide_5.png",
+        "assets/content/20261006/slide_6.png"
+      ],
+      "caption": "아이가 산타에게 전화를 건다. 그런데 받은 건 AI 목소리였다."
+    },
+    {
+      "id": "20261005",
+      "date": "2026-10-05",
+      "title": "AI 제안마다 이유를 쓰게 한 실험",
+      "category": "인간과 AI의 협업, 신뢰, 의존, 판단",
+      "source_title": "Think Before You Accept: Can Written Justification Reduce Uncritical Uptake of AI Writing Suggestions?",
+      "source_url": "https://arxiv.org/abs/2609.23936",
+      "accent": "#8A5A2B",
+      "cover": "assets/content/20261005/slide_1.png",
+      "slides": [
+        "assets/content/20261005/slide_1.png",
+        "assets/content/20261005/slide_2.png",
+        "assets/content/20261005/slide_3.png",
+        "assets/content/20261005/slide_4.png",
+        "assets/content/20261005/slide_5.png",
+        "assets/content/20261005/slide_6.png"
+      ],
+      "caption": "AI가 내 글에서 고칠 곳 8개를 짚어 준다면, 몇 개나 그대로 받을까."
+    },
+    {
+      "id": "20261002",
+      "date": "2026-10-02",
+      "title": "물 마셨을 뿐인데 강의가 처음으로",
+      "category": "인터페이스, UX 실패, 다크패턴, 주의와 기억",
+      "source_title": "When Attention Guardrails Become Barriers to Learning: Towards the Tipping Point",
+      "source_url": "https://arxiv.org/abs/2609.39023",
+      "accent": "#2F8F5B",
+      "cover": "assets/content/20261002/slide_1.png",
+      "slides": [
+        "assets/content/20261002/slide_1.png",
+        "assets/content/20261002/slide_2.png",
+        "assets/content/20261002/slide_3.png",
+        "assets/content/20261002/slide_4.png",
+        "assets/content/20261002/slide_5.png",
+        "assets/content/20261002/slide_6.png"
+      ],
+      "caption": "강의를 보다 물 한 모금 마셨을 뿐인데, 영상이 보던 구간의 처음으로 돌아간다면."
+    },
+    {
+      "id": "20261001",
+      "date": "2026-10-01",
+      "title": "어느 영상이 더 떴는지 맞히기",
+      "category": "추천 시스템, 알고리즘, 소비자행동, 선택",
+      "source_title": "Echoes in the Algorithm: Analyzing the Fidelity of User Preferences Against Realized Platform Reach",
+      "source_url": "https://arxiv.org/abs/2609.09365",
+      "accent": "#D9772B",
+      "cover": "assets/content/20261001/slide_1.png",
+      "slides": [
+        "assets/content/20261001/slide_1.png",
+        "assets/content/20261001/slide_2.png",
+        "assets/content/20261001/slide_3.png",
+        "assets/content/20261001/slide_4.png",
+        "assets/content/20261001/slide_5.png",
+        "assets/content/20261001/slide_6.png"
+      ],
+      "caption": "좋아요도 조회수도 보이지 않는다면, 우리는 어떤 영상이 더 많이 퍼졌는지 알아볼 수 있을까."
+    },
+    {
+      "id": "20260930",
+      "date": "2026-09-30",
+      "title": "카메라 너머로 보면 고개를 덜 돌린다",
+      "category": "공간, XR, AR·VR, 프레즌스, 현실감, 온오프라인 전환",
+      "source_title": "Passthrough Rigidity: The Behavioral and Visuomotor Costs of Mediated Perception",
+      "source_url": "https://arxiv.org/abs/2609.25002",
+      "accent": "#2C7DA0",
+      "cover": "assets/content/20260930/slide_1.png",
+      "slides": [
+        "assets/content/20260930/slide_1.png",
+        "assets/content/20260930/slide_2.png",
+        "assets/content/20260930/slide_3.png",
+        "assets/content/20260930/slide_4.png",
+        "assets/content/20260930/slide_5.png",
+        "assets/content/20260930/slide_6.png"
+      ],
+      "caption": "VR·MR 헤드셋 중에는 바깥 카메라로 방을 찍어 눈앞 화면에 다시 띄워 주는 '패스스루' 기능이 있다. 보이는 건 같은 현실인데, 몸은 다르게 움직일까."
+    },
+    {
+      "id": "20260927",
+      "date": "2026-09-27",
+      "title": "알림 차단과 멈춤이 엇갈린 사람들",
+      "category": "일상에서 발견할 수 있는 흥미로운 디지털 행동",
+      "source_title": "Student programming behavior with and without phone notification suppression",
+      "source_url": "https://arxiv.org/abs/2605.22657",
+      "accent": "#1E7A6F",
+      "cover": "assets/content/20260927/slide_1.png",
+      "slides": [
+        "assets/content/20260927/slide_1.png",
+        "assets/content/20260927/slide_2.png",
+        "assets/content/20260927/slide_3.png",
+        "assets/content/20260927/slide_4.png",
+        "assets/content/20260927/slide_5.png",
+        "assets/content/20260927/slide_6.png"
+      ],
+      "caption": "미국 한 대학의 프로그래밍 입문 수업에서 연구팀은 휴대폰 알림 차단 상태와 IDE 키보드 기록을 맞춰 살펴봤다. 측정한 것은 개별 알림 도착이나 폰 확인이 아니라 5분 이상 이어진 키보드 입력 공백이었다."
+    },
+    {
+      "id": "20260922",
+      "date": "2026-09-22",
+      "title": "AI의 위로 메시지와 구체적인 대처법",
+      "category": "챗봇, 의인화, 감정, 사회적 상호작용",
+      "source_title": "A Digital Shoulder to Cry On: Understanding Why Large Language Models Can Be Effective in Extrinsic Interpersonal Emotion Regulation",
+      "source_url": "https://doi.org/10.31234/osf.io/nt5d8_v5",
+      "accent": "#2F5D8A",
+      "cover": "assets/content/20260922/slide_1.png",
+      "slides": [
+        "assets/content/20260922/slide_1.png",
+        "assets/content/20260922/slide_2.png",
+        "assets/content/20260922/slide_3.png",
+        "assets/content/20260922/slide_4.png",
+        "assets/content/20260922/slide_5.png",
+        "assets/content/20260922/slide_6.png"
+      ],
+      "caption": "위로 쪽지 두 장이 있다. 하나는 AI가, 하나는 사람이 썼다. 어느 쪽이 더 위로가 될까?"
+    },
+    {
+      "id": "20260921",
+      "date": "2026-09-21",
+      "title": "AI와 함께하면 빨라질 거라는 기대",
+      "category": "인간과 AI의 협업, 신뢰, 의존, 판단",
+      "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+      "source_url": "https://arxiv.org/abs/2605.23177",
+      "accent": "#B5462A",
+      "cover": "assets/content/20260921/slide_1.png",
+      "slides": [
+        "assets/content/20260921/slide_1.png",
+        "assets/content/20260921/slide_2.png",
+        "assets/content/20260921/slide_3.png",
+        "assets/content/20260921/slide_4.png",
+        "assets/content/20260921/slide_5.png",
+        "assets/content/20260921/slide_6.png"
+      ],
+      "caption": "AI한테 시키면 금방 끝날 것 같다. 그 기대는 얼마나 맞을까?"
+    }
+  ]
+}

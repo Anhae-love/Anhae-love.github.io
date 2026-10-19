@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+  <rect width="1080" height="1350" fill="#2a0a0a"/>
+  <rect x="64" y="64" width="952" height="1222" rx="28" fill="#3d1414"/>
+  <circle cx="860" cy="300" r="180" fill="#D63031" opacity="0.35"/>
+  <circle cx="260" cy="1050" r="130" fill="#D63031" opacity="0.22"/>
+  <text x="120" y="200" font-family="Segoe UI, sans-serif" font-size="34" fill="#D63031" font-weight="700" letter-spacing="4">디지털 웰빙</text>
+  <text x="120" y="560" font-family="Segoe UI, sans-serif" font-size="92" fill="#ffffff" font-weight="800">쇼츠 무한스크롤</text>
+  <text x="120" y="680" font-family="Segoe UI, sans-serif" font-size="92" fill="#D63031" font-weight="800">멈춤 장치</text>
+  <text x="120" y="800" font-family="Segoe UI, sans-serif" font-size="92" fill="#ffffff" font-weight="800">실험</text>
+  <text x="120" y="1200" font-family="Segoe UI, sans-serif" font-size="30" fill="#b36b6b">CHI 2026 · Friction in Scroll</text>
+</svg>

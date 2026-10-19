@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+  <rect width="1080" height="1350" fill="#2a2208"/>
+  <rect x="64" y="64" width="952" height="1222" rx="28" fill="#3d3210"/>
+  <circle cx="860" cy="300" r="180" fill="#FDCB6E" opacity="0.35"/>
+  <circle cx="260" cy="1050" r="130" fill="#FDCB6E" opacity="0.22"/>
+  <text x="120" y="200" font-family="Segoe UI, sans-serif" font-size="34" fill="#FDCB6E" font-weight="700" letter-spacing="4">음성 인터페이스</text>
+  <text x="120" y="560" font-family="Segoe UI, sans-serif" font-size="92" fill="#ffffff" font-weight="800">비서 이름을</text>
+  <text x="120" y="680" font-family="Segoe UI, sans-serif" font-size="92" fill="#FDCB6E" font-weight="800">바꾼 사람들의</text>
+  <text x="120" y="800" font-family="Segoe UI, sans-serif" font-size="92" fill="#ffffff" font-weight="800">말투</text>
+  <text x="120" y="1200" font-family="Segoe UI, sans-serif" font-size="30" fill="#b3a36b">CHI 2026 · Naming Assistants</text>
+</svg>

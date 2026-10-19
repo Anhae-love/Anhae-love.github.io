@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HCI 인스타 쇼케이스</title>
+<meta name="description" content="HCI·인간-AI 상호작용 연구를 인스타그램 카드뉴스로 옮긴 아카이브">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="#top">HCI<span>.showcase</span></a>
+  <nav class="nav">
+    <a href="#work">작업</a>
+    <a href="#about">소개</a>
+    <span class="count" id="navCount"></span>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <p class="hero-kicker" id="heroKicker">아카이브 · 2026</p>
+    <h1 class="hero-title" id="heroTitle">매일 새벽,<br>연구 한 편을<br><em>카드 여섯 장</em>으로.</h1>
+    <p class="hero-sub" id="heroSub">HCI·인간-AI 상호작용 연구를 인스타그램 카드뉴스로 옮긴 아카이브입니다.</p>
+    <a class="hero-scroll" href="#work" aria-label="작업으로 이동">작업 보기 ↓</a>
+  </section>
+
+  <section class="work" id="work">
+    <div class="grid" id="grid">
+      <div class="empty">불러오는 중…</div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>소개</h2>
+    <p>이 아카이브는 자동화 파이프라인이 매일 새벽 생성한 인스타그램 카드뉴스를 모아 둔 공간입니다. 최신 HCI 연구를 골라, 사실 검증을 거친 뒤, 여섯 장의 카드와 캡션으로 다시 씁니다.</p>
+    <p class="muted">정적 사이트 · AWS S3 + CloudFront 배포를 염두에 두고 만들었습니다.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>HCI 인스타 쇼케이스</span>
+  <span id="footGen"></span>
+</footer>
+
+<!-- 라이트박스 -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" id="lbClose" aria-label="닫기">×</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="이전">‹</button>
+  <div class="lb-stage">
+    <figure class="lb-figure">
+      <img id="lbImg" alt="">
+      <figcaption class="lb-meta">
+        <span class="lb-cat" id="lbCat"></span>
+        <h3 id="lbTitle"></h3>
+        <p class="lb-source" id="lbSource"></p>
+        <p class="lb-caption" id="lbCaption"></p>
+        <div class="lb-dots" id="lbDots"></div>
+      </figcaption>
+    </figure>
+  </div>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="다음">›</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

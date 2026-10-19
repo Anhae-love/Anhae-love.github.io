@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+  <rect width="1080" height="1350" fill="#071a2a"/>
+  <rect x="64" y="64" width="952" height="1222" rx="28" fill="#0e2b43"/>
+  <circle cx="860" cy="300" r="180" fill="#0984E3" opacity="0.35"/>
+  <circle cx="260" cy="1050" r="130" fill="#0984E3" opacity="0.22"/>
+  <text x="120" y="200" font-family="Segoe UI, sans-serif" font-size="34" fill="#0984E3" font-weight="700" letter-spacing="4">보안 · 프라이버시</text>
+  <text x="120" y="560" font-family="Segoe UI, sans-serif" font-size="92" fill="#ffffff" font-weight="800">기본 비밀번호를</text>
+  <text x="120" y="680" font-family="Segoe UI, sans-serif" font-size="92" fill="#0984E3" font-weight="800">바꾸라는</text>
+  <text x="120" y="800" font-family="Segoe UI, sans-serif" font-size="92" fill="#ffffff" font-weight="800">조언</text>
+  <text x="120" y="1200" font-family="Segoe UI, sans-serif" font-size="30" fill="#6b93b3">CHI 2026 · Default Password</text>
+</svg>

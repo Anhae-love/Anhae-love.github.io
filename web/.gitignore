@@ -1,0 +1,5 @@
+# GitHub Pages 발행용: 데이터와 이미지를 포함한다.
+# (로컬 캐시만 제외)
+__pycache__/
+.DS_Store
+Thumbs.db

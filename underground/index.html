@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE UNDERGROUND // ai 지하실</title>
+<meta name="description" content="GitHub에서 지금 떡상 중인 AI 도구·프롬프트. 지하실 랭킹.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- 부팅 오버레이 -->
+<div class="boot" id="boot">
+  <pre class="boot-log" id="bootLog"></pre>
+</div>
+
+<!-- 스캔라인 / 노이즈 -->
+<div class="crt" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="logo">
+    <span class="blink">█</span> THE_UNDERGROUND
+    <span class="sub">// ai 지하실</span>
+  </div>
+  <div class="status" id="status">booting…</div>
+</header>
+
+<main class="shell">
+
+  <!-- 추천 콘솔 -->
+  <section class="oracle">
+    <div class="oracle-head">
+      <span class="prompt-sign">root@underground:~$</span>
+      <span class="oracle-title">뭐가 필요한데</span>
+    </div>
+    <div class="oracle-row">
+      <input id="ask" type="text" autocomplete="off" spellcheck="false"
+             placeholder="예: 발표자료 빨리, 코딩 자동화, 토큰 걱정 없이 쓰기…">
+      <button id="askBtn">추천 받기 ⏎</button>
+    </div>
+    <div class="chips" id="chips"></div>
+    <div class="oracle-out" id="oracleOut" hidden></div>
+  </section>
+
+  <!-- 떡상 티커 -->
+  <section class="surge" id="surgeWrap">
+    <div class="surge-label">▲ 오늘의 떡상</div>
+    <div class="surge-track" id="surge"></div>
+  </section>
+
+  <!-- 필터 -->
+  <nav class="filters" id="filters"></nav>
+
+  <!-- 랭킹 -->
+  <section class="rank">
+    <div class="rank-head">
+      <span>#</span><span>레포</span><span class="hcol">열기</span>
+    </div>
+    <div id="list"><div class="loading">// 랭킹 복호화 중…</div></div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <span id="genAt"></span>
+  <span class="disc">합법 라인 전용 · 크랙/우회성 레포는 자동 차단됨</span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

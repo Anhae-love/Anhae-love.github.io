@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+  <rect width="1080" height="1350" fill="#07211c"/>
+  <rect x="64" y="64" width="952" height="1222" rx="28" fill="#0e3029"/>
+  <circle cx="860" cy="300" r="180" fill="#00B894" opacity="0.35"/>
+  <circle cx="260" cy="1050" r="130" fill="#00B894" opacity="0.22"/>
+  <text x="120" y="200" font-family="Segoe UI, sans-serif" font-size="34" fill="#00B894" font-weight="700" letter-spacing="4">디지털 웰빙</text>
+  <text x="120" y="560" font-family="Segoe UI, sans-serif" font-size="92" fill="#ffffff" font-weight="800">그만 쓸까</text>
+  <text x="120" y="680" font-family="Segoe UI, sans-serif" font-size="92" fill="#ffffff" font-weight="800">물었을 때와</text>
+  <text x="120" y="800" font-family="Segoe UI, sans-serif" font-size="92" fill="#00B894" font-weight="800">실제 사용</text>
+  <text x="120" y="1200" font-family="Segoe UI, sans-serif" font-size="30" fill="#6f9e94">CHI 2026 · Intention vs. Behavior</text>
+</svg>

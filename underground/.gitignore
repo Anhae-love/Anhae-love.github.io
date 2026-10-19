@@ -1,0 +1,6 @@
+# GitHub Pages 발행용: feed.json 을 포함한다.
+__pycache__/
+.DS_Store
+Thumbs.db
+# 비교용 스냅샷은 발행 불필요
+data/_prev_stars.json
