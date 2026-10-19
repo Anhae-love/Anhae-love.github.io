@@ -1,0 +1,33 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# --- 로컬 실행 로그 / 결과물 ---
+logs/
+output/
+figma_test/
+
+# --- 가상환경 / 빌드 산출물 ---
+automation/bin/
+
+# --- 자격증명 / 비밀 (실수로 생성될 경우 대비) ---
+.credentials.json
+*.credentials.json
+.env
+.env.*
+*.key
+*.pem
+
+# --- OS / 에디터 ---
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# --- 대용량 생성 자료 (필요시 수동 추가) ---
+*.pdf

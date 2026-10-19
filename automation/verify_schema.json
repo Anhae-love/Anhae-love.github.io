@@ -1,0 +1,88 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["verdict", "source_check", "checklist", "issues", "summary"],
+  "properties": {
+    "verdict": {
+      "type": "string",
+      "enum": ["pass", "revise", "reject"],
+      "description": "pass = 이대로 카드 제작 가능. revise = 지적사항을 고치면 가능. reject = 주제 선정 자체가 부적절하거나 원문 근거가 무너짐."
+    },
+    "source_check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url_reachable", "title_matches", "claims_traceable", "notes"],
+      "properties": {
+        "url_reachable": { "type": "string", "enum": ["yes", "no", "unverified"] },
+        "title_matches": { "type": "string", "enum": ["yes", "no", "unverified"] },
+        "claims_traceable": {
+          "type": "string",
+          "enum": ["yes", "partial", "no", "unverified"],
+          "description": "카드와 캡션의 주장이 원문에서 실제로 확인되는가."
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "checklist": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "프롬프트 v3 '최종 검증' 7항. 하나라도 fail이면 verdict는 pass가 될 수 없다.",
+      "required": [
+        "c1_standalone_comprehension", "c2_headline_within_scope",
+        "c3_number_not_misread", "c4_no_group_stigma",
+        "c5_question_not_as_finding", "c6_visual_not_overclaiming",
+        "c7_six_cards_self_contained"
+      ],
+      "properties": {
+        "c1_standalone_comprehension": { "type": "string", "enum": ["pass", "fail"] },
+        "c2_headline_within_scope":    { "type": "string", "enum": ["pass", "fail"] },
+        "c3_number_not_misread":       { "type": "string", "enum": ["pass", "fail", "n/a"] },
+        "c4_no_group_stigma":          { "type": "string", "enum": ["pass", "fail", "n/a"] },
+        "c5_question_not_as_finding":  { "type": "string", "enum": ["pass", "fail"] },
+        "c6_visual_not_overclaiming":  { "type": "string", "enum": ["pass", "fail"] },
+        "c7_six_cards_self_contained": { "type": "string", "enum": ["pass", "fail"] }
+      }
+    },
+    "issues": {
+      "type": "array",
+      "description": "지적사항. 없으면 빈 배열.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["severity", "category", "location", "quote", "problem", "fix"],
+        "properties": {
+          "severity": {
+            "type": "string",
+            "enum": ["blocker", "major", "minor"],
+            "description": "blocker 가 하나라도 있으면 verdict는 revise 이상."
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "factual_error", "overclaim", "causal_confusion", "stat_misread",
+              "group_stigma", "preprint_labeling", "visual_overclaim",
+              "scope_creep", "ambiguity", "jargon", "checklist_fail"
+            ]
+          },
+          "location": {
+            "type": "string",
+            "description": "예: slide 4 hero_copy / caption 3문단 / object_svg slide 5"
+          },
+          "quote": {
+            "type": "string",
+            "description": "문제가 되는 원문 텍스트를 그대로 인용. 수정 대상을 특정하기 위함."
+          },
+          "problem": { "type": "string" },
+          "fix": {
+            "type": "string",
+            "description": "그대로 갈아끼울 수 있는 구체적 대안 문구. '완화하라' 같은 지시가 아니라 실제 문장."
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "string",
+      "description": "2~4문장. 이 콘텐츠를 발행했을 때 생길 수 있는 가장 큰 오해 하나를 명시할 것."
+    }
+  }
+}

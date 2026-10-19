@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>인스타 콘텐츠 검토</title>
+<style>
+  :root{
+    --ink:#2b2b2b; --sub:#6b6b6b; --faint:#9a9a9a;
+    --paper:#ffffff; --panel:#fafafa; --line:#dcdcdc; --line2:#ededed;
+    --hl:#ffd400; --hl-soft:#fff6bf;
+    --ok:#1f7a3d; --ok-bg:#eaf6ee; --wait:#8a6d00; --wait-bg:#fdf6e0; --bad:#b3261e; --bad-bg:#fbeceb;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --ink:#ededed; --sub:#b0b0b0; --faint:#7c7c7c;
+    --paper:#171717; --panel:#212121; --line:#383838; --line2:#2c2c2c;
+    --hl:#ffd400; --hl-soft:#4a4020;
+    --ok:#5fd08a; --ok-bg:#16281c; --wait:#e6c34d; --wait-bg:#2b2410; --bad:#f0857d; --bad-bg:#2c1614;
+    color-scheme:dark;
+  }}
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--paper); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Malgun Gothic",sans-serif;
+    line-height:1.5; -webkit-font-smoothing:antialiased;
+    padding-top:env(safe-area-inset-top,0); padding-bottom:env(safe-area-inset-bottom,0);}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  header{position:sticky; top:env(safe-area-inset-top,0); z-index:5;
+    background:var(--paper); border-bottom:1.5px solid var(--ink);
+    padding:14px 18px; display:flex; flex-wrap:wrap; gap:6px 14px; align-items:baseline;}
+  header h1{font-size:16px; margin:0; font-weight:800; letter-spacing:-.01em}
+  .meta{color:var(--sub); font-size:12.5px; display:flex; gap:12px; flex-wrap:wrap}
+  .meta b{color:var(--ink); font-weight:600}
+  .pill{margin-left:auto; font-size:12px; font-weight:700; padding:4px 11px; border-radius:999px}
+  .pill.ok{background:var(--ok-bg); color:var(--ok)}
+  .pill.wait{background:var(--wait-bg); color:var(--wait)}
+  .pill.bad{background:var(--bad-bg); color:var(--bad)}
+
+  .wrap{max-width:1080px; margin:0 auto; padding:18px 16px 64px}
+  .lead{color:var(--sub); font-size:13px; margin:0 0 18px}
+  mark{background:var(--hl); color:#1a1a1a; padding:0 4px; border-radius:2px; font-weight:700}
+
+  h2{font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint);
+    font-weight:800; margin:26px 0 12px; padding-bottom:7px; border-bottom:1px solid var(--line)}
+
+  /* 오늘 카드 그리드 */
+  .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+  @media (max-width:760px){ .cards{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:440px){ .cards{grid-template-columns:1fr} }
+  .card{border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--panel)}
+  .card img{width:100%; display:block; aspect-ratio:4/5; object-fit:cover; background:var(--line2)}
+  .card .n{font-size:11px; font-weight:700; color:var(--faint); padding:6px 10px; letter-spacing:.05em}
+
+  .titleblk{margin:0 0 4px}
+  .titleblk .cat{font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--faint); font-weight:700}
+  .titleblk h3{margin:3px 0 0; font-size:19px; font-weight:800; letter-spacing:-.02em}
+  .src{font-size:12px; color:var(--sub); margin:4px 0 0}
+  .src a{color:var(--sub)}
+
+  /* 캡션·노트 */
+  details{border:1px solid var(--line); border-radius:10px; margin-top:12px; background:var(--panel)}
+  summary{padding:12px 14px; font-size:13px; font-weight:700; cursor:pointer; list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"▾"; float:right; color:var(--faint)}
+  details[open] summary::after{content:"▴"}
+  .body{padding:0 14px 14px; font-size:13px; color:var(--sub); white-space:pre-wrap}
+
+  /* 결정 패널 */
+  .decide{border:1.5px solid var(--ink); border-radius:10px; padding:16px; margin-top:20px; background:var(--panel)}
+  .decide h4{margin:0 0 4px; font-size:14px; font-weight:800}
+  .decide p{margin:0 0 12px; font-size:12.5px; color:var(--sub)}
+  .checks{display:flex; flex-direction:column; gap:9px; margin:0 0 14px; padding:0; list-style:none}
+  .checks li{display:flex; gap:9px; font-size:13px; align-items:flex-start}
+  .checks input{margin-top:2px; width:16px; height:16px; accent-color:var(--ink); flex:none}
+  .btns{display:flex; gap:8px; flex-wrap:wrap}
+  button{font:inherit; font-weight:700; font-size:14px; border-radius:8px; padding:11px 16px;
+    border:1px solid var(--line); background:var(--paper); color:var(--ink); cursor:pointer}
+  .approve{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+  .approve:disabled{opacity:.4; cursor:not-allowed}
+  .reject{color:var(--bad); border-color:var(--bad)}
+  .out{margin-top:12px; font-size:12.5px}
+  .out textarea{width:100%; min-height:70px; font:inherit; font-size:12px; padding:9px;
+    border:1px solid var(--line); border-radius:8px; background:var(--paper); color:var(--ink)}
+  .copy{margin-top:6px; font-size:12px; padding:7px 12px}
+
+  /* 이력 */
+  .hist{width:100%; border-collapse:collapse; font-size:12.5px}
+  .hist th,.hist td{text-align:left; padding:8px 8px; border-bottom:1px solid var(--line2)}
+  .hist th{font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--faint); font-weight:700}
+  .hist td:first-child{font-weight:700; white-space:nowrap}
+  .dot{display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:5px; vertical-align:middle}
+  .dot.ok{background:var(--ok)} .dot.wait{background:var(--wait)} .dot.bad{background:var(--bad)}
+
+  .empty{padding:40px 16px; text-align:center; color:var(--faint); font-size:14px}
+  .foot{margin-top:36px; padding-top:14px; border-top:1px solid var(--line);
+    font-size:11px; color:var(--faint); display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px}
+</style>
+</head>
+<body>
+<header>
+  <h1>콘텐츠 검토</h1>
+  <div class="meta tnum" id="meta"></div>
+  <span class="pill wait" id="statuspill">불러오는 중</span>
+</header>
+
+<div class="wrap">
+  <p class="lead">매일 새벽 자동 제작 → 여기서 검토하고 인스타에 올립니다. 감사·검증은 이미 끝난 상태입니다.</p>
+  <div id="app"><div class="empty">manifest 불러오는 중…</div></div>
+
+  <div class="foot">
+    <span>인스타 콘텐츠 팀 · 검토 대시보드</span>
+    <span id="gen"></span>
+  </div>
+</div>
+
+<script>
+const STATUS_KO = {
+  awaiting_human_review: ["검토 대기", "wait"],
+  needs_human:          ["사람 판단 필요", "bad"],
+  rejected:             ["주제 기각", "bad"],
+  verify_failed:        ["검증 실패", "bad"],
+  no_output:            ["생성 안 됨", "bad"],
+  approved:             ["승인됨", "ok"],
+  unknown:              ["상태 미상", "wait"],
+};
+
+function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+function render(m){
+  const app = document.getElementById("app");
+  const latest = m.latest;
+  document.getElementById("gen").textContent = "갱신 " + (m.generated_at||"").replace("T"," ");
+
+  if(!latest){ app.innerHTML = '<div class="empty">아직 만들어진 콘텐츠가 없습니다.</div>'; return; }
+
+  // 상단 상태
+  const [label, cls] = STATUS_KO[latest.status] || STATUS_KO.unknown;
+  const pill = document.getElementById("statuspill");
+  pill.textContent = label; pill.className = "pill " + cls;
+  const lr = m.last_run || {};
+  document.getElementById("meta").innerHTML =
+    `<span>오늘 <b>${esc(latest.date)}</b></span>` +
+    (latest.category ? `<span>${esc(latest.category.split("—")[0].trim())}</span>` : "") +
+    (lr.started_at ? `<span>제작 <b>${esc((lr.started_at||"").slice(11,16))}</b></span>` : "") +
+    (lr.minutes ? `<span><b>${lr.minutes}</b>분</span>` : "");
+
+  let html = "";
+  // 제목
+  html += `<div class="titleblk">`;
+  if(latest.category) html += `<div class="cat">${esc(latest.category)}</div>`;
+  html += `<h3>${esc(latest.title)}</h3>`;
+  if(latest.source_title){
+    html += `<p class="src">📄 ${esc(latest.source_title)}`;
+    if(latest.source_url) html += ` · <a href="${esc(latest.source_url)}" target="_blank" rel="noopener">원문</a>`;
+    html += `</p>`;
+  }
+  html += `</div>`;
+
+  // 카드
+  html += `<h2>카드 6장</h2><div class="cards">`;
+  if(latest.cards && latest.cards.length){
+    latest.cards.forEach((c,i)=>{
+      html += `<div class="card"><img loading="lazy" src="${esc(c)}" alt="슬라이드 ${i+1}"><div class="n">${i+1}</div></div>`;
+    });
+  } else {
+    html += `<div class="empty">카드 이미지가 아직 없습니다.</div>`;
+  }
+  html += `</div>`;
+
+  // 캡션 / 노트
+  if(latest.caption)
+    html += `<details><summary>캡션 복사</summary><div class="body">${esc(latest.caption)}</div></details>`;
+  if(latest.notes)
+    html += `<details><summary>NOTES — 무엇을 골랐고 GPT가 뭘 지적했나</summary><div class="body">${esc(latest.notes)}</div></details>`;
+
+  // 결정
+  html += `
+  <div class="decide">
+    <h4>사람 확인</h4>
+    <p>감사·Red Team이 이미 본 것(수치·이미지·과장)은 뺐습니다. 사람만 판단할 것만.</p>
+    <ul class="checks">
+      <li><label><input type="checkbox" class="chk"> 오늘 주제가 시의적으로 괜찮은가</label></li>
+      <li><label><input type="checkbox" class="chk"> 계정 톤과 맞는가</label></li>
+      <li><label><input type="checkbox" class="chk"> 최종 미감 — 색·여백·글자 균형</label></li>
+      <li><label><input type="checkbox" class="chk"> 서사·공감이 있는가 (빈약·3인칭 아님)</label></li>
+    </ul>
+    <div class="btns">
+      <button class="approve" id="approve" disabled>승인</button>
+      <button class="reject" id="reject">반려</button>
+    </div>
+    <div class="out" id="out" hidden>
+      <div id="outmsg"></div>
+      <textarea id="decision" readonly></textarea>
+      <button class="copy" id="copyBtn">결정 복사</button>
+      <p style="color:var(--faint);font-size:11px;margin:8px 0 0">이 텍스트를 복사해 두면 PC의 결정 기록·가드레일이 읽습니다. (정적 페이지라 자동 저장은 안 됨)</p>
+    </div>
+  </div>`;
+
+  // 이력
+  if(m.history && m.history.length > 1){
+    html += `<h2>지난 이력</h2><table class="hist"><thead><tr><th>날짜</th><th>제목</th><th>오브젝트</th><th>검증</th><th>상태</th></tr></thead><tbody>`;
+    m.history.slice(0,14).forEach(e=>{
+      const [lab, c] = STATUS_KO[e.status] || STATUS_KO.unknown;
+      html += `<tr><td>${esc(e.date)}</td><td>${esc(e.title)}</td><td>${esc(e.object_name)}</td>` +
+              `<td>${esc(e.verdict)||"—"}${e.attempts?` <span style="color:var(--faint)">(${e.attempts})</span>`:""}</td>` +
+              `<td><span class="dot ${c}"></span>${lab}</td></tr>`;
+    });
+    html += `</tbody></table>`;
+  }
+
+  app.innerHTML = html;
+
+  // 상호작용
+  const chks = [...document.querySelectorAll(".chk")];
+  const approve = document.getElementById("approve");
+  const out = document.getElementById("out");
+  const outmsg = document.getElementById("outmsg");
+  const decision = document.getElementById("decision");
+  chks.forEach(c=>c.addEventListener("change", ()=>{ approve.disabled = !chks.every(x=>x.checked); }));
+
+  function emit(verdict, reason){
+    const rec = {folder:latest.folder, date:latest.date, decision:verdict,
+                 reason:reason||"", decided_at:new Date().toISOString()};
+    decision.value = JSON.stringify(rec, null, 2);
+    out.hidden = false;
+    outmsg.innerHTML = verdict==="approved"
+      ? '<b style="color:var(--ok)">승인</b> — 인스타에 올린 뒤 이 결정을 복사해 두세요.'
+      : '<b style="color:var(--bad)">반려</b> — 사유가 기획실로 전달됩니다.';
+  }
+  approve.addEventListener("click", ()=>emit("approved"));
+  document.getElementById("reject").addEventListener("click", ()=>{
+    const r = prompt("반려 사유 (시의성·톤·미감·서사 등)") || "";
+    emit("rejected", r);
+  });
+  document.getElementById("copyBtn").addEventListener("click", async ()=>{
+    try{ await navigator.clipboard.writeText(decision.value); document.getElementById("copyBtn").textContent="복사됨 ✓"; }
+    catch(e){ decision.select(); }
+  });
+}
+
+fetch("data/manifest.json?t=" + Date.now())
+  .then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); })
+  .then(render)
+  .catch(e=>{
+    document.getElementById("app").innerHTML =
+      '<div class="empty">manifest를 불러오지 못했습니다.<br>첫 배포 전이거나 data/manifest.json이 아직 없습니다.<br><small>'+esc(String(e))+'</small></div>';
+    const pill=document.getElementById("statuspill"); pill.textContent="데이터 없음"; pill.className="pill bad";
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+{
+  "date": "2026-07-17",
+  "weekday_category": "화 — 챗봇, 의인화, 감정, 사회적 상호작용",
+  "content_title": "챗봇이랑 15분 얘기하면 나를 보는 눈이 달라진다",
+  "source_title": "Self-concept alignment after brief conversations with an LLM agent",
+  "source_url": "https://example.org/chi2026-self-concept",
+  "source_access_status": "원문 확인",
+  "is_preprint": false,
+  "selection_sentence": "이 연구는 챗봇과 15분 대화한 뒤의 자기평가를 살펴봤고, 개인적인 주제로 대화했을 때 자기평가가 AI의 성격 점수 쪽으로 움직이는 경향을 발견했다. 하지만 실제 성격이 변했는지까지 확인한 것은 아니다.",
+  "object_name": "두 개의 점",
+  "object_rationale": "'나'와 'AI'를 각각 하나의 점으로 두면, 연구가 측정한 것(두 자기평가 사이의 거리)을 도형 두 개와 선 하나로 정확히 그릴 수 있다. 이동·분열·수렴으로 6장을 관통한다.",
+  "accent_color": "#2E6F5E",
+
+  "slides": [
+    {
+      "slide_number": 1,
+      "narrative_role": "등장",
+      "context_label": "챗봇을 켜기 전",
+      "hero_copy": ["나는 나를", "이렇게 생각한다"],
+      "support_copy": "내향적인 편. 성실한 편. 그런 감각.",
+      "footnote": [],
+      "object_state": "검은 점 하나. 홀로, 중립적으로 놓여 있다.",
+      "layout": "top-object",
+      "object_height": 250,
+      "object_svg": "<circle cx=\"208\" cy=\"110\" r=\"30\" fill=\"INK\"/>",
+      "object_labels": [{ "x": 208, "y": 182, "text": "나", "color": "MUTED" }]
+    },
+    {
+      "slide_number": 2,
+      "narrative_role": "작동",
+      "context_label": "15분의 대화",
+      "hero_copy": ["AI에게도", "성격 점수가 있다"],
+      "support_copy": "연구팀은 GPT-4o에게 성격검사를 100번 시켰다.",
+      "footnote": ["같은 문항, 같은 설정.", "100회 평균값을 AI의 성격으로 삼았다."],
+      "object_state": "초록 점이 등장한다. 둘 사이에 긴 선분이 놓인다.",
+      "layout": "mid-object",
+      "object_height": 230,
+      "object_svg": "<line x1=\"208\" y1=\"100\" x2=\"688\" y2=\"100\" stroke=\"MUTED\" stroke-width=\"3\"/><circle cx=\"208\" cy=\"100\" r=\"30\" fill=\"INK\"/><circle cx=\"688\" cy=\"100\" r=\"30\" fill=\"ACCENT\"/>",
+      "object_labels": [
+        { "x": 208, "y": 172, "text": "나", "color": "MUTED" },
+        { "x": 688, "y": 172, "text": "AI", "color": "ACCENT" }
+      ]
+    },
+    {
+      "slide_number": 3,
+      "narrative_role": "분할",
+      "context_label": "두 조건",
+      "hero_copy": ["무슨 얘기를", "했느냐가 갈랐다"],
+      "support_copy": "",
+      "footnote": ["92명 무작위 배정. 각 조건 46명."],
+      "object_state": "같은 구조가 조건 수만큼 나뉜다. 아직 둘은 같은 모습이다.",
+      "layout": "mid-object",
+      "object_height": 330,
+      "object_svg": "<line x1=\"208\" y1=\"100\" x2=\"688\" y2=\"100\" stroke=\"MUTED\" stroke-width=\"3\"/><circle cx=\"208\" cy=\"100\" r=\"26\" fill=\"INK\"/><circle cx=\"688\" cy=\"100\" r=\"26\" fill=\"ACCENT\"/><line x1=\"208\" y1=\"280\" x2=\"688\" y2=\"280\" stroke=\"MUTED\" stroke-width=\"3\"/><circle cx=\"208\" cy=\"280\" r=\"26\" fill=\"INK\"/><circle cx=\"688\" cy=\"280\" r=\"26\" fill=\"ACCENT\"/>",
+      "object_labels": [
+        { "x": 0, "y": 32, "text": "개인적인 주제", "color": "MUTED", "anchor": "start" },
+        { "x": 0, "y": 212, "text": "고양이 밈 같은 주제", "color": "MUTED", "anchor": "start" }
+      ]
+    },
+    {
+      "slide_number": 4,
+      "narrative_role": "결과",
+      "context_label": "대화가 끝난 뒤",
+      "hero_copy": ["나의 자기평가가", "AI 쪽으로", "움직였다"],
+      "support_copy": "",
+      "footnote": ["p < .001, d = 0.51.", "비개인 조건은 유의하지 않았다 (p = .279)."],
+      "object_state": "개인 조건에서만 검은 점이 초록 쪽으로 이동한다. 원래 자리는 점선으로 남는다.",
+      "layout": "mid-object",
+      "object_height": 330,
+      "object_svg": "<line x1=\"208\" y1=\"100\" x2=\"468\" y2=\"100\" stroke=\"MUTED\" stroke-width=\"3\" stroke-dasharray=\"10 9\"/><line x1=\"238\" y1=\"100\" x2=\"438\" y2=\"100\" stroke=\"INK\" stroke-width=\"4\" marker-end=\"url(#ar)\"/><line x1=\"498\" y1=\"100\" x2=\"688\" y2=\"100\" stroke=\"MUTED\" stroke-width=\"3\"/><circle cx=\"208\" cy=\"100\" r=\"22\" fill=\"none\" stroke=\"MUTED\" stroke-width=\"6\" stroke-dasharray=\"9 8\"/><circle cx=\"498\" cy=\"100\" r=\"26\" fill=\"INK\"/><circle cx=\"688\" cy=\"100\" r=\"26\" fill=\"ACCENT\"/><line x1=\"208\" y1=\"280\" x2=\"688\" y2=\"280\" stroke=\"MUTED\" stroke-width=\"3\"/><circle cx=\"208\" cy=\"280\" r=\"26\" fill=\"INK\"/><circle cx=\"688\" cy=\"280\" r=\"26\" fill=\"ACCENT\"/>",
+      "object_labels": [
+        { "x": 0, "y": 32, "text": "개인적인 주제", "color": "ACCENT", "anchor": "start" },
+        { "x": 0, "y": 212, "text": "고양이 밈 같은 주제", "color": "MUTED", "anchor": "start" }
+      ]
+    },
+    {
+      "slide_number": 5,
+      "narrative_role": "오해 방지",
+      "context_label": "자주 하는 오해",
+      "hero_copy": ["AI가 나를", "바꾼 게 아니다"],
+      "support_copy": "바뀐 건 내가 나를 보는 눈이다. 실제 성격이 변했는지는 측정하지 않았다.",
+      "footnote": ["20문항 자기보고 척도.", "행동 변화나 지속성은 이 연구의 범위 밖이다."],
+      "object_state": "실제 나(속 빈 원)는 제자리. 움직인 것은 '내가 아는 나'(점선 원)뿐이다.",
+      "layout": "mid-object",
+      "object_height": 250,
+      "object_svg": "<line x1=\"208\" y1=\"100\" x2=\"528\" y2=\"100\" stroke=\"MUTED\" stroke-width=\"3\" stroke-dasharray=\"10 9\"/><line x1=\"568\" y1=\"100\" x2=\"738\" y2=\"100\" stroke=\"MUTED\" stroke-width=\"3\"/><circle cx=\"208\" cy=\"100\" r=\"30\" fill=\"none\" stroke=\"INK\" stroke-width=\"7\"/><circle cx=\"528\" cy=\"100\" r=\"26\" fill=\"none\" stroke=\"INK\" stroke-width=\"6\" stroke-dasharray=\"9 8\"/><circle cx=\"778\" cy=\"100\" r=\"26\" fill=\"ACCENT\"/>",
+      "object_labels": [
+        { "x": 208, "y": 185, "text": "실제 나", "color": "MUTED" },
+        { "x": 528, "y": 185, "text": "내가 아는 나", "color": "MUTED" },
+        { "x": 778, "y": 185, "text": "AI", "color": "ACCENT" }
+      ]
+    },
+    {
+      "slide_number": 6,
+      "narrative_role": "개방",
+      "context_label": "남은 질문",
+      "hero_copy": ["같은 AI를 쓴 사람들은", "서로 닮아갔다"],
+      "support_copy": "92명의 자기평가가 서로 더 비슷해졌다. 그리고 그럴수록 대화가 더 즐거웠다.",
+      "footnote": ["p < .001. 즐거움과의 연관은 상관이며, 인과가 아니다."],
+      "object_state": "여러 검은 점이 하나의 초록 점 주위로 수렴한다. 구조가 열린 채 끝난다.",
+      "layout": "center-object",
+      "object_height": 400,
+      "object_svg": "<line x1=\"448\" y1=\"200\" x2=\"448\" y2=\"25\" stroke=\"DOT\" stroke-width=\"2\"/><line x1=\"448\" y1=\"200\" x2=\"560.5\" y2=\"65.9\" stroke=\"DOT\" stroke-width=\"2\"/><line x1=\"448\" y1=\"200\" x2=\"620.3\" y2=\"169.6\" stroke=\"DOT\" stroke-width=\"2\"/><line x1=\"448\" y1=\"200\" x2=\"599.6\" y2=\"287.5\" stroke=\"DOT\" stroke-width=\"2\"/><line x1=\"448\" y1=\"200\" x2=\"507.9\" y2=\"364.4\" stroke=\"DOT\" stroke-width=\"2\"/><line x1=\"448\" y1=\"200\" x2=\"388.1\" y2=\"364.4\" stroke=\"DOT\" stroke-width=\"2\"/><line x1=\"448\" y1=\"200\" x2=\"296.4\" y2=\"287.5\" stroke=\"DOT\" stroke-width=\"2\"/><line x1=\"448\" y1=\"200\" x2=\"275.7\" y2=\"169.6\" stroke=\"DOT\" stroke-width=\"2\"/><line x1=\"448\" y1=\"200\" x2=\"335.5\" y2=\"65.9\" stroke=\"DOT\" stroke-width=\"2\"/><circle cx=\"448\" cy=\"25\" r=\"19\" fill=\"INK\"/><circle cx=\"560.5\" cy=\"65.9\" r=\"19\" fill=\"INK\"/><circle cx=\"620.3\" cy=\"169.6\" r=\"19\" fill=\"INK\"/><circle cx=\"599.6\" cy=\"287.5\" r=\"19\" fill=\"INK\"/><circle cx=\"507.9\" cy=\"364.4\" r=\"19\" fill=\"INK\"/><circle cx=\"388.1\" cy=\"364.4\" r=\"19\" fill=\"INK\"/><circle cx=\"296.4\" cy=\"287.5\" r=\"19\" fill=\"INK\"/><circle cx=\"275.7\" cy=\"169.6\" r=\"19\" fill=\"INK\"/><circle cx=\"335.5\" cy=\"65.9\" r=\"19\" fill=\"INK\"/><circle cx=\"448\" cy=\"200\" r=\"34\" fill=\"ACCENT\"/>",
+      "object_labels": []
+    }
+  ],
+
+  "caption": "챗봇과 15분. 그 뒤에 달라지는 건 챗봇이 아니라 나였다.\n\n연구팀은 참가자 92명을 두 조건에 무작위로 나눴다. 한쪽은 챗봇과 개인적인 이야기를 나눴고, 다른 쪽은 고양이 밈 같은 가벼운 주제로 대화했다. 대화 전후로 참가자들은 자기 성격을 스스로 평가했다. 연구팀은 같은 성격검사를 챗봇에게도 100번 반복시켜 평균값을 '챗봇의 성격 점수'로 삼았다.\n\n개인적인 주제로 대화한 쪽에서만, 대화 후 자기평가가 챗봇의 점수 쪽으로 가까워졌다. 가벼운 주제 조건에서는 그런 변화가 나타나지 않았다. 같은 챗봇을 쓴 사람들끼리 자기평가가 서로 더 비슷해지는 경향도 함께 관찰됐고, 그럴수록 대화를 더 즐거웠다고 보고했다.\n\n주의할 점. 이 연구가 측정한 것은 '내가 나를 어떻게 보는가'다. 실제 성격이 바뀌었는지, 이 변화가 얼마나 오래 가는지, 일상 행동으로 이어지는지는 확인하지 않았다. 즐거움과의 연관도 함께 나타난 관계일 뿐 인과가 아니다. 참가자는 92명이며 전체 인구를 대표하지 않는다.",
+
+  "hashtags": ["#HCI", "#인간과AI", "#챗봇", "#자기개념", "#UX리서치",
+               "#디지털행동", "#AI심리", "#인터랙션디자인", "#CHI2026", "#연구노트"],
+
+  "alt_texts": [
+    "웜 오프화이트 배경 위 검은 점 하나와 '나' 라벨. 큰 글씨로 '나는 나를 이렇게 생각한다'.",
+    "검은 점과 초록 점이 선 하나로 이어져 있다. 각각 '나'와 'AI' 라벨.",
+    "같은 점-선-점 구조가 위아래 두 줄로 나뉜다. 각각 '개인적인 주제', '고양이 밈 같은 주제'.",
+    "위 줄에서 검은 점이 화살표를 따라 초록 점 쪽으로 이동했고 원래 자리는 점선 원으로 남았다. 아래 줄은 그대로다.",
+    "속 빈 원('실제 나')은 제자리, 점선 원('내가 아는 나')만 초록 점 쪽으로 옮겨져 있다.",
+    "아홉 개의 검은 점이 가운데 초록 점을 향해 가는 선으로 수렴한다."
+  ],
+
+  "verification_items": [
+    "표본 92명, 조건당 46명 — 원문 대조 완료",
+    "효과크기 d = 0.51, p < .001 — 개인 조건 한정",
+    "비개인 조건 p = .279 (비유의) 명시",
+    "측정 대상은 자기보고 성격평가이며 실제 성격 변화가 아님",
+    "즐거움과의 연관은 상관 — 캡션에 인과 아님 명시"
+  ],
+
+  "human_check_items": [
+    "원문 링크가 실제로 열리는지",
+    "1장 헤드라인이 연구 범위를 넘지 않는지",
+    "5장 오해 방지 문장이 가장 흔한 오해를 겨냥하는지",
+    "해시태그에 계정 톤과 안 맞는 태그가 섞이지 않았는지"
+  ],
+
+  "status": "awaiting_human_review"
+}

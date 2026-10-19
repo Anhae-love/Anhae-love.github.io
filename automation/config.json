@@ -1,0 +1,19 @@
+{
+  "$comment": "확정된 실행 파일 경로. 비워 두거나 경로가 유효하지 않으면 run_daily.ps1 / verify.py 가 자동 탐색으로 넘어간다. Claude Code 나 Codex 를 업데이트해서 버전 폴더가 바뀌면 여기를 고치거나 비워라.",
+
+  "claude_path": "C:\\Users\\CXlab\\AppData\\Local\\Packages\\Claude_pzs8sxrjxfjjc\\LocalCache\\Roaming\\Claude\\claude-code\\2.1.275\\claude.exe",
+  "codex_path": "C:\\Users\\CXlab\\AppData\\Local\\OpenAI\\Codex\\bin\\12219cbfbcbddde7\\codex.exe",
+
+  "verify": {
+    "max_attempts": 3,
+    "timeout_sec": 900,
+    "$comment": "max_attempts 3 = 최초 검증 1회 + 재검증 2회. pipeline_prompt.md 의 규칙과 맞춰야 한다."
+  },
+
+  "schedule": {
+    "task_name": "HCI 인스타 일일 콘텐츠",
+    "start": "03:00",
+    "random_window_hours": 2,
+    "run_timeout_min": 75
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$comment": "무인 새벽 실행에만 얹는 추가 제약. run_daily.ps1 이 --settings 로 전달한다. 대화형 작업에는 적용되지 않는다. 목적은 두 가지 — (1) 자는 동안 인스타그램에 무엇도 발행되지 않게 하고, (2) 파이프라인이 자기 자신과 원본 프롬프트를 고쳐쓰지 못하게 한다. 파일 보호는 Edit(경로) 규칙으로만 건다. Write(경로) 규칙은 권한 검사에 매칭되지 않아 무시되며, Edit 규칙이 Write 를 포함한 모든 파일 편집 도구를 덮는다.",
+
+  "permissions": {
+    "deny": [
+      "WebFetch(domain:instagram.com)",
+      "WebFetch(domain:www.instagram.com)",
+      "WebFetch(domain:graph.instagram.com)",
+      "WebFetch(domain:graph.facebook.com)",
+      "WebFetch(domain:business.facebook.com)",
+      "WebFetch(domain:developers.facebook.com)",
+
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(Invoke-WebRequest:*)",
+      "Bash(Invoke-RestMethod:*)",
+
+      "Bash(rm:*)",
+      "Bash(rmdir:*)",
+      "Bash(del:*)",
+      "Bash(Remove-Item:*)",
+
+      "Bash(pip:*)",
+      "Bash(npm:*)",
+      "Bash(git:*)",
+
+      "Edit(HCI_인스타그램_콘텐츠_프롬프트_v3.md)",
+      "Edit(automation/**)",
+      "Edit(.claude/**)"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+﻿{
+  "$comment": "이 프로젝트의 기본 권한. 대화형·무인 실행 양쪽에 적용된다. 무인 새벽 실행에만 거는 추가 제약(발행 차단, 원본 보호)은 automation/unattended_settings.json 에 따로 있고 run_daily.ps1 이 --settings 로 얹는다. python 은 스크립트별로 좁히지 않고 통째로 허용한다 — 2026-09-21 첫 무인 실행에서 'python automation/verify.py' 접두어 규칙이 실제 호출 형태와 어긋나 조용히 거부됐고, 새벽에는 그게 빈 폴더로 끝난다. 위험한 쪽은 unattended_settings.json 의 deny 가 막는다.",
+
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "WebSearch",
+      "WebFetch",
+      "Write",
+      "Edit",
+      "Bash(python:*)",
+      "Bash(py:*)"
+    ]
+  }
+}

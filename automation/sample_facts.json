@@ -1,0 +1,95 @@
+{
+  "$comment": "sample_content.json 과 짝을 이루는 예시. 실제 파이프라인에서는 output/<폴더>/facts.json 으로 만든다.",
+
+  "source": {
+    "title": "Self-concept alignment after brief conversations with an LLM agent",
+    "url": "https://example.org/chi2026-self-concept",
+    "access": "원문 확인",
+    "is_preprint": false,
+    "venue_checked": "CHI 2026 프로시딩"
+  },
+
+  "design": {
+    "type": "무작위 배정 실험",
+    "assignment": "무작위 배정",
+    "n_total": 92,
+    "samples": [
+      {
+        "label": "개인적 주제 조건",
+        "n": 46,
+        "note": "챗봇과 개인적인 이야기를 나눴다. 대화 전후로 자기 성격을 자기보고로 평가했다."
+      },
+      {
+        "label": "비개인적 주제 조건",
+        "n": 46,
+        "note": "고양이 밈 같은 가벼운 주제로 대화했다. 같은 자기보고 척도를 썼다."
+      }
+    ],
+    "scope_limit": "15분 단일 세션, 20문항 자기보고 척도, GPT-4o 한정. 실제 성격 변화나 지속성은 다루지 않았다."
+  },
+
+  "findings": [
+    {
+      "id": "F1",
+      "kind": "difference",
+      "claim": "개인적 주제 조건에서 대화 후 자기평가가 AI의 성격 점수 쪽으로 이동했다",
+      "value": 0.51,
+      "unit": "Cohen's d",
+      "scope": "개인적 주제 조건 한정, 사전-사후 비교",
+      "source_quote": "개인적 주제 조건에서 자기평가의 정렬 변화는 유의했다 (p < .001, d = 0.51)."
+    },
+    {
+      "id": "F2",
+      "kind": "null_result",
+      "claim": "비개인적 주제 조건에서는 자기평가 이동이 유의하지 않았다",
+      "value": null,
+      "scope": "비개인적 주제 조건 한정",
+      "source_quote": "비개인 조건에서는 유의한 변화가 관찰되지 않았다 (p = .279)."
+    },
+    {
+      "id": "F3",
+      "kind": "descriptive",
+      "claim": "연구팀은 GPT-4o에게 같은 성격검사를 100번 반복시켜 평균값을 AI의 성격 점수로 삼았다",
+      "value": 100,
+      "unit": "회",
+      "scope": "AI 성격 점수 산출 방법",
+      "source_quote": "동일 문항과 설정으로 100회 반복 측정한 평균을 에이전트의 성격 점수로 사용했다."
+    },
+    {
+      "id": "F4",
+      "kind": "correlation",
+      "claim": "같은 AI를 쓴 참가자들의 자기평가가 서로 더 비슷해졌고, 그럴수록 대화를 더 즐거웠다고 보고했다",
+      "value": 92,
+      "unit": "명",
+      "scope": "전체 참가자, 상관 분석",
+      "source_quote": "참가자 간 자기평가 거리의 감소는 대화 즐거움 보고와 정적 상관을 보였다 (p < .001)."
+    },
+    {
+      "id": "F5",
+      "kind": "descriptive",
+      "claim": "자기평가는 20문항 척도로 측정했다",
+      "value": 20,
+      "unit": "문항",
+      "scope": "측정 도구",
+      "source_quote": "자기개념은 20문항 자기보고 척도로 측정했다."
+    },
+    {
+      "id": "F6",
+      "kind": "descriptive",
+      "claim": "대화 시간은 15분이었다",
+      "value": 15,
+      "unit": "분",
+      "scope": "실험 절차",
+      "source_quote": "각 참가자는 에이전트와 15분간 대화했다."
+    }
+  ],
+
+  "extra_allowed_numbers": [],
+
+  "not_measured": [
+    "실제 성격 변화 — 측정한 것은 자기평가뿐이다",
+    "변화의 지속 기간",
+    "일상 행동으로의 전이",
+    "즐거움과 자기평가 수렴 사이의 인과 방향"
+  ]
+}
