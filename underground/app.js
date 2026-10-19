@@ -90,16 +90,22 @@
       const fire = "🔥".repeat(it.danger || 1);
       const d = it.delta > 0 ? `<span class="d-up">▲ +${it.delta.toLocaleString()}</span>` : "";
       const tag = (it.tags || [])[0] ? `<span class="tag">#${esc(it.tags[0])}</span>` : "";
+      const summary = it.summary_kr ? `<div class="rsummary">${esc(it.summary_kr)}</div>` : "";
+      const why = (it.why || []).length
+        ? `<div class="rwhy">${it.why.map((w) => `<span class="whytag">${esc(w)}</span>`).join("")}</div>`
+        : "";
+      const descEn = it.desc ? `<div class="rdesc">“${esc(it.desc)}”</div>` : "";
       return `<div class="row" style="animation-delay:${Math.min(idx, 20) * 0.02}s">
         <div class="rnum ${idx < 3 ? "top" : ""}">${it.rank}</div>
         <div class="rmain">
           <div class="rname">${esc(it.name)}<span class="fire">${fire}</span></div>
-          <div class="rowner">@${esc(it.owner)}</div>
-          ${it.desc ? `<div class="rdesc">${esc(it.desc)}</div>` : ""}
+          <div class="rowner">@${esc(it.owner)} · ${esc(it.lang)} ${tag}</div>
+          ${summary}
+          ${why}
           <div class="rmeta">
             <span class="star">★ ${it.stars.toLocaleString()}</span>${d}
-            <span>${esc(it.lang)}</span>${tag}
           </div>
+          ${descEn}
         </div>
         <div class="ropen"><a href="${esc(it.url)}" target="_blank" rel="noopener">열기 ↗</a></div>
       </div>`;
@@ -143,7 +149,8 @@
       picks.map((p) =>
         `<a class="pick" href="${esc(p.url)}" target="_blank" rel="noopener">` +
         `<b>#${p.rank} ${esc(p.name)}</b> ${"🔥".repeat(p.danger || 1)}<br>` +
-        `<span class="why">★${p.stars.toLocaleString()} · ${esc((p.desc || "설명 없음").slice(0, 90))}</span></a>`
+        `<span class="pick-sum">${esc(p.summary_kr || "")}</span><br>` +
+        `<span class="why">★${p.stars.toLocaleString()}${p.delta > 0 ? " · ▲+" + p.delta.toLocaleString() : ""}</span></a>`
       ).join("");
   }
 

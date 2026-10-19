@@ -1,116 +1,21 @@
 {
-  "generated_at": "2026-10-19T12:15:10+00:00",
+  "generated_at": "2026-10-19T12:40:11+00:00",
   "count": 80,
   "top_surge": [
     {
-      "id": "codecrafters-io/build-your-own-x",
-      "name": "build-your-own-x",
-      "owner": "codecrafters-io",
-      "url": "https://github.com/codecrafters-io/build-your-own-x",
-      "desc": "Master programming by recreating your favorite technologies from scratch.",
-      "stars": 554488,
-      "delta": 0,
-      "lang": "Markdown",
-      "topics": [
-        "awesome-list",
-        "free",
-        "programming",
-        "tutorial-code",
-        "tutorial-exercises",
-        "tutorials"
-      ],
-      "tags": [
-        "coding",
-        "free"
-      ],
-      "pushed_at": "2026-07-14T19:25:58Z",
-      "heat": 554504,
-      "rank": 1,
-      "danger": 5
-    },
-    {
-      "id": "sindresorhus/awesome",
-      "name": "awesome",
-      "owner": "sindresorhus",
-      "url": "https://github.com/sindresorhus/awesome",
-      "desc": "😎 Awesome lists about all kinds of interesting topics [NOTE: Pull requests are temporarily disabled until I have a chance to catch up with the existing ones]",
-      "stars": 521230,
-      "delta": 0,
-      "lang": "—",
-      "topics": [
-        "awesome",
-        "awesome-list",
-        "lists",
-        "resources",
-        "unicorns"
-      ],
-      "tags": [
-        "misc"
-      ],
-      "pushed_at": "2026-09-02T02:10:47Z",
-      "heat": 521442,
-      "rank": 2,
-      "danger": 5
-    },
-    {
-      "id": "public-apis/public-apis",
-      "name": "public-apis",
-      "owner": "public-apis",
-      "url": "https://github.com/public-apis/public-apis",
-      "desc": "A collective list of free APIs",
-      "stars": 490317,
-      "delta": 0,
-      "lang": "Python",
-      "topics": [
-        "api",
-        "apis",
-        "dataset",
-        "development",
-        "free",
-        "list"
-      ],
-      "tags": [
-        "free"
-      ],
-      "pushed_at": "2026-10-17T17:36:01Z",
-      "heat": 490713,
-      "rank": 3,
-      "danger": 5
-    },
-    {
-      "id": "nilbuild/developer-roadmap",
-      "name": "developer-roadmap",
-      "owner": "nilbuild",
-      "url": "https://github.com/nilbuild/developer-roadmap",
-      "desc": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
-      "stars": 369845,
-      "delta": 0,
-      "lang": "TypeScript",
-      "topics": [
-        "angular-roadmap",
-        "backend-roadmap",
-        "blockchain-roadmap",
-        "computer-science",
-        "dba-roadmap",
-        "developer-roadmap"
-      ],
-      "tags": [
-        "coding",
-        "writing"
-      ],
-      "pushed_at": "2026-10-19T10:21:02Z",
-      "heat": 370245,
-      "rank": 4,
-      "danger": 5
-    },
-    {
       "id": "morluto/rea",
       "name": "rea",
       "owner": "morluto",
       "url": "https://github.com/morluto/rea",
       "desc": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-      "stars": 330559,
-      "delta": 0,
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+26)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 330850,
+      "delta": 26,
       "lang": "TypeScript",
       "topics": [
         "agent-skills",
@@ -124,189 +29,42 @@
         "coding",
         "agent"
       ],
-      "pushed_at": "2026-10-19T12:06:41Z",
-      "heat": 330959,
+      "pushed_at": "2026-10-19T12:16:21Z",
+      "heat": 331328,
       "rank": 5,
       "danger": 5
-    }
-  ],
-  "items": [
-    {
-      "id": "codecrafters-io/build-your-own-x",
-      "name": "build-your-own-x",
-      "owner": "codecrafters-io",
-      "url": "https://github.com/codecrafters-io/build-your-own-x",
-      "desc": "Master programming by recreating your favorite technologies from scratch.",
-      "stars": 554488,
-      "delta": 0,
-      "lang": "Markdown",
-      "topics": [
-        "awesome-list",
-        "free",
-        "programming",
-        "tutorial-code",
-        "tutorial-exercises",
-        "tutorials"
-      ],
-      "tags": [
-        "coding",
-        "free"
-      ],
-      "pushed_at": "2026-07-14T19:25:58Z",
-      "heat": 554504,
-      "rank": 1,
-      "danger": 5
     },
     {
-      "id": "sindresorhus/awesome",
-      "name": "awesome",
-      "owner": "sindresorhus",
-      "url": "https://github.com/sindresorhus/awesome",
-      "desc": "😎 Awesome lists about all kinds of interesting topics [NOTE: Pull requests are temporarily disabled until I have a chance to catch up with the existing ones]",
-      "stars": 521230,
-      "delta": 0,
-      "lang": "—",
-      "topics": [
-        "awesome",
-        "awesome-list",
-        "lists",
-        "resources",
-        "unicorns"
+      "id": "ruvnet/ruflo",
+      "name": "ruflo",
+      "owner": "ruvnet",
+      "url": "https://github.com/ruvnet/ruflo",
+      "desc": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "📈 상승 중 (+3)",
+        "🔥 이번 주에도 업데이트"
       ],
-      "tags": [
-        "misc"
-      ],
-      "pushed_at": "2026-09-02T02:10:47Z",
-      "heat": 521442,
-      "rank": 2,
-      "danger": 5
-    },
-    {
-      "id": "public-apis/public-apis",
-      "name": "public-apis",
-      "owner": "public-apis",
-      "url": "https://github.com/public-apis/public-apis",
-      "desc": "A collective list of free APIs",
-      "stars": 490317,
-      "delta": 0,
-      "lang": "Python",
-      "topics": [
-        "api",
-        "apis",
-        "dataset",
-        "development",
-        "free",
-        "list"
-      ],
-      "tags": [
-        "free"
-      ],
-      "pushed_at": "2026-10-17T17:36:01Z",
-      "heat": 490713,
-      "rank": 3,
-      "danger": 5
-    },
-    {
-      "id": "nilbuild/developer-roadmap",
-      "name": "developer-roadmap",
-      "owner": "nilbuild",
-      "url": "https://github.com/nilbuild/developer-roadmap",
-      "desc": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
-      "stars": 369845,
-      "delta": 0,
+      "stars": 76862,
+      "delta": 3,
       "lang": "TypeScript",
       "topics": [
-        "angular-roadmap",
-        "backend-roadmap",
-        "blockchain-roadmap",
-        "computer-science",
-        "dba-roadmap",
-        "developer-roadmap"
-      ],
-      "tags": [
-        "coding",
-        "writing"
-      ],
-      "pushed_at": "2026-10-19T10:21:02Z",
-      "heat": 370245,
-      "rank": 4,
-      "danger": 5
-    },
-    {
-      "id": "morluto/rea",
-      "name": "rea",
-      "owner": "morluto",
-      "url": "https://github.com/morluto/rea",
-      "desc": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-      "stars": 330559,
-      "delta": 0,
-      "lang": "TypeScript",
-      "topics": [
-        "agent-skills",
+        "agentic-ai",
+        "agentic-framework",
+        "agentic-workflow",
+        "agents",
         "ai-agents",
-        "binary-analysis",
-        "claude-code",
-        "cli",
-        "codex"
+        "ai-assistant"
       ],
       "tags": [
         "coding",
-        "agent"
+        "agent",
+        "chat"
       ],
-      "pushed_at": "2026-10-19T12:06:41Z",
-      "heat": 330959,
-      "rank": 5,
-      "danger": 5
-    },
-    {
-      "id": "vinta/awesome-python",
-      "name": "awesome-python",
-      "owner": "vinta",
-      "url": "https://github.com/vinta/awesome-python",
-      "desc": "The definitive list that answers \"I want to do X in Python, which tool should I use?\"",
-      "stars": 328609,
-      "delta": 0,
-      "lang": "Python",
-      "topics": [
-        "awesome",
-        "awesome-list",
-        "python",
-        "python-frameworks",
-        "python-libraries",
-        "python-tools"
-      ],
-      "tags": [
-        "misc"
-      ],
-      "pushed_at": "2026-10-19T05:39:01Z",
-      "heat": 329009,
-      "rank": 6,
-      "danger": 5
-    },
-    {
-      "id": "awesome-selfhosted/awesome-selfhosted",
-      "name": "awesome-selfhosted",
-      "owner": "awesome-selfhosted",
-      "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
-      "desc": "A list of Free Software network services and web applications which can be hosted on your own servers",
-      "stars": 328194,
-      "delta": 0,
-      "lang": "—",
-      "topics": [
-        "awesome",
-        "awesome-list",
-        "cloud",
-        "free-software",
-        "hosting",
-        "privacy"
-      ],
-      "tags": [
-        "local",
-        "free"
-      ],
-      "pushed_at": "2026-10-18T15:44:07Z",
-      "heat": 328594,
-      "rank": 7,
+      "pushed_at": "2026-10-19T09:16:48Z",
+      "heat": 77271,
+      "rank": 54,
       "danger": 5
     },
     {
@@ -315,8 +73,14 @@
       "owner": "obra",
       "url": "https://github.com/obra/superpowers",
       "desc": "An agentic skills framework & software development methodology that works.",
-      "stars": 301891,
-      "delta": 0,
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+2)",
+        "🟢 활발히 관리 중"
+      ],
+      "stars": 301906,
+      "delta": 2,
       "lang": "Shell",
       "topics": [
         "ai",
@@ -331,7 +95,7 @@
         "agent"
       ],
       "pushed_at": "2026-10-10T03:03:30Z",
-      "heat": 302255,
+      "heat": 302276,
       "rank": 8,
       "danger": 5
     },
@@ -341,8 +105,14 @@
       "owner": "affaan-m",
       "url": "https://github.com/affaan-m/ECC",
       "desc": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-      "stars": 283656,
-      "delta": 0,
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+2)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 283678,
+      "delta": 2,
       "lang": "JavaScript",
       "topics": [
         "ai-agents",
@@ -357,7 +127,321 @@
         "agent"
       ],
       "pushed_at": "2026-10-19T05:03:15Z",
-      "heat": 284056,
+      "heat": 284084,
+      "rank": 9,
+      "danger": 5
+    },
+    {
+      "id": "D4Vinci/Scrapling",
+      "name": "Scrapling",
+      "owner": "D4Vinci",
+      "url": "https://github.com/D4Vinci/Scrapling",
+      "desc": "🕷️ A Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+      "summary_kr": "🧩 개발자가 가져다 쓰는 AI 라이브러리·프레임워크",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "📈 상승 중 (+2)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 88598,
+      "delta": 2,
+      "lang": "Python",
+      "topics": [
+        "ai",
+        "ai-scraping",
+        "automation",
+        "crawler",
+        "crawling",
+        "crawling-python"
+      ],
+      "tags": [
+        "misc"
+      ],
+      "pushed_at": "2026-10-18T17:41:44Z",
+      "heat": 89004,
+      "rank": 49,
+      "danger": 5
+    }
+  ],
+  "items": [
+    {
+      "id": "codecrafters-io/build-your-own-x",
+      "name": "build-your-own-x",
+      "owner": "codecrafters-io",
+      "url": "https://github.com/codecrafters-io/build-your-own-x",
+      "desc": "Master programming by recreating your favorite technologies from scratch.",
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
+      "stars": 554498,
+      "delta": 0,
+      "lang": "Markdown",
+      "topics": [
+        "awesome-list",
+        "free",
+        "programming",
+        "tutorial-code",
+        "tutorial-exercises",
+        "tutorials"
+      ],
+      "tags": [
+        "coding",
+        "free"
+      ],
+      "pushed_at": "2026-07-14T19:25:58Z",
+      "heat": 554514,
+      "rank": 1,
+      "danger": 5
+    },
+    {
+      "id": "sindresorhus/awesome",
+      "name": "awesome",
+      "owner": "sindresorhus",
+      "url": "https://github.com/sindresorhus/awesome",
+      "desc": "😎 Awesome lists about all kinds of interesting topics [NOTE: Pull requests are temporarily disabled until I have a chance to catch up with the existing ones]",
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
+      "stars": 521240,
+      "delta": 0,
+      "lang": "—",
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "lists",
+        "resources",
+        "unicorns"
+      ],
+      "tags": [
+        "misc"
+      ],
+      "pushed_at": "2026-09-02T02:10:47Z",
+      "heat": 521452,
+      "rank": 2,
+      "danger": 5
+    },
+    {
+      "id": "public-apis/public-apis",
+      "name": "public-apis",
+      "owner": "public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "desc": "A collective list of free APIs",
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 490330,
+      "delta": 0,
+      "lang": "Python",
+      "topics": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list"
+      ],
+      "tags": [
+        "free"
+      ],
+      "pushed_at": "2026-10-19T12:30:00Z",
+      "heat": 490730,
+      "rank": 3,
+      "danger": 5
+    },
+    {
+      "id": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "desc": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "summary_kr": "⌨️ 코딩을 돕거나 자동화하는 AI 도구",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 369845,
+      "delta": 0,
+      "lang": "TypeScript",
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap"
+      ],
+      "tags": [
+        "coding",
+        "writing"
+      ],
+      "pushed_at": "2026-10-19T10:21:02Z",
+      "heat": 370245,
+      "rank": 4,
+      "danger": 5
+    },
+    {
+      "id": "morluto/rea",
+      "name": "rea",
+      "owner": "morluto",
+      "url": "https://github.com/morluto/rea",
+      "desc": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+26)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 330850,
+      "delta": 26,
+      "lang": "TypeScript",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "binary-analysis",
+        "claude-code",
+        "cli",
+        "codex"
+      ],
+      "tags": [
+        "coding",
+        "agent"
+      ],
+      "pushed_at": "2026-10-19T12:16:21Z",
+      "heat": 331328,
+      "rank": 5,
+      "danger": 5
+    },
+    {
+      "id": "vinta/awesome-python",
+      "name": "awesome-python",
+      "owner": "vinta",
+      "url": "https://github.com/vinta/awesome-python",
+      "desc": "The definitive list that answers \"I want to do X in Python, which tool should I use?\"",
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
+      "stars": 328616,
+      "delta": 0,
+      "lang": "Python",
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "python",
+        "python-frameworks",
+        "python-libraries",
+        "python-tools"
+      ],
+      "tags": [
+        "misc"
+      ],
+      "pushed_at": "2026-10-19T05:39:01Z",
+      "heat": 329016,
+      "rank": 6,
+      "danger": 5
+    },
+    {
+      "id": "awesome-selfhosted/awesome-selfhosted",
+      "name": "awesome-selfhosted",
+      "owner": "awesome-selfhosted",
+      "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
+      "desc": "A list of Free Software network services and web applications which can be hosted on your own servers",
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+1)",
+        "🔥 이번 주에도 업데이트",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
+      "stars": 328207,
+      "delta": 1,
+      "lang": "—",
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "cloud",
+        "free-software",
+        "hosting",
+        "privacy"
+      ],
+      "tags": [
+        "local",
+        "free"
+      ],
+      "pushed_at": "2026-10-18T15:44:07Z",
+      "heat": 328610,
+      "rank": 7,
+      "danger": 5
+    },
+    {
+      "id": "obra/superpowers",
+      "name": "superpowers",
+      "owner": "obra",
+      "url": "https://github.com/obra/superpowers",
+      "desc": "An agentic skills framework & software development methodology that works.",
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+2)",
+        "🟢 활발히 관리 중"
+      ],
+      "stars": 301906,
+      "delta": 2,
+      "lang": "Shell",
+      "topics": [
+        "ai",
+        "brainstorming",
+        "coding",
+        "obra",
+        "sdlc",
+        "skills"
+      ],
+      "tags": [
+        "coding",
+        "agent"
+      ],
+      "pushed_at": "2026-10-10T03:03:30Z",
+      "heat": 302276,
+      "rank": 8,
+      "danger": 5
+    },
+    {
+      "id": "affaan-m/ECC",
+      "name": "ECC",
+      "owner": "affaan-m",
+      "url": "https://github.com/affaan-m/ECC",
+      "desc": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+2)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 283678,
+      "delta": 2,
+      "lang": "JavaScript",
+      "topics": [
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "developer-tools",
+        "llm"
+      ],
+      "tags": [
+        "coding",
+        "agent"
+      ],
+      "pushed_at": "2026-10-19T05:03:15Z",
+      "heat": 284084,
       "rank": 9,
       "danger": 5
     },
@@ -367,7 +451,12 @@
       "owner": "NousResearch",
       "url": "https://github.com/NousResearch/hermes-agent",
       "desc": "The agent that grows with you",
-      "stars": 255128,
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 255135,
       "delta": 0,
       "lang": "Python",
       "topics": [
@@ -383,8 +472,8 @@
         "agent",
         "chat"
       ],
-      "pushed_at": "2026-10-19T12:14:13Z",
-      "heat": 255528,
+      "pushed_at": "2026-10-19T12:40:08Z",
+      "heat": 255539,
       "rank": 10,
       "danger": 5
     },
@@ -394,7 +483,13 @@
       "owner": "trimstray",
       "url": "https://github.com/trimstray/the-book-of-secret-knowledge",
       "desc": "A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.",
-      "stars": 251321,
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🕸️ 1년+ 조용함",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
+      "stars": 251326,
       "delta": 0,
       "lang": "—",
       "topics": [
@@ -409,7 +504,7 @@
         "coding"
       ],
       "pushed_at": "2024-11-19T14:00:38Z",
-      "heat": 251321,
+      "heat": 251326,
       "rank": 11,
       "danger": 5
     },
@@ -419,8 +514,14 @@
       "owner": "n8n-io",
       "url": "https://github.com/n8n-io/n8n",
       "desc": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
-      "stars": 207987,
-      "delta": 0,
+      "summary_kr": "💻 내 컴퓨터에서 AI 모델을 직접 돌리는 도구 (토큰 비용 없음)",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+1)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 207990,
+      "delta": 1,
       "lang": "TypeScript",
       "topics": [
         "ai",
@@ -435,8 +536,8 @@
         "agent",
         "local"
       ],
-      "pushed_at": "2026-10-19T12:14:15Z",
-      "heat": 208387,
+      "pushed_at": "2026-10-19T12:39:52Z",
+      "heat": 208393,
       "rank": 12,
       "danger": 5
     },
@@ -446,7 +547,12 @@
       "owner": "microsoft",
       "url": "https://github.com/microsoft/markitdown",
       "desc": "Python tool for converting files and office documents to Markdown.",
-      "stars": 191036,
+      "summary_kr": "🧰 AI 관련 오픈소스 프로젝트",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🟢 활발히 관리 중"
+      ],
+      "stars": 191040,
       "delta": 0,
       "lang": "Python",
       "topics": [
@@ -461,7 +567,7 @@
         "misc"
       ],
       "pushed_at": "2026-10-04T03:59:52Z",
-      "heat": 191376,
+      "heat": 191380,
       "rank": 13,
       "danger": 5
     },
@@ -471,7 +577,12 @@
       "owner": "ohmyzsh",
       "url": "https://github.com/ohmyzsh/ohmyzsh",
       "desc": "🙃   A delightful community-driven (with 2,500+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up with the latest updates from the community.",
-      "stars": 190073,
+      "summary_kr": "🧩 개발자가 가져다 쓰는 AI 라이브러리·프레임워크",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 190071,
       "delta": 0,
       "lang": "Shell",
       "topics": [
@@ -486,7 +597,7 @@
         "misc"
       ],
       "pushed_at": "2026-10-18T12:53:51Z",
-      "heat": 190473,
+      "heat": 190471,
       "rank": 14,
       "danger": 5
     },
@@ -496,8 +607,15 @@
       "owner": "avelino",
       "url": "https://github.com/avelino/awesome-go",
       "desc": "A curated list of awesome Go frameworks, libraries and software",
-      "stars": 189190,
-      "delta": 0,
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+1)",
+        "🔥 이번 주에도 업데이트",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
+      "stars": 189194,
+      "delta": 1,
       "lang": "Go",
       "topics": [
         "awesome",
@@ -511,7 +629,7 @@
         "misc"
       ],
       "pushed_at": "2026-10-15T14:03:07Z",
-      "heat": 189578,
+      "heat": 189585,
       "rank": 15,
       "danger": 5
     },
@@ -521,6 +639,11 @@
       "owner": "Significant-Gravitas",
       "url": "https://github.com/Significant-Gravitas/AutoGPT",
       "desc": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
       "stars": 187649,
       "delta": 0,
       "lang": "Python",
@@ -537,7 +660,7 @@
         "image",
         "agent"
       ],
-      "pushed_at": "2026-10-19T12:09:23Z",
+      "pushed_at": "2026-10-19T12:36:47Z",
       "heat": 188049,
       "rank": 16,
       "danger": 5
@@ -548,6 +671,11 @@
       "owner": "ollama",
       "url": "https://github.com/ollama/ollama",
       "desc": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "summary_kr": "💻 내 컴퓨터에서 AI 모델을 직접 돌리는 도구 (토큰 비용 없음)",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
       "stars": 183808,
       "delta": 0,
       "lang": "Go",
@@ -562,7 +690,7 @@
       "tags": [
         "local"
       ],
-      "pushed_at": "2026-10-18T18:44:30Z",
+      "pushed_at": "2026-10-19T12:25:38Z",
       "heat": 184208,
       "rank": 17,
       "danger": 5
@@ -573,6 +701,11 @@
       "owner": "github",
       "url": "https://github.com/github/gitignore",
       "desc": "A collection of useful .gitignore templates",
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🟢 활발히 관리 중"
+      ],
       "stars": 175990,
       "delta": 0,
       "lang": "—",
@@ -594,7 +727,13 @@
       "owner": "f",
       "url": "https://github.com/f/prompts.chat",
       "desc": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
-      "stars": 173522,
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
+      "stars": 173526,
       "delta": 0,
       "lang": "HTML",
       "topics": [
@@ -613,7 +752,7 @@
         "chat"
       ],
       "pushed_at": "2026-10-19T03:19:47Z",
-      "heat": 173922,
+      "heat": 173926,
       "rank": 19,
       "danger": 5
     },
@@ -623,6 +762,11 @@
       "owner": "huggingface",
       "url": "https://github.com/huggingface/transformers",
       "desc": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+      "summary_kr": "🎨 이미지·그림을 만들어내는 AI",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
       "stars": 167852,
       "delta": 0,
       "lang": "Python",
@@ -637,7 +781,7 @@
       "tags": [
         "image"
       ],
-      "pushed_at": "2026-10-19T12:08:25Z",
+      "pushed_at": "2026-10-19T12:37:01Z",
       "heat": 168252,
       "rank": 20,
       "danger": 5
@@ -648,15 +792,21 @@
       "owner": "msitarzewski",
       "url": "https://github.com/msitarzewski/agency-agents",
       "desc": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
-      "stars": 161453,
-      "delta": 0,
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+1)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 161462,
+      "delta": 1,
       "lang": "Shell",
       "topics": [],
       "tags": [
         "agent"
       ],
       "pushed_at": "2026-10-15T05:33:33Z",
-      "heat": 161837,
+      "heat": 161849,
       "rank": 21,
       "danger": 5
     },
@@ -666,7 +816,12 @@
       "owner": "langgenius",
       "url": "https://github.com/langgenius/dify",
       "desc": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
-      "stars": 158880,
+      "summary_kr": "💻 내 컴퓨터에서 AI 모델을 직접 돌리는 도구 (토큰 비용 없음)",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 158885,
       "delta": 0,
       "lang": "Python",
       "topics": [
@@ -682,8 +837,8 @@
         "agent",
         "local"
       ],
-      "pushed_at": "2026-10-19T11:26:06Z",
-      "heat": 159280,
+      "pushed_at": "2026-10-19T12:33:11Z",
+      "heat": 159285,
       "rank": 22,
       "danger": 5
     },
@@ -693,7 +848,12 @@
       "owner": "open-webui",
       "url": "https://github.com/open-webui/open-webui",
       "desc": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
-      "stars": 156146,
+      "summary_kr": "💻 내 컴퓨터에서 AI 모델을 직접 돌리는 도구 (토큰 비용 없음)",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 156148,
       "delta": 0,
       "lang": "Python",
       "topics": [
@@ -708,7 +868,7 @@
         "local"
       ],
       "pushed_at": "2026-10-18T20:02:00Z",
-      "heat": 156546,
+      "heat": 156548,
       "rank": 23,
       "danger": 5
     },
@@ -718,6 +878,11 @@
       "owner": "langflow-ai",
       "url": "https://github.com/langflow-ai/langflow",
       "desc": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
       "stars": 155832,
       "delta": 0,
       "lang": "Python",
@@ -744,8 +909,14 @@
       "owner": "langchain-ai",
       "url": "https://github.com/langchain-ai/langchain",
       "desc": "The agent engineering platform.",
-      "stars": 148072,
-      "delta": 0,
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+1)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 148076,
+      "delta": 1,
       "lang": "Python",
       "topics": [
         "agents",
@@ -761,7 +932,7 @@
         "chat"
       ],
       "pushed_at": "2026-10-19T08:34:08Z",
-      "heat": 148472,
+      "heat": 148479,
       "rank": 25,
       "danger": 5
     },
@@ -771,7 +942,12 @@
       "owner": "farion1231",
       "url": "https://github.com/farion1231/cc-switch",
       "desc": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Grok Build & Hermes Agent. Only official website: ccswitch.io",
-      "stars": 146212,
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 146220,
       "delta": 0,
       "lang": "Rust",
       "topics": [
@@ -789,7 +965,7 @@
         "chat"
       ],
       "pushed_at": "2026-10-19T10:26:56Z",
-      "heat": 146612,
+      "heat": 146620,
       "rank": 26,
       "danger": 5
     },
@@ -799,7 +975,12 @@
       "owner": "Shubhamsaboo",
       "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
       "desc": "100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source.",
-      "stars": 142282,
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 142284,
       "delta": 0,
       "lang": "Python",
       "topics": [
@@ -813,7 +994,7 @@
         "free"
       ],
       "pushed_at": "2026-10-18T16:28:46Z",
-      "heat": 142682,
+      "heat": 142684,
       "rank": 27,
       "danger": 5
     },
@@ -823,6 +1004,12 @@
       "owner": "ripienaar",
       "url": "https://github.com/ripienaar/free-for-dev",
       "desc": "A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev",
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
       "stars": 139793,
       "delta": 0,
       "lang": "HTML",
@@ -845,8 +1032,14 @@
       "owner": "nextlevelbuilder",
       "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
       "desc": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
-      "stars": 137457,
-      "delta": 0,
+      "summary_kr": "⌨️ 코딩을 돕거나 자동화하는 AI 도구",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+1)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 137459,
+      "delta": 1,
       "lang": "Python",
       "topics": [
         "ai-skills",
@@ -860,7 +1053,7 @@
         "coding"
       ],
       "pushed_at": "2026-10-15T02:04:34Z",
-      "heat": 137841,
+      "heat": 137846,
       "rank": 29,
       "danger": 5
     },
@@ -870,6 +1063,11 @@
       "owner": "garrytan",
       "url": "https://github.com/garrytan/gstack",
       "desc": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
+      "summary_kr": "⌨️ 코딩을 돕거나 자동화하는 AI 도구",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
       "stars": 136905,
       "delta": 0,
       "lang": "TypeScript",
@@ -888,8 +1086,14 @@
       "owner": "harry0703",
       "url": "https://github.com/harry0703/MoneyPrinterTurbo",
       "desc": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
-      "stars": 133015,
-      "delta": 0,
+      "summary_kr": "⌨️ 코딩을 돕거나 자동화하는 AI 도구",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+1)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 133023,
+      "delta": 1,
       "lang": "Python",
       "topics": [
         "ai-video-generator",
@@ -905,7 +1109,7 @@
         "agent"
       ],
       "pushed_at": "2026-10-19T09:57:53Z",
-      "heat": 133415,
+      "heat": 133426,
       "rank": 31,
       "danger": 5
     },
@@ -915,8 +1119,14 @@
       "owner": "Graphify-Labs",
       "url": "https://github.com/Graphify-Labs/graphify",
       "desc": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
-      "stars": 128764,
-      "delta": 0,
+      "summary_kr": "💻 내 컴퓨터에서 AI 모델을 직접 돌리는 도구 (토큰 비용 없음)",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+1)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 128781,
+      "delta": 1,
       "lang": "Python",
       "topics": [
         "ai-agents",
@@ -932,7 +1142,7 @@
         "local"
       ],
       "pushed_at": "2026-10-16T17:57:21Z",
-      "heat": 129156,
+      "heat": 129176,
       "rank": 32,
       "danger": 5
     },
@@ -942,7 +1152,12 @@
       "owner": "Hack-with-Github",
       "url": "https://github.com/Hack-with-Github/Awesome-Hacking",
       "desc": "A collection of various awesome lists for hackers, pentesters and security researchers",
-      "stars": 123028,
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
+      "stars": 123030,
       "delta": 0,
       "lang": "—",
       "topics": [
@@ -957,7 +1172,7 @@
         "misc"
       ],
       "pushed_at": "2026-07-26T03:29:02Z",
-      "heat": 123088,
+      "heat": 123090,
       "rank": 33,
       "danger": 5
     },
@@ -967,8 +1182,15 @@
       "owner": "VoltAgent",
       "url": "https://github.com/VoltAgent/awesome-design-md",
       "desc": "A collection of DESIGN.md files analysis by popular brand design systems. Drop one into your project and let coding agents generate a matching UI.",
-      "stars": 122220,
-      "delta": 0,
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+1)",
+        "🔥 이번 주에도 업데이트",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
+      "stars": 122227,
+      "delta": 1,
       "lang": "—",
       "topics": [
         "awesome-list",
@@ -983,7 +1205,7 @@
         "agent"
       ],
       "pushed_at": "2026-10-14T05:46:48Z",
-      "heat": 122600,
+      "heat": 122610,
       "rank": 34,
       "danger": 5
     },
@@ -993,7 +1215,12 @@
       "owner": "microsoft",
       "url": "https://github.com/microsoft/generative-ai-for-beginners",
       "desc": "21 Lessons, Get Started Building with Generative AI ",
-      "stars": 121622,
+      "summary_kr": "✍️ 프롬프트 모음·기법 — AI에게 잘 말 거는 법",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 121624,
       "delta": 0,
       "lang": "Jupyter Notebook",
       "topics": [
@@ -1010,7 +1237,7 @@
         "chat"
       ],
       "pushed_at": "2026-10-19T09:10:07Z",
-      "heat": 122022,
+      "heat": 122024,
       "rank": 35,
       "danger": 5
     },
@@ -1020,6 +1247,10 @@
       "owner": "justjavac",
       "url": "https://github.com/justjavac/free-programming-books-zh_CN",
       "desc": ":books: 免费的计算机编程类中文书籍，欢迎投稿",
+      "summary_kr": "⌨️ 코딩을 돕거나 자동화하는 AI 도구",
+      "why": [
+        "🏆 전설급 스타 (10만+)"
+      ],
       "stars": 119271,
       "delta": 0,
       "lang": "—",
@@ -1046,7 +1277,12 @@
       "owner": "browser-use",
       "url": "https://github.com/browser-use/browser-use",
       "desc": "Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.",
-      "stars": 118479,
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 118483,
       "delta": 0,
       "lang": "Python",
       "topics": [
@@ -1062,7 +1298,7 @@
         "free"
       ],
       "pushed_at": "2026-10-17T20:02:49Z",
-      "heat": 118875,
+      "heat": 118879,
       "rank": 37,
       "danger": 5
     },
@@ -1072,6 +1308,12 @@
       "owner": "jaywcjlove",
       "url": "https://github.com/jaywcjlove/awesome-mac",
       "desc": " This project is dedicated to collecting high-quality macOS software and organizing them systematically by different categories for easy search and use.",
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
       "stars": 116486,
       "delta": 0,
       "lang": "Swift",
@@ -1097,8 +1339,14 @@
       "owner": "earendil-works",
       "url": "https://github.com/earendil-works/pi",
       "desc": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
-      "stars": 116335,
-      "delta": 0,
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+1)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 116336,
+      "delta": 1,
       "lang": "TypeScript",
       "topics": [],
       "tags": [
@@ -1106,7 +1354,7 @@
         "agent"
       ],
       "pushed_at": "2026-10-19T09:36:46Z",
-      "heat": 116735,
+      "heat": 116739,
       "rank": 39,
       "danger": 5
     },
@@ -1116,7 +1364,12 @@
       "owner": "TauricResearch",
       "url": "https://github.com/TauricResearch/TradingAgents",
       "desc": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
-      "stars": 112011,
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 112016,
       "delta": 0,
       "lang": "Python",
       "topics": [
@@ -1130,7 +1383,7 @@
         "agent"
       ],
       "pushed_at": "2026-10-16T21:38:46Z",
-      "heat": 112403,
+      "heat": 112408,
       "rank": 40,
       "danger": 5
     },
@@ -1140,6 +1393,11 @@
       "owner": "fatedier",
       "url": "https://github.com/fatedier/frp",
       "desc": "A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.",
+      "summary_kr": "💻 내 컴퓨터에서 AI 모델을 직접 돌리는 도구 (토큰 비용 없음)",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
       "stars": 109993,
       "delta": 0,
       "lang": "Go",
@@ -1165,8 +1423,14 @@
       "owner": "addyosmani",
       "url": "https://github.com/addyosmani/agent-skills",
       "desc": "Production-grade engineering skills for AI coding agents.",
-      "stars": 108425,
-      "delta": 0,
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+1)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 108434,
+      "delta": 1,
       "lang": "JavaScript",
       "topics": [
         "agent-skills",
@@ -1181,7 +1445,7 @@
         "agent"
       ],
       "pushed_at": "2026-10-13T20:24:07Z",
-      "heat": 108805,
+      "heat": 108817,
       "rank": 42,
       "danger": 5
     },
@@ -1191,8 +1455,14 @@
       "owner": "paperclipai",
       "url": "https://github.com/paperclipai/paperclip",
       "desc": "The open-source app everyone uses to manage agents at work",
-      "stars": 104434,
-      "delta": 0,
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+1)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 104444,
+      "delta": 1,
       "lang": "TypeScript",
       "topics": [
         "acpx",
@@ -1207,8 +1477,8 @@
         "agent",
         "free"
       ],
-      "pushed_at": "2026-10-19T12:11:54Z",
-      "heat": 104834,
+      "pushed_at": "2026-10-19T12:33:28Z",
+      "heat": 104847,
       "rank": 43,
       "danger": 5
     },
@@ -1218,8 +1488,14 @@
       "owner": "nexu-io",
       "url": "https://github.com/nexu-io/open-design",
       "desc": "The 1st Collaborative AI Design Agent Workspace. Local-first and open source. Create motion, prototypes, websites, apps, dashboards, presentations, images, and videos with your team and AI agents. Share work, exchange feedback, and iterate together in one workspace.",
-      "stars": 102398,
-      "delta": 0,
+      "summary_kr": "💻 내 컴퓨터에서 AI 모델을 직접 돌리는 도구 (토큰 비용 없음)",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+1)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 102407,
+      "delta": 1,
       "lang": "TypeScript",
       "topics": [
         "agent-skills",
@@ -1235,8 +1511,8 @@
         "agent",
         "local"
       ],
-      "pushed_at": "2026-10-19T12:13:34Z",
-      "heat": 102798,
+      "pushed_at": "2026-10-19T12:40:03Z",
+      "heat": 102814,
       "rank": 44,
       "danger": 5
     },
@@ -1246,8 +1522,15 @@
       "owner": "ruvnet",
       "url": "https://github.com/ruvnet/RuView",
       "desc": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
-      "stars": 98732,
-      "delta": 0,
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "📈 상승 중 (+1)",
+        "🔥 이번 주에도 업데이트",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
+      "stars": 98737,
+      "delta": 1,
       "lang": "Rust",
       "topics": [
         "awesome",
@@ -1261,8 +1544,8 @@
         "coding",
         "chat"
       ],
-      "pushed_at": "2026-10-19T06:33:34Z",
-      "heat": 99132,
+      "pushed_at": "2026-10-19T12:24:00Z",
+      "heat": 99140,
       "rank": 45,
       "danger": 5
     },
@@ -1272,7 +1555,12 @@
       "owner": "microsoft",
       "url": "https://github.com/microsoft/playwright",
       "desc": "Playwright is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API. ",
-      "stars": 98060,
+      "summary_kr": "🧩 개발자가 가져다 쓰는 AI 라이브러리·프레임워크",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 98063,
       "delta": 0,
       "lang": "TypeScript",
       "topics": [
@@ -1287,7 +1575,7 @@
         "misc"
       ],
       "pushed_at": "2026-10-19T09:20:30Z",
-      "heat": 98460,
+      "heat": 98463,
       "rank": 46,
       "danger": 5
     },
@@ -1297,6 +1585,11 @@
       "owner": "punkpeye",
       "url": "https://github.com/punkpeye/awesome-mcp-servers",
       "desc": "A collection of MCP servers.",
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
       "stars": 96601,
       "delta": 0,
       "lang": "—",
@@ -1318,6 +1611,11 @@
       "owner": "ChatGPTNextWeb",
       "url": "https://github.com/ChatGPTNextWeb/NextChat",
       "desc": "✨ Zero-config AI chat assistant. No API key needed — sign up and instantly chat with GPT-5, Claude 4, Gemini 2.5, DeepSeek & 100+ top models. Pay-as-you-go saves you more. Available on Web, iOS, macOS, Android, Linux, Windows.",
+      "summary_kr": "💻 내 컴퓨터에서 AI 모델을 직접 돌리는 도구 (토큰 비용 없음)",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
       "stars": 88866,
       "delta": 0,
       "lang": "TypeScript",
@@ -1344,8 +1642,14 @@
       "owner": "D4Vinci",
       "url": "https://github.com/D4Vinci/Scrapling",
       "desc": "🕷️ A Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
-      "stars": 88594,
-      "delta": 0,
+      "summary_kr": "🧩 개발자가 가져다 쓰는 AI 라이브러리·프레임워크",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "📈 상승 중 (+2)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 88598,
+      "delta": 2,
       "lang": "Python",
       "topics": [
         "ai",
@@ -1359,7 +1663,7 @@
         "misc"
       ],
       "pushed_at": "2026-10-18T17:41:44Z",
-      "heat": 88994,
+      "heat": 89004,
       "rank": 49,
       "danger": 5
     },
@@ -1369,8 +1673,14 @@
       "owner": "bytedance",
       "url": "https://github.com/bytedance/deer-flow",
       "desc": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
-      "stars": 84125,
-      "delta": 0,
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "📈 상승 중 (+1)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 84130,
+      "delta": 1,
       "lang": "Python",
       "topics": [
         "agent",
@@ -1386,7 +1696,7 @@
         "free"
       ],
       "pushed_at": "2026-10-19T08:31:49Z",
-      "heat": 84525,
+      "heat": 84533,
       "rank": 50,
       "danger": 5
     },
@@ -1396,8 +1706,13 @@
       "owner": "mlabonne",
       "url": "https://github.com/mlabonne/llm-course",
       "desc": "Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks.",
-      "stars": 84326,
-      "delta": 0,
+      "summary_kr": "🎓 배우기 위한 튜토리얼·로드맵·강의 자료",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "📈 상승 중 (+1)"
+      ],
+      "stars": 84328,
+      "delta": 1,
       "lang": "—",
       "topics": [
         "course",
@@ -1410,7 +1725,7 @@
         "misc"
       ],
       "pushed_at": "2026-02-05T13:09:26Z",
-      "heat": 84326,
+      "heat": 84331,
       "rank": 51,
       "danger": 5
     },
@@ -1420,6 +1735,11 @@
       "owner": "fighting41love",
       "url": "https://github.com/fighting41love/funNLP",
       "desc": "中英文敏感词、语言检测、中外手机/电话归属地/运营商查询、名字推断性别、手机号抽取、身份证抽取、邮箱抽取、中日文人名库、中文缩写库、拆字词典、词汇情感值、停用词、反动词表、暴恐词表、繁简体转换、英文模拟中文发音、汪峰歌词生成器、职业名称词库、同义词库、反义词库、否定词库、汽车品牌词库、汽车零件词库、连续英文切割、各种中文词向量、公司名字大全、古诗词库、IT词库、财经词库、成语词库、地名词库、历史名人词库、诗词词库、医学词库、饮食词库、法律词库、汽车词库、动物词库、中文聊天语料、中文谣言数据、百度中文问答数据集、句子相似度匹配算法集合、bert资源、文本生成&摘要相关工具、cocoNLP信息抽取工具、国内电话号码正则匹配、清华大学XLORE:中英文跨语言百科知识图谱、清华大学人工智能技术系列报告、自然语言生成、NLU太难了系列、自动对联数据及机器人、用户名黑名单列表、罪名法务名词及分类模型、微信公众号语料、cs224n深度学习自然语言处理课程、中文手写汉字识别、中文自然语言处理 语料/数据集、变量命名神器、分词语料库+代码、任务型对话英文数据集、ASR 语音数据集 + 基于深度学习的中文语音识别系统、笑声检测器、Microsoft多语言数字/单位/如日期时间识别包、中华新华字典数据库及api(包括常用歇后语、成语、词语和汉字)、文档图谱自动生成、SpaCy 中文模型、Common Voice语音识别数据集新版、神经网络关系抽取、基于bert的命名实体识别、关键词(Keyphrase)抽取包pke、基于医疗领域知识图谱的问答系统、基于依存句法与语义角色标注的事件三元组抽取、依存句法分析4万句高质量标注数据、cnocr：用来做中文OCR的Python3包、中文人物关系知识图谱项目、中文nlp竞赛项目及代码汇总、中文字符数据、speech-aligner: 从“人声语音”及其“语言文本”产生音素级别时间对齐标注的工具、AmpliGraph: 知识图谱表示学习(Python)库：知识图谱概念链接预测、Scattertext 文本可视化(python)、语言/知识表示工具：BERT & ERNIE、中文对比英文自然语言处理NLP的区别综述、Synonyms中文近义词工具包、HarvestText领域自适应文本挖掘工具（新词发现-情感分析-实体链接等）、word2word：(Python)方便易用的多语言词-词对集：62种语言/3,564个多语言对、语音识别语料生成工具：从具有音频/字幕的在线视频创建自动语音识别(ASR)语料库、构建医疗实体识别的模型（包含词典和语料标注）、单文档非监督的关键词抽取、Kashgari中使用gpt-2语言模型、开源的金融投资数据提取工具、文本自动摘要库TextTeaser: 仅支持英文、人民日报语料处理工具集、一些关于自然语言的基本模型、基于14W歌曲知识库的问答尝试--功能包括歌词接龙and已知歌词找歌曲以及歌曲歌手歌词三角关系的问答、基于Siamese bilstm模型的相似句子判定模型并提供训练数据集和测试数据集、用Transformer编解码模型实现的根据Hacker News文章标题自动生成评论、用BERT进行序列标记和文本分类的模板代码、LitBank：NLP数据集——支持自然语言处理和计算人文学科任务的100部带标记英文小说语料、百度开源的基准信息抽取系统、虚假新闻数据集、Facebook: LAMA语言模型分析，提供Transformer-XL/BERT/ELMo/GPT预训练语言模型的统一访问接口、CommonsenseQA：面向常识的英文QA挑战、中文知识图谱资料、数据及工具、各大公司内部里大牛分享的技术文档 PDF 或者 PPT、自然语言生成SQL语句（英文）、中文NLP数据增强（EDA）工具、英文NLP数据增强工具 、基于医药知识图谱的智能问答系统、京东商品知识图谱、基于mongodb存储的军事领域知识图谱问答项目、基于远监督的中文关系抽取、语音情感分析、中文ULMFiT-情感分析-文本分类-语料及模型、一个拍照做题程序、世界各国大规模人名库、一个利用有趣中文语料库 qingyun 训练出来的中文聊天机器人、中文聊天机器人seqGAN、省市区镇行政区划数据带拼音标注、教育行业新闻语料库包含自动文摘功能、开放了对话机器人-知识图谱-语义理解-自然语言处理工具及数据、中文知识图谱：基于百度百科中文页面-抽取三元组信息-构建中文知识图谱、masr: 中文语音识别-提供预训练模型-高识别率、Python音频数据增广库、中文全词覆盖BERT及两份阅读理解数据、ConvLab：开源多域端到端对话系统平台、中文自然语言处理数据集、基于最新版本rasa搭建的对话系统、基于TensorFlow和BERT的管道式实体及关系抽取、一个小型的证券知识图谱/知识库、复盘所有NLP比赛的TOP方案、OpenCLaP：多领域开源中文预训练语言模型仓库、UER：基于不同语料+编码器+目标任务的中文预训练模型仓库、中文自然语言处理向量合集、基于金融-司法领域(兼有闲聊性质)的聊天机器人、g2pC：基于上下文的汉语读音自动标记模块、Zincbase 知识图谱构建工具包、诗歌质量评价/细粒度情感诗歌语料库、快速转化「中文数字」和「阿拉伯数字」、百度知道问答语料库、基于知识图谱的问答系统、jieba_fast 加速版的jieba、正则表达式教程、中文阅读理解数据集、基于BERT等最新语言模型的抽取式摘要提取、Python利用深度学习进行文本摘要的综合指南、知识图谱深度学习相关资料整理、维基大规模平行文本语料、StanfordNLP 0.2.0：纯Python版自然语言处理包、NeuralNLP-NeuralClassifier：腾讯开源深度学习文本分类工具、端到端的封闭域对话系统、中文命名实体识别：NeuroNER vs. BertNER、新闻事件线索抽取、2019年百度的三元组抽取比赛：“科学空间队”源码、基于依存句法的开放域文本知识三元组抽取和知识库构建、中文的GPT2训练代码、ML-NLP - 机器学习(Machine Learning)NLP面试中常考到的知识点和代码实现、nlp4han:中文自然语言处理工具集(断句/分词/词性标注/组块/句法分析/语义分析/NER/N元语法/HMM/代词消解/情感分析/拼写检查、XLM：Facebook的跨语言预训练语言模型、用基于BERT的微调和特征提取方法来进行知识图谱百度百科人物词条属性抽取、中文自然语言处理相关的开放任务-数据集-当前最佳结果、CoupletAI - 基于CNN+Bi-LSTM+Attention 的自动对对联系统、抽象知识图谱、MiningZhiDaoQACorpus - 580万百度知道问答数据挖掘项目、brat rapid annotation tool: 序列标注工具、大规模中文知识图谱数据：1.4亿实体、数据增强在机器翻译及其他nlp任务中的应用及效果、allennlp阅读理解:支持多种数据和模型、PDF表格数据提取工具 、 Graphbrain：AI开源软件库和科研工具，目的是促进自动意义提取和文本理解以及知识的探索和推断、简历自动筛选系统、基于命名实体识别的简历自动摘要、中文语言理解测评基准，包括代表性的数据集&基准模型&语料库&排行榜、树洞 OCR 文字识别 、从包含表格的扫描图片中识别表格和文字、语声迁移、Python口语自然语言处理工具集(英文)、 similarity：相似度计算工具包，java编写、海量中文预训练ALBERT模型 、Transformers 2.0 、基于大规模音频数据集Audioset的音频增强 、Poplar：网页版自然语言标注工具、图片文字去除，可用于漫画翻译 、186种语言的数字叫法库、Amazon发布基于知识的人-人开放领域对话数据集 、中文文本纠错模块代码、繁简体转换 、 Python实现的多种文本可读性评价指标、类似于人名/地名/组织机构名的命名体识别数据集 、东南大学《知识图谱》研究生课程(资料)、. 英文拼写检查库 、 wwsearch是企业微信后台自研的全文检索引擎、CHAMELEON：深度学习新闻推荐系统元架构 、 8篇论文梳理BERT相关模型进展与反思、DocSearch：免费文档搜索引擎、 LIDA：轻量交互式对话标注工具 、aili - the fastest in-memory index in the East 东半球最快并发索引 、知识图谱车音工作项目、自然语言生成资源大全 、中日韩分词库mecab的Python接口库、中文文本摘要/关键词提取、汉字字符特征提取器 (featurizer)，提取汉字的特征（发音特征、字形特征）用做深度学习的特征、中文生成任务基准测评 、中文缩写数据集、中文任务基准测评 - 代表性的数据集-基准(预训练)模型-语料库-baseline-工具包-排行榜、PySS3：面向可解释AI的SS3文本分类器机器可视化工具 、中文NLP数据集列表、COPE - 格律诗编辑程序、doccano：基于网页的开源协同多语言文本标注工具 、PreNLP：自然语言预处理库、简单的简历解析器，用来从简历中提取关键信息、用于中文闲聊的GPT2模型：GPT2-chitchat、基于检索聊天机器人多轮响应选择相关资源列表(Leaderboards、Datasets、Papers)、(Colab)抽象文本摘要实现集锦(教程 、词语拼音数据、高效模糊搜索工具、NLP数据增广资源集、微软对话机器人框架 、 GitHub Typo Corpus：大规模GitHub多语言拼写错误/语法错误数据集、TextCluster：短文本聚类预处理模块 Short text cluster、面向语音识别的中文文本规范化、BLINK：最先进的实体链接库、BertPunc：基于BERT的最先进标点修复模型、Tokenizer：快速、可定制的文本词条化库、中文语言理解测评基准，包括代表性的数据集、基准(预训练)模型、语料库、排行榜、spaCy 医学文本挖掘与信息提取 、 NLP任务示例项目代码集、 python拼写检查库、chatbot-list - 行业内关于智能客服、聊天机器人的应用和架构、算法分享和介绍、语音质量评价指标(MOSNet, BSSEval, STOI, PESQ, SRMR)、 用138GB语料训练的法文RoBERTa预训练语言模型 、BERT-NER-Pytorch：三种不同模式的BERT中文NER实验、无道词典 - 有道词典的命令行版本，支持英汉互查和在线查询、2019年NLP亮点回顾、 Chinese medical dialogue data 中文医疗对话数据集 、最好的汉字数字(中文数字)-阿拉伯数字转换工具、 基于百科知识库的中文词语多词义/义项获取与特定句子词语语义消歧、awesome-nlp-sentiment-analysis - 情感分析、情绪原因识别、评价对象和评价词抽取、LineFlow：面向所有深度学习框架的NLP数据高效加载器、中文医学NLP公开资源整理 、MedQuAD：(英文)医学问答数据集、将自然语言数字串解析转换为整数和浮点数、Transfer Learning in Natural Language Processing (NLP) 、面向语音识别的中文/英文发音辞典、Tokenizers：注重性能与多功能性的最先进分词器、CLUENER 细粒度命名实体识别 Fine Grained Named Entity Recognition、 基于BERT的中文命名实体识别、中文谣言数据库、NLP数据集/基准任务大列表、nlp相关的一些论文及代码, 包括主题模型、词向量(Word Embedding)、命名实体识别(NER)、文本分类(Text Classificatin)、文本生成(Text Generation)、文本相似性(Text Similarity)计算等，涉及到各种与nlp相关的算法，基于keras和tensorflow 、Python文本挖掘/NLP实战示例、 Blackstone：面向非结构化法律文本的spaCy pipeline和NLP模型通过同义词替换实现文本“变脸” 、中文 预训练 ELECTREA 模型: 基于对抗学习 pretrain Chinese Model 、albert-chinese-ner - 用预训练语言模型ALBERT做中文NER 、基于GPT2的特定主题文本生成/文本增广、开源预训练语言模型合集、多语言句向量包、编码、标记和实现：一种可控高效的文本生成方法、 英文脏话大列表 、attnvis：GPT2、BERT等transformer语言模型注意力交互可视化、CoVoST：Facebook发布的多语种语音-文本翻译语料库，包括11种语言(法语、德语、荷兰语、俄语、西班牙语、意大利语、土耳其语、波斯语、瑞典语、蒙古语和中文)的语音、文字转录及英文译文、Jiagu自然语言处理工具 - 以BiLSTM等模型为基础，提供知识图谱关系抽取 中文分词 词性标注 命名实体识别 情感分析 新词发现 关键词 文本摘要 文本聚类等功能、用unet实现对文档表格的自动检测，表格重建、NLP事件提取文献资源列表 、 金融领域自然语言处理研究资源大列表、CLUEDatasetSearch - 中英文NLP数据集：搜索所有中文NLP数据集，附常用英文NLP数据集 、medical_NER - 中文医学知识图谱命名实体识别 、(哈佛)讲因果推理的免费书、知识图谱相关学习资料/数据集/工具资源大列表、Forte：灵活强大的自然语言处理pipeline工具集 、Python字符串相似性算法库、PyLaia：面向手写文档分析的深度学习工具包、TextFooler：针对文本分类/推理的对抗文本生成模块、Haystack：灵活、强大的可扩展问答(QA)框架、中文关键短语抽取工具",
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "🕸️ 1년+ 조용함"
+      ],
       "stars": 84009,
       "delta": 0,
       "lang": "Python",
@@ -1438,7 +1758,12 @@
       "owner": "diegosouzapw",
       "url": "https://github.com/diegosouzapw/OmniRoute",
       "desc": "Never stop coding. Free MIT AI gateway: one endpoint, 375 providers (150+ free), 1,400+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 900+ contributors",
-      "stars": 78321,
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 78326,
       "delta": 0,
       "lang": "TypeScript",
       "topics": [
@@ -1454,8 +1779,8 @@
         "agent",
         "free"
       ],
-      "pushed_at": "2026-10-19T11:29:40Z",
-      "heat": 78721,
+      "pushed_at": "2026-10-19T12:23:03Z",
+      "heat": 78726,
       "rank": 53,
       "danger": 5
     },
@@ -1465,8 +1790,14 @@
       "owner": "ruvnet",
       "url": "https://github.com/ruvnet/ruflo",
       "desc": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
-      "stars": 76849,
-      "delta": 0,
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "📈 상승 중 (+3)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 76862,
+      "delta": 3,
       "lang": "TypeScript",
       "topics": [
         "agentic-ai",
@@ -1482,7 +1813,7 @@
         "chat"
       ],
       "pushed_at": "2026-10-19T09:16:48Z",
-      "heat": 77249,
+      "heat": 77271,
       "rank": 54,
       "danger": 5
     },
@@ -1492,7 +1823,12 @@
       "owner": "career-ops-hq",
       "url": "https://github.com/career-ops-hq/career-ops",
       "desc": "Open-source AI job search agent and job finder: scan job boards, score each job 1-5 against your CV before you apply, tailor an ATS-friendly resume and cover letter, get interview prep and a job application tracker. It helps you fill in each application; you press Submit. Runs locally in your AI coding CLI (Claude Code, Codex, OpenCode and more).",
-      "stars": 75579,
+      "summary_kr": "💻 내 컴퓨터에서 AI 모델을 직접 돌리는 도구 (토큰 비용 없음)",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 75583,
       "delta": 0,
       "lang": "JavaScript",
       "topics": [
@@ -1510,7 +1846,7 @@
         "free"
       ],
       "pushed_at": "2026-10-19T12:09:35Z",
-      "heat": 75979,
+      "heat": 75983,
       "rank": 55,
       "danger": 5
     },
@@ -1520,6 +1856,11 @@
       "owner": "josephmisiti",
       "url": "https://github.com/josephmisiti/awesome-machine-learning",
       "desc": "A curated list of awesome Machine Learning frameworks, libraries and software.",
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
       "stars": 74610,
       "delta": 0,
       "lang": "Python",
@@ -1538,6 +1879,11 @@
       "owner": "thedaviddias",
       "url": "https://github.com/thedaviddias/Front-End-Checklist",
       "desc": "🗂 The essential checklist for modern web development, for humans and AI agents",
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "🟢 활발히 관리 중"
+      ],
       "stars": 74511,
       "delta": 0,
       "lang": "MDX",
@@ -1564,6 +1910,11 @@
       "owner": "vuejs",
       "url": "https://github.com/vuejs/awesome-vue",
       "desc": "🎉 A curated list of awesome things related to Vue.js",
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
       "stars": 73511,
       "delta": 0,
       "lang": "—",
@@ -1582,7 +1933,12 @@
       "owner": "rohitg00",
       "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
       "desc": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
-      "stars": 71264,
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 71275,
       "delta": 0,
       "lang": "Python",
       "topics": [
@@ -1598,7 +1954,7 @@
         "agent"
       ],
       "pushed_at": "2026-10-19T08:42:46Z",
-      "heat": 71664,
+      "heat": 71675,
       "rank": 59,
       "danger": 5
     },
@@ -1608,6 +1964,11 @@
       "owner": "asgeirtj",
       "url": "https://github.com/asgeirtj/system_prompts_leaks",
       "desc": "Documented system prompts from Anthropic - Claude Fable 5.1, Opus 5.5, Claude Design, Claude Code. OpenAI - ChatGPT GPT-6-Astra, Codex. Google - Gemini 3.8 Flash, 3.1 Pro, Antigravity. xAI - Grok, Grok Bot, Cursor, Kimi and more! Updated regularly.",
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
       "stars": 69891,
       "delta": 0,
       "lang": "Python",
@@ -1636,6 +1997,11 @@
       "owner": "sindresorhus",
       "url": "https://github.com/sindresorhus/awesome-nodejs",
       "desc": ":zap: Delightful Node.js packages and resources [BECAUSE OF TOO MUCH SPAM AND LOW-QUALITY SUBMISSIONS, SUBMISSIONS ARE PAUSED TEMPORARILY]",
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
       "stars": 67168,
       "delta": 0,
       "lang": "—",
@@ -1661,6 +2027,12 @@
       "owner": "rust-unofficial",
       "url": "https://github.com/rust-unofficial/awesome-rust",
       "desc": "A curated list of Rust code and resources.",
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "🔥 이번 주에도 업데이트",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
       "stars": 59953,
       "delta": 0,
       "lang": "Rust",
@@ -1682,7 +2054,13 @@
       "owner": "hesreallyhim",
       "url": "https://github.com/hesreallyhim/awesome-claude-code",
       "desc": "A hand-picked collection of the finest of resources for the most awesome of agents, Claude Code, the undisputed champion of coding companions, from the unstoppable team at Anthropic PBC (no affiliation). A delectable showcase of top tier skills, ambidextrous agents, scintillating status lines, top notch developer tooling, and also we have plugins",
-      "stars": 55995,
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "🔥 이번 주에도 업데이트",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
+      "stars": 55996,
       "delta": 0,
       "lang": "Python",
       "topics": [
@@ -1698,8 +2076,8 @@
         "agent",
         "chat"
       ],
-      "pushed_at": "2026-10-19T09:16:10Z",
-      "heat": 56395,
+      "pushed_at": "2026-10-19T12:15:48Z",
+      "heat": 56396,
       "rank": 63,
       "danger": 5
     },
@@ -1709,7 +2087,13 @@
       "owner": "dkhamsing",
       "url": "https://github.com/dkhamsing/open-source-ios-apps",
       "desc": ":iphone: Collaborative List of Open-Source iOS Apps",
-      "stars": 52680,
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "🔥 이번 주에도 업데이트",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
+      "stars": 52681,
       "delta": 0,
       "lang": "—",
       "topics": [
@@ -1725,7 +2109,7 @@
         "free"
       ],
       "pushed_at": "2026-10-18T17:19:29Z",
-      "heat": 53080,
+      "heat": 53081,
       "rank": 64,
       "danger": 5
     },
@@ -1735,7 +2119,13 @@
       "owner": "serhii-londar",
       "url": "https://github.com/serhii-londar/open-source-mac-os-apps",
       "desc": "🚀 Awesome list of open source applications for macOS. https://t.me/s/opensourcemacosapps",
-      "stars": 50875,
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "🔥 이번 주에도 업데이트",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
+      "stars": 50874,
       "delta": 0,
       "lang": "—",
       "topics": [
@@ -1750,7 +2140,7 @@
         "free"
       ],
       "pushed_at": "2026-10-19T11:58:39Z",
-      "heat": 51275,
+      "heat": 51274,
       "rank": 65,
       "danger": 5
     },
@@ -1760,6 +2150,11 @@
       "owner": "sahat",
       "url": "https://github.com/sahat/hackathon-starter",
       "desc": "A boilerplate for Node.js web applications",
+      "summary_kr": "🎨 이미지·그림을 만들어내는 AI",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "🔥 이번 주에도 업데이트"
+      ],
       "stars": 35252,
       "delta": 0,
       "lang": "JavaScript",
@@ -1785,8 +2180,14 @@
       "owner": "NandhaKishorM",
       "url": "https://github.com/NandhaKishorM/laya",
       "desc": "Non-autoregressive System 1 decision engine. Typed choice, score and yes/no decisions over any text in a single forward pass, in 100+ languages, with a router that picks the right checkpoint per request.",
-      "stars": 33480,
-      "delta": 0,
+      "summary_kr": "🧰 AI 관련 오픈소스 프로젝트",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "📈 상승 중 (+1)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 33486,
+      "delta": 1,
       "lang": "Python",
       "topics": [
         "calibration",
@@ -1800,7 +2201,7 @@
         "misc"
       ],
       "pushed_at": "2026-10-19T09:40:14Z",
-      "heat": 33880,
+      "heat": 33889,
       "rank": 67,
       "danger": 5
     },
@@ -1810,6 +2211,12 @@
       "owner": "academic",
       "url": "https://github.com/academic/awesome-datascience",
       "desc": ":memo: An awesome Data Science repository to learn and apply for real world problems.",
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "⭐ 초인기 (3만+)",
+        "🔥 이번 주에도 업데이트",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
       "stars": 30210,
       "delta": 0,
       "lang": "—",
@@ -1835,6 +2242,11 @@
       "owner": "yuaotian",
       "url": "https://github.com/yuaotian/go-cursor-help",
       "desc": "解决Cursor在免费订阅期间出现以下提示的问题:  Your request has been blocked as our system has detected suspicious activity / You've reached your trial request limit.  /  Too many free trial accounts used on this machine.",
+      "summary_kr": "🧰 AI 관련 오픈소스 프로젝트",
+      "why": [
+        "👍 검증된 인기",
+        "🟢 활발히 관리 중"
+      ],
       "stars": 26078,
       "delta": 0,
       "lang": "Shell",
@@ -1856,7 +2268,12 @@
       "owner": "AZeC4",
       "url": "https://github.com/AZeC4/TelegramGroup",
       "desc": "2026最新悄咪咪收集的10000+个Telegram群合集，附全网最有趣好用的机器人BOT🤖【dianbaodaohang.com】",
-      "stars": 23580,
+      "summary_kr": "🧩 개발자가 가져다 쓰는 AI 라이브러리·프레임워크",
+      "why": [
+        "👍 검증된 인기",
+        "🟢 활발히 관리 중"
+      ],
+      "stars": 23581,
       "delta": 0,
       "lang": "—",
       "topics": [
@@ -1871,7 +2288,7 @@
         "misc"
       ],
       "pushed_at": "2026-10-08T06:18:42Z",
-      "heat": 23936,
+      "heat": 23937,
       "rank": 70,
       "danger": 3
     },
@@ -1881,6 +2298,12 @@
       "owner": "EthicalML",
       "url": "https://github.com/EthicalML/awesome-production-machine-learning",
       "desc": "A curated list of awesome open source libraries to deploy, monitor, version and scale your machine learning",
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "👍 검증된 인기",
+        "🔥 이번 주에도 업데이트",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
       "stars": 21018,
       "delta": 0,
       "lang": "—",
@@ -1906,8 +2329,14 @@
       "owner": "NVIDIA",
       "url": "https://github.com/NVIDIA/SkillSpector",
       "desc": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injection, data exfiltration, and supply-chain risks in Claude Code, Codex, and MCP skills before you install them.",
-      "stars": 20533,
-      "delta": 0,
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "👍 검증된 인기",
+        "📈 상승 중 (+1)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "stars": 20536,
+      "delta": 1,
       "lang": "Python",
       "topics": [
         "agent-security",
@@ -1922,8 +2351,8 @@
         "agent",
         "prompt"
       ],
-      "pushed_at": "2026-10-19T11:56:30Z",
-      "heat": 20933,
+      "pushed_at": "2026-10-19T12:35:50Z",
+      "heat": 20939,
       "rank": 72,
       "danger": 3
     },
@@ -1933,6 +2362,12 @@
       "owner": "keon",
       "url": "https://github.com/keon/awesome-nlp",
       "desc": ":book: A curated list of resources dedicated to Natural Language Processing (NLP)",
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "👍 검증된 인기",
+        "🔥 이번 주에도 업데이트",
+        "📚 레퍼런스로 자주 공유됨"
+      ],
       "stars": 19088,
       "delta": 0,
       "lang": "—",
@@ -1958,6 +2393,10 @@
       "owner": "vitalysim",
       "url": "https://github.com/vitalysim/Awesome-Hacking-Resources",
       "desc": "A collection of hacking / penetration testing resources to make you better!",
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "👍 검증된 인기"
+      ],
       "stars": 17539,
       "delta": 0,
       "lang": "—",
@@ -1983,6 +2422,11 @@
       "owner": "Orchestra-Research",
       "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
       "desc": "Comprehensive open-source library of AI research and engineering skills for any AI model. Package the skills and your claude code/codex/gemini agent will be an AI research agent with full horsepower. Maintained by Orchestra Research.",
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "👍 검증된 인기",
+        "🟢 활발히 관리 중"
+      ],
       "stars": 13708,
       "delta": 0,
       "lang": "TeX",
@@ -2010,7 +2454,11 @@
       "owner": "langgptai",
       "url": "https://github.com/langgptai/LangGPT",
       "desc": "LangGPT: Empowering everyone to become a prompt expert! 🚀  📌 结构化提示词（Structured Prompt）提出者 📌 元提示词（Meta-Prompt）发起者   📌 最流行的提示词落地范式 | Language of GPT  The pioneering framework for structured & meta-prompt design 10,000+ ⭐ | Battle-tested by thousands of users worldwide  Created by 云中江树",
-      "stars": 12609,
+      "summary_kr": "✍️ 프롬프트 모음·기법 — AI에게 잘 말 거는 법",
+      "why": [
+        "👍 검증된 인기"
+      ],
+      "stars": 12610,
       "delta": 0,
       "lang": "Jupyter Notebook",
       "topics": [
@@ -2027,7 +2475,7 @@
         "chat"
       ],
       "pushed_at": "2026-09-11T02:11:09Z",
-      "heat": 12857,
+      "heat": 12858,
       "rank": 76,
       "danger": 2
     },
@@ -2037,6 +2485,10 @@
       "owner": "0xk1h0",
       "url": "https://github.com/0xk1h0/ChatGPT_DAN",
       "desc": "ChatGPT DAN, Jailbreaks prompt",
+      "summary_kr": "✍️ 프롬프트 모음·기법 — AI에게 잘 말 거는 법",
+      "why": [
+        "👍 검증된 인기"
+      ],
       "stars": 12632,
       "delta": 0,
       "lang": "—",
@@ -2063,6 +2515,11 @@
       "owner": "RUCAIBox",
       "url": "https://github.com/RUCAIBox/LLMSurvey",
       "desc": "The official GitHub page for the survey paper \"A Survey of Large Language Models\".",
+      "summary_kr": "💬 대화형 AI·챗봇을 만들거나 쓰는 도구",
+      "why": [
+        "👍 검증된 인기",
+        "🕸️ 1년+ 조용함"
+      ],
       "stars": 12234,
       "delta": 0,
       "lang": "Python",
@@ -2088,6 +2545,10 @@
       "owner": "elder-plinius",
       "url": "https://github.com/elder-plinius/G0DM0D3",
       "desc": "LIBERATED AI CHAT",
+      "summary_kr": "💬 대화형 AI·챗봇을 만들거나 쓰는 도구",
+      "why": [
+        "👍 검증된 인기"
+      ],
       "stars": 11824,
       "delta": 0,
       "lang": "TypeScript",
@@ -2106,6 +2567,11 @@
       "owner": "KalyanKS-NLP",
       "url": "https://github.com/KalyanKS-NLP/llm-engineer-toolkit",
       "desc": "A curated list of  120+ LLM libraries category wise. ",
+      "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
+      "why": [
+        "👍 검증된 인기",
+        "🟢 활발히 관리 중"
+      ],
       "stars": 10885,
       "delta": 0,
       "lang": "—",
