@@ -30,6 +30,9 @@ jobs:
           # 지하실을 하위 경로로
           mkdir -p _site/underground
           cp -r underground/* _site/underground/ 2>/dev/null || true
+          # 강릉 여행 계획을 하위 경로로
+          mkdir -p _site/gangneung
+          cp -r gangneung/* _site/gangneung/ 2>/dev/null || true
           # Jekyll 처리를 끈다 (정적 그대로)
           touch _site/.nojekyll
           # 폴더/파일명이 '_'로 시작해도 무시되지 않게
