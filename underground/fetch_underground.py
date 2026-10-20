@@ -126,6 +126,64 @@ def summarize_kr(name: str, desc: str, topics: list[str]) -> str:
     return "🧰 AI 관련 오픈소스 프로젝트"
 
 
+def install_guide(name: str, desc: str, topics: list[str], lang: str, owner: str) -> dict:
+    """
+    레포 종류를 추론해 '공략집' 단계를 만든다.
+    브라우저에서 진짜 자동설치는 불가능/위험하므로:
+      - 받는 명령어를 '원클릭 복사'로 제공
+      - GitHub 공식 ZIP 다운로드 링크 제공
+    실제 설치법은 레포마다 다르니 '가장 그럴듯한' 방법을 제시하고,
+    정확한 건 README 확인하라고 안내한다.
+    """
+    blob = " ".join([name or "", desc or "", " ".join(topics or [])]).lower()
+    lang_l = (lang or "").lower()
+    repo = f"{owner}/{name}"
+    clone = f"git clone https://github.com/{repo}.git"
+    zip_url = f"https://github.com/{repo}/archive/refs/heads/main.zip"
+
+    # 설치 유형 추론
+    if any(k in blob for k in ["awesome", "curated", "list of", "roadmap", "collection", "cheatsheet"]):
+        kind = "read"
+        cmd = None
+        steps = [
+            {"icon": "📖", "title": "읽기 자료예요", "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."},
+            {"icon": "🔖", "title": "북마크 추천", "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."},
+        ]
+    elif "python" in lang_l or any(k in blob for k in ["pip install", "pypi"]):
+        kind = "pip"
+        cmd = f"pip install {name}"
+        steps = [
+            {"icon": "⬇️", "title": "받기", "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."},
+            {"icon": "📂", "title": "확인", "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"},
+            {"icon": "🚀", "title": "실행", "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."},
+        ]
+    elif any(k in blob for k in ["npm", "node", "javascript", "typescript"]) or lang_l in ("javascript", "typescript"):
+        kind = "npm"
+        cmd = f"npm install {name}"
+        steps = [
+            {"icon": "⬇️", "title": "받기", "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."},
+            {"icon": "📂", "title": "확인", "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"},
+            {"icon": "🚀", "title": "실행", "body": "README의 예제 코드를 복사해 돌려보면 됩니다."},
+        ]
+    elif "docker" in blob:
+        kind = "docker"
+        cmd = f"docker run {owner}/{name}"
+        steps = [
+            {"icon": "🐳", "title": "받기", "body": "Docker가 깔려 있다면 아래 명령으로 바로 실행돼요."},
+            {"icon": "📂", "title": "확인", "body": "정확한 이미지 이름/옵션은 README를 보세요."},
+        ]
+    else:
+        kind = "clone"
+        cmd = clone
+        steps = [
+            {"icon": "⬇️", "title": "받기 (복제)", "body": "아래 git 명령으로 통째로 받거나, ZIP 다운로드 버튼을 눌러 압축으로 받으세요."},
+            {"icon": "📂", "title": "열기", "body": "받은 폴더를 열고 README 파일을 먼저 읽으세요. 설치·실행법이 거기 있어요."},
+            {"icon": "🚀", "title": "실행", "body": "README의 'Getting started' 단계를 따라 하면 됩니다."},
+        ]
+
+    return {"kind": kind, "cmd": cmd, "zip": zip_url, "steps": steps}
+
+
 def why_hot(stars: int, delta: int, pushed_at: str, topics: list[str]) -> list[str]:
     """왜 랭킹에 올랐는지 사람이 읽을 배지들."""
     badges = []
@@ -219,6 +277,7 @@ def main():
                 "desc": desc,
                 "summary_kr": summarize_kr(name, desc, topics),
                 "why": why_hot(stars, delta, pushed, topics),
+                "guide": install_guide(name, desc, topics, it.get("language") or "", it["owner"]["login"]),
                 "stars": stars,
                 "delta": delta,
                 "lang": it.get("language") or "—",

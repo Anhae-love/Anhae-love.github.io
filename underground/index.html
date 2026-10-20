@@ -66,6 +66,34 @@
   <span class="disc">합법 라인 전용 · 크랙/우회성 레포는 자동 차단됨</span>
 </footer>
 
+<!-- 공략집(WALKTHROUGH) 모달 -->
+<div class="quest" id="quest" hidden>
+  <div class="quest-box" role="dialog" aria-modal="true" aria-labelledby="qTitle">
+    <button class="quest-x" id="questX" aria-label="닫기">×</button>
+    <div class="quest-head">
+      <span class="quest-badge">▶ 공략집 // WALKTHROUGH</span>
+      <h2 id="qTitle"></h2>
+      <p class="quest-sum" id="qSum"></p>
+    </div>
+
+    <div class="quest-steps" id="qSteps"></div>
+
+    <div class="quest-cmd" id="qCmdWrap" hidden>
+      <span class="quest-cmd-label">// 이거 복사해서 터미널에 붙여넣어</span>
+      <div class="quest-cmd-row">
+        <code id="qCmd"></code>
+        <button id="qCopy" class="quest-copy">복사</button>
+      </div>
+    </div>
+
+    <div class="quest-actions">
+      <a id="qZip" class="quest-dl" href="#" target="_blank" rel="noopener" hidden>⬇ ZIP 다운로드</a>
+      <a id="qOpen" class="quest-open" href="#" target="_blank" rel="noopener">GitHub에서 열기 ↗</a>
+    </div>
+    <p class="quest-foot">정확한 설치법은 레포마다 달라요. 막히면 GitHub의 README를 먼저 보세요.</p>
+  </div>
+</div>
+
 <script src="app.js"></script>
 </body>
 </html>

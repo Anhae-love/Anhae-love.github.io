@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T12:40:11+00:00",
+  "generated_at": "2026-10-19T12:47:45+00:00",
   "count": 80,
   "top_surge": [
     {
@@ -11,11 +11,33 @@
       "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
       "why": [
         "🏆 전설급 스타 (10만+)",
-        "📈 상승 중 (+26)",
+        "📈 상승 중 (+92)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 330850,
-      "delta": 26,
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install rea",
+        "zip": "https://github.com/morluto/rea/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
+      "stars": 330942,
+      "delta": 92,
       "lang": "TypeScript",
       "topics": [
         "agent-skills",
@@ -30,41 +52,8 @@
         "agent"
       ],
       "pushed_at": "2026-10-19T12:16:21Z",
-      "heat": 331328,
+      "heat": 331618,
       "rank": 5,
-      "danger": 5
-    },
-    {
-      "id": "ruvnet/ruflo",
-      "name": "ruflo",
-      "owner": "ruvnet",
-      "url": "https://github.com/ruvnet/ruflo",
-      "desc": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
-      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
-      "why": [
-        "⭐ 초인기 (3만+)",
-        "📈 상승 중 (+3)",
-        "🔥 이번 주에도 업데이트"
-      ],
-      "stars": 76862,
-      "delta": 3,
-      "lang": "TypeScript",
-      "topics": [
-        "agentic-ai",
-        "agentic-framework",
-        "agentic-workflow",
-        "agents",
-        "ai-agents",
-        "ai-assistant"
-      ],
-      "tags": [
-        "coding",
-        "agent",
-        "chat"
-      ],
-      "pushed_at": "2026-10-19T09:16:48Z",
-      "heat": 77271,
-      "rank": 54,
       "danger": 5
     },
     {
@@ -76,11 +65,33 @@
       "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
       "why": [
         "🏆 전설급 스타 (10만+)",
-        "📈 상승 중 (+2)",
+        "📈 상승 중 (+6)",
         "🟢 활발히 관리 중"
       ],
-      "stars": 301906,
-      "delta": 2,
+      "guide": {
+        "kind": "clone",
+        "cmd": "git clone https://github.com/obra/superpowers.git",
+        "zip": "https://github.com/obra/superpowers/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기 (복제)",
+            "body": "아래 git 명령으로 통째로 받거나, ZIP 다운로드 버튼을 눌러 압축으로 받으세요."
+          },
+          {
+            "icon": "📂",
+            "title": "열기",
+            "body": "받은 폴더를 열고 README 파일을 먼저 읽으세요. 설치·실행법이 거기 있어요."
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Getting started' 단계를 따라 하면 됩니다."
+          }
+        ]
+      },
+      "stars": 301912,
+      "delta": 6,
       "lang": "Shell",
       "topics": [
         "ai",
@@ -95,71 +106,172 @@
         "agent"
       ],
       "pushed_at": "2026-10-10T03:03:30Z",
-      "heat": 302276,
+      "heat": 302294,
       "rank": 8,
       "danger": 5
     },
     {
-      "id": "affaan-m/ECC",
-      "name": "ECC",
-      "owner": "affaan-m",
-      "url": "https://github.com/affaan-m/ECC",
-      "desc": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "id": "paperclipai/paperclip",
+      "name": "paperclip",
+      "owner": "paperclipai",
+      "url": "https://github.com/paperclipai/paperclip",
+      "desc": "The open-source app everyone uses to manage agents at work",
       "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
       "why": [
         "🏆 전설급 스타 (10만+)",
-        "📈 상승 중 (+2)",
+        "📈 상승 중 (+5)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 283678,
-      "delta": 2,
-      "lang": "JavaScript",
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install paperclip",
+        "zip": "https://github.com/paperclipai/paperclip/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
+      "stars": 104449,
+      "delta": 5,
+      "lang": "TypeScript",
       "topics": [
+        "acpx",
+        "agent-orchestration",
+        "agent-skills",
+        "agentic-ai",
         "ai-agents",
-        "anthropic",
-        "claude",
-        "claude-code",
-        "developer-tools",
-        "llm"
+        "ai-engineering"
       ],
       "tags": [
         "coding",
-        "agent"
+        "agent",
+        "free"
       ],
-      "pushed_at": "2026-10-19T05:03:15Z",
-      "heat": 284084,
-      "rank": 9,
+      "pushed_at": "2026-10-19T12:45:07Z",
+      "heat": 104864,
+      "rank": 43,
       "danger": 5
     },
     {
-      "id": "D4Vinci/Scrapling",
-      "name": "Scrapling",
-      "owner": "D4Vinci",
-      "url": "https://github.com/D4Vinci/Scrapling",
-      "desc": "🕷️ A Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
-      "summary_kr": "🧩 개발자가 가져다 쓰는 AI 라이브러리·프레임워크",
+      "id": "rohitg00/ai-engineering-from-scratch",
+      "name": "ai-engineering-from-scratch",
+      "owner": "rohitg00",
+      "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+      "desc": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
       "why": [
         "⭐ 초인기 (3만+)",
-        "📈 상승 중 (+2)",
+        "📈 상승 중 (+5)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 88598,
-      "delta": 2,
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install ai-engineering-from-scratch",
+        "zip": "https://github.com/rohitg00/ai-engineering-from-scratch/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
+      "stars": 71280,
+      "delta": 5,
+      "lang": "Python",
+      "topics": [
+        "agents",
+        "ai",
+        "ai-agents",
+        "ai-engineering",
+        "computer-vision",
+        "course"
+      ],
+      "tags": [
+        "image",
+        "agent"
+      ],
+      "pushed_at": "2026-10-19T08:42:46Z",
+      "heat": 71695,
+      "rank": 59,
+      "danger": 5
+    },
+    {
+      "id": "NousResearch/hermes-agent",
+      "name": "hermes-agent",
+      "owner": "NousResearch",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "desc": "The agent that grows with you",
+      "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
+      "why": [
+        "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+4)",
+        "🔥 이번 주에도 업데이트"
+      ],
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install hermes-agent",
+        "zip": "https://github.com/NousResearch/hermes-agent/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
+      "stars": 255139,
+      "delta": 4,
       "lang": "Python",
       "topics": [
         "ai",
-        "ai-scraping",
-        "automation",
-        "crawler",
-        "crawling",
-        "crawling-python"
+        "ai-agent",
+        "ai-agents",
+        "anthropic",
+        "chatgpt",
+        "claude"
       ],
       "tags": [
-        "misc"
+        "coding",
+        "agent",
+        "chat"
       ],
-      "pushed_at": "2026-10-18T17:41:44Z",
-      "heat": 89004,
-      "rank": 49,
+      "pushed_at": "2026-10-19T12:46:20Z",
+      "heat": 255551,
+      "rank": 10,
       "danger": 5
     }
   ],
@@ -173,10 +285,28 @@
       "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
       "why": [
         "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+1)",
         "📚 레퍼런스로 자주 공유됨"
       ],
-      "stars": 554498,
-      "delta": 0,
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/codecrafters-io/build-your-own-x/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
+      "stars": 554499,
+      "delta": 1,
       "lang": "Markdown",
       "topics": [
         "awesome-list",
@@ -191,7 +321,7 @@
         "free"
       ],
       "pushed_at": "2026-07-14T19:25:58Z",
-      "heat": 554514,
+      "heat": 554518,
       "rank": 1,
       "danger": 5
     },
@@ -206,8 +336,25 @@
         "🏆 전설급 스타 (10만+)",
         "📚 레퍼런스로 자주 공유됨"
       ],
-      "stars": 521240,
-      "delta": 0,
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/sindresorhus/awesome/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
+      "stars": 521239,
+      "delta": -1,
       "lang": "—",
       "topics": [
         "awesome",
@@ -220,7 +367,7 @@
         "misc"
       ],
       "pushed_at": "2026-09-02T02:10:47Z",
-      "heat": 521452,
+      "heat": 521451,
       "rank": 2,
       "danger": 5
     },
@@ -235,8 +382,25 @@
         "🏆 전설급 스타 (10만+)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 490330,
-      "delta": 0,
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/public-apis/public-apis/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
+      "stars": 490329,
+      "delta": -1,
       "lang": "Python",
       "topics": [
         "api",
@@ -250,7 +414,7 @@
         "free"
       ],
       "pushed_at": "2026-10-19T12:30:00Z",
-      "heat": 490730,
+      "heat": 490729,
       "rank": 3,
       "danger": 5
     },
@@ -265,8 +429,25 @@
         "🏆 전설급 스타 (10만+)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 369845,
-      "delta": 0,
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/nilbuild/developer-roadmap/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
+      "stars": 369844,
+      "delta": -1,
       "lang": "TypeScript",
       "topics": [
         "angular-roadmap",
@@ -281,7 +462,7 @@
         "writing"
       ],
       "pushed_at": "2026-10-19T10:21:02Z",
-      "heat": 370245,
+      "heat": 370244,
       "rank": 4,
       "danger": 5
     },
@@ -294,11 +475,33 @@
       "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
       "why": [
         "🏆 전설급 스타 (10만+)",
-        "📈 상승 중 (+26)",
+        "📈 상승 중 (+92)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 330850,
-      "delta": 26,
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install rea",
+        "zip": "https://github.com/morluto/rea/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
+      "stars": 330942,
+      "delta": 92,
       "lang": "TypeScript",
       "topics": [
         "agent-skills",
@@ -313,7 +516,7 @@
         "agent"
       ],
       "pushed_at": "2026-10-19T12:16:21Z",
-      "heat": 331328,
+      "heat": 331618,
       "rank": 5,
       "danger": 5
     },
@@ -329,6 +532,23 @@
         "🔥 이번 주에도 업데이트",
         "📚 레퍼런스로 자주 공유됨"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/vinta/awesome-python/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 328616,
       "delta": 0,
       "lang": "Python",
@@ -357,12 +577,29 @@
       "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
       "why": [
         "🏆 전설급 스타 (10만+)",
-        "📈 상승 중 (+1)",
+        "📈 상승 중 (+2)",
         "🔥 이번 주에도 업데이트",
         "📚 레퍼런스로 자주 공유됨"
       ],
-      "stars": 328207,
-      "delta": 1,
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/awesome-selfhosted/awesome-selfhosted/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
+      "stars": 328209,
+      "delta": 2,
       "lang": "—",
       "topics": [
         "awesome",
@@ -377,7 +614,7 @@
         "free"
       ],
       "pushed_at": "2026-10-18T15:44:07Z",
-      "heat": 328610,
+      "heat": 328615,
       "rank": 7,
       "danger": 5
     },
@@ -390,11 +627,33 @@
       "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
       "why": [
         "🏆 전설급 스타 (10만+)",
-        "📈 상승 중 (+2)",
+        "📈 상승 중 (+6)",
         "🟢 활발히 관리 중"
       ],
-      "stars": 301906,
-      "delta": 2,
+      "guide": {
+        "kind": "clone",
+        "cmd": "git clone https://github.com/obra/superpowers.git",
+        "zip": "https://github.com/obra/superpowers/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기 (복제)",
+            "body": "아래 git 명령으로 통째로 받거나, ZIP 다운로드 버튼을 눌러 압축으로 받으세요."
+          },
+          {
+            "icon": "📂",
+            "title": "열기",
+            "body": "받은 폴더를 열고 README 파일을 먼저 읽으세요. 설치·실행법이 거기 있어요."
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Getting started' 단계를 따라 하면 됩니다."
+          }
+        ]
+      },
+      "stars": 301912,
+      "delta": 6,
       "lang": "Shell",
       "topics": [
         "ai",
@@ -409,7 +668,7 @@
         "agent"
       ],
       "pushed_at": "2026-10-10T03:03:30Z",
-      "heat": 302276,
+      "heat": 302294,
       "rank": 8,
       "danger": 5
     },
@@ -422,11 +681,33 @@
       "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
       "why": [
         "🏆 전설급 스타 (10만+)",
-        "📈 상승 중 (+2)",
+        "📈 상승 중 (+3)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 283678,
-      "delta": 2,
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install ECC",
+        "zip": "https://github.com/affaan-m/ECC/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
+      "stars": 283681,
+      "delta": 3,
       "lang": "JavaScript",
       "topics": [
         "ai-agents",
@@ -441,7 +722,7 @@
         "agent"
       ],
       "pushed_at": "2026-10-19T05:03:15Z",
-      "heat": 284084,
+      "heat": 284090,
       "rank": 9,
       "danger": 5
     },
@@ -454,10 +735,33 @@
       "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
       "why": [
         "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+4)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 255135,
-      "delta": 0,
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install hermes-agent",
+        "zip": "https://github.com/NousResearch/hermes-agent/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
+      "stars": 255139,
+      "delta": 4,
       "lang": "Python",
       "topics": [
         "ai",
@@ -472,8 +776,8 @@
         "agent",
         "chat"
       ],
-      "pushed_at": "2026-10-19T12:40:08Z",
-      "heat": 255539,
+      "pushed_at": "2026-10-19T12:46:20Z",
+      "heat": 255551,
       "rank": 10,
       "danger": 5
     },
@@ -489,8 +793,25 @@
         "🕸️ 1년+ 조용함",
         "📚 레퍼런스로 자주 공유됨"
       ],
-      "stars": 251326,
-      "delta": 0,
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/trimstray/the-book-of-secret-knowledge/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
+      "stars": 251324,
+      "delta": -2,
       "lang": "—",
       "topics": [
         "awesome",
@@ -504,7 +825,7 @@
         "coding"
       ],
       "pushed_at": "2024-11-19T14:00:38Z",
-      "heat": 251326,
+      "heat": 251324,
       "rank": 11,
       "danger": 5
     },
@@ -517,11 +838,32 @@
       "summary_kr": "💻 내 컴퓨터에서 AI 모델을 직접 돌리는 도구 (토큰 비용 없음)",
       "why": [
         "🏆 전설급 스타 (10만+)",
-        "📈 상승 중 (+1)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 207990,
-      "delta": 1,
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install n8n",
+        "zip": "https://github.com/n8n-io/n8n/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
+      "stars": 207989,
+      "delta": -1,
       "lang": "TypeScript",
       "topics": [
         "ai",
@@ -536,8 +878,8 @@
         "agent",
         "local"
       ],
-      "pushed_at": "2026-10-19T12:39:52Z",
-      "heat": 208393,
+      "pushed_at": "2026-10-19T12:47:08Z",
+      "heat": 208389,
       "rank": 12,
       "danger": 5
     },
@@ -550,10 +892,33 @@
       "summary_kr": "🧰 AI 관련 오픈소스 프로젝트",
       "why": [
         "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+3)",
         "🟢 활발히 관리 중"
       ],
-      "stars": 191040,
-      "delta": 0,
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install markitdown",
+        "zip": "https://github.com/microsoft/markitdown/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
+      "stars": 191043,
+      "delta": 3,
       "lang": "Python",
       "topics": [
         "autogen",
@@ -567,7 +932,7 @@
         "misc"
       ],
       "pushed_at": "2026-10-04T03:59:52Z",
-      "heat": 191380,
+      "heat": 191392,
       "rank": 13,
       "danger": 5
     },
@@ -582,6 +947,28 @@
         "🏆 전설급 스타 (10만+)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install ohmyzsh",
+        "zip": "https://github.com/ohmyzsh/ohmyzsh/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
       "stars": 190071,
       "delta": 0,
       "lang": "Shell",
@@ -610,12 +997,28 @@
       "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
       "why": [
         "🏆 전설급 스타 (10만+)",
-        "📈 상승 중 (+1)",
         "🔥 이번 주에도 업데이트",
         "📚 레퍼런스로 자주 공유됨"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/avelino/awesome-go/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 189194,
-      "delta": 1,
+      "delta": 0,
       "lang": "Go",
       "topics": [
         "awesome",
@@ -629,7 +1032,7 @@
         "misc"
       ],
       "pushed_at": "2026-10-15T14:03:07Z",
-      "heat": 189585,
+      "heat": 189582,
       "rank": 15,
       "danger": 5
     },
@@ -644,6 +1047,28 @@
         "🏆 전설급 스타 (10만+)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install AutoGPT",
+        "zip": "https://github.com/Significant-Gravitas/AutoGPT/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
       "stars": 187649,
       "delta": 0,
       "lang": "Python",
@@ -660,7 +1085,7 @@
         "image",
         "agent"
       ],
-      "pushed_at": "2026-10-19T12:36:47Z",
+      "pushed_at": "2026-10-19T12:47:02Z",
       "heat": 188049,
       "rank": 16,
       "danger": 5
@@ -676,6 +1101,28 @@
         "🏆 전설급 스타 (10만+)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "clone",
+        "cmd": "git clone https://github.com/ollama/ollama.git",
+        "zip": "https://github.com/ollama/ollama/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기 (복제)",
+            "body": "아래 git 명령으로 통째로 받거나, ZIP 다운로드 버튼을 눌러 압축으로 받으세요."
+          },
+          {
+            "icon": "📂",
+            "title": "열기",
+            "body": "받은 폴더를 열고 README 파일을 먼저 읽으세요. 설치·실행법이 거기 있어요."
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Getting started' 단계를 따라 하면 됩니다."
+          }
+        ]
+      },
       "stars": 183808,
       "delta": 0,
       "lang": "Go",
@@ -704,10 +1151,28 @@
       "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
       "why": [
         "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+1)",
         "🟢 활발히 관리 중"
       ],
-      "stars": 175990,
-      "delta": 0,
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/github/gitignore/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
+      "stars": 175991,
+      "delta": 1,
       "lang": "—",
       "topics": [
         "git",
@@ -717,7 +1182,7 @@
         "misc"
       ],
       "pushed_at": "2026-10-02T20:59:38Z",
-      "heat": 176326,
+      "heat": 176330,
       "rank": 18,
       "danger": 5
     },
@@ -733,6 +1198,23 @@
         "🔥 이번 주에도 업데이트",
         "📚 레퍼런스로 자주 공유됨"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/f/prompts.chat/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 173526,
       "delta": 0,
       "lang": "HTML",
@@ -767,6 +1249,28 @@
         "🏆 전설급 스타 (10만+)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install transformers",
+        "zip": "https://github.com/huggingface/transformers/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
       "stars": 167852,
       "delta": 0,
       "lang": "Python",
@@ -795,18 +1299,40 @@
       "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
       "why": [
         "🏆 전설급 스타 (10만+)",
-        "📈 상승 중 (+1)",
+        "📈 상승 중 (+3)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 161462,
-      "delta": 1,
+      "guide": {
+        "kind": "clone",
+        "cmd": "git clone https://github.com/msitarzewski/agency-agents.git",
+        "zip": "https://github.com/msitarzewski/agency-agents/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기 (복제)",
+            "body": "아래 git 명령으로 통째로 받거나, ZIP 다운로드 버튼을 눌러 압축으로 받으세요."
+          },
+          {
+            "icon": "📂",
+            "title": "열기",
+            "body": "받은 폴더를 열고 README 파일을 먼저 읽으세요. 설치·실행법이 거기 있어요."
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Getting started' 단계를 따라 하면 됩니다."
+          }
+        ]
+      },
+      "stars": 161465,
+      "delta": 3,
       "lang": "Shell",
       "topics": [],
       "tags": [
         "agent"
       ],
       "pushed_at": "2026-10-15T05:33:33Z",
-      "heat": 161849,
+      "heat": 161858,
       "rank": 21,
       "danger": 5
     },
@@ -821,6 +1347,28 @@
         "🏆 전설급 스타 (10만+)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install dify",
+        "zip": "https://github.com/langgenius/dify/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
       "stars": 158885,
       "delta": 0,
       "lang": "Python",
@@ -851,10 +1399,33 @@
       "summary_kr": "💻 내 컴퓨터에서 AI 모델을 직접 돌리는 도구 (토큰 비용 없음)",
       "why": [
         "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+1)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 156148,
-      "delta": 0,
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install open-webui",
+        "zip": "https://github.com/open-webui/open-webui/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
+      "stars": 156149,
+      "delta": 1,
       "lang": "Python",
       "topics": [
         "ai",
@@ -868,7 +1439,7 @@
         "local"
       ],
       "pushed_at": "2026-10-18T20:02:00Z",
-      "heat": 156548,
+      "heat": 156552,
       "rank": 23,
       "danger": 5
     },
@@ -883,6 +1454,28 @@
         "🏆 전설급 스타 (10만+)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install langflow",
+        "zip": "https://github.com/langflow-ai/langflow/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
       "stars": 155832,
       "delta": 0,
       "lang": "Python",
@@ -912,11 +1505,32 @@
       "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
       "why": [
         "🏆 전설급 스타 (10만+)",
-        "📈 상승 중 (+1)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install langchain",
+        "zip": "https://github.com/langchain-ai/langchain/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
       "stars": 148076,
-      "delta": 1,
+      "delta": 0,
       "lang": "Python",
       "topics": [
         "agents",
@@ -932,7 +1546,7 @@
         "chat"
       ],
       "pushed_at": "2026-10-19T08:34:08Z",
-      "heat": 148479,
+      "heat": 148476,
       "rank": 25,
       "danger": 5
     },
@@ -945,10 +1559,33 @@
       "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
       "why": [
         "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+2)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 146220,
-      "delta": 0,
+      "guide": {
+        "kind": "clone",
+        "cmd": "git clone https://github.com/farion1231/cc-switch.git",
+        "zip": "https://github.com/farion1231/cc-switch/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기 (복제)",
+            "body": "아래 git 명령으로 통째로 받거나, ZIP 다운로드 버튼을 눌러 압축으로 받으세요."
+          },
+          {
+            "icon": "📂",
+            "title": "열기",
+            "body": "받은 폴더를 열고 README 파일을 먼저 읽으세요. 설치·실행법이 거기 있어요."
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Getting started' 단계를 따라 하면 됩니다."
+          }
+        ]
+      },
+      "stars": 146222,
+      "delta": 2,
       "lang": "Rust",
       "topics": [
         "ai-tools",
@@ -965,7 +1602,7 @@
         "chat"
       ],
       "pushed_at": "2026-10-19T10:26:56Z",
-      "heat": 146620,
+      "heat": 146628,
       "rank": 26,
       "danger": 5
     },
@@ -978,10 +1615,28 @@
       "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
       "why": [
         "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+2)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 142284,
-      "delta": 0,
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/Shubhamsaboo/awesome-llm-apps/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
+      "stars": 142286,
+      "delta": 2,
       "lang": "Python",
       "topics": [
         "agents",
@@ -994,7 +1649,7 @@
         "free"
       ],
       "pushed_at": "2026-10-18T16:28:46Z",
-      "heat": 142684,
+      "heat": 142692,
       "rank": 27,
       "danger": 5
     },
@@ -1010,8 +1665,25 @@
         "🔥 이번 주에도 업데이트",
         "📚 레퍼런스로 자주 공유됨"
       ],
-      "stars": 139793,
-      "delta": 0,
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/ripienaar/free-for-dev/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
+      "stars": 139792,
+      "delta": -1,
       "lang": "HTML",
       "topics": [
         "awesome-list",
@@ -1022,7 +1694,7 @@
         "free"
       ],
       "pushed_at": "2026-10-18T13:25:47Z",
-      "heat": 140193,
+      "heat": 140192,
       "rank": 28,
       "danger": 5
     },
@@ -1035,11 +1707,33 @@
       "summary_kr": "⌨️ 코딩을 돕거나 자동화하는 AI 도구",
       "why": [
         "🏆 전설급 스타 (10만+)",
-        "📈 상승 중 (+1)",
+        "📈 상승 중 (+4)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 137459,
-      "delta": 1,
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install ui-ux-pro-max-skill",
+        "zip": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
+      "stars": 137463,
+      "delta": 4,
       "lang": "Python",
       "topics": [
         "ai-skills",
@@ -1053,7 +1747,7 @@
         "coding"
       ],
       "pushed_at": "2026-10-15T02:04:34Z",
-      "heat": 137846,
+      "heat": 137859,
       "rank": 29,
       "danger": 5
     },
@@ -1066,17 +1760,40 @@
       "summary_kr": "⌨️ 코딩을 돕거나 자동화하는 AI 도구",
       "why": [
         "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+1)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 136905,
-      "delta": 0,
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install gstack",
+        "zip": "https://github.com/garrytan/gstack/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
+      "stars": 136906,
+      "delta": 1,
       "lang": "TypeScript",
       "topics": [],
       "tags": [
         "coding"
       ],
       "pushed_at": "2026-10-19T10:31:27Z",
-      "heat": 137305,
+      "heat": 137309,
       "rank": 30,
       "danger": 5
     },
@@ -1089,11 +1806,33 @@
       "summary_kr": "⌨️ 코딩을 돕거나 자동화하는 AI 도구",
       "why": [
         "🏆 전설급 스타 (10만+)",
-        "📈 상승 중 (+1)",
+        "📈 상승 중 (+2)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 133023,
-      "delta": 1,
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install MoneyPrinterTurbo",
+        "zip": "https://github.com/harry0703/MoneyPrinterTurbo/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
+      "stars": 133025,
+      "delta": 2,
       "lang": "Python",
       "topics": [
         "ai-video-generator",
@@ -1109,7 +1848,7 @@
         "agent"
       ],
       "pushed_at": "2026-10-19T09:57:53Z",
-      "heat": 133426,
+      "heat": 133431,
       "rank": 31,
       "danger": 5
     },
@@ -1122,11 +1861,33 @@
       "summary_kr": "💻 내 컴퓨터에서 AI 모델을 직접 돌리는 도구 (토큰 비용 없음)",
       "why": [
         "🏆 전설급 스타 (10만+)",
-        "📈 상승 중 (+1)",
+        "📈 상승 중 (+2)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 128781,
-      "delta": 1,
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install graphify",
+        "zip": "https://github.com/Graphify-Labs/graphify/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
+      "stars": 128783,
+      "delta": 2,
       "lang": "Python",
       "topics": [
         "ai-agents",
@@ -1142,7 +1903,7 @@
         "local"
       ],
       "pushed_at": "2026-10-16T17:57:21Z",
-      "heat": 129176,
+      "heat": 129181,
       "rank": 32,
       "danger": 5
     },
@@ -1157,6 +1918,23 @@
         "🏆 전설급 스타 (10만+)",
         "📚 레퍼런스로 자주 공유됨"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/Hack-with-Github/Awesome-Hacking/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 123030,
       "delta": 0,
       "lang": "—",
@@ -1189,7 +1967,24 @@
         "🔥 이번 주에도 업데이트",
         "📚 레퍼런스로 자주 공유됨"
       ],
-      "stars": 122227,
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/VoltAgent/awesome-design-md/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
+      "stars": 122228,
       "delta": 1,
       "lang": "—",
       "topics": [
@@ -1205,7 +2000,7 @@
         "agent"
       ],
       "pushed_at": "2026-10-14T05:46:48Z",
-      "heat": 122610,
+      "heat": 122611,
       "rank": 34,
       "danger": 5
     },
@@ -1218,10 +2013,33 @@
       "summary_kr": "✍️ 프롬프트 모음·기법 — AI에게 잘 말 거는 법",
       "why": [
         "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+3)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 121624,
-      "delta": 0,
+      "guide": {
+        "kind": "clone",
+        "cmd": "git clone https://github.com/microsoft/generative-ai-for-beginners.git",
+        "zip": "https://github.com/microsoft/generative-ai-for-beginners/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기 (복제)",
+            "body": "아래 git 명령으로 통째로 받거나, ZIP 다운로드 버튼을 눌러 압축으로 받으세요."
+          },
+          {
+            "icon": "📂",
+            "title": "열기",
+            "body": "받은 폴더를 열고 README 파일을 먼저 읽으세요. 설치·실행법이 거기 있어요."
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Getting started' 단계를 따라 하면 됩니다."
+          }
+        ]
+      },
+      "stars": 121627,
+      "delta": 3,
       "lang": "Jupyter Notebook",
       "topics": [
         "ai",
@@ -1237,7 +2055,7 @@
         "chat"
       ],
       "pushed_at": "2026-10-19T09:10:07Z",
-      "heat": 122024,
+      "heat": 122036,
       "rank": 35,
       "danger": 5
     },
@@ -1251,6 +2069,28 @@
       "why": [
         "🏆 전설급 스타 (10만+)"
       ],
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install free-programming-books-zh_CN",
+        "zip": "https://github.com/justjavac/free-programming-books-zh_CN/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
       "stars": 119271,
       "delta": 0,
       "lang": "—",
@@ -1282,6 +2122,28 @@
         "🏆 전설급 스타 (10만+)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install browser-use",
+        "zip": "https://github.com/browser-use/browser-use/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
       "stars": 118483,
       "delta": 0,
       "lang": "Python",
@@ -1314,6 +2176,23 @@
         "🔥 이번 주에도 업데이트",
         "📚 레퍼런스로 자주 공유됨"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/jaywcjlove/awesome-mac/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 116486,
       "delta": 0,
       "lang": "Swift",
@@ -1342,11 +2221,32 @@
       "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
       "why": [
         "🏆 전설급 스타 (10만+)",
-        "📈 상승 중 (+1)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install pi",
+        "zip": "https://github.com/earendil-works/pi/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
       "stars": 116336,
-      "delta": 1,
+      "delta": 0,
       "lang": "TypeScript",
       "topics": [],
       "tags": [
@@ -1354,7 +2254,7 @@
         "agent"
       ],
       "pushed_at": "2026-10-19T09:36:46Z",
-      "heat": 116739,
+      "heat": 116736,
       "rank": 39,
       "danger": 5
     },
@@ -1367,10 +2267,33 @@
       "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
       "why": [
         "🏆 전설급 스타 (10만+)",
+        "📈 상승 중 (+1)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 112016,
-      "delta": 0,
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install TradingAgents",
+        "zip": "https://github.com/TauricResearch/TradingAgents/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
+      "stars": 112017,
+      "delta": 1,
       "lang": "Python",
       "topics": [
         "agent",
@@ -1383,7 +2306,7 @@
         "agent"
       ],
       "pushed_at": "2026-10-16T21:38:46Z",
-      "heat": 112408,
+      "heat": 112412,
       "rank": 40,
       "danger": 5
     },
@@ -1398,6 +2321,28 @@
         "🏆 전설급 스타 (10만+)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "clone",
+        "cmd": "git clone https://github.com/fatedier/frp.git",
+        "zip": "https://github.com/fatedier/frp/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기 (복제)",
+            "body": "아래 git 명령으로 통째로 받거나, ZIP 다운로드 버튼을 눌러 압축으로 받으세요."
+          },
+          {
+            "icon": "📂",
+            "title": "열기",
+            "body": "받은 폴더를 열고 README 파일을 먼저 읽으세요. 설치·실행법이 거기 있어요."
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Getting started' 단계를 따라 하면 됩니다."
+          }
+        ]
+      },
       "stars": 109993,
       "delta": 0,
       "lang": "Go",
@@ -1412,7 +2357,7 @@
       "tags": [
         "local"
       ],
-      "pushed_at": "2026-10-19T12:08:44Z",
+      "pushed_at": "2026-10-19T12:45:49Z",
       "heat": 110393,
       "rank": 41,
       "danger": 5
@@ -1426,11 +2371,33 @@
       "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
       "why": [
         "🏆 전설급 스타 (10만+)",
-        "📈 상승 중 (+1)",
+        "📈 상승 중 (+4)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 108434,
-      "delta": 1,
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install agent-skills",
+        "zip": "https://github.com/addyosmani/agent-skills/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
+      "stars": 108438,
+      "delta": 4,
       "lang": "JavaScript",
       "topics": [
         "agent-skills",
@@ -1445,7 +2412,7 @@
         "agent"
       ],
       "pushed_at": "2026-10-13T20:24:07Z",
-      "heat": 108817,
+      "heat": 108830,
       "rank": 42,
       "danger": 5
     },
@@ -1458,11 +2425,33 @@
       "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
       "why": [
         "🏆 전설급 스타 (10만+)",
-        "📈 상승 중 (+1)",
+        "📈 상승 중 (+5)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 104444,
-      "delta": 1,
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install paperclip",
+        "zip": "https://github.com/paperclipai/paperclip/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
+      "stars": 104449,
+      "delta": 5,
       "lang": "TypeScript",
       "topics": [
         "acpx",
@@ -1477,8 +2466,8 @@
         "agent",
         "free"
       ],
-      "pushed_at": "2026-10-19T12:33:28Z",
-      "heat": 104847,
+      "pushed_at": "2026-10-19T12:45:07Z",
+      "heat": 104864,
       "rank": 43,
       "danger": 5
     },
@@ -1491,11 +2480,33 @@
       "summary_kr": "💻 내 컴퓨터에서 AI 모델을 직접 돌리는 도구 (토큰 비용 없음)",
       "why": [
         "🏆 전설급 스타 (10만+)",
-        "📈 상승 중 (+1)",
+        "📈 상승 중 (+3)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 102407,
-      "delta": 1,
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install open-design",
+        "zip": "https://github.com/nexu-io/open-design/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
+      "stars": 102410,
+      "delta": 3,
       "lang": "TypeScript",
       "topics": [
         "agent-skills",
@@ -1511,8 +2522,8 @@
         "agent",
         "local"
       ],
-      "pushed_at": "2026-10-19T12:40:03Z",
-      "heat": 102814,
+      "pushed_at": "2026-10-19T12:47:00Z",
+      "heat": 102819,
       "rank": 44,
       "danger": 5
     },
@@ -1525,12 +2536,28 @@
       "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
       "why": [
         "⭐ 초인기 (3만+)",
-        "📈 상승 중 (+1)",
         "🔥 이번 주에도 업데이트",
         "📚 레퍼런스로 자주 공유됨"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/ruvnet/RuView/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 98737,
-      "delta": 1,
+      "delta": 0,
       "lang": "Rust",
       "topics": [
         "awesome",
@@ -1545,7 +2572,7 @@
         "chat"
       ],
       "pushed_at": "2026-10-19T12:24:00Z",
-      "heat": 99140,
+      "heat": 99137,
       "rank": 45,
       "danger": 5
     },
@@ -1560,6 +2587,28 @@
         "⭐ 초인기 (3만+)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install playwright",
+        "zip": "https://github.com/microsoft/playwright/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
       "stars": 98063,
       "delta": 0,
       "lang": "TypeScript",
@@ -1590,6 +2639,23 @@
         "⭐ 초인기 (3만+)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/punkpeye/awesome-mcp-servers/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 96601,
       "delta": 0,
       "lang": "—",
@@ -1616,6 +2682,28 @@
         "⭐ 초인기 (3만+)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install NextChat",
+        "zip": "https://github.com/ChatGPTNextWeb/NextChat/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
       "stars": 88866,
       "delta": 0,
       "lang": "TypeScript",
@@ -1645,11 +2733,32 @@
       "summary_kr": "🧩 개발자가 가져다 쓰는 AI 라이브러리·프레임워크",
       "why": [
         "⭐ 초인기 (3만+)",
-        "📈 상승 중 (+2)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install Scrapling",
+        "zip": "https://github.com/D4Vinci/Scrapling/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
       "stars": 88598,
-      "delta": 2,
+      "delta": 0,
       "lang": "Python",
       "topics": [
         "ai",
@@ -1663,7 +2772,7 @@
         "misc"
       ],
       "pushed_at": "2026-10-18T17:41:44Z",
-      "heat": 89004,
+      "heat": 88998,
       "rank": 49,
       "danger": 5
     },
@@ -1676,11 +2785,32 @@
       "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
       "why": [
         "⭐ 초인기 (3만+)",
-        "📈 상승 중 (+1)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install deer-flow",
+        "zip": "https://github.com/bytedance/deer-flow/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
       "stars": 84130,
-      "delta": 1,
+      "delta": 0,
       "lang": "Python",
       "topics": [
         "agent",
@@ -1696,7 +2826,7 @@
         "free"
       ],
       "pushed_at": "2026-10-19T08:31:49Z",
-      "heat": 84533,
+      "heat": 84530,
       "rank": 50,
       "danger": 5
     },
@@ -1708,11 +2838,27 @@
       "desc": "Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks.",
       "summary_kr": "🎓 배우기 위한 튜토리얼·로드맵·강의 자료",
       "why": [
-        "⭐ 초인기 (3만+)",
-        "📈 상승 중 (+1)"
+        "⭐ 초인기 (3만+)"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/mlabonne/llm-course/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 84328,
-      "delta": 1,
+      "delta": 0,
       "lang": "—",
       "topics": [
         "course",
@@ -1725,7 +2871,7 @@
         "misc"
       ],
       "pushed_at": "2026-02-05T13:09:26Z",
-      "heat": 84331,
+      "heat": 84328,
       "rank": 51,
       "danger": 5
     },
@@ -1740,6 +2886,23 @@
         "⭐ 초인기 (3만+)",
         "🕸️ 1년+ 조용함"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/fighting41love/funNLP/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 84009,
       "delta": 0,
       "lang": "Python",
@@ -1761,10 +2924,33 @@
       "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
       "why": [
         "⭐ 초인기 (3만+)",
+        "📈 상승 중 (+2)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 78326,
-      "delta": 0,
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install OmniRoute",
+        "zip": "https://github.com/diegosouzapw/OmniRoute/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
+      "stars": 78328,
+      "delta": 2,
       "lang": "TypeScript",
       "topics": [
         "a2a",
@@ -1780,7 +2966,7 @@
         "free"
       ],
       "pushed_at": "2026-10-19T12:23:03Z",
-      "heat": 78726,
+      "heat": 78734,
       "rank": 53,
       "danger": 5
     },
@@ -1796,7 +2982,29 @@
         "📈 상승 중 (+3)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 76862,
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install ruflo",
+        "zip": "https://github.com/ruvnet/ruflo/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
+      "stars": 76865,
       "delta": 3,
       "lang": "TypeScript",
       "topics": [
@@ -1813,7 +3021,7 @@
         "chat"
       ],
       "pushed_at": "2026-10-19T09:16:48Z",
-      "heat": 77271,
+      "heat": 77274,
       "rank": 54,
       "danger": 5
     },
@@ -1828,6 +3036,28 @@
         "⭐ 초인기 (3만+)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install career-ops",
+        "zip": "https://github.com/career-ops-hq/career-ops/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
       "stars": 75583,
       "delta": 0,
       "lang": "JavaScript",
@@ -1861,6 +3091,23 @@
         "⭐ 초인기 (3만+)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/josephmisiti/awesome-machine-learning/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 74610,
       "delta": 0,
       "lang": "Python",
@@ -1884,6 +3131,28 @@
         "⭐ 초인기 (3만+)",
         "🟢 활발히 관리 중"
       ],
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install Front-End-Checklist",
+        "zip": "https://github.com/thedaviddias/Front-End-Checklist/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
       "stars": 74511,
       "delta": 0,
       "lang": "MDX",
@@ -1915,6 +3184,23 @@
         "⭐ 초인기 (3만+)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/vuejs/awesome-vue/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 73511,
       "delta": 0,
       "lang": "—",
@@ -1936,10 +3222,33 @@
       "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
       "why": [
         "⭐ 초인기 (3만+)",
+        "📈 상승 중 (+5)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 71275,
-      "delta": 0,
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install ai-engineering-from-scratch",
+        "zip": "https://github.com/rohitg00/ai-engineering-from-scratch/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
+      "stars": 71280,
+      "delta": 5,
       "lang": "Python",
       "topics": [
         "agents",
@@ -1954,7 +3263,7 @@
         "agent"
       ],
       "pushed_at": "2026-10-19T08:42:46Z",
-      "heat": 71675,
+      "heat": 71695,
       "rank": 59,
       "danger": 5
     },
@@ -1969,6 +3278,28 @@
         "⭐ 초인기 (3만+)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install system_prompts_leaks",
+        "zip": "https://github.com/asgeirtj/system_prompts_leaks/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
       "stars": 69891,
       "delta": 0,
       "lang": "Python",
@@ -2002,6 +3333,23 @@
         "⭐ 초인기 (3만+)",
         "📚 레퍼런스로 자주 공유됨"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/sindresorhus/awesome-nodejs/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 67168,
       "delta": 0,
       "lang": "—",
@@ -2030,11 +3378,29 @@
       "summary_kr": "📚 엄선된 모음집 — 관련 도구·자료를 한곳에 정리",
       "why": [
         "⭐ 초인기 (3만+)",
+        "📈 상승 중 (+1)",
         "🔥 이번 주에도 업데이트",
         "📚 레퍼런스로 자주 공유됨"
       ],
-      "stars": 59953,
-      "delta": 0,
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/rust-unofficial/awesome-rust/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
+      "stars": 59954,
+      "delta": 1,
       "lang": "Rust",
       "topics": [
         "awesome",
@@ -2044,7 +3410,7 @@
         "coding"
       ],
       "pushed_at": "2026-10-18T18:24:48Z",
-      "heat": 60353,
+      "heat": 60357,
       "rank": 62,
       "danger": 5
     },
@@ -2060,6 +3426,23 @@
         "🔥 이번 주에도 업데이트",
         "📚 레퍼런스로 자주 공유됨"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/hesreallyhim/awesome-claude-code/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 55996,
       "delta": 0,
       "lang": "Python",
@@ -2093,6 +3476,23 @@
         "🔥 이번 주에도 업데이트",
         "📚 레퍼런스로 자주 공유됨"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/dkhamsing/open-source-ios-apps/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 52681,
       "delta": 0,
       "lang": "—",
@@ -2125,6 +3525,23 @@
         "🔥 이번 주에도 업데이트",
         "📚 레퍼런스로 자주 공유됨"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/serhii-londar/open-source-mac-os-apps/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 50874,
       "delta": 0,
       "lang": "—",
@@ -2155,6 +3572,28 @@
         "⭐ 초인기 (3만+)",
         "🔥 이번 주에도 업데이트"
       ],
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install hackathon-starter",
+        "zip": "https://github.com/sahat/hackathon-starter/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
       "stars": 35252,
       "delta": 0,
       "lang": "JavaScript",
@@ -2186,7 +3625,29 @@
         "📈 상승 중 (+1)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 33486,
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install laya",
+        "zip": "https://github.com/NandhaKishorM/laya/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
+      "stars": 33487,
       "delta": 1,
       "lang": "Python",
       "topics": [
@@ -2201,7 +3662,7 @@
         "misc"
       ],
       "pushed_at": "2026-10-19T09:40:14Z",
-      "heat": 33889,
+      "heat": 33890,
       "rank": 67,
       "danger": 5
     },
@@ -2217,6 +3678,23 @@
         "🔥 이번 주에도 업데이트",
         "📚 레퍼런스로 자주 공유됨"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/academic/awesome-datascience/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 30210,
       "delta": 0,
       "lang": "—",
@@ -2247,6 +3725,28 @@
         "👍 검증된 인기",
         "🟢 활발히 관리 중"
       ],
+      "guide": {
+        "kind": "clone",
+        "cmd": "git clone https://github.com/yuaotian/go-cursor-help.git",
+        "zip": "https://github.com/yuaotian/go-cursor-help/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기 (복제)",
+            "body": "아래 git 명령으로 통째로 받거나, ZIP 다운로드 버튼을 눌러 압축으로 받으세요."
+          },
+          {
+            "icon": "📂",
+            "title": "열기",
+            "body": "받은 폴더를 열고 README 파일을 먼저 읽으세요. 설치·실행법이 거기 있어요."
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Getting started' 단계를 따라 하면 됩니다."
+          }
+        ]
+      },
       "stars": 26078,
       "delta": 0,
       "lang": "Shell",
@@ -2273,6 +3773,28 @@
         "👍 검증된 인기",
         "🟢 활발히 관리 중"
       ],
+      "guide": {
+        "kind": "clone",
+        "cmd": "git clone https://github.com/AZeC4/TelegramGroup.git",
+        "zip": "https://github.com/AZeC4/TelegramGroup/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기 (복제)",
+            "body": "아래 git 명령으로 통째로 받거나, ZIP 다운로드 버튼을 눌러 압축으로 받으세요."
+          },
+          {
+            "icon": "📂",
+            "title": "열기",
+            "body": "받은 폴더를 열고 README 파일을 먼저 읽으세요. 설치·실행법이 거기 있어요."
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Getting started' 단계를 따라 하면 됩니다."
+          }
+        ]
+      },
       "stars": 23581,
       "delta": 0,
       "lang": "—",
@@ -2304,6 +3826,23 @@
         "🔥 이번 주에도 업데이트",
         "📚 레퍼런스로 자주 공유됨"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/EthicalML/awesome-production-machine-learning/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 21018,
       "delta": 0,
       "lang": "—",
@@ -2335,7 +3874,29 @@
         "📈 상승 중 (+1)",
         "🔥 이번 주에도 업데이트"
       ],
-      "stars": 20536,
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install SkillSpector",
+        "zip": "https://github.com/NVIDIA/SkillSpector/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
+      "stars": 20537,
       "delta": 1,
       "lang": "Python",
       "topics": [
@@ -2352,7 +3913,7 @@
         "prompt"
       ],
       "pushed_at": "2026-10-19T12:35:50Z",
-      "heat": 20939,
+      "heat": 20940,
       "rank": 72,
       "danger": 3
     },
@@ -2368,6 +3929,23 @@
         "🔥 이번 주에도 업데이트",
         "📚 레퍼런스로 자주 공유됨"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/keon/awesome-nlp/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 19088,
       "delta": 0,
       "lang": "—",
@@ -2397,6 +3975,23 @@
       "why": [
         "👍 검증된 인기"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/vitalysim/Awesome-Hacking-Resources/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 17539,
       "delta": 0,
       "lang": "—",
@@ -2425,10 +4020,33 @@
       "summary_kr": "🤖 스스로 작업을 수행하는 AI 에이전트",
       "why": [
         "👍 검증된 인기",
+        "📈 상승 중 (+1)",
         "🟢 활발히 관리 중"
       ],
-      "stars": 13708,
-      "delta": 0,
+      "guide": {
+        "kind": "clone",
+        "cmd": "git clone https://github.com/Orchestra-Research/AI-Research-SKILLs.git",
+        "zip": "https://github.com/Orchestra-Research/AI-Research-SKILLs/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기 (복제)",
+            "body": "아래 git 명령으로 통째로 받거나, ZIP 다운로드 버튼을 눌러 압축으로 받으세요."
+          },
+          {
+            "icon": "📂",
+            "title": "열기",
+            "body": "받은 폴더를 열고 README 파일을 먼저 읽으세요. 설치·실행법이 거기 있어요."
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Getting started' 단계를 따라 하면 됩니다."
+          }
+        ]
+      },
+      "stars": 13709,
+      "delta": 1,
       "lang": "TeX",
       "topics": [
         "ai",
@@ -2444,7 +4062,7 @@
         "free"
       ],
       "pushed_at": "2026-10-11T02:56:34Z",
-      "heat": 14076,
+      "heat": 14080,
       "rank": 75,
       "danger": 2
     },
@@ -2458,6 +4076,28 @@
       "why": [
         "👍 검증된 인기"
       ],
+      "guide": {
+        "kind": "clone",
+        "cmd": "git clone https://github.com/langgptai/LangGPT.git",
+        "zip": "https://github.com/langgptai/LangGPT/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기 (복제)",
+            "body": "아래 git 명령으로 통째로 받거나, ZIP 다운로드 버튼을 눌러 압축으로 받으세요."
+          },
+          {
+            "icon": "📂",
+            "title": "열기",
+            "body": "받은 폴더를 열고 README 파일을 먼저 읽으세요. 설치·실행법이 거기 있어요."
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Getting started' 단계를 따라 하면 됩니다."
+          }
+        ]
+      },
       "stars": 12610,
       "delta": 0,
       "lang": "Jupyter Notebook",
@@ -2489,6 +4129,28 @@
       "why": [
         "👍 검증된 인기"
       ],
+      "guide": {
+        "kind": "clone",
+        "cmd": "git clone https://github.com/0xk1h0/ChatGPT_DAN.git",
+        "zip": "https://github.com/0xk1h0/ChatGPT_DAN/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기 (복제)",
+            "body": "아래 git 명령으로 통째로 받거나, ZIP 다운로드 버튼을 눌러 압축으로 받으세요."
+          },
+          {
+            "icon": "📂",
+            "title": "열기",
+            "body": "받은 폴더를 열고 README 파일을 먼저 읽으세요. 설치·실행법이 거기 있어요."
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Getting started' 단계를 따라 하면 됩니다."
+          }
+        ]
+      },
       "stars": 12632,
       "delta": 0,
       "lang": "—",
@@ -2520,6 +4182,28 @@
         "👍 검증된 인기",
         "🕸️ 1년+ 조용함"
       ],
+      "guide": {
+        "kind": "pip",
+        "cmd": "pip install LLMSurvey",
+        "zip": "https://github.com/RUCAIBox/LLMSurvey/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해서 터미널(명령 프롬프트)에 붙여넣고 엔터. 파이썬이 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "에러가 나면 README에 적힌 정확한 패키지 이름/추가 단계를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 'Usage' 또는 'Quick start' 예제를 그대로 따라 하면 첫 실행 끝."
+          }
+        ]
+      },
       "stars": 12234,
       "delta": 0,
       "lang": "Python",
@@ -2549,6 +4233,28 @@
       "why": [
         "👍 검증된 인기"
       ],
+      "guide": {
+        "kind": "npm",
+        "cmd": "npm install G0DM0D3",
+        "zip": "https://github.com/elder-plinius/G0DM0D3/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "⬇️",
+            "title": "받기",
+            "body": "아래 명령어를 복사해 터미널에 붙여넣기. Node.js가 깔려 있어야 해요."
+          },
+          {
+            "icon": "📂",
+            "title": "확인",
+            "body": "정확한 패키지명은 README를 확인하세요. (추정 명령어예요)"
+          },
+          {
+            "icon": "🚀",
+            "title": "실행",
+            "body": "README의 예제 코드를 복사해 돌려보면 됩니다."
+          }
+        ]
+      },
       "stars": 11824,
       "delta": 0,
       "lang": "TypeScript",
@@ -2572,6 +4278,23 @@
         "👍 검증된 인기",
         "🟢 활발히 관리 중"
       ],
+      "guide": {
+        "kind": "read",
+        "cmd": null,
+        "zip": "https://github.com/KalyanKS-NLP/llm-engineer-toolkit/archive/refs/heads/main.zip",
+        "steps": [
+          {
+            "icon": "📖",
+            "title": "읽기 자료예요",
+            "body": "설치할 게 아니라, 링크·자료가 정리된 모음집이에요. 그냥 열어서 필요한 걸 골라 쓰면 됩니다."
+          },
+          {
+            "icon": "🔖",
+            "title": "북마크 추천",
+            "body": "자주 볼 거면 즐겨찾기 해두세요. 설치/실행 과정은 없어요."
+          }
+        ]
+      },
       "stars": 10885,
       "delta": 0,
       "lang": "—",

@@ -107,9 +107,19 @@
           </div>
           ${descEn}
         </div>
-        <div class="ropen"><a href="${esc(it.url)}" target="_blank" rel="noopener">열기 ↗</a></div>
+        <div class="ropen">
+          <button class="rguide" data-rank="${it.rank}">▶ 공략집</button>
+          <a href="${esc(it.url)}" target="_blank" rel="noopener">열기 ↗</a>
+        </div>
       </div>`;
     }).join("");
+
+    // 공략집 버튼 연결
+    list.querySelectorAll(".rguide").forEach((b) =>
+      b.addEventListener("click", () => {
+        const it = FEED.items.find((x) => String(x.rank) === b.dataset.rank);
+        if (it) openQuest(it);
+      }));
   }
 
   // ---------- 추천 콘솔 (능글맞은 로컬 매칭, API 비용 0) ----------
@@ -163,6 +173,68 @@
 
   $("#askBtn").addEventListener("click", () => recommend($("#ask").value));
   $("#ask").addEventListener("keydown", (e) => { if (e.key === "Enter") recommend($("#ask").value); });
+
+  // ---------- 공략집 모달 ----------
+  function openQuest(it) {
+    const g = it.guide || {};
+    document.documentElement.style.setProperty("--accent", "#39ff14");
+    $("#qTitle").textContent = `#${it.rank}  ${it.name}`;
+    $("#qSum").textContent = it.summary_kr || it.desc || "";
+
+    // 단계들 (한 번에 한 STEP, 번호 매김)
+    const steps = g.steps || [];
+    $("#qSteps").innerHTML = steps.map((s, i) =>
+      `<div class="qstep" style="animation-delay:${i * 0.08}s">
+         <div class="qstep-n">${i + 1}</div>
+         <div class="qstep-b">
+           <div class="qstep-t">${esc(s.icon || "")} ${esc(s.title || "")}</div>
+           <div class="qstep-d">${esc(s.body || "")}</div>
+         </div>
+       </div>`).join("");
+
+    // 복사 명령어
+    const cmdWrap = $("#qCmdWrap");
+    if (g.cmd) {
+      cmdWrap.hidden = false;
+      $("#qCmd").textContent = g.cmd;
+    } else {
+      cmdWrap.hidden = true;
+    }
+
+    // ZIP 다운로드 (clone 류만 노출)
+    const zip = $("#qZip");
+    if (g.zip && (g.kind === "clone" || g.kind === "read")) {
+      zip.hidden = false; zip.href = g.zip;
+    } else {
+      zip.hidden = true;
+    }
+
+    $("#qOpen").href = it.url;
+    const q = $("#quest");
+    q.hidden = false;
+    document.body.style.overflow = "hidden";
+    $("#questX").focus();
+  }
+
+  function closeQuest() {
+    $("#quest").hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  $("#questX").addEventListener("click", closeQuest);
+  $("#quest").addEventListener("click", (e) => { if (e.target === $("#quest")) closeQuest(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("#quest").hidden) closeQuest(); });
+  $("#qCopy").addEventListener("click", async () => {
+    const txt = $("#qCmd").textContent;
+    try {
+      await navigator.clipboard.writeText(txt);
+      const b = $("#qCopy"); b.textContent = "복사됨 ✓"; b.classList.add("done");
+      setTimeout(() => { b.textContent = "복사"; b.classList.remove("done"); }, 1600);
+    } catch (e) {
+      const r = document.createRange(); r.selectNode($("#qCmd"));
+      window.getSelection().removeAllRanges(); window.getSelection().addRange(r);
+    }
+  });
 
   boot();
 })();
