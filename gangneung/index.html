@@ -711,7 +711,7 @@ const CURSOR=(function(){
 
   // 키로 말풍선 — 엄마처럼: 먼저 날씨 잔소리 → 그다음 커서 얘기
   const quest=document.getElementById("curQuest"),qText=document.getElementById("curQuestText"),qBtn=document.getElementById("curQuestBtn");
-  const pick=a=>a[Math.floor(Math.random()*a.length)];
+  const randPick=a=>a[Math.floor(Math.random()*a.length)];
   const ASK=[
     (c,o)=>`...그리고 뭘 봐. 커서 <b>${c.emoji} ${c.label}</b>잖아. ${o.emoji} <b>${o.label}</b>로 바꾸든가 말든가.`,
     (c,o)=>`아 커서. 지금 <b>${c.emoji} ${c.label}</b>도 뭐... 그래도 ${o.emoji} <b>${o.label}</b>가 낫긴 해.`,
@@ -728,10 +728,10 @@ const CURSOR=(function(){
     if(!quest)return;
     const cur=CURSOR.def(CURSOR.shape);
     const others=CURSOR.SHAPES.filter(s=>s.emoji&&s.id!==CURSOR.shape);
-    const o=pick(others);
-    qText.innerHTML=pick(ASK)(cur,o);
-    qBtn.style.display="";qBtn.textContent=`${o.emoji} ${pick(BTN)}`;
-    qBtn.onclick=()=>{CURSOR.setShape(o.id);sync();qText.innerHTML=pick(DONE)(o);qBtn.textContent="딴 거";qBtn.onclick=toCursorTalk;};
+    const o=randPick(others);
+    qText.innerHTML=randPick(ASK)(cur,o);
+    qBtn.style.display="";qBtn.textContent=`${o.emoji} ${randPick(BTN)}`;
+    qBtn.onclick=()=>{CURSOR.setShape(o.id);sync();qText.innerHTML=randPick(DONE)(o);qBtn.textContent="딴 거";qBtn.onclick=toCursorTalk;};
   }
   // 날씨 잔소리부터
   window.kiroSay=function(mode){
@@ -919,8 +919,8 @@ const CURSOR=(function(){
   const popX=document.getElementById("wxPopX");
   if(popX)popX.addEventListener("click",e=>{e.stopPropagation();closePop()});
   addEventListener("keydown",e=>{if(e.key==="Escape")closePop()});
-  // trip.start가 이미 있으면 바로, 없으면 로딩 상태 유지(trip 로드 후 호출됨)
-  if(window.trip&&trip.start)loadWeather();
+  // trip.start가 이미 있으면 바로 (let trip은 아래에서 선언되므로 window.trip로만 접근)
+  if(window.trip&&window.trip.start)loadWeather();
 })();
 
 const IDEAS=[["경포해변","관광"],["안목해변 커피거리","카페"],["오죽헌","관광"],["정동진","관광"],["주문진 수산시장","맛집"],["초당순두부마을","맛집"],["강문해변","관광"],["경포호","관광"],["강릉중앙시장","맛집"],["선교장","관광"],["하슬라아트월드","관광"],["사천해변","관광"]];
