@@ -127,18 +127,22 @@ button{cursor:pointer}
 
 /* 옷차림 말풍선 — 날씨 칩 바로 밑(상단 우측)에서 자동으로 톡 */
 .wx-pop{position:fixed;top:calc(54px + env(safe-area-inset-top,0px));right:calc(18px + env(safe-area-inset-right,0px));z-index:120;
-  width:max-content;max-width:min(84vw,320px);display:flex;gap:11px;align-items:flex-start;text-align:left;
+  width:max-content;max-width:min(86vw,330px);display:flex;flex-direction:column;gap:10px;text-align:left;
   background:var(--surface);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border:1px solid var(--line);border-radius:16px;padding:14px 38px 14px 15px;box-shadow:var(--shadow-md);
+  border:1px solid var(--line);border-radius:16px;padding:14px 15px 11px;box-shadow:var(--shadow-md);
   animation:wxpop .4s cubic-bezier(.22,1,.36,1)}
 .wx-pop[hidden]{display:none}
 /* 말풍선 꼬리 — 위(날씨 칩)를 가리킴 */
 .wx-pop::before{content:"";position:absolute;top:-8px;right:30px;width:15px;height:15px;background:var(--surface);
   border-left:1px solid var(--line);border-top:1px solid var(--line);transform:rotate(45deg)}
-.wx-pop-emo{font-size:30px;line-height:1.05;flex:none}
+.wx-pop-row{display:flex;gap:11px;align-items:flex-start}
+.wx-pop-tmr{padding-top:9px;border-top:1px dashed var(--line)}
+.wx-pop-emo{font-size:28px;line-height:1.05;flex:none}
 .wx-pop-body strong{display:block;font-size:13px;color:var(--ink);margin-bottom:3px}
 .wx-pop-body p{margin:0;font-size:12.5px;line-height:1.55;color:var(--muted);white-space:normal}
-.wx-pop-x{position:absolute;top:8px;right:10px;background:none;border:0;font-size:18px;line-height:1;color:var(--muted);padding:2px}
+.wx-pop-src{font-size:10.5px;color:var(--muted);text-decoration:none;letter-spacing:.01em;opacity:.85}
+.wx-pop-src:hover{color:var(--accent);text-decoration:underline}
+.wx-pop-x{position:absolute;top:8px;right:10px;background:none;border:0;font-size:18px;line-height:1;color:var(--muted);padding:2px;z-index:1}
 .wx-pop-x:hover{color:var(--ink)}
 @keyframes wxpop{from{opacity:0;transform:translateY(-12px) scale(.96)}to{opacity:1;transform:none}}
 @media (max-width:600px){.wx-pop{top:auto;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:14px;right:14px;max-width:none}
@@ -232,13 +236,24 @@ button{cursor:pointer}
 .mapbox{background:var(--surface);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-sm)}
 .maphead{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:10px 12px;border-bottom:1px solid var(--line)}
 .maphead h2{font-family:var(--display);font-weight:700;font-size:15px;margin:0 8px 0 0;letter-spacing:-0.01em}
+/* 지도 접기/펴기 토글 */
+.map-toggle{margin-left:auto;display:inline-flex;align-items:center;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:12px;color:var(--muted);transition:border-color .2s,color .2s}
+.map-toggle:hover{border-color:var(--accent);color:var(--ink)}
+.map-toggle .arr{display:inline-block;transition:transform .3s ease;font-size:14px;line-height:1}
+.mapbox.compact .map-toggle .arr{transform:rotate(180deg)}
+.mapbox.compact .map-toggle .lbl::after{content:"지도 펼치기"}
+.mapbox:not(.compact) .map-toggle .lbl::after{content:"지도 접기"}
+/* 접힌 상태: 지도+노트 숨기고 헤더만 */
+.mapwrap,.mapnote{transition:max-height .4s ease,opacity .3s ease,padding .3s ease}
+.mapbox.compact .mapwrap{max-height:0;opacity:0;overflow:hidden}
+.mapbox.compact .mapnote{max-height:0;opacity:0;overflow:hidden;padding:0 12px}
 .dchip{border:1px solid var(--line);background:none;border-radius:999px;padding:4px 11px;font-size:12px;display:inline-flex;gap:6px;align-items:center;color:var(--ink);font-variant-numeric:tabular-nums;transition:border-color .15s,background .15s}
 .dchip:hover{border-color:var(--accent)}
 .dchip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-weak);color:var(--accent);font-weight:600}
 .dchip .km{color:var(--muted);font-weight:400}
 .dot{width:9px;height:9px;border-radius:50%;flex:none}
 .mapwrap{position:relative;background:var(--map-bg);overflow:hidden;touch-action:none}
-#map svg{display:block;width:100%;height:auto;max-height:72vh;transform-origin:0 0;will-change:transform}
+#map svg{display:block;width:100%;height:auto;max-height:46vh;transform-origin:0 0;will-change:transform}
 #map.zoomed svg{cursor:grab}
 #map .mk{cursor:pointer}
 #map.picking svg{cursor:crosshair;outline:2px solid var(--accent);outline-offset:-2px}
@@ -288,8 +303,8 @@ button{cursor:pointer}
   .detail{padding:11px;gap:9px}
   .mapbox{border-radius:16px}
   .maphead h2{font-size:14px}
-  /* 모바일 지도: 더 키우고 라벨 글자도 크게 */
-  #map svg{max-height:72vh}
+  /* 모바일 지도: 접기 전 기본 높이 + 라벨 글자 크게 */
+  #map svg{max-height:52vh}
   #map .pl{font-size:17px;stroke-width:5px}
   #map .ref{font-size:14px}
   #map .sea-l{font-size:22px}
@@ -357,14 +372,24 @@ button{cursor:pointer}
     </div>
   </header>
 
-  <!-- 옷차림 제안 토스트 (들어오면 자동으로 톡) -->
+  <!-- 옷차림 제안 토스트 (들어오면 자동으로 톡) · 오늘 + 내일 -->
   <div class="wx-pop" id="wxPop" role="status" hidden>
-    <div class="wx-pop-emo" id="wxPopEmo">🧥</div>
-    <div class="wx-pop-body">
-      <strong id="wxPopTitle">오늘의 옷차림</strong>
-      <p id="wxPopText">날씨를 불러오면 추천해 드려요.</p>
-    </div>
     <button class="wx-pop-x" id="wxPopX" type="button" aria-label="닫기">×</button>
+    <div class="wx-pop-row">
+      <div class="wx-pop-emo" id="wxPopEmo">🧥</div>
+      <div class="wx-pop-body">
+        <strong id="wxPopTitle">오늘의 옷차림</strong>
+        <p id="wxPopText">날씨를 불러오면 추천해 드려요.</p>
+      </div>
+    </div>
+    <div class="wx-pop-row wx-pop-tmr" id="wxPopTmrRow">
+      <div class="wx-pop-emo" id="wxPopTmEmo">🧥</div>
+      <div class="wx-pop-body">
+        <strong id="wxPopTmTitle">내일</strong>
+        <p id="wxPopTmText">—</p>
+      </div>
+    </div>
+    <a class="wx-pop-src" id="wxPopSrc" href="https://search.naver.com/search.naver?query=강릉+날씨" target="_blank" rel="noopener">출처 · 기상청·Open-Meteo 기준 · 네이버 날씨</a>
   </div>
 
   <p class="board-label"><span>THE MAP</span><em>강릉 일대</em></p>
@@ -579,6 +604,7 @@ const INK=(function(){
   }
   const tmEmo=document.getElementById("wxTmEmo"),tmT=document.getElementById("wxTmTemp");
   const pop=document.getElementById("wxPop"),popEmo=document.getElementById("wxPopEmo"),popTitle=document.getElementById("wxPopTitle"),popText=document.getElementById("wxPopText");
+  const popTmEmo=document.getElementById("wxPopTmEmo"),popTmTitle=document.getElementById("wxPopTmTitle"),popTmText=document.getElementById("wxPopTmText"),popSrc=document.getElementById("wxPopSrc");
   // 기온별 옷차림 제안 (최고기온 기준)
   function outfit(hi,code){
     const rain=[51,53,55,56,57,61,63,65,66,67,80,81,82].includes(code);
@@ -608,20 +634,26 @@ const INK=(function(){
     tEl.textContent=(isFinite(t)?t:"–")+"°";
     dEl.textContent=desc+((hi!=null&&lo!=null)?` ${hi}°/${lo}°`:"");
     // 내일
+    let hi2,lo2,code2;
     if(day.weather_code&&day.weather_code.length>1){
       const [emo2,desc2]=wmo(day.weather_code[1],true);
-      const hi2=Math.round(day.temperature_2m_max[1]),lo2=Math.round(day.temperature_2m_min[1]);
+      hi2=Math.round(day.temperature_2m_max[1]);lo2=Math.round(day.temperature_2m_min[1]);code2=day.weather_code[1];
       if(tmEmo)tmEmo.textContent=emo2;
       if(tmT)tmT.textContent=`${hi2}°/${lo2}°`;
       el.title=`오늘 강릉 ${desc} ${isFinite(t)?t+"°":""} (${hi}°/${lo}°) · 내일 ${desc2} (${hi2}°/${lo2}°)`;
     }
-    // 옷차림 추천 채우고 → 들어오자마자 자동으로 토스트 띄움
+    // 옷차림 추천(오늘+내일) 채우고 → 들어오자마자 자동으로 토스트 띄움
     if(pop&&hi!=null){
       const [oe,ot]=outfit(hi,cur.weather_code);
       popEmo.textContent=oe;popTitle.textContent=`오늘 ${hi}° · 이렇게 입어요`;popText.textContent=ot;
+      if(hi2!=null){
+        const [oe2,ot2]=outfit(hi2,code2);
+        popTmEmo.textContent=oe2;popTmTitle.textContent=`내일 ${hi2}° · 이렇게 입어요`;popTmText.textContent=ot2;
+      }
+      if(popSrc)popSrc.href="https://search.naver.com/search.naver?query="+encodeURIComponent("강릉 날씨");
       pop.hidden=false;                 // 자동 등장
       clearTimeout(pop._t);
-      pop._t=setTimeout(closePop,16000); // 16초 뒤 자동 사라짐
+      pop._t=setTimeout(closePop,22000); // 22초 뒤 자동 사라짐 (오늘+내일 읽을 시간)
     }
     el.classList.remove("loading");
   }).catch(()=>{
@@ -630,7 +662,7 @@ const INK=(function(){
   });
   function closePop(){if(pop){clearTimeout(pop._t);pop.hidden=true}}
   // 날씨 칩을 누르면 옷차림 토스트 다시 띄움
-  el.addEventListener("click",()=>{if(pop&&popText.textContent){pop.hidden=false;clearTimeout(pop._t);pop._t=setTimeout(closePop,16000)}});
+  el.addEventListener("click",()=>{if(pop&&popText.textContent){pop.hidden=false;clearTimeout(pop._t);pop._t=setTimeout(closePop,22000)}});
   const popX=document.getElementById("wxPopX");
   if(popX)popX.addEventListener("click",e=>{e.stopPropagation();closePop()});
   addEventListener("keydown",e=>{if(e.key==="Escape")closePop()});
@@ -743,6 +775,7 @@ function renderMap(){
     const st=routeStops(d);let dist=0;for(let i=1;i<st.length;i++)dist+=km(st[i-1],st[i]);
     chips+=`<button class="dchip" data-md="${d}" aria-pressed="${mapDay===String(d)}"><span class="dot" style="background:${DAYC(d)}"></span>${dayLabel(d).t}${st.length>1?` <span class="km">${dist.toFixed(1)}km</span>`:""}</button>`;
   }
+  chips+=`<button class="map-toggle" id="mapToggle" type="button" aria-label="지도 접기/펼치기"><span class="arr">⌃</span><span class="lbl"></span></button>`;
   $("#mapHead").innerHTML=chips;
   if(mapDay!=="all"&&!days.includes(+mapDay))mapDay="all";
 
@@ -898,7 +931,9 @@ $("#board").addEventListener("change",e=>{
   const v=f==="day"?+e.target.value:f==="cand"?e.target.checked:e.target.value;
   patch(id,{[f]:v});
 });
-$("#mapHead").addEventListener("click",e=>{const b=e.target.closest("[data-md]");if(b){mapDay=b.dataset.md;renderMap()}});
+$("#mapHead").addEventListener("click",e=>{
+  if(e.target.closest("#mapToggle")){document.querySelector(".mapbox").classList.toggle("compact");return;}
+  const b=e.target.closest("[data-md]");if(b){mapDay=b.dataset.md;renderMap()}});
 function openFromMap(id){openId=id;render();loadNames();const c=document.querySelector(`.card[data-id="${CSS.escape(id)}"]`);c?.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth",block:"center"})}
 $("#map").addEventListener("click",e=>{
   if(pickId){const svg=$("#map svg");if(!svg||!proj)return;
