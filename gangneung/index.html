@@ -36,7 +36,8 @@ img{max-width:100%}
   --mint-bg:38,166,154;
   /* 동선(일차) — 농담만 다른 먹 톤 */
   --d0:#B6B7BA; --d1:#1C1D20; --d2:#6F7175;
-  --grad:linear-gradient(170deg,#FBFBFC 0%,#EFEFF1 48%,#E3E3E6 100%);
+  /* 레퍼런스 보라~민트 유동 그라데이션 (라이트: 파스텔) */
+  --grad:linear-gradient(155deg,#EAE3F6 0%,#E7E0F2 22%,#DCE8F0 46%,#DAEFE4 70%,#E6F3DE 100%);
   --ink-rgb:20,21,23;
   --blot1:38,166,154;   /* 배경 민트 웨시 (아주 옅게) */
   --blot2:226,59,46;    /* 빨강 (클릭 포인트) */
@@ -57,12 +58,12 @@ img{max-width:100%}
   --red:#FF5648;
   --mint-bg:45,212,191;
   --d0:#55575C; --d1:#ECECEE; --d2:#9A9CA1;
-  --grad:linear-gradient(170deg,#17181B 0%,#101113 50%,#0A0B0C 100%);
+  --grad:linear-gradient(155deg,#1A1026 0%,#2A1E3C 30%,#2E2A44 52%,#223A36 78%,#2C4A36 100%);
   --ink-rgb:236,236,238;
   --blot1:45,212,191;
   --blot2:255,86,72;
   --map-bg:#15302C; --map-land:#15302C; --map-sea:#0F2420; --map-ink:#CFEAE3; --map-line:#234B44;
-  --paper:#0E0F11;
+  --paper:#140C1E;
   --shadow-sm:0 2px 12px rgba(0,0,0,.4);
   --shadow-md:0 10px 30px rgba(0,0,0,.55);
   color-scheme:dark;
@@ -76,12 +77,12 @@ img{max-width:100%}
   --red:#FF5648;
   --mint-bg:45,212,191;
   --d0:#55575C; --d1:#ECECEE; --d2:#9A9CA1;
-  --grad:linear-gradient(170deg,#17181B 0%,#101113 50%,#0A0B0C 100%);
+  --grad:linear-gradient(155deg,#1A1026 0%,#2A1E3C 30%,#2E2A44 52%,#223A36 78%,#2C4A36 100%);
   --ink-rgb:236,236,238;
   --blot1:45,212,191;
   --blot2:255,86,72;
   --map-bg:#15302C; --map-land:#15302C; --map-sea:#0F2420; --map-ink:#CFEAE3; --map-line:#234B44;
-  --paper:#0E0F11;
+  --paper:#140C1E;
   --shadow-sm:0 2px 12px rgba(0,0,0,.4);
   --shadow-md:0 10px 30px rgba(0,0,0,.55);
   color-scheme:dark;
@@ -89,7 +90,7 @@ img{max-width:100%}
 *{box-sizing:border-box}
 body{background:var(--paper);background-image:var(--grad);background-attachment:fixed;color:var(--ink);font-family:var(--body);font-size:14px;line-height:1.62;-webkit-font-smoothing:antialiased;letter-spacing:0;position:relative;min-height:100vh;transition:background-color .4s ease,color .4s ease}
 /* 먹 번짐 캔버스: 가운데에서 계속 번지고, 마우스/터치에 반응 */
-#ink{position:fixed;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none;opacity:.9}
+#ink{position:fixed;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none;opacity:.5}
 .wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:26px 60px;display:flex;flex-direction:column;gap:20px}
 button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer}
@@ -200,11 +201,11 @@ button{cursor:pointer}
 .board-label em{font-style:normal;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.1em;color:var(--muted)}
 .board{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
 .day{display:flex;flex-direction:column;gap:8px;min-width:0;border-radius:18px;padding:14px 12px;position:relative;overflow:hidden}
-/* 1일차 민트코어 / 2일차 보라코어 배경 그라데이션 */
-.day[data-day="1"]{background:linear-gradient(160deg,#E8F6EF 0%,#D6EFD9 45%,#CFE8E4 100%)}
-.day[data-day="2"]{background:linear-gradient(160deg,#EFE7F6 0%,#E3DAF2 45%,#D9D2EC 100%)}
-:root[data-theme="dark"] .day[data-day="1"]{background:linear-gradient(160deg,#16302A 0%,#17382C 50%,#12292F 100%)}
-:root[data-theme="dark"] .day[data-day="2"]{background:linear-gradient(160deg,#241F38 0%,#2A2342 50%,#1E1B33 100%)}
+/* 1일차 민트코어 / 2일차 보라코어 배경 그라데이션 (진하게) */
+.day[data-day="1"]{background:linear-gradient(150deg,#9FE6C4 0%,#7FD7C7 40%,#AFE6A8 75%,#CFF0B0 100%)}
+.day[data-day="2"]{background:linear-gradient(150deg,#B9A6F0 0%,#9B86E6 42%,#C79BD8 75%,#E4C2E8 100%)}
+:root[data-theme="dark"] .day[data-day="1"]{background:linear-gradient(150deg,#114A3A 0%,#155A44 45%,#1E5A3A 100%)}
+:root[data-theme="dark"] .day[data-day="2"]{background:linear-gradient(150deg,#2E1F55 0%,#3A2A66 45%,#48306E 100%)}
 .day h2{font-family:var(--display);font-weight:800;font-size:15px;margin:0;display:flex;align-items:baseline;gap:8px;letter-spacing:.01em}
 .day h2 .date{font-family:var(--body);font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.02em}
 .day h2 .n{margin-left:auto;font-family:var(--body);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;font-weight:500}
@@ -354,13 +355,22 @@ button{cursor:pointer}
 #emo-cursor .ec.dot{border-radius:50%;background:var(--cur,var(--red))}
 @media (hover:hover) and (pointer:fine){ body.has-cursor{cursor:none} }
 
-/* 커서 퀘스트 토스트 */
-.cur-quest{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:140;
-  display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--surface);
-  padding:10px 14px;border-radius:999px;font-size:13px;box-shadow:var(--shadow-md);animation:wxpop .35s cubic-bezier(.22,1,.36,1);max-width:calc(100% - 28px)}
-.cur-quest[hidden]{display:none}
-.cur-quest b{font-weight:700}
-.cur-quest button{background:var(--surface);color:var(--ink);border:0;border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700;white-space:nowrap}
+/* 키로 + 말풍선 한 줄 배치 (말풍선이 키로 옆에 둥둥) */
+.kiro-row{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+.kiro-bubble{position:relative;max-width:230px;text-align:left;
+  background:var(--surface);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid var(--line);border-radius:18px;padding:12px 14px;box-shadow:var(--shadow-md);
+  animation:kbubble 3.4s ease-in-out infinite}
+.kiro-bubble[hidden]{display:none}
+.kiro-bubble::before{content:"";position:absolute;left:-8px;top:34px;width:14px;height:14px;background:var(--surface);
+  border-left:1px solid var(--line);border-bottom:1px solid var(--line);transform:rotate(45deg)}
+.kiro-bubble p{margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--ink)}
+.kiro-bubble b{font-weight:800}
+.kiro-bubble button{background:var(--ink);color:var(--surface);border:0;border-radius:999px;padding:6px 14px;font-size:12px;font-weight:700;white-space:nowrap}
+@keyframes kbubble{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@media (max-width:600px){.kiro-row{flex-direction:column;gap:8px}.kiro-bubble{max-width:min(86vw,300px)}
+  .kiro-bubble::before{left:50%;top:-8px;margin-left:-7px;border-left:1px solid var(--line);border-top:1px solid var(--line);border-bottom:none;transform:rotate(45deg)}}
+@media (prefers-reduced-motion:reduce){.kiro-bubble{animation:none}}
 </style>
 </head>
 <body>
@@ -369,7 +379,7 @@ button{cursor:pointer}
 
 <svg id="line-cursor" aria-hidden="true"><polyline id="lcLine" points=""></polyline><circle id="lcHead" r="3.5" cx="-10" cy="-10"></circle></svg>
 <div id="emo-cursor" aria-hidden="true"></div>
-<div class="cur-quest" id="curQuest" hidden><span id="curQuestText"></span><button type="button" id="curQuestBtn">바꾸기</button></div>
+
 
 <div class="wrap">
   <header class="masthead">
@@ -428,6 +438,7 @@ button{cursor:pointer}
     <!-- 가운데 정렬: 작은 GEO 라벨 → 둥근 키로 얼굴 -->
     <p class="eyebrow"><span class="geo">GEO</span><span class="geo-full">Gangneung Experience Observatory</span></p>
 
+    <div class="kiro-row">
     <div class="kiro" id="kiro" aria-label="키로 마스코트">
       <svg viewBox="0 0 240 240" role="img" aria-hidden="true">
         <defs>
@@ -453,6 +464,12 @@ button{cursor:pointer}
         <circle class="k-eye" id="kpL" cx="92" cy="120" r="15"/>
         <circle class="k-eye" id="kpR" cx="148" cy="120" r="15"/>
       </svg>
+    </div>
+    <!-- 키로 말풍선 (키로 옆에 둥둥) -->
+    <div class="kiro-bubble" id="curQuest" hidden>
+      <p id="curQuestText"></p>
+      <button type="button" id="curQuestBtn">바꾸기</button>
+    </div>
     </div>
     <div class="dateline">
       <span class="dl-no">DAY 01 — 02</span>
@@ -598,9 +615,10 @@ const CURSOR=(function(){
       if(shape==="dot"){
         const sz=Math.max(4,11-i*1.0);el.textContent="";
         el.style.width=el.style.height=sz+"px";el.style.fontSize="";
-      }else{ // emoji
+      }else{ // emoji — 색은 뒤에 번지는 글로우(오라)로 반영
         const sz=Math.max(12,26-i*1.8);el.textContent=d.emoji;
         el.style.width=el.style.height="";el.style.fontSize=sz+"px";
+        el.style.textShadow=`0 0 ${Math.round(sz*0.5)}px ${color}, 0 0 ${Math.round(sz*0.9)}px ${color}`;
       }
     });
   }
@@ -648,7 +666,7 @@ const CURSOR=(function(){
     get shape(){return shape}, get color(){return color},
     def,
     setShape(s){shape=s;try{localStorage.setItem("gn-cur-shape",s)}catch{};pts.length=0;styleNodes();kick();},
-    setColor(c){color=c;setColorVar();try{localStorage.setItem("gn-cur-color",c)}catch{};}
+    setColor(c){color=c;setColorVar();try{localStorage.setItem("gn-cur-color",c)}catch{};styleNodes();}
   };
 })();
 
@@ -673,19 +691,21 @@ const CURSOR=(function(){
   });
   document.addEventListener("click",e=>{if(!pick.hidden&&!pick.contains(e.target)&&e.target!==btn&&!btn.contains(e.target))pick.hidden=true;});
 
-  // 첫 방문 퀘스트: "지금은 OO 커서! △△ 커서로 바꿔볼까요?"
+  // 키로 말풍선 퀘스트 — 들어올 때마다 키로 옆에 둥둥
   const quest=document.getElementById("curQuest"),qText=document.getElementById("curQuestText"),qBtn=document.getElementById("curQuestBtn");
-  if(CURSOR.firstTime&&quest){
-    const cur=CURSOR.def(CURSOR.shape);
-    // 다른 이모지 하나를 추천
-    const others=CURSOR.SHAPES.filter(s=>s.emoji&&s.id!==CURSOR.shape);
-    const pickOne=others[Math.floor(Math.random()*others.length)];
-    // 키로가 1인칭으로 말하는 톤
-    qText.innerHTML=`안녕, 나 <b>키로</b>야! 네 커서를 <b>${cur.emoji} ${cur.label}</b>로 정해봤어. ${pickOne.emoji} ${pickOne.label}가 더 좋으면 바꿔줄게!`;
+  if(quest){
+    function recommend(){
+      const cur=CURSOR.def(CURSOR.shape);
+      const others=CURSOR.SHAPES.filter(s=>s.emoji&&s.id!==CURSOR.shape);
+      const pickOne=others[Math.floor(Math.random()*others.length)];
+      qText.innerHTML=`안녕, 나 <b>키로</b>야! 지금 네 커서는 <b>${cur.emoji} ${cur.label}</b>야. ${pickOne.emoji} <b>${pickOne.label}</b>로 바꿔볼래?`;
+      qBtn.textContent=`${pickOne.emoji} 바꾸기`;
+      qBtn.onclick=()=>{CURSOR.setShape(pickOne.id);sync();
+        qText.innerHTML=`좋아! <b>${pickOne.emoji} ${pickOne.label}</b> 커서로 바꿨어 ✨ 마우스를 움직여봐~`;
+        qBtn.textContent="다른 거 볼래?";qBtn.onclick=recommend;};
+    }
+    recommend();
     quest.hidden=false;
-    qBtn.textContent=`${pickOne.emoji} 바꾸기`;
-    qBtn.addEventListener("click",()=>{CURSOR.setShape(pickOne.id);sync();qText.innerHTML=`좋아! <b>${pickOne.emoji} ${pickOne.label}</b> 커서로 바꿨어 ✨ 언제든 오른쪽 위에서 또 바꿀 수 있어!`;setTimeout(()=>{quest.hidden=true;},2600);});
-    setTimeout(()=>{quest.hidden=true;},14000);
   }
 })();
 
