@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
 <title>강릉 여행 계획</title>
 <meta name="theme-color" content="#F7F9FB" media="(prefers-color-scheme:light)">
 <meta name="theme-color" content="#141C22" media="(prefers-color-scheme:dark)">
@@ -164,8 +164,10 @@ button{cursor:pointer}
   border:1px solid var(--line);border-radius:14px;padding:10px;box-shadow:var(--shadow-md);min-width:148px;
   animation:wxpop .25s cubic-bezier(.22,1,.36,1)}
 .curpick[hidden]{display:none}
+.curpick{min-width:176px}
 .curpick .cp-row{display:flex;gap:6px}
-.cp-shapes button{flex:1;height:30px;border:1px solid var(--line);border-radius:8px;background:none;color:var(--ink);font-size:15px;line-height:1;transition:border-color .15s,background .15s}
+.cp-shapes{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
+.cp-shapes button{height:32px;border:1px solid var(--line);border-radius:8px;background:none;color:var(--ink);font-size:16px;line-height:1;padding:0;transition:border-color .15s,background .15s}
 .cp-shapes button[aria-pressed="true"]{border-color:var(--ink);background:var(--accent-weak)}
 .cp-colors{flex-wrap:wrap}
 .cp-colors button{width:24px;height:24px;border-radius:50%;border:2px solid transparent;padding:0;cursor:pointer}
@@ -264,10 +266,10 @@ button{cursor:pointer}
 .dchip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-weak);color:var(--accent);font-weight:600}
 .dchip .km{color:var(--muted);font-weight:400}
 .dot{width:9px;height:9px;border-radius:50%;flex:none}
-.mapwrap{position:relative;background:var(--map-bg);overflow:hidden;touch-action:none}
-/* 기본은 얇은 배너처럼, 펼치면 크게 */
-#map svg{display:block;width:100%;height:auto;max-height:230px;transform-origin:0 0;will-change:transform;transition:max-height .4s ease}
-.mapbox.expanded #map svg{max-height:62vh}
+/* 지도 컨테이너에 높이를 줘서 배너↔크게 전환 (SVG가 높이에 맞춰 채움) */
+.mapwrap{position:relative;background:var(--map-bg);overflow:hidden;touch-action:none;height:230px;transition:height .4s ease}
+.mapbox.expanded .mapwrap{height:62vh}
+#map,#map svg{display:block;width:100%;height:100%;transform-origin:0 0;will-change:transform}
 #map.zoomed svg{cursor:grab}
 #map .mk{cursor:pointer}
 #map.picking svg{cursor:crosshair;outline:2px solid var(--accent);outline-offset:-2px}
@@ -296,7 +298,8 @@ button{cursor:pointer}
   #fDay{order:1}#fCat{order:2}#fTime{order:3}.fcand{order:4}.add form .memo{order:5}.add form .btn{order:6}
   .add form .memo{grid-column:1/4}
   .add form .btn{grid-column:4/5;padding-inline:14px}
-  .add input,.add select{padding:8px 9px;font-size:15px}
+  .add input,.add select{padding:8px 9px;font-size:16px}  /* iOS 자동확대 방지(16px) */
+  .dateline input,.trip input{font-size:16px}
   .fcand{padding:0 9px;font-size:13px}
   .ideas{flex-wrap:nowrap;overflow-x:auto;padding-bottom:2px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .ideas::-webkit-scrollbar{display:none}
@@ -318,8 +321,8 @@ button{cursor:pointer}
   .mapbox{border-radius:16px}
   .maphead h2{font-size:14px}
   /* 모바일 지도: 배너 높이 + 펼치면 크게, 라벨 글자 크게 */
-  #map svg{max-height:260px}
-  .mapbox.expanded #map svg{max-height:72vh}
+  .mapwrap{height:240px}
+  .mapbox.expanded .mapwrap{height:76vh}
   #map .pl{font-size:17px;stroke-width:5px}
   #map .ref{font-size:14px}
   #map .sea-l{font-size:22px}
@@ -333,19 +336,32 @@ button{cursor:pointer}
   .add form .btn{grid-column:3/4}
 }
 
-/* ---- 커스텀 커서: 모양(선/점/하트) + 색 선택 ---- */
+/* ---- 커스텀 커서: 선/점 + 이모지(고양이·강아지·하트·꽃·악마·천사…) ---- */
 #line-cursor{position:fixed;inset:0;z-index:9999;pointer-events:none;width:100%;height:100%}
 #line-cursor #lcLine{fill:none;stroke:var(--cur,var(--red));stroke-width:2;stroke-linejoin:miter;stroke-linecap:round;vector-effect:non-scaling-stroke}
 #lcHead{fill:var(--cur,var(--red))}
-#lcHeart{fill:var(--cur,var(--red))}
+/* 이모지 트레일: 점들이 졸졸졸 지연 추적 */
+#emo-cursor{position:fixed;inset:0;z-index:9999;pointer-events:none}
+#emo-cursor .ec{position:absolute;top:0;left:0;will-change:transform;opacity:0;line-height:1;transform:translate(-50%,-50%)}
+#emo-cursor .ec.dot{border-radius:50%;background:var(--cur,var(--red))}
 @media (hover:hover) and (pointer:fine){ body.has-cursor{cursor:none} }
+
+/* 커서 퀘스트 토스트 */
+.cur-quest{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:140;
+  display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--surface);
+  padding:10px 14px;border-radius:999px;font-size:13px;box-shadow:var(--shadow-md);animation:wxpop .35s cubic-bezier(.22,1,.36,1);max-width:calc(100% - 28px)}
+.cur-quest[hidden]{display:none}
+.cur-quest b{font-weight:700}
+.cur-quest button{background:var(--surface);color:var(--ink);border:0;border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700;white-space:nowrap}
 </style>
 </head>
 <body>
 
 <canvas id="ink" aria-hidden="true"></canvas>
 
-<svg id="line-cursor" aria-hidden="true"><polyline id="lcLine" points=""></polyline><path id="lcHeart" d="" style="display:none"></path><circle id="lcHead" r="3.5" cx="-10" cy="-10"></circle></svg>
+<svg id="line-cursor" aria-hidden="true"><polyline id="lcLine" points=""></polyline><circle id="lcHead" r="3.5" cx="-10" cy="-10"></circle></svg>
+<div id="emo-cursor" aria-hidden="true"></div>
+<div class="cur-quest" id="curQuest" hidden><span id="curQuestText"></span><button type="button" id="curQuestBtn">바꾸기</button></div>
 
 <div class="wrap">
   <header class="masthead">
@@ -510,75 +526,116 @@ const INK=(function(){
   return {spawn,splash,toLocal:(x,y)=>{const r=cv.getBoundingClientRect();return [x-r.left,y-r.top]}};
 })();
 
-/* ---- 커스텀 커서: 모양(선/점/하트) + 색을 고를 수 있음. 궤적이 길게 남았다 페이드 ---- */
+/* ---- 커스텀 커서: 선 / 점 / 이모지(고양이·강아지…) — 모두 '졸졸졸' 지연 추적 ---- */
 const CURSOR=(function(){
   const fine=matchMedia("(hover:hover) and (pointer:fine)").matches;
-  const svg=document.getElementById("line-cursor");
-  if(!svg)return null;
-  const poly=document.getElementById("lcLine"),head=document.getElementById("lcHead"),heart=document.getElementById("lcHeart");
+  const svg=document.getElementById("line-cursor"),emoWrap=document.getElementById("emo-cursor");
+  if(!svg||!emoWrap)return null;
+  const poly=document.getElementById("lcLine"),head=document.getElementById("lcHead");
   if(fine)document.body.classList.add("has-cursor");
-  // 저장된 취향 불러오기
+  // 고를 수 있는 커서들 (emoji면 그 글자, dot/line은 특수)
+  const SHAPES=[
+    {id:"cat",   emoji:"🐱", label:"고양이"},
+    {id:"dog",   emoji:"🐶", label:"강아지"},
+    {id:"heart", emoji:"🩷", label:"하트"},
+    {id:"flower",emoji:"🌸", label:"꽃"},
+    {id:"devil", emoji:"😈", label:"악마"},
+    {id:"angel", emoji:"😇", label:"천사"},
+    {id:"star",  emoji:"⭐", label:"별"},
+    {id:"dot",   emoji:"",   label:"점"},
+    {id:"line",  emoji:"",   label:"선"}
+  ];
   const PAL=["#E2231A","#1E88E5","#17B9A6","#8E5CF6","#F39C12","#EC407A","#111111"];
-  let shape="line",color="#E2231A";
-  try{const sv=localStorage.getItem("gn-cur-shape");if(sv)shape=sv;const cv=localStorage.getItem("gn-cur-color");if(cv)color=cv;}catch{}
+  let shape,color="#E2231A";
+  try{const cv=localStorage.getItem("gn-cur-color");if(cv)color=cv;}catch{}
+  // 저장된 모양 없으면 랜덤 자동배정 (게임 퀘스트 느낌)
+  let firstTime=false;
+  try{shape=localStorage.getItem("gn-cur-shape");}catch{}
+  if(!shape){firstTime=true;shape=SHAPES[Math.floor(Math.random()*6)].id;} // 이모지 중 랜덤
   function setColorVar(){document.documentElement.style.setProperty("--cur",color);}
   setColorVar();
-  const pts=[];
-  const TAIL=90,LIFE=1600,MINSEG=7;
+  function def(id){return SHAPES.find(s=>s.id===id)||SHAPES[0];}
+
+  // 이모지 트레일용 점(요소) 풀
+  const N=8;                 // 꼬리 길이 (졸졸졸)
+  const nodes=[];
+  for(let i=0;i<N;i++){const el=document.createElement("div");el.className="ec";emoWrap.appendChild(el);nodes.push({el,x:innerWidth/2,y:innerHeight/2});}
+  // 선(line) 모드용 궤적
+  const pts=[];const TAIL=90,LIFE=1600,MINSEG=7;
   let mx=innerWidth/2,my=innerHeight/2,have=false,raf=null;
-  // 하트 path (중심 cx,cy, 크기 s)
-  function heartPath(cx,cy,s){
-    return `M${cx} ${cy+ s*0.3} C ${cx- s} ${cy- s*0.5}, ${cx- s*0.5} ${cy- s}, ${cx} ${cy- s*0.4} C ${cx+ s*0.5} ${cy- s}, ${cx+ s} ${cy- s*0.5}, ${cx} ${cy+ s*0.3} Z`;
+
+  function styleNodes(){
+    const d=def(shape);
+    nodes.forEach((n,i)=>{
+      const el=n.el;el.className="ec"+(shape==="dot"?" dot":"");
+      if(shape==="line"){el.style.display="none";return;}
+      el.style.display="";
+      if(shape==="dot"){
+        const sz=Math.max(4,11-i*1.0);el.textContent="";
+        el.style.width=el.style.height=sz+"px";el.style.fontSize="";
+      }else{ // emoji
+        const sz=Math.max(12,26-i*1.8);el.textContent=d.emoji;
+        el.style.width=el.style.height="";el.style.fontSize=sz+"px";
+      }
+    });
   }
-  function push(x,y){
-    mx=x;my=y;have=true;
+  styleNodes();
+
+  function pushLine(x,y){
     const last=pts[pts.length-1];
-    if(!last||Math.hypot(mx-last.x,my-last.y)>=MINSEG){pts.push({x:mx,y:my,t:performance.now()});if(pts.length>TAIL)pts.shift();}
-    else{last.x=mx;last.y=my;last.t=performance.now();}
-    kick();
+    if(!last||Math.hypot(x-last.x,y-last.y)>=MINSEG){pts.push({x,y,t:performance.now()});if(pts.length>TAIL)pts.shift();}
+    else{last.x=x;last.y=y;last.t=performance.now();}
   }
-  function draw(){
-    const now=performance.now();
-    while(pts.length&&now-pts[0].t>LIFE)pts.shift();
-    // 모양별 머리 표시
+  function frame(){
     if(shape==="line"){
-      poly.style.display="";head.style.display="";heart.style.display="none";
+      emoWrap.style.display="none";svg.style.display="";
+      const now=performance.now();while(pts.length&&now-pts[0].t>LIFE)pts.shift();
       const all=pts.concat(have?[{x:mx,y:my}]:[]);
       poly.setAttribute("points",all.map(p=>p.x+","+p.y).join(" "));
       if(have){head.setAttribute("cx",mx);head.setAttribute("cy",my)}else{head.setAttribute("cx",-10);head.setAttribute("cy",-10)}
-    }else if(shape==="dot"){
-      poly.style.display="none";heart.style.display="none";head.style.display="";head.setAttribute("r","6");
-      if(have){head.setAttribute("cx",mx);head.setAttribute("cy",my)}else{head.setAttribute("cx",-10);head.setAttribute("cy",-10)}
-    }else{ // heart
-      poly.style.display="none";head.style.display="none";heart.style.display="";
-      heart.setAttribute("d", have?heartPath(mx,my,9):"");
+      if(pts.length>0){raf=requestAnimationFrame(frame)}else raf=null;
+      return;
     }
-    if(shape==="line"&&pts.length>0){raf=requestAnimationFrame(draw)}else{raf=null}
+    // dot/emoji: 각 노드가 앞 노드를 지연 추적 → 졸졸졸
+    svg.style.display="none";emoWrap.style.display="";
+    let px=mx,py=my,moving=false;
+    for(let i=0;i<N;i++){
+      const n=nodes[i];n.x+=(px-n.x)*0.32;n.y+=(py-n.y)*0.32;
+      n.el.style.transform=`translate(${n.x}px,${n.y}px) translate(-50%,-50%)`;
+      n.el.style.opacity=have?String(1-i/(N+2)):"0";
+      if(Math.abs(px-n.x)>0.2||Math.abs(py-n.y)>0.2)moving=true;
+      px=n.x;py=n.y;
+    }
+    if(moving){raf=requestAnimationFrame(frame)}else raf=null;
   }
-  function kick(){if(!raf)raf=requestAnimationFrame(draw)}
-  function clear(){pts.length=0;have=false;draw();}
-  addEventListener("mousemove",e=>push(e.clientX,e.clientY),{passive:true});
+  function kick(){if(!raf)raf=requestAnimationFrame(frame)}
+  function onMove(x,y){mx=x;my=y;have=true;if(shape==="line")pushLine(x,y);kick();}
+  function clear(){have=false;pts.length=0;nodes.forEach(n=>n.el.style.opacity="0");if(shape==="line"){poly.setAttribute("points","");head.setAttribute("cx",-10);head.setAttribute("cy",-10)}}
+  addEventListener("mousemove",e=>onMove(e.clientX,e.clientY),{passive:true});
   addEventListener("mousedown",e=>{if(INK){const [x,y]=INK.toLocal(e.clientX,e.clientY);INK.splash(x,y,1.0,1)}});
   document.addEventListener("mouseleave",clear);
-  addEventListener("touchstart",e=>{const t=e.touches[0];if(!t)return;push(t.clientX,t.clientY);
-    if(INK){const [x,y]=INK.toLocal(t.clientX,t.clientY);INK.splash(x,y,1.1,1)}},{passive:true});
-  addEventListener("touchmove",e=>{const t=e.touches[0];if(!t)return;push(t.clientX,t.clientY)},{passive:true});
+  addEventListener("touchstart",e=>{const t=e.touches[0];if(!t)return;onMove(t.clientX,t.clientY);if(INK){const [x,y]=INK.toLocal(t.clientX,t.clientY);INK.splash(x,y,1.1,1)}},{passive:true});
+  addEventListener("touchmove",e=>{const t=e.touches[0];if(!t)return;onMove(t.clientX,t.clientY)},{passive:true});
   addEventListener("touchend",()=>{have=false;kick()},{passive:true});
-  draw();
+  kick();
   return {
-    PAL,
+    SHAPES,PAL,firstTime,
     get shape(){return shape}, get color(){return color},
-    setShape(s){shape=s;try{localStorage.setItem("gn-cur-shape",s)}catch{};draw();},
+    def,
+    setShape(s){shape=s;try{localStorage.setItem("gn-cur-shape",s)}catch{};pts.length=0;styleNodes();kick();},
     setColor(c){color=c;setColorVar();try{localStorage.setItem("gn-cur-color",c)}catch{};}
   };
 })();
 
-/* ---- 커서 꾸미기 피커 ---- */
+/* ---- 커서 꾸미기 피커 + 첫 방문 퀘스트 ---- */
 (function(){
   const btn=document.getElementById("curBtn"),pick=document.getElementById("curPick");
   if(!btn||!pick||!CURSOR)return;
-  const colorsWrap=document.getElementById("cpColors");
-  // 색 버튼 생성
+  const shapesWrap=pick.querySelector(".cp-shapes"),colorsWrap=document.getElementById("cpColors");
+  // 모양 버튼 생성 (이모지 라벨)
+  shapesWrap.innerHTML="";
+  CURSOR.SHAPES.forEach(s=>{const b=document.createElement("button");b.type="button";b.dataset.shape=s.id;b.title=s.label;
+    b.textContent=s.emoji||(s.id==="dot"?"●":"／");shapesWrap.appendChild(b);});
   CURSOR.PAL.forEach(c=>{const b=document.createElement("button");b.type="button";b.style.background=c;b.dataset.color=c;b.title=c;colorsWrap.appendChild(b);});
   function sync(){
     pick.querySelectorAll(".cp-shapes button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.shape===CURSOR.shape)));
@@ -590,6 +647,19 @@ const CURSOR=(function(){
     const cb=e.target.closest("[data-color]");if(cb){CURSOR.setColor(cb.dataset.color);sync();return;}
   });
   document.addEventListener("click",e=>{if(!pick.hidden&&!pick.contains(e.target)&&e.target!==btn&&!btn.contains(e.target))pick.hidden=true;});
+
+  // 첫 방문 퀘스트: "지금은 OO 커서! △△ 커서로 바꿔볼까요?"
+  const quest=document.getElementById("curQuest"),qText=document.getElementById("curQuestText"),qBtn=document.getElementById("curQuestBtn");
+  if(CURSOR.firstTime&&quest){
+    const cur=CURSOR.def(CURSOR.shape);
+    // 다른 이모지 하나를 추천
+    const others=CURSOR.SHAPES.filter(s=>s.emoji&&s.id!==CURSOR.shape);
+    const pickOne=others[Math.floor(Math.random()*others.length)];
+    qText.innerHTML=`지금 커서는 <b>${cur.emoji} ${cur.label}</b>! ${pickOne.emoji} ${pickOne.label}로 바꿔볼까요?`;
+    quest.hidden=false;
+    qBtn.addEventListener("click",()=>{CURSOR.setShape(pickOne.id);sync();quest.hidden=true;});
+    setTimeout(()=>{quest.hidden=true;},12000);
+  }
 })();
 
 /* ---- 키로 마스코트: 점 눈이 마우스를 따라 움직임, 클릭하면 깜빡 + 번짐 ---- */
@@ -857,7 +927,7 @@ function renderMap(){
   proj={W,H,k,s,cLat,cLng};
   const pos=p=>{const x=X(p.lng),y=Y(p.lat),dx=x-W/2,dy=y-H/2,m=28;const t=Math.min(dx?(W/2-m)/Math.abs(dx):Infinity,dy?(H/2-m)/Math.abs(dy):Infinity);return t<1?{x:+(W/2+dx*t).toFixed(1),y:+(H/2+dy*t).toFixed(1),far:true}:{x,y,far:false}};
   const P=pts=>pts.map(([a,g])=>X(g)+","+Y(a)).join(" ");
-  let svg=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="강릉 지도에 표시한 장소">
+  let svg=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="강릉 지도에 표시한 장소">
     <rect width="${W}" height="${H}" fill="var(--map-land)"/>
     <polyline points="${P(RIVER)}" fill="none" stroke="var(--map-sea)" stroke-width="${Math.max(2,s*0.0009)}" stroke-linecap="round"/>
     <ellipse cx="${X(128.8985)}" cy="${Y(37.7955)}" rx="${(0.0065*k*s).toFixed(1)}" ry="${(0.0045*s).toFixed(1)}" fill="var(--map-sea)"/>
