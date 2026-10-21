@@ -92,19 +92,21 @@ button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;border-bottom:1px solid var(--line);padding-bottom:18px}
-h1{font-family:var(--display);font-weight:800;font-size:clamp(20px,2.8vw,26px);line-height:1.22;margin:0;text-wrap:balance;letter-spacing:.005em;display:flex;flex-wrap:wrap;align-items:baseline;gap:0 10px}
-h1 small{flex-basis:100%;display:block;font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:7px;text-transform:uppercase}
-h1 small::before{content:"";display:inline-block;width:14px;height:2px;background:var(--red);vertical-align:middle;margin-right:7px;margin-bottom:3px}
-h1 .title-main{color:var(--ink)}
-.trip{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:13px;color:var(--muted)}
-.trip label{display:flex;align-items:center;gap:6px}
-.trip input{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:5px 8px}
-.trip input[type=number]{width:60px}
+/* ===== 에디토리얼 마스트헤드 (비대칭·탈전형) ===== */
+.masthead{position:relative;padding:14px 0 26px;margin-bottom:6px;border-bottom:1px solid var(--line)}
+.eyebrow{display:flex;align-items:baseline;gap:12px;margin:0 0 6px}
+.eyebrow .geo{font-family:var(--display);font-weight:800;font-size:clamp(34px,8vw,64px);line-height:.8;color:var(--red);letter-spacing:.02em}
+.eyebrow .geo-full{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:700}
+/* 큰 명조 타이틀을 오른쪽으로 밀어 비대칭 */
+.masthead-t{font-family:var(--display);font-weight:800;font-size:clamp(40px,10vw,84px);line-height:.98;margin:2px 0 0;
+  letter-spacing:-.01em;text-align:right;color:var(--ink)}
+.dateline{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:18px;font-size:12px;color:var(--muted)}
+.dateline .dl-no{font-family:var(--display);font-weight:700;letter-spacing:.1em;color:var(--ink)}
+.dateline label{display:inline-flex;align-items:center;gap:7px;letter-spacing:.08em}
+.dateline input{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:5px 8px}
 .status{font-size:12px;color:var(--muted)}
-
-/* 날씨 + 테마 토글 */
-.hbar{display:flex;align-items:center;gap:8px}
+/* 메타: 오른쪽 상단에 흩뿌림 */
+.meta{position:absolute;top:14px;right:0;display:flex;align-items:center;gap:8px;z-index:5}
 .weather{display:inline-flex;align-items:center;gap:10px;background:var(--surface);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:12px;color:var(--ink);box-shadow:var(--shadow-sm);white-space:nowrap}
 .weather .wx-now,.weather .wx-tmr{display:inline-flex;align-items:center;gap:6px}
 .weather .wx-tmr{padding-left:10px;border-left:1px solid var(--line);color:var(--muted)}
@@ -115,22 +117,22 @@ h1 .title-main{color:var(--ink)}
 .weather .wx-desc{color:var(--muted)}
 .weather.loading .wx-tmr{display:none}
 .weather.loading{color:var(--muted)}
-.weather{position:relative;cursor:pointer}
-.wx-chevron{color:var(--muted);transform:rotate(90deg);font-size:15px;line-height:1;transition:transform .25s ease;margin-left:2px}
-.weather.pop-open .wx-chevron{transform:rotate(-90deg)}
-/* 옷차림 팝업 — 채팅 말풍선 */
-.wx-pop{position:absolute;top:calc(100% + 10px);left:0;z-index:60;width:max-content;max-width:min(78vw,300px);
-  display:flex;gap:10px;align-items:flex-start;text-align:left;
-  background:var(--surface);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  border:1px solid var(--line);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow-md);
-  animation:wxpop .28s cubic-bezier(.22,1,.36,1)}
+
+/* 옷차림 토스트 — 들어오면 자동으로 톡 (화면 고정, 안 가림) */
+.wx-pop{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:120;
+  width:max-content;max-width:min(84vw,320px);display:flex;gap:11px;align-items:flex-start;text-align:left;
+  background:var(--surface);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid var(--line);border-radius:16px;padding:14px 38px 14px 15px;box-shadow:var(--shadow-md);
+  animation:wxpop .4s cubic-bezier(.22,1,.36,1)}
 .wx-pop[hidden]{display:none}
-.wx-pop::before{content:"";position:absolute;top:-7px;left:22px;width:12px;height:12px;background:var(--surface);
-  border-left:1px solid var(--line);border-top:1px solid var(--line);transform:rotate(45deg)}
-.wx-pop-emo{font-size:26px;line-height:1.1;flex:none}
+.wx-pop::after{content:"";position:absolute;left:0;top:14px;bottom:14px;width:3px;border-radius:3px;background:var(--red)}
+.wx-pop-emo{font-size:28px;line-height:1.05;flex:none}
 .wx-pop-body strong{display:block;font-size:13px;color:var(--ink);margin-bottom:3px}
-.wx-pop-body p{margin:0;font-size:12.5px;line-height:1.5;color:var(--muted);white-space:normal}
-@keyframes wxpop{from{opacity:0;transform:translateY(-6px) scale(.97)}to{opacity:1;transform:none}}
+.wx-pop-body p{margin:0;font-size:12.5px;line-height:1.55;color:var(--muted);white-space:normal}
+.wx-pop-x{position:absolute;top:8px;right:10px;background:none;border:0;font-size:18px;line-height:1;color:var(--muted);padding:2px}
+.wx-pop-x:hover{color:var(--ink)}
+@keyframes wxpop{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
+@media (max-width:600px){.wx-pop{left:14px;right:14px;bottom:14px;max-width:none}}
 .themebtn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:999px;border:1px solid var(--line);background:var(--surface);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--ink);box-shadow:var(--shadow-sm);transition:border-color .2s,transform .2s;flex:none}
 .themebtn:hover{border-color:var(--accent);transform:translateY(-1px)}
 .themebtn svg{width:18px;height:18px}
@@ -234,14 +236,12 @@ h1 .title-main{color:var(--ink)}
   html{font-size:94%}
   body{font-size:14px;line-height:1.55}
   .wrap{padding-block:12px 44px;gap:14px}
-  header{padding-bottom:12px;gap:10px;flex-direction:column;align-items:stretch}
-  h1{font-size:20px}
-  h1 small{margin-bottom:2px;font-size:10px}
-  .trip{font-size:12px;gap:8px;align-items:center}
-  /* 모바일: 날씨·테마 바를 맨 위 한 줄로, 좌우 정렬 */
-  .hbar{order:-1;width:100%;justify-content:space-between}
-  .weather{flex:1;justify-content:flex-start;padding:6px 12px}
-  .trip label{font-size:12px}
+  /* 모바일 마스트헤드: 메타는 흐름에 넣고, 타이틀은 왼쪽 정렬로 */
+  .masthead{padding:10px 0 20px}
+  .meta{position:static;justify-content:flex-start;margin-bottom:14px}
+  .eyebrow .geo{font-size:clamp(30px,13vw,48px)}
+  .masthead-t{text-align:left;font-size:clamp(34px,15vw,56px)}
+  .dateline{margin-top:14px;font-size:12px}
   .add{padding:12px;gap:9px;border-radius:14px}
   .add form{grid-template-columns:1fr 1fr 84px auto;gap:6px}
   .add form .name{grid-column:1/-1}
@@ -273,7 +273,7 @@ h1 .title-main{color:var(--ink)}
 }
 @media (max-width:380px){
   html{font-size:90%}
-  h1{font-size:18px}
+  .masthead-t{font-size:clamp(30px,14vw,44px)}
   .weather .wx-desc{display:none}
   .add form{grid-template-columns:1fr 84px auto}
   #fCat{grid-column:1/2}#fTime{grid-column:2/3}.fcand{grid-column:3/4;justify-content:center}
@@ -295,39 +295,46 @@ h1 .title-main{color:var(--ink)}
 <svg id="line-cursor" aria-hidden="true"><polyline points=""></polyline><circle class="lc-head" r="3.5" cx="-10" cy="-10"></circle></svg>
 
 <div class="wrap">
-  <header>
-    <h1><small>GEO · Gangneung Experience Observatory</small><span class="title-main">강릉 여행 계획</span></h1>
-    <div class="trip">
-      <div class="hbar">
-        <span class="weather loading" id="weather" title="강릉 날씨">
-          <span class="wx-now">
-            <span class="wx-emo" id="wxEmo">⛅</span>
-            <span class="wx-temp" id="wxTemp">–°</span>
-            <span class="wx-desc" id="wxDesc">날씨 불러오는 중…</span>
-          </span>
-          <span class="wx-tmr" id="wxTmr">
-            <span class="wx-tl">내일</span>
-            <span class="wx-emo" id="wxTmEmo">⛅</span>
-            <span class="wx-tt" id="wxTmTemp">–°/–°</span>
-          </span>
-          <span class="wx-chevron" aria-hidden="true">›</span>
-          <div class="wx-pop" id="wxPop" role="status" hidden>
-            <div class="wx-pop-emo" id="wxPopEmo">🧥</div>
-            <div class="wx-pop-body">
-              <strong id="wxPopTitle">오늘의 옷차림</strong>
-              <p id="wxPopText">날씨를 불러오면 추천해 드려요.</p>
-            </div>
-          </div>
+  <header class="masthead">
+    <!-- 오른쪽 상단에 흩뿌린 메타 (날씨 · 테마) -->
+    <div class="meta">
+      <span class="weather loading" id="weather" title="강릉 날씨">
+        <span class="wx-now">
+          <span class="wx-emo" id="wxEmo">⛅</span>
+          <span class="wx-temp" id="wxTemp">–°</span>
+          <span class="wx-desc" id="wxDesc">날씨…</span>
         </span>
-        <button class="themebtn" id="themeBtn" type="button" aria-label="화면 테마 전환" title="다크/화이트 모드">
-          <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-          <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-        </button>
-      </div>
-      <label for="start">출발일 <input type="date" id="start"></label>
+        <span class="wx-tmr" id="wxTmr">
+          <span class="wx-tl">내일</span>
+          <span class="wx-emo" id="wxTmEmo">⛅</span>
+          <span class="wx-tt" id="wxTmTemp">–°/–°</span>
+        </span>
+      </span>
+      <button class="themebtn" id="themeBtn" type="button" aria-label="화면 테마 전환" title="다크/화이트 모드">
+        <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </div>
+
+    <!-- 에디토리얼 타이틀: 세로 라벨 + 큰 명조 -->
+    <p class="eyebrow"><span class="geo">GEO</span><span class="geo-full">Gangneung Experience Observatory</span></p>
+    <h1 class="masthead-t">강릉<br>여행 계획</h1>
+    <div class="dateline">
+      <span class="dl-no">01 — 02</span>
+      <label for="start">DEPART <input type="date" id="start"></label>
       <span class="status" id="status">불러오는 중…</span>
     </div>
   </header>
+
+  <!-- 옷차림 제안 토스트 (들어오면 자동으로 톡) -->
+  <div class="wx-pop" id="wxPop" role="status" hidden>
+    <div class="wx-pop-emo" id="wxPopEmo">🧥</div>
+    <div class="wx-pop-body">
+      <strong id="wxPopTitle">오늘의 옷차림</strong>
+      <p id="wxPopText">날씨를 불러오면 추천해 드려요.</p>
+    </div>
+    <button class="wx-pop-x" id="wxPopX" type="button" aria-label="닫기">×</button>
+  </div>
 
   <section class="add" aria-label="장소 추가">
     <form id="addForm" autocomplete="off">
@@ -537,20 +544,24 @@ const INK=(function(){
       if(tmT)tmT.textContent=`${hi2}°/${lo2}°`;
       el.title=`오늘 강릉 ${desc} ${isFinite(t)?t+"°":""} (${hi}°/${lo}°) · 내일 ${desc2} (${hi2}°/${lo2}°)`;
     }
-    // 옷차림 추천 채우기 (오늘 최고기온 기준)
-    if(pop&&hi!=null){const [oe,ot]=outfit(hi,cur.weather_code);popEmo.textContent=oe;popTitle.textContent=`오늘 ${hi}° · 이렇게 입어요`;popText.textContent=ot;}
+    // 옷차림 추천 채우고 → 들어오자마자 자동으로 토스트 띄움
+    if(pop&&hi!=null){
+      const [oe,ot]=outfit(hi,cur.weather_code);
+      popEmo.textContent=oe;popTitle.textContent=`오늘 ${hi}° · 이렇게 입어요`;popText.textContent=ot;
+      pop.hidden=false;                 // 자동 등장
+      clearTimeout(pop._t);
+      pop._t=setTimeout(closePop,9000); // 9초 뒤 자동 사라짐
+    }
     el.classList.remove("loading");
   }).catch(()=>{
     emoEl.textContent="⛅";tEl.textContent="";dEl.textContent="날씨 정보를 못 받았어요";
     el.classList.remove("loading");
   });
-  // 날씨 클릭 → 옷차림 말풍선 토글
-  function closePop(){if(pop){pop.hidden=true;el.classList.remove("pop-open")}}
-  el.addEventListener("click",e=>{
-    if(!pop)return;e.stopPropagation();
-    const open=pop.hidden;pop.hidden=!open;el.classList.toggle("pop-open",open);
-  });
-  document.addEventListener("click",e=>{if(pop&&!pop.hidden&&!el.contains(e.target))closePop()});
+  function closePop(){if(pop){clearTimeout(pop._t);pop.hidden=true}}
+  // 날씨 칩을 누르면 옷차림 토스트 다시 띄움
+  el.addEventListener("click",()=>{if(pop&&popText.textContent){pop.hidden=false;clearTimeout(pop._t);pop._t=setTimeout(closePop,9000)}});
+  const popX=document.getElementById("wxPopX");
+  if(popX)popX.addEventListener("click",e=>{e.stopPropagation();closePop()});
   addEventListener("keydown",e=>{if(e.key==="Escape")closePop()});
 })();
 
