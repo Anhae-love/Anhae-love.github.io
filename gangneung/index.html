@@ -19,64 +19,65 @@ body{margin:0}
 img{max-width:100%}
 [hidden]{display:none!important}
 /* Layout: 한 줄 헤더 + 장소 추가 바 + 일차별 세로 타임라인(넓은 화면에선 열로 나란히) */
-/* ===== v2 · d.school 감각: 흰 바탕 + 소색/회색 + 블랙 글씨, 가끔 민트, 빨간 선 커서 ===== */
+/* ===== v3 · 버전1(흑백 수묵) 베이스 + 빨간 선 커서 · 민트는 배경 웨시로만 ===== */
 :root{
-  /* 라이트 — 순백 배경, 블랙 텍스트, 소색/회색 중간톤 */
-  --bg:#FFFFFF; --surface:#FFFFFF; --ink:#111111; --muted:#6B6B6E; --line:#E6E4DF;
-  --sea:#111111; --sea-soft:#F3F1EC; --pine:#4B4B4E; --pine-soft:#F1F0EC; --sun:#6B6B6E; --sun-soft:#F3F1EC;
-  --danger:#E23B2E; /* 빨강 = 커서 전용 포인트 */
-  --land:#F4F2ED; --sea-fill:#ECEAE4; --road:#F0EEE8; --on-dot:#FFFFFF;
-  /* 포인트: 평소엔 거의 안 쓰고, 가끔 민트만 확 */
-  --mint:#17B9A6; --mint-weak:#E2F6F2;
-  --accent:#111111; --accent-weak:#F2F1EC;  /* 기본 인터랙션은 블랙/소색, 민트는 선택적 */
+  /* 라이트 — 흑백 수묵 */
+  --bg:#F4F4F5; --surface:#FFFFFFEC; --ink:#0B0B0C; --muted:#5E6064; --line:#D8D8DB;
+  --sea:#0B0B0C; --sea-soft:#E7E7E9; --pine:#2A2B2E; --pine-soft:#E7E7E9; --sun:#4A4C50; --sun-soft:#ECECEE;
+  --danger:#E23B2E;
+  --land:#ECECEE; --sea-fill:#DEDEE1; --road:#E8E8EA; --on-dot:#FFFFFF;
+  /* 인터랙션 = 먹색(흑백). 선/테두리/뱃지에 민트 금지 */
+  --accent:#17181A; --accent-weak:#E6E6E8;
   --red:#E23B2E;
-  /* 동선(일차): 소색 계열, 구분만 */
-  --d0:#C3C1BA; --d1:#111111; --d2:#9A9893;
-  --grad:linear-gradient(180deg,#FFFFFF 0%,#FBFAF7 100%);
-  --ink-rgb:17,17,17;
-  --blot1:23,185,166;   /* 민트 (가끔) */
+  /* 민트는 오직 배경 웨시용 (blot1). 전경 색으로는 안 씀 */
+  --mint-bg:38,166,154;
+  /* 동선(일차) — 농담만 다른 먹 톤 */
+  --d0:#B6B7BA; --d1:#1C1D20; --d2:#6F7175;
+  --grad:linear-gradient(170deg,#FBFBFC 0%,#EFEFF1 48%,#E3E3E6 100%);
+  --ink-rgb:20,21,23;
+  --blot1:38,166,154;   /* 배경 민트 웨시 (아주 옅게) */
   --blot2:226,59,46;    /* 빨강 (클릭 포인트) */
-  --paper:#FFFFFF;
+  --paper:#F4F4F5;
   --display:"Gowun Batang","Nanum Myeongjo","Apple SD Gothic Neo",serif;
   --body:"Gowun Batang","Nanum Myeongjo","Apple SD Gothic Neo","Malgun Gothic",serif;
-  --shadow-sm:0 1px 3px rgba(17,17,17,.05);
-  --shadow-md:0 8px 24px rgba(17,17,17,.09);
+  --shadow-sm:0 2px 10px rgba(20,21,23,.06);
+  --shadow-md:0 8px 26px rgba(20,21,23,.12);
 }
-/* 다크 — 소색이 빠진 차콜, 글씨 흰색, 같은 민트/빨강 포인트 */
+/* 다크 — 먹빛 밤 */
 :root[data-theme="dark"]{
-  --bg:#121211; --surface:#1A1A18; --ink:#F3F1EC; --muted:#9C9A94; --line:#2C2B28;
-  --sea:#F3F1EC; --sea-soft:#242320; --pine:#C4C2BB; --pine-soft:#242320; --sun:#9C9A94; --sun-soft:#201F1D;
+  --bg:#0E0F11; --surface:#1A1B1EEC; --ink:#ECECEE; --muted:#9A9CA1; --line:#2A2B2E;
+  --sea:#ECECEE; --sea-soft:#242528; --pine:#C4C6CA; --pine-soft:#242528; --sun:#9A9CA1; --sun-soft:#202123;
   --danger:#FF5648;
-  --land:#1A1A18; --sea-fill:#232220; --road:#1E1E1C; --on-dot:#121211;
-  --mint:#2DD4BF; --mint-weak:#17322E;
-  --accent:#F3F1EC; --accent-weak:#242320;
+  --land:#17181A; --sea-fill:#232427; --road:#1D1E20; --on-dot:#0E0F11;
+  --accent:#ECECEE; --accent-weak:#26272A;
   --red:#FF5648;
-  --d0:#565550; --d1:#F3F1EC; --d2:#9C9A94;
-  --grad:linear-gradient(180deg,#141413 0%,#101010 100%);
-  --ink-rgb:243,241,236;
+  --mint-bg:45,212,191;
+  --d0:#55575C; --d1:#ECECEE; --d2:#9A9CA1;
+  --grad:linear-gradient(170deg,#17181B 0%,#101113 50%,#0A0B0C 100%);
+  --ink-rgb:236,236,238;
   --blot1:45,212,191;
   --blot2:255,86,72;
-  --paper:#121211;
-  --shadow-sm:0 1px 3px rgba(0,0,0,.4);
-  --shadow-md:0 10px 28px rgba(0,0,0,.55);
+  --paper:#0E0F11;
+  --shadow-sm:0 2px 12px rgba(0,0,0,.4);
+  --shadow-md:0 10px 30px rgba(0,0,0,.55);
   color-scheme:dark;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#121211; --surface:#1A1A18; --ink:#F3F1EC; --muted:#9C9A94; --line:#2C2B28;
-  --sea:#F3F1EC; --sea-soft:#242320; --pine:#C4C2BB; --pine-soft:#242320; --sun:#9C9A94; --sun-soft:#201F1D;
+  --bg:#0E0F11; --surface:#1A1B1EEC; --ink:#ECECEE; --muted:#9A9CA1; --line:#2A2B2E;
+  --sea:#ECECEE; --sea-soft:#242528; --pine:#C4C6CA; --pine-soft:#242528; --sun:#9A9CA1; --sun-soft:#202123;
   --danger:#FF5648;
-  --land:#1A1A18; --sea-fill:#232220; --road:#1E1E1C; --on-dot:#121211;
-  --mint:#2DD4BF; --mint-weak:#17322E;
-  --accent:#F3F1EC; --accent-weak:#242320;
+  --land:#17181A; --sea-fill:#232427; --road:#1D1E20; --on-dot:#0E0F11;
+  --accent:#ECECEE; --accent-weak:#26272A;
   --red:#FF5648;
-  --d0:#565550; --d1:#F3F1EC; --d2:#9C9A94;
-  --grad:linear-gradient(180deg,#141413 0%,#101010 100%);
-  --ink-rgb:243,241,236;
+  --mint-bg:45,212,191;
+  --d0:#55575C; --d1:#ECECEE; --d2:#9A9CA1;
+  --grad:linear-gradient(170deg,#17181B 0%,#101113 50%,#0A0B0C 100%);
+  --ink-rgb:236,236,238;
   --blot1:45,212,191;
   --blot2:255,86,72;
-  --paper:#121211;
-  --shadow-sm:0 1px 3px rgba(0,0,0,.4);
-  --shadow-md:0 10px 28px rgba(0,0,0,.55);
+  --paper:#0E0F11;
+  --shadow-sm:0 2px 12px rgba(0,0,0,.4);
+  --shadow-md:0 10px 30px rgba(0,0,0,.55);
   color-scheme:dark;
 }}
 *{box-sizing:border-box}
@@ -89,14 +90,10 @@ button{cursor:pointer}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;border-bottom:1px solid var(--line);padding-bottom:18px}
-h1{font-family:var(--display);font-weight:800;font-size:clamp(19px,2.6vw,23px);line-height:1.3;margin:0;text-wrap:balance;letter-spacing:.01em;display:flex;flex-wrap:wrap;align-items:baseline;gap:0 10px}
-h1 small{flex-basis:100%;display:block;font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.18em;color:var(--muted);margin-bottom:5px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(20px,2.8vw,26px);line-height:1.22;margin:0;text-wrap:balance;letter-spacing:.005em;display:flex;flex-wrap:wrap;align-items:baseline;gap:0 10px}
+h1 small{flex-basis:100%;display:block;font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:7px;text-transform:uppercase}
+h1 small::before{content:"";display:inline-block;width:14px;height:2px;background:var(--red);vertical-align:middle;margin-right:7px;margin-bottom:3px}
 h1 .title-main{color:var(--ink)}
-/* 하슬라 캐릭터 — 본문 제목보다 한 단계 작게, 민트 포인트 */
-h1 .buddy{font-family:var(--display);font-weight:700;font-size:.62em;letter-spacing:.01em;color:var(--mint);
-  display:inline-flex;align-items:center;gap:5px;padding:2px 10px;border-radius:999px;
-  background:var(--mint-weak);border:1px solid color-mix(in srgb,var(--mint) 35%,transparent)}
-h1 .buddy::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 3px color-mix(in srgb,var(--mint) 25%,transparent)}
 .trip{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:13px;color:var(--muted)}
 .trip label{display:flex;align-items:center;gap:6px}
 .trip input{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:5px 8px}
@@ -138,7 +135,7 @@ h1 .buddy::before{content:"";width:7px;height:7px;border-radius:50%;background:v
 .ideas{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px}
 .ideas span.lbl{color:var(--muted);margin-right:4px}
 .chip{border:1px solid var(--line);background:none;border-radius:999px;padding:3px 12px;font-size:13px;color:var(--ink);transition:border-color .15s,color .15s,background .15s}
-.chip:hover{border-color:var(--mint);color:var(--mint);background:var(--mint-weak);transform:translateY(-1px)}
+.chip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-weak);transform:translateY(-1px)}
 @media (max-width:820px){.add form{grid-template-columns:1fr 1fr}.add form .name,.add form .memo{grid-column:1/-1}.add form .btn{grid-column:1/-1}.fcand{padding-block:8px}}
 
 .board{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
@@ -151,13 +148,12 @@ h1 .buddy::before{content:"";width:7px;height:7px;border-radius:50%;background:v
 .empty{font-size:13px;color:var(--muted);padding:10px 0}
 
 .card{background:var(--surface);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:14px;min-width:0;transition:border-color .2s,box-shadow .2s,transform .2s}
-.card:hover{box-shadow:var(--shadow-md);transform:translateY(-1px);border-color:color-mix(in srgb,var(--mint) 45%,var(--line))}
+.card:hover{box-shadow:var(--shadow-md);transform:translateY(-1px);border-color:color-mix(in srgb,var(--ink) 28%,var(--line))}
 .card.open{border-color:var(--ink);box-shadow:var(--shadow-md)}
-/* 1일차 타임라인=민트 포인트, 2일차=소색 */
-.day[data-day="1"] .list{border-left-color:color-mix(in srgb,var(--mint) 55%,var(--line))}
+/* 1일차·2일차 타임라인 — 먹 농담만 다르게 */
+.day[data-day="1"] .list{border-left-color:color-mix(in srgb,var(--ink) 38%,var(--line))}
 .day[data-day="2"] .list{border-left-color:var(--line)}
-.day[data-day="1"] h2 .n{color:var(--mint)}
-.day[data-day="2"] h2 .n{color:var(--muted)}
+.day[data-day="1"] h2 .n,.day[data-day="2"] h2 .n{color:var(--muted)}
 .row{display:flex;align-items:flex-start;gap:8px;padding:7px 10px;width:100%;background:none;border:0;text-align:left}
 .time{font-variant-numeric:tabular-nums;font-size:12px;color:var(--muted);width:38px;flex:none;padding-top:2px}
 .main{flex:1;min-width:0}
@@ -165,8 +161,7 @@ h1 .buddy::before{content:"";width:7px;height:7px;border-radius:50%;background:v
 .pmemo{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.4}
 .card.open .pmemo{white-space:normal;overflow-wrap:anywhere}
 .cat{flex:none;font-size:11px;font-weight:600;border-radius:6px;padding:2px 7px;margin-top:2px}
-.c-관광{background:var(--mint-weak);color:color-mix(in srgb,var(--mint) 70%,#000)}
-:root[data-theme="dark"] .c-관광{color:var(--mint)}
+.c-관광{background:var(--sea-soft);color:var(--sea)}
 .c-맛집{background:var(--sun-soft);color:var(--sun)}
 .c-카페{background:var(--sun-soft);color:var(--sun)}
 .c-숙소{background:var(--land);color:var(--ink)}
@@ -282,7 +277,7 @@ h1 .buddy::before{content:"";width:7px;height:7px;border-radius:50%;background:v
 
 <div class="wrap">
   <header>
-    <h1><small>GEO · Gaze, Experience, Observation</small><span class="title-main">강릉 여행 계획</span><span class="buddy" aria-label="강릉 캐릭터 하슬라">with 하슬라</span></h1>
+    <h1><small>GEO · Gaze, Experience, Observation</small><span class="title-main">강릉 여행 계획</span></h1>
     <div class="trip">
       <div class="hbar">
         <span class="weather loading" id="weather" title="강릉 날씨">
@@ -362,14 +357,14 @@ const INK=(function(){
     t+=dt;
     ctx.clearRect(0,0,W,H);
     ctx.globalCompositeOperation="source-over";
-    // 흰 배경 유지: 아주 가끔, 아주 옅은 민트만 은은하게 피어오름
-    if(!reduce&&Math.random()<0.012){const cx=W/2+(Math.random()-0.5)*W*0.4,cy=H*0.5+(Math.random()-0.5)*H*0.4;spawn(cx,cy,60+Math.random()*90,1.6+Math.random(),0)}
+    // 배경: 민트가 넓고 느리게 은은히 피어오름 (배경 웨시로만)
+    if(!reduce&&Math.random()<0.016){const cx=W/2+(Math.random()-0.5)*W*0.55,cy=H*0.5+(Math.random()-0.5)*H*0.55;spawn(cx,cy,110+Math.random()*140,2.2+Math.random(),0)}
     for(let i=blobs.length-1;i>=0;i--){
-      const b=blobs[i];b.age+=dt/ (reduce?1600:3200) / b.life;
+      const b=blobs[i];b.age+=dt/ (reduce?1600:3600) / b.life;
       if(b.age>=1){blobs.splice(i,1);continue}
       const e=b.age, r=b.r0+(b.r-b.r0)*(1-Math.pow(1-e,2));
-      // 민트(c=0)는 아주 옅게, 빨강(c=1, 클릭)만 조금 더 선명하게
-      const alpha=(1-e)*(b.c? 0.16 : 0.07);
+      // 민트(c=0) 배경 웨시는 옅게, 빨강(c=1, 클릭)만 선명하게
+      const alpha=(1-e)*(b.c? 0.16 : 0.11);
       const g=ctx.createRadialGradient(b.x,b.y,0,b.x,b.y,r);
       g.addColorStop(0,blotColor(b.c,alpha));
       g.addColorStop(0.55,blotColor(b.c,alpha*0.45));
@@ -382,27 +377,27 @@ const INK=(function(){
   function loop(now){const dt=Math.min(now-last,60);last=now;frame(dt);raf=requestAnimationFrame(loop)}
   addEventListener("resize",resize,{passive:true});
   resize();
-  // 처음에 가운데 한 방울
-  spawn(W/2,H*0.5,120,2);
+  // 처음에 가운데 큰 민트 웨시
+  spawn(W/2,H*0.42,220,3,0);spawn(W*0.3,H*0.6,180,3,0);
   raf=requestAnimationFrame(loop);
   return {spawn,splash,toLocal:(x,y)=>{const r=cv.getBoundingClientRect();return [x-r.left,y-r.top]}};
 })();
 
-/* ---- 빨간 선 커서: 포인터 궤적을 1개의 선으로, 꺾이는 지점에서 각지게 ---- */
+/* ---- 빨간 선: 포인터/손가락 궤적을 1개의 선으로, 꺾이는 지점에서 각지게 ---- */
+/*   PC → 마우스를 따라 상시 / 모바일 → 손가락 드래그 중에 그려짐          */
 (function(){
   const fine=matchMedia("(hover:hover) and (pointer:fine)").matches;
   const svg=document.getElementById("line-cursor");
-  if(!fine||!svg)return;
+  if(!svg)return;
   const poly=svg.querySelector("polyline"),head=svg.querySelector(".lc-head");
-  document.body.classList.add("has-cursor");
-  // 최근 포인터 지점들을 모아 1개의 선으로. 움직임이 멈추면 꼬리부터 사라짐.
+  if(fine)document.body.classList.add("has-cursor"); // 기본 커서 숨김은 PC만
   const pts=[];            // {x,y,t}
-  const TAIL=14;           // 선을 이루는 최대 꼭짓점 수 (꺾임점 포함)
-  const LIFE=320;          // 각 점이 살아있는 시간(ms) → 멈추면 선이 짧아짐
-  const MINSEG=6;          // 이 거리 이상 움직였을 때만 새 꼭짓점(각지게 끊기도록)
+  const TAIL=14;           // 선을 이루는 최대 꼭짓점 수
+  const LIFE=340;          // 각 점 수명(ms) → 멈추면 선이 짧아짐
+  const MINSEG=6;          // 이 거리 이상 움직였을 때만 새 꼭짓점(각지게)
   let mx=innerWidth/2,my=innerHeight/2,have=false,raf=null;
-  function onMove(e){
-    mx=e.clientX;my=e.clientY;have=true;
+  function push(x,y){
+    mx=x;my=y;have=true;
     const last=pts[pts.length-1];
     if(!last||Math.hypot(mx-last.x,my-last.y)>=MINSEG){
       pts.push({x:mx,y:my,t:performance.now()});
@@ -412,28 +407,24 @@ const INK=(function(){
   }
   function draw(){
     const now=performance.now();
-    // 수명 지난 꼭짓점 제거 → 꼬리부터 사라짐
     while(pts.length&&now-pts[0].t>LIFE)pts.shift();
-    if(have){                 // 머리(현재 위치)는 항상 포함
-      head.setAttribute("cx",mx);head.setAttribute("cy",my);
-    }
+    if(have){head.setAttribute("cx",mx);head.setAttribute("cy",my)}
     const all=pts.concat(have?[{x:mx,y:my}]:[]);
     poly.setAttribute("points",all.map(p=>p.x+","+p.y).join(" "));
-    // 점이 남아있으면 계속 애니메이션(멈춰도 꼬리 소멸까지 돌다가 멈춤)
-    if(pts.length>0){raf=requestAnimationFrame(draw)}else raf=null;
+    if(pts.length>0){raf=requestAnimationFrame(draw)}else{raf=null;if(!have){head.setAttribute("cx",-10);head.setAttribute("cy",-10)}}
   }
   function kick(){if(!raf)raf=requestAnimationFrame(draw)}
-  addEventListener("mousemove",onMove,{passive:true});
-  // 클릭하면 빨간 번짐 한 번
+  function clear(){pts.length=0;have=false;poly.setAttribute("points","");head.setAttribute("cx",-10);head.setAttribute("cy",-10)}
+  // PC
+  addEventListener("mousemove",e=>push(e.clientX,e.clientY),{passive:true});
   addEventListener("mousedown",e=>{if(INK){const [x,y]=INK.toLocal(e.clientX,e.clientY);INK.splash(x,y,1.0,1)}});
-  document.addEventListener("mouseleave",()=>{pts.length=0;poly.setAttribute("points","");head.setAttribute("cx",-10);head.setAttribute("cy",-10)});
+  document.addEventListener("mouseleave",clear);
+  // 모바일: 손가락 드래그 궤적을 빨간 선으로, 처음 닿을 때 번짐
+  addEventListener("touchstart",e=>{const t=e.touches[0];if(!t)return;push(t.clientX,t.clientY);
+    if(INK){const [x,y]=INK.toLocal(t.clientX,t.clientY);INK.splash(x,y,1.1,1)}},{passive:true});
+  addEventListener("touchmove",e=>{const t=e.touches[0];if(!t)return;push(t.clientX,t.clientY)},{passive:true});
+  addEventListener("touchend",()=>{have=false;kick()},{passive:true});
 })();
-
-/* ---- 모바일: 터치하면 색이 확 번짐 (가끔 민트) ---- */
-addEventListener("touchstart",e=>{
-  if(!INK)return;const tt=e.touches[0];if(!tt)return;
-  const [x,y]=INK.toLocal(tt.clientX,tt.clientY);INK.splash(x,y,1.2,0);
-},{passive:true});
 
 /* ---- 다크 / 화이트 모드 토글 ---- */
 (function(){
