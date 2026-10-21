@@ -169,12 +169,11 @@ button{cursor:pointer}
 .chip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-weak);transform:translateY(-1px)}
 @media (max-width:820px){.add form{grid-template-columns:1fr 1fr}.add form .name,.add form .memo{grid-column:1/-1}.add form .btn{grid-column:1/-1}.fcand{padding-block:8px}}
 
-/* 에디토리얼 섹션 라벨 (지도 아래 '여정') */
-.board-label{display:flex;align-items:center;gap:14px;margin:4px 0 -4px;color:var(--muted)}
-.board-label::before,.board-label::after{content:"";height:1px;background:var(--line);flex:1}
-.board-label span{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.3em;color:var(--ink)}
-/* 지도 히어로 강조 */
-.mapbox.hero{border-radius:22px}
+/* 에디토리얼 섹션 라벨 */
+.board-label{display:flex;align-items:baseline;gap:14px;margin:10px 0 0;color:var(--muted)}
+.board-label span{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.28em;color:var(--ink);text-transform:uppercase}
+.board-label::after{content:"";height:1px;background:var(--line);flex:1;align-self:center}
+.board-label em{font-style:normal;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.1em;color:var(--muted)}
 .board{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
 .day{display:flex;flex-direction:column;gap:8px;min-width:0}
 .day h2{font-family:var(--display);font-weight:800;font-size:15px;margin:0;display:flex;align-items:baseline;gap:8px;letter-spacing:.01em}
@@ -238,10 +237,15 @@ button{cursor:pointer}
 .dchip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-weak);color:var(--accent);font-weight:600}
 .dchip .km{color:var(--muted);font-weight:400}
 .dot{width:9px;height:9px;border-radius:50%;flex:none}
-.mapwrap{position:relative;background:var(--map-bg)}
-#map svg{display:block;width:100%;height:auto;max-height:72vh}
+.mapwrap{position:relative;background:var(--map-bg);overflow:hidden;touch-action:none}
+#map svg{display:block;width:100%;height:auto;max-height:72vh;transform-origin:0 0;will-change:transform}
+#map.zoomed svg{cursor:grab}
 #map .mk{cursor:pointer}
 #map.picking svg{cursor:crosshair;outline:2px solid var(--accent);outline-offset:-2px}
+/* 모바일 줌 힌트/컨트롤 */
+.mapzoom{position:absolute;right:10px;bottom:10px;display:none;gap:6px;z-index:6}
+.mapzoom button{width:34px;height:34px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:18px;line-height:1;box-shadow:var(--shadow-sm);display:flex;align-items:center;justify-content:center}
+@media (hover:none) and (pointer:coarse){.mapzoom{display:flex}}
 .mapnote button{margin-left:6px}
 #map .mk:focus-visible circle{stroke:var(--accent);stroke-width:3}
 #map .pl{font-size:11px;font-weight:600;fill:var(--map-ink);paint-order:stroke;stroke:var(--map-bg);stroke-width:3px;stroke-linejoin:round;letter-spacing:-0.01em}
@@ -363,6 +367,7 @@ button{cursor:pointer}
     <button class="wx-pop-x" id="wxPopX" type="button" aria-label="닫기">×</button>
   </div>
 
+  <p class="board-label"><span>ADD A PLACE</span><em>가고 싶은 곳</em></p>
   <section class="add" aria-label="장소 추가">
     <form id="addForm" autocomplete="off">
       <input class="name" id="fName" placeholder="가고 싶은 곳 (예: 안목해변 커피거리)" required maxlength="60">
@@ -378,15 +383,21 @@ button{cursor:pointer}
     <div class="ideas" id="ideas"><span class="lbl">강릉에서 많이 가는 곳</span></div>
   </section>
 
-  <!-- 지도를 주인공으로 위에, 그 아래 일차 리스트 -->
-  <section class="mapbox hero" aria-label="지도">
-    <div class="maphead" id="mapHead"><h2>지도</h2></div>
-    <div class="mapwrap" id="map"></div>
-    <div class="mapnote" id="mapNote">추가한 장소가 일차별 색으로 표시되고, 같은 날 장소는 시간순으로 이어져요. 거리는 직선 거리예요.</div>
-  </section>
-
-  <p class="board-label"><span>ITINERARY</span></p>
+  <p class="board-label"><span>ITINERARY</span><em>01 — 02</em></p>
   <main class="board" id="board"></main>
+
+  <p class="board-label"><span>THE MAP</span><em>강릉 일대</em></p>
+  <section class="mapbox" aria-label="지도">
+    <div class="maphead" id="mapHead"><h2>지도</h2></div>
+    <div class="mapwrap">
+      <div id="map"></div>
+      <div class="mapzoom" aria-hidden="true">
+        <button type="button" id="mzOut" aria-label="축소">−</button>
+        <button type="button" id="mzIn" aria-label="확대">+</button>
+      </div>
+    </div>
+    <div class="mapnote" id="mapNote">추가한 장소가 일차별 색으로 표시되고, 같은 날 장소는 시간순으로 이어져요. 거리는 직선 거리예요. 모바일에선 두 손가락으로 확대·축소돼요.</div>
+  </section>
 
 </div>
 <div class="toast" id="toast" hidden></div>
@@ -784,6 +795,7 @@ function renderMap(){
   svg+=`<g transform="translate(16 ${H-16})"><rect x="-6" y="-15" width="${bw+46}" height="23" rx="5" fill="var(--map-bg)" opacity=".8"/><line x1="0" y1="0" x2="${bw}" y2="0" stroke="var(--map-ink)" stroke-width="1.5"/><line x1="0" y1="-3" x2="0" y2="0" stroke="var(--map-ink)" stroke-width="1.5"/><line x1="${bw}" y1="-3" x2="${bw}" y2="0" stroke="var(--map-ink)" stroke-width="1.5"/><text x="${bw+6}" y="3.5" font-size="11" fill="var(--map-ink)">${sk} km</text></g>`;
   if(!shown.length)svg+=`<text x="${W/2}" y="${H/2+60}" text-anchor="middle" font-size="13" fill="var(--map-ink)" opacity=".6">${places.length?"이 날에는 위치가 확인된 장소가 없어요":"장소를 추가하면 여기에 표시돼요"}</text>`;
   $("#map").innerHTML=svg+"</svg>";
+  if(typeof applyZoom==="function")applyZoom(); // 재렌더 후 줌 상태 유지
   $("#map").classList.toggle("picking",!!pickId);
   const pp=pickId&&places.find(p=>p.id===pickId);
   if(pp){$("#mapNote").innerHTML=`<strong>${esc(pp.name)}</strong> 위치를 지도에서 눌러 주세요.<button class="ghost" data-act="pickcancel">취소</button>`;return}
@@ -900,6 +912,76 @@ $("#mapNote").addEventListener("click",e=>{
   if(e.target.closest('[data-act="pickcancel"]')){pickId=null;renderMap()}
   if(e.target.closest('[data-act="locall"]')){places.filter(p=>!okCoord(p.lat,p.lng)&&!isStay(p)).slice(0,5).forEach(p=>locate(p.id,p.name))}});
 $("#map").addEventListener("keydown",e=>{const g=e.target.closest(".mk");if(g&&(e.key==="Enter"||e.key===" ")){e.preventDefault();openFromMap(g.dataset.pid)}});
+
+/* ---- 지도 확대·축소 (모바일 핀치/더블탭 + 버튼) ---- */
+const mapZoom={s:1,tx:0,ty:0};
+function clampZoom(){
+  mapZoom.s=Math.max(1,Math.min(4,mapZoom.s));
+  const wrap=$("#map").parentElement, W=wrap?wrap.clientWidth:0, H=wrap?wrap.clientHeight:0;
+  const maxX=W*(mapZoom.s-1), maxY=H*(mapZoom.s-1);
+  mapZoom.tx=Math.min(0,Math.max(-maxX,mapZoom.tx));
+  mapZoom.ty=Math.min(0,Math.max(-maxY,mapZoom.ty));
+}
+function applyZoom(){
+  const svg=$("#map svg");if(!svg)return;
+  clampZoom();
+  svg.style.transform=`translate(${mapZoom.tx}px,${mapZoom.ty}px) scale(${mapZoom.s})`;
+  $("#map").classList.toggle("zoomed",mapZoom.s>1.01);
+}
+function zoomAt(cx,cy,factor){
+  // 화면상의 (cx,cy)를 기준으로 확대/축소 (wrap 좌표계)
+  const wrap=$("#map").parentElement;if(!wrap)return;
+  const r=wrap.getBoundingClientRect(), px=cx-r.left, py=cy-r.top;
+  const s0=mapZoom.s, s1=Math.max(1,Math.min(4,s0*factor));
+  // 기준점이 고정되도록 translate 보정
+  mapZoom.tx=px-(px-mapZoom.tx)*(s1/s0);
+  mapZoom.ty=py-(py-mapZoom.ty)*(s1/s0);
+  mapZoom.s=s1;
+  if(mapZoom.s<=1.01){mapZoom.s=1;mapZoom.tx=0;mapZoom.ty=0;}
+  applyZoom();
+}
+(function(){
+  const wrap=$("#map").parentElement;if(!wrap)return;
+  let pts=new Map(),startDist=0,startS=1,lastMid=null,moved=false,lastTap=0;
+  function dist(a,b){return Math.hypot(a.x-b.x,a.y-b.y)}
+  function mid(a,b){return {x:(a.x+b.x)/2,y:(a.y+b.y)/2}}
+  wrap.addEventListener("pointerdown",e=>{
+    pts.set(e.pointerId,{x:e.clientX,y:e.clientY});moved=false;
+    if(pts.size===2){const[a,b]=[...pts.values()];startDist=dist(a,b);startS=mapZoom.s;lastMid=mid(a,b);}
+  });
+  wrap.addEventListener("pointermove",e=>{
+    if(!pts.has(e.pointerId))return;
+    const prev=pts.get(e.pointerId);pts.set(e.pointerId,{x:e.clientX,y:e.clientY});
+    if(pts.size===2){
+      const[a,b]=[...pts.values()];const d=dist(a,b),m=mid(a,b);
+      if(startDist>0){const f=(d/startDist)/(mapZoom.s/startS);zoomAt(m.x,m.y,f);}
+      if(lastMid){mapZoom.tx+=m.x-lastMid.x;mapZoom.ty+=m.y-lastMid.y;applyZoom();}
+      lastMid=m;moved=true;e.preventDefault();
+    }else if(pts.size===1&&mapZoom.s>1.01){
+      mapZoom.tx+=e.clientX-prev.x;mapZoom.ty+=e.clientY-prev.y;applyZoom();moved=true;e.preventDefault();
+    }
+  });
+  function up(e){
+    pts.delete(e.pointerId);
+    if(pts.size<2){startDist=0;lastMid=null;}
+    // 더블탭 토글 (손가락 1개, 이동 없음)
+    if(e.pointerType!=="mouse"&&!moved){
+      const now=Date.now();
+      if(now-lastTap<300){zoomAt(e.clientX,e.clientY,mapZoom.s>1.01?0.01:2.2);lastTap=0;}
+      else lastTap=now;
+    }
+  }
+  wrap.addEventListener("pointerup",up);
+  wrap.addEventListener("pointercancel",up);
+  // 데스크탑: 휠로 확대/축소 (Ctrl 없이도)
+  wrap.addEventListener("wheel",e=>{e.preventDefault();zoomAt(e.clientX,e.clientY,e.deltaY<0?1.15:1/1.15);},{passive:false});
+  // 버튼
+  const zin=document.getElementById("mzIn"),zout=document.getElementById("mzOut");
+  function btnZoom(f){const r=wrap.getBoundingClientRect();zoomAt(r.left+r.width/2,r.top+r.height/2,f);}
+  if(zin)zin.addEventListener("click",()=>btnZoom(1.4));
+  if(zout)zout.addEventListener("click",()=>btnZoom(1/1.4));
+})();
+
 let tripTimer;
 trip.days=2; // 항상 1·2일차 2단 고정
 function saveTrip(){clearTimeout(tripTimer);tripTimer=setTimeout(async()=>{
