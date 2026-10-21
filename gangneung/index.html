@@ -35,10 +35,10 @@ img{max-width:100%}
   /* 민트는 오직 배경 웨시용 (blot1). 전경 색으로는 안 씀 */
   --mint-bg:38,166,154;
   /* 동선(일차) — 농담만 다른 먹 톤 */
-  /* 동선: 1일차 연두 / 2일차 보라 (리스트 배경과 맞춤) */
-  --d0:#B6B7BA; --d1:#5FA83C; --d2:#8A5CD8;
-  /* 레퍼런스 보라~연두 유동 그라데이션 (라이트: 파스텔) */
-  --grad:linear-gradient(155deg,#EAE3F6 0%,#E7E0F2 22%,#DEE9EF 46%,#DCEFD6 70%,#E7F3D4 100%);
+  /* 동선: 1일차 민트 / 2일차 진보라 (리스트 배경과 맞춤) */
+  --d0:#B6B7BA; --d1:#2FA98A; --d2:#7445C8;
+  /* 레퍼런스 보라~민트 유동 그라데이션 (라이트: 파스텔) */
+  --grad:linear-gradient(155deg,#E6E0F4 0%,#E2DCF0 22%,#DCE8EC 46%,#D6EFE2 70%,#E0F2DA 100%);
   --ink-rgb:20,21,23;
   --blot1:38,166,154;   /* 배경 민트 웨시 (아주 옅게) */
   --blot2:226,59,46;    /* 빨강 (클릭 포인트) */
@@ -58,7 +58,7 @@ img{max-width:100%}
   --accent:#ECECEE; --accent-weak:#26272A;
   --red:#FF5648;
   --mint-bg:45,212,191;
-  --d0:#55575C; --d1:#8FD46A; --d2:#B79BFF;
+  --d0:#55575C; --d1:#4FD6B0; --d2:#A782FF;
   --grad:linear-gradient(155deg,#1A1026 0%,#2A1E3C 30%,#2E2A44 52%,#223A36 78%,#2C4A36 100%);
   --ink-rgb:236,236,238;
   --blot1:45,212,191;
@@ -77,7 +77,7 @@ img{max-width:100%}
   --accent:#ECECEE; --accent-weak:#26272A;
   --red:#FF5648;
   --mint-bg:45,212,191;
-  --d0:#55575C; --d1:#8FD46A; --d2:#B79BFF;
+  --d0:#55575C; --d1:#4FD6B0; --d2:#A782FF;
   --grad:linear-gradient(155deg,#1A1026 0%,#2A1E3C 30%,#2E2A44 52%,#223A36 78%,#2C4A36 100%);
   --ink-rgb:236,236,238;
   --blot1:45,212,191;
@@ -121,6 +121,15 @@ button{cursor:pointer}
 .dateline label{display:inline-flex;align-items:center;gap:7px;letter-spacing:.08em}
 .dateline input{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:5px 8px}
 .status{font-size:12px;color:var(--muted)}
+/* 익명 무전기 */
+.radio{display:flex;align-items:center;gap:8px;margin-top:14px;width:min(100%,460px);
+  background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 6px 5px 14px;box-shadow:var(--shadow-sm)}
+.radio-ico{font-size:16px;line-height:1;flex:none}
+.radio input{flex:1;min-width:0;background:none;border:0;outline:none;font-size:13px;color:var(--ink)}
+.radio input::placeholder{color:var(--muted)}
+.radio button{flex:none;background:var(--ink);color:var(--surface);border:0;border-radius:999px;padding:7px 15px;font-size:12px;font-weight:700;white-space:nowrap}
+.radio button:disabled{opacity:.5}
+@media (max-width:600px){.radio input{font-size:16px}}
 /* 메타: 오른쪽 상단 */
 .meta{position:absolute;top:14px;right:0;display:flex;align-items:center;gap:8px;z-index:5}
 .weather{display:inline-flex;align-items:center;gap:10px;background:var(--surface);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:12px;color:var(--ink);box-shadow:var(--shadow-sm);white-space:nowrap}
@@ -207,11 +216,11 @@ button{cursor:pointer}
 .board-label em{font-style:normal;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.1em;color:var(--muted)}
 .board{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
 .day{display:flex;flex-direction:column;gap:8px;min-width:0;border-radius:18px;padding:14px 12px;position:relative;overflow:hidden}
-/* 1일차 연두코어 / 2일차 보라코어 배경 그라데이션 + 노이즈 질감 */
-.day[data-day="1"]{background:linear-gradient(150deg,#B6E88C 0%,#A6E08A 38%,#C4EC98 72%,#D8F0A6 100%)}
-.day[data-day="2"]{background:linear-gradient(150deg,#BBA6F0 0%,#9E88E6 42%,#C79BDC 75%,#E6C6EA 100%)}
-:root[data-theme="dark"] .day[data-day="1"]{background:linear-gradient(150deg,#2A4A1E 0%,#335A26 45%,#2C5424 100%)}
-:root[data-theme="dark"] .day[data-day="2"]{background:linear-gradient(150deg,#2E1F55 0%,#3A2A66 45%,#48306E 100%)}
+/* 1일차 민트코어 / 2일차 진한 보라코어 배경 그라데이션 + 노이즈 질감 */
+.day[data-day="1"]{background:linear-gradient(150deg,#9FE6C4 0%,#7FD7C7 40%,#AFE6A8 75%,#CFF0B0 100%)}
+.day[data-day="2"]{background:linear-gradient(150deg,#9A7BE8 0%,#7E5CD8 42%,#A86FD0 75%,#C78FDC 100%)}
+:root[data-theme="dark"] .day[data-day="1"]{background:linear-gradient(150deg,#114A3A 0%,#155A44 45%,#1E5A3A 100%)}
+:root[data-theme="dark"] .day[data-day="2"]{background:linear-gradient(150deg,#2A1860 0%,#381F7A 45%,#4A2A86 100%)}
 /* 노이즈 질감 오버레이 (리스트 카드 영역) */
 .day::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E")}
@@ -494,6 +503,12 @@ button{cursor:pointer}
       <label for="start">출발 <input type="date" id="start"></label>
       <span class="status" id="status">불러오는 중…</span>
     </div>
+    <!-- 익명 무전기: 지야호에게 익명 메시지 -->
+    <form class="radio" id="radioForm" autocomplete="off">
+      <span class="radio-ico" aria-hidden="true">📻</span>
+      <input id="radioInput" maxlength="60" placeholder="지야호에게 익명으로 한마디… (예: 안해야 잘 좀 하자)">
+      <button type="submit" id="radioBtn">보내기</button>
+    </form>
   </header>
 
   <p class="board-label"><span>THE MAP</span><em>강릉 일대</em></p>
@@ -1438,6 +1453,43 @@ function makeDb(){
     render();
   });
   await refresh();startPolling();
+
+  // ---- 익명 무전기: 지야호가 익명 메시지를 전달 ----
+  (function(){
+    const form=$("#radioForm"),inp=$("#radioInput"),btn=$("#radioBtn");
+    if(!form)return;
+    let lastId=null,primed=false;
+    function announce(text){
+      const q=document.getElementById("curQuest"),qt=document.getElementById("curQuestText"),qb=document.getElementById("curQuestBtn");
+      if(!q||!qt)return;
+      q.hidden=false;
+      qt.innerHTML=`📻 <b>익명이</b>가 그러는데… "${esc(text)}"`;
+      if(qb){qb.style.display="none";}
+    }
+    async function poll(){
+      try{
+        const rows=await sb("GET","/messages?select=id,text&order=id.desc&limit=1");
+        const row=rows&&rows[0];
+        if(!row)return;
+        if(!primed){lastId=row.id;primed=true;return;} // 처음엔 과거 메시지 안 띄움
+        if(row.id!==lastId){lastId=row.id;announce(row.text);}
+      }catch(e){/* messages 테이블 없으면 조용히 무시 */}
+    }
+    form.addEventListener("submit",async e=>{
+      e.preventDefault();
+      const text=(inp.value||"").trim();if(!text)return;
+      btn.disabled=true;
+      try{
+        await sb("POST","/messages",{text},{Prefer:"return=representation"});
+        inp.value="";
+        await poll(); // 바로 반영
+      }catch(err){
+        announce(text); // 서버에 테이블이 없더라도 최소한 내 화면엔 전달
+      }finally{btn.disabled=false;}
+    });
+    poll();                 // 기준점 잡기(과거 건 안 띄움)
+    setInterval(poll,5000); // 5초마다 새 익명 메시지 확인
+  })();
 })();
 </script>
 </body>
