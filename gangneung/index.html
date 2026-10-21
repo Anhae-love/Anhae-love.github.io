@@ -19,61 +19,64 @@ body{margin:0}
 img{max-width:100%}
 [hidden]{display:none!important}
 /* Layout: 한 줄 헤더 + 장소 추가 바 + 일차별 세로 타임라인(넓은 화면에선 열로 나란히) */
-/* ===== v2 · d.school 감각: 베이지/옅은블랙 바탕 + 민트·보라 포인트 ===== */
+/* ===== v2 · d.school 감각: 흰 바탕 + 소색/회색 + 블랙 글씨, 가끔 민트, 빨간 선 커서 ===== */
 :root{
-  /* 라이트 — 따뜻한 베이지 종이 + 잉크 블랙 텍스트 */
-  --bg:#F4F0E8; --surface:#FBF8F2F2; --ink:#1C1A17; --muted:#6E685E; --line:#E4DCCB;
-  --sea:#1C1A17; --sea-soft:#EAE4D6; --pine:#2F6E5E; --pine-soft:#DDEFE8; --sun:#8A5A2B; --sun-soft:#F0E6D6;
-  --danger:#B4473C;
-  --land:#EFE9DB; --sea-fill:#E2DACB; --road:#EAE3D4; --on-dot:#FBF8F2;
-  /* 포인트 컬러 — 민트 & 보라 (확 터뜨리는 강조) */
-  --mint:#14B8A6; --mint-weak:#CFF3EE; --violet:#7C5CFC; --violet-weak:#E7E0FF;
-  --accent:#7C5CFC; --accent-weak:#E7E0FF;
-  /* 동선(일차): 1=민트, 2=보라 */
-  --d0:#B9B2A2; --d1:#14B8A6; --d2:#7C5CFC;
-  --grad:radial-gradient(130% 120% at 15% 0%,#FBF7EF 0%,#F4EFE6 45%,#EDE6D8 100%);
-  --ink-rgb:28,26,23;  /* 번짐 캔버스 베이스 */
-  --blot1:20,184,166;  /* 민트 */
-  --blot2:124,92,252;  /* 보라 */
-  --paper:#F4F0E8;
+  /* 라이트 — 순백 배경, 블랙 텍스트, 소색/회색 중간톤 */
+  --bg:#FFFFFF; --surface:#FFFFFF; --ink:#111111; --muted:#6B6B6E; --line:#E6E4DF;
+  --sea:#111111; --sea-soft:#F3F1EC; --pine:#4B4B4E; --pine-soft:#F1F0EC; --sun:#6B6B6E; --sun-soft:#F3F1EC;
+  --danger:#E23B2E; /* 빨강 = 커서 전용 포인트 */
+  --land:#F4F2ED; --sea-fill:#ECEAE4; --road:#F0EEE8; --on-dot:#FFFFFF;
+  /* 포인트: 평소엔 거의 안 쓰고, 가끔 민트만 확 */
+  --mint:#17B9A6; --mint-weak:#E2F6F2;
+  --accent:#111111; --accent-weak:#F2F1EC;  /* 기본 인터랙션은 블랙/소색, 민트는 선택적 */
+  --red:#E23B2E;
+  /* 동선(일차): 소색 계열, 구분만 */
+  --d0:#C3C1BA; --d1:#111111; --d2:#9A9893;
+  --grad:linear-gradient(180deg,#FFFFFF 0%,#FBFAF7 100%);
+  --ink-rgb:17,17,17;
+  --blot1:23,185,166;   /* 민트 (가끔) */
+  --blot2:226,59,46;    /* 빨강 (클릭 포인트) */
+  --paper:#FFFFFF;
   --display:"Gowun Batang","Nanum Myeongjo","Apple SD Gothic Neo",serif;
   --body:"Gowun Batang","Nanum Myeongjo","Apple SD Gothic Neo","Malgun Gothic",serif;
-  --shadow-sm:0 2px 12px rgba(28,26,23,.06);
-  --shadow-md:0 10px 30px rgba(28,26,23,.12);
+  --shadow-sm:0 1px 3px rgba(17,17,17,.05);
+  --shadow-md:0 8px 24px rgba(17,17,17,.09);
 }
-/* 다크 — 옅은블랙(차콜) 바탕, 같은 민트·보라 포인트 */
+/* 다크 — 소색이 빠진 차콜, 글씨 흰색, 같은 민트/빨강 포인트 */
 :root[data-theme="dark"]{
-  --bg:#15140F; --surface:#201E19E6; --ink:#F2EEE4; --muted:#A8A192; --line:#34302A;
-  --sea:#F2EEE4; --sea-soft:#2A2720; --pine:#6FD2BE; --pine-soft:#20302C; --sun:#D7A86B; --sun-soft:#2C2418;
-  --danger:#E98A7E;
-  --land:#1D1B16; --sea-fill:#262219; --road:#221F19; --on-dot:#15140F;
-  --mint:#2DD4BF; --mint-weak:#163A37; --violet:#A896FF; --violet-weak:#2A2448;
-  --accent:#A896FF; --accent-weak:#2A2448;
-  --d0:#5C5648; --d1:#2DD4BF; --d2:#A896FF;
-  --grad:radial-gradient(130% 120% at 15% 0%,#1C1A14 0%,#141209 55%,#0E0D08 100%);
-  --ink-rgb:242,238,228;
+  --bg:#121211; --surface:#1A1A18; --ink:#F3F1EC; --muted:#9C9A94; --line:#2C2B28;
+  --sea:#F3F1EC; --sea-soft:#242320; --pine:#C4C2BB; --pine-soft:#242320; --sun:#9C9A94; --sun-soft:#201F1D;
+  --danger:#FF5648;
+  --land:#1A1A18; --sea-fill:#232220; --road:#1E1E1C; --on-dot:#121211;
+  --mint:#2DD4BF; --mint-weak:#17322E;
+  --accent:#F3F1EC; --accent-weak:#242320;
+  --red:#FF5648;
+  --d0:#565550; --d1:#F3F1EC; --d2:#9C9A94;
+  --grad:linear-gradient(180deg,#141413 0%,#101010 100%);
+  --ink-rgb:243,241,236;
   --blot1:45,212,191;
-  --blot2:168,150,255;
-  --paper:#15140F;
-  --shadow-sm:0 2px 14px rgba(0,0,0,.45);
-  --shadow-md:0 12px 34px rgba(0,0,0,.6);
+  --blot2:255,86,72;
+  --paper:#121211;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.4);
+  --shadow-md:0 10px 28px rgba(0,0,0,.55);
   color-scheme:dark;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#15140F; --surface:#201E19E6; --ink:#F2EEE4; --muted:#A8A192; --line:#34302A;
-  --sea:#F2EEE4; --sea-soft:#2A2720; --pine:#6FD2BE; --pine-soft:#20302C; --sun:#D7A86B; --sun-soft:#2C2418;
-  --danger:#E98A7E;
-  --land:#1D1B16; --sea-fill:#262219; --road:#221F19; --on-dot:#15140F;
-  --mint:#2DD4BF; --mint-weak:#163A37; --violet:#A896FF; --violet-weak:#2A2448;
-  --accent:#A896FF; --accent-weak:#2A2448;
-  --d0:#5C5648; --d1:#2DD4BF; --d2:#A896FF;
-  --grad:radial-gradient(130% 120% at 15% 0%,#1C1A14 0%,#141209 55%,#0E0D08 100%);
-  --ink-rgb:242,238,228;
+  --bg:#121211; --surface:#1A1A18; --ink:#F3F1EC; --muted:#9C9A94; --line:#2C2B28;
+  --sea:#F3F1EC; --sea-soft:#242320; --pine:#C4C2BB; --pine-soft:#242320; --sun:#9C9A94; --sun-soft:#201F1D;
+  --danger:#FF5648;
+  --land:#1A1A18; --sea-fill:#232220; --road:#1E1E1C; --on-dot:#121211;
+  --mint:#2DD4BF; --mint-weak:#17322E;
+  --accent:#F3F1EC; --accent-weak:#242320;
+  --red:#FF5648;
+  --d0:#565550; --d1:#F3F1EC; --d2:#9C9A94;
+  --grad:linear-gradient(180deg,#141413 0%,#101010 100%);
+  --ink-rgb:243,241,236;
   --blot1:45,212,191;
-  --blot2:168,150,255;
-  --paper:#15140F;
-  --shadow-sm:0 2px 14px rgba(0,0,0,.45);
-  --shadow-md:0 12px 34px rgba(0,0,0,.6);
+  --blot2:255,86,72;
+  --paper:#121211;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.4);
+  --shadow-md:0 10px 28px rgba(0,0,0,.55);
   color-scheme:dark;
 }}
 *{box-sizing:border-box}
@@ -87,8 +90,7 @@ button{cursor:pointer}
 
 header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;border-bottom:1px solid var(--line);padding-bottom:18px}
 h1{font-family:var(--display);font-weight:800;font-size:clamp(19px,2.6vw,23px);line-height:1.3;margin:0;text-wrap:balance;letter-spacing:.01em;display:flex;flex-wrap:wrap;align-items:baseline;gap:0 10px}
-h1 small{flex-basis:100%;display:block;font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.18em;color:var(--violet);margin-bottom:5px}
-:root[data-theme="dark"] h1 small{color:var(--mint)}
+h1 small{flex-basis:100%;display:block;font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.18em;color:var(--muted);margin-bottom:5px}
 h1 .title-main{color:var(--ink)}
 /* 하슬라 캐릭터 — 본문 제목보다 한 단계 작게, 민트 포인트 */
 h1 .buddy{font-family:var(--display);font-weight:700;font-size:.62em;letter-spacing:.01em;color:var(--mint);
@@ -149,13 +151,13 @@ h1 .buddy::before{content:"";width:7px;height:7px;border-radius:50%;background:v
 .empty{font-size:13px;color:var(--muted);padding:10px 0}
 
 .card{background:var(--surface);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:14px;min-width:0;transition:border-color .2s,box-shadow .2s,transform .2s}
-.card:hover{box-shadow:0 8px 24px color-mix(in srgb,var(--mint) 22%,transparent);transform:translateY(-2px);border-color:color-mix(in srgb,var(--mint) 55%,var(--line))}
-.card.open{border-color:var(--violet);box-shadow:0 10px 30px color-mix(in srgb,var(--violet) 22%,transparent)}
-/* 1일차 타임라인=민트, 2일차=보라 */
-.day[data-day="1"] .list{border-left-color:color-mix(in srgb,var(--mint) 60%,var(--line))}
-.day[data-day="2"] .list{border-left-color:color-mix(in srgb,var(--violet) 60%,var(--line))}
+.card:hover{box-shadow:var(--shadow-md);transform:translateY(-1px);border-color:color-mix(in srgb,var(--mint) 45%,var(--line))}
+.card.open{border-color:var(--ink);box-shadow:var(--shadow-md)}
+/* 1일차 타임라인=민트 포인트, 2일차=소색 */
+.day[data-day="1"] .list{border-left-color:color-mix(in srgb,var(--mint) 55%,var(--line))}
+.day[data-day="2"] .list{border-left-color:var(--line)}
 .day[data-day="1"] h2 .n{color:var(--mint)}
-.day[data-day="2"] h2 .n{color:var(--violet)}
+.day[data-day="2"] h2 .n{color:var(--muted)}
 .row{display:flex;align-items:flex-start;gap:8px;padding:7px 10px;width:100%;background:none;border:0;text-align:left}
 .time{font-variant-numeric:tabular-nums;font-size:12px;color:var(--muted);width:38px;flex:none;padding-top:2px}
 .main{flex:1;min-width:0}
@@ -163,12 +165,11 @@ h1 .buddy::before{content:"";width:7px;height:7px;border-radius:50%;background:v
 .pmemo{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.4}
 .card.open .pmemo{white-space:normal;overflow-wrap:anywhere}
 .cat{flex:none;font-size:11px;font-weight:600;border-radius:6px;padding:2px 7px;margin-top:2px}
-.c-관광{background:var(--mint-weak);color:color-mix(in srgb,var(--mint) 72%,#000)}
+.c-관광{background:var(--mint-weak);color:color-mix(in srgb,var(--mint) 70%,#000)}
 :root[data-theme="dark"] .c-관광{color:var(--mint)}
 .c-맛집{background:var(--sun-soft);color:var(--sun)}
 .c-카페{background:var(--sun-soft);color:var(--sun)}
-.c-숙소{background:var(--violet-weak);color:color-mix(in srgb,var(--violet) 72%,#000)}
-:root[data-theme="dark"] .c-숙소{color:var(--violet)}
+.c-숙소{background:var(--land);color:var(--ink)}
 .c-기타{background:var(--land);color:var(--muted)}
 .cand-b{font-size:11px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:0 5px;margin-left:6px;vertical-align:1px}
 .card.cand .pname{color:var(--muted)}
@@ -266,33 +267,18 @@ h1 .buddy::before{content:"";width:7px;height:7px;border-radius:50%;background:v
   .add form .btn{grid-column:3/4}
 }
 
-/* ---- 시선(gaze) 커서: 아이트래커 고정점처럼 요소에 머물고 번짐 ---- */
-.gaze{position:fixed;top:0;left:0;z-index:9998;pointer-events:none;border-radius:50%;
-  width:46px;height:46px;margin:-23px 0 0 -23px;opacity:0;will-change:transform;
-  background:radial-gradient(circle at 50% 50%,rgba(var(--blot2),.22),rgba(var(--blot2),.08) 60%,transparent 72%);
-  border:1.5px solid rgba(var(--blot2),.55);
-  box-shadow:0 0 22px rgba(var(--blot2),.25);
-  transition:width .28s cubic-bezier(.22,1,.36,1),height .28s cubic-bezier(.22,1,.36,1),margin .28s cubic-bezier(.22,1,.36,1),opacity .3s ease,background-color .3s ease,border-color .3s ease}
-.gaze-dot{position:fixed;top:0;left:0;z-index:9999;pointer-events:none;width:7px;height:7px;margin:-3.5px 0 0 -3.5px;border-radius:50%;background:var(--ink);opacity:0;will-change:transform}
-@media (hover:hover) and (pointer:fine){
-  body.has-cursor{cursor:none}
-  body.has-cursor a,body.has-cursor button,body.has-cursor input,body.has-cursor select,body.has-cursor textarea,body.has-cursor label,body.has-cursor [role="button"],body.has-cursor .mk,body.has-cursor .chip,body.has-cursor .card{cursor:none}
-  body.has-cursor .gaze,body.has-cursor .gaze-dot{opacity:1}
-  /* 요소에 '고정'될 때: 민트로 커지며 번짐 */
-  body.has-cursor.gaze-lock .gaze{width:var(--gw,72px);height:var(--gh,72px);margin:calc(var(--gh,72px)/-2) 0 0 calc(var(--gw,72px)/-2);
-    background:radial-gradient(circle at 50% 50%,rgba(var(--blot1),.20),rgba(var(--blot1),.07) 62%,transparent 74%);
-    border-color:rgba(var(--blot1),.6);box-shadow:0 0 30px rgba(var(--blot1),.3);border-radius:16px}
-  body.has-cursor.gaze-lock .gaze-dot{opacity:.4}
-}
-@media (prefers-reduced-motion:reduce){.gaze{transition:opacity .3s ease}}
+/* ---- 빨간 선(line) 커서: 포인터 궤적을 1개의 선으로, 꺾이는 지점에서 각지게 이어짐 ---- */
+#line-cursor{position:fixed;inset:0;z-index:9999;pointer-events:none;width:100%;height:100%}
+#line-cursor polyline{fill:none;stroke:var(--red);stroke-width:2;stroke-linejoin:miter;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.lc-head{fill:var(--red)}
+@media (hover:hover) and (pointer:fine){ body.has-cursor{cursor:none} }
 </style>
 </head>
 <body>
 
 <canvas id="ink" aria-hidden="true"></canvas>
 
-<div class="gaze" id="gaze" aria-hidden="true"></div>
-<div class="gaze-dot" id="gazeDot" aria-hidden="true"></div>
+<svg id="line-cursor" aria-hidden="true"><polyline points=""></polyline><circle class="lc-head" r="3.5" cx="-10" cy="-10"></circle></svg>
 
 <div class="wrap">
   <header>
@@ -365,10 +351,10 @@ const INK=(function(){
     W=cv.clientWidth;H=cv.clientHeight;
     cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
   }
-  // 하나의 색 번짐: 중심에서 퍼지며 옅어짐 (c=0 민트 / 1 보라)
-  function spawn(x,y,r,life,c){blobs.push({x,y,r0:r*0.2,r,age:0,life:life||1,c:c==null?(Math.random()<0.5?0:1):c})}
+  // 하나의 색 번짐: 중심에서 퍼지며 옅어짐 (c=0 민트 / 1 빨강)
+  function spawn(x,y,r,life,c){blobs.push({x,y,r0:r*0.2,r,age:0,life:life||1,c:c==null?0:c})}
   function splash(x,y,power,c){ // 클릭/터치 시 확 번짐
-    const n=5+Math.floor(power*4);const col=c==null?(Math.random()<0.5?0:1):c;
+    const n=5+Math.floor(power*4);const col=c==null?0:c;
     for(let i=0;i<n;i++){const a=Math.random()*6.283,d=Math.random()*40*power;
       spawn(x+Math.cos(a)*d,y+Math.sin(a)*d,(24+Math.random()*54)*power,0.9+Math.random()*0.5,col)}
   }
@@ -376,13 +362,14 @@ const INK=(function(){
     t+=dt;
     ctx.clearRect(0,0,W,H);
     ctx.globalCompositeOperation="source-over";
-    // 가운데에서 은은하게 계속 피어오르는 민트/보라
-    if(!reduce&&Math.random()<0.05){const cx=W/2+(Math.random()-0.5)*W*0.34,cy=H*0.46+(Math.random()-0.5)*H*0.34;spawn(cx,cy,40+Math.random()*80,1.2+Math.random())}
+    // 흰 배경 유지: 아주 가끔, 아주 옅은 민트만 은은하게 피어오름
+    if(!reduce&&Math.random()<0.012){const cx=W/2+(Math.random()-0.5)*W*0.4,cy=H*0.5+(Math.random()-0.5)*H*0.4;spawn(cx,cy,60+Math.random()*90,1.6+Math.random(),0)}
     for(let i=blobs.length-1;i>=0;i--){
-      const b=blobs[i];b.age+=dt/ (reduce?1600:3000) / b.life;
+      const b=blobs[i];b.age+=dt/ (reduce?1600:3200) / b.life;
       if(b.age>=1){blobs.splice(i,1);continue}
       const e=b.age, r=b.r0+(b.r-b.r0)*(1-Math.pow(1-e,2));
-      const alpha=(1-e)*0.16;
+      // 민트(c=0)는 아주 옅게, 빨강(c=1, 클릭)만 조금 더 선명하게
+      const alpha=(1-e)*(b.c? 0.16 : 0.07);
       const g=ctx.createRadialGradient(b.x,b.y,0,b.x,b.y,r);
       g.addColorStop(0,blotColor(b.c,alpha));
       g.addColorStop(0.55,blotColor(b.c,alpha*0.45));
@@ -401,62 +388,51 @@ const INK=(function(){
   return {spawn,splash,toLocal:(x,y)=>{const r=cv.getBoundingClientRect();return [x-r.left,y-r.top]}};
 })();
 
-/* ---- 시선(gaze) 커서: 아이트래커 고정점처럼 요소에 머물고 색이 번짐 ---- */
+/* ---- 빨간 선 커서: 포인터 궤적을 1개의 선으로, 꺾이는 지점에서 각지게 ---- */
 (function(){
   const fine=matchMedia("(hover:hover) and (pointer:fine)").matches;
-  const gaze=document.getElementById("gaze"),dot=document.getElementById("gazeDot");
-  if(!fine||!gaze||!dot)return;
-  const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+  const svg=document.getElementById("line-cursor");
+  if(!fine||!svg)return;
+  const poly=svg.querySelector("polyline"),head=svg.querySelector(".lc-head");
   document.body.classList.add("has-cursor");
-  const body=document.body;
-  const HOT='a,button,input,select,textarea,label,[role="button"],.mk,.chip,.card,.dchip';
-  let mx=innerWidth/2,my=innerHeight/2;      // 실제 마우스
-  let gx=mx,gy=my;                            // 시선 원(지연 추적)
-  let tx=mx,ty=my;                            // 목표점 (요소면 그 중심)
-  let locked=null,raf=null;
-  function targetFor(el){
-    const t=el&&el.closest&&el.closest(HOT);
-    if(!t)return null;
-    const r=t.getBoundingClientRect();
-    // 너무 큰 카드는 커서가 통째로 덮지 않게 크기 상한
-    const gw=Math.min(r.width+16,240),gh=Math.min(r.height+16,120);
-    return {cx:r.left+r.width/2,cy:r.top+r.height/2,gw,gh,el:t};
-  }
-  function frame(){
-    // 시선 원은 목표점으로 부드럽게 (saccade→fixation)
-    const k=locked?0.22:0.16;
-    gx+=(tx-gx)*k;gy+=(ty-gy)*k;
-    gaze.style.transform=`translate(${gx}px,${gy}px)`;
-    dot.style.transform=`translate(${mx}px,${my}px)`; // 작은 점은 실제 커서에 딱
-    const moving=Math.abs(tx-gx)>0.3||Math.abs(ty-gy)>0.3||Math.abs(mx-dot._lx)>0.3;
-    dot._lx=mx;
-    if(moving){raf=requestAnimationFrame(frame)}else raf=null;
-  }
-  function kick(){if(!raf)raf=requestAnimationFrame(frame)}
-  addEventListener("mousemove",e=>{
-    mx=e.clientX;my=e.clientY;
-    const tgt=targetFor(e.target);
-    if(tgt){
-      locked=tgt.el;tx=tgt.cx;ty=tgt.cy;
-      gaze.style.setProperty("--gw",tgt.gw+"px");
-      gaze.style.setProperty("--gh",tgt.gh+"px");
-      body.classList.add("gaze-lock");
-    }else{
-      locked=null;tx=mx;ty=my;body.classList.remove("gaze-lock");
-    }
+  // 최근 포인터 지점들을 모아 1개의 선으로. 움직임이 멈추면 꼬리부터 사라짐.
+  const pts=[];            // {x,y,t}
+  const TAIL=14;           // 선을 이루는 최대 꼭짓점 수 (꺾임점 포함)
+  const LIFE=320;          // 각 점이 살아있는 시간(ms) → 멈추면 선이 짧아짐
+  const MINSEG=6;          // 이 거리 이상 움직였을 때만 새 꼭짓점(각지게 끊기도록)
+  let mx=innerWidth/2,my=innerHeight/2,have=false,raf=null;
+  function onMove(e){
+    mx=e.clientX;my=e.clientY;have=true;
+    const last=pts[pts.length-1];
+    if(!last||Math.hypot(mx-last.x,my-last.y)>=MINSEG){
+      pts.push({x:mx,y:my,t:performance.now()});
+      if(pts.length>TAIL)pts.shift();
+    }else{last.x=mx;last.y=my;last.t=performance.now();}
     kick();
-  },{passive:true});
-  // 클릭하면 민트/보라 번짐
-  addEventListener("mousedown",e=>{if(INK){const [x,y]=INK.toLocal(e.clientX,e.clientY);INK.splash(x,y,1.1,locked?0:1)}});
-  document.addEventListener("mouseleave",()=>{gaze.style.opacity=dot.style.opacity="0"});
-  document.addEventListener("mouseenter",()=>{gaze.style.opacity=dot.style.opacity=""});
-  dot._lx=mx;kick();
+  }
+  function draw(){
+    const now=performance.now();
+    // 수명 지난 꼭짓점 제거 → 꼬리부터 사라짐
+    while(pts.length&&now-pts[0].t>LIFE)pts.shift();
+    if(have){                 // 머리(현재 위치)는 항상 포함
+      head.setAttribute("cx",mx);head.setAttribute("cy",my);
+    }
+    const all=pts.concat(have?[{x:mx,y:my}]:[]);
+    poly.setAttribute("points",all.map(p=>p.x+","+p.y).join(" "));
+    // 점이 남아있으면 계속 애니메이션(멈춰도 꼬리 소멸까지 돌다가 멈춤)
+    if(pts.length>0){raf=requestAnimationFrame(draw)}else raf=null;
+  }
+  function kick(){if(!raf)raf=requestAnimationFrame(draw)}
+  addEventListener("mousemove",onMove,{passive:true});
+  // 클릭하면 빨간 번짐 한 번
+  addEventListener("mousedown",e=>{if(INK){const [x,y]=INK.toLocal(e.clientX,e.clientY);INK.splash(x,y,1.0,1)}});
+  document.addEventListener("mouseleave",()=>{pts.length=0;poly.setAttribute("points","");head.setAttribute("cx",-10);head.setAttribute("cy",-10)});
 })();
 
-/* ---- 모바일: 터치하면 색이 확 번짐 ---- */
+/* ---- 모바일: 터치하면 색이 확 번짐 (가끔 민트) ---- */
 addEventListener("touchstart",e=>{
   if(!INK)return;const tt=e.touches[0];if(!tt)return;
-  const [x,y]=INK.toLocal(tt.clientX,tt.clientY);INK.splash(x,y,1.3);
+  const [x,y]=INK.toLocal(tt.clientX,tt.clientY);INK.splash(x,y,1.2,0);
 },{passive:true});
 
 /* ---- 다크 / 화이트 모드 토글 ---- */
