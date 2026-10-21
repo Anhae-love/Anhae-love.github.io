@@ -92,20 +92,38 @@ button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-/* ===== 에디토리얼 마스트헤드 (비대칭·탈전형) ===== */
-.masthead{position:relative;padding:14px 0 26px;margin-bottom:6px;border-bottom:1px solid var(--line)}
-.eyebrow{display:flex;align-items:baseline;gap:12px;margin:0 0 6px}
-.eyebrow .geo{font-family:var(--display);font-weight:800;font-size:clamp(34px,8vw,64px);line-height:.8;color:var(--red);letter-spacing:.02em}
-.eyebrow .geo-full{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:700}
-/* 큰 명조 타이틀을 오른쪽으로 밀어 비대칭 */
-.masthead-t{font-family:var(--display);font-weight:800;font-size:clamp(40px,10vw,84px);line-height:.98;margin:2px 0 0;
-  letter-spacing:-.01em;text-align:right;color:var(--ink)}
-.dateline{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:18px;font-size:12px;color:var(--muted)}
+/* ===== 가운데 정렬 마스트헤드 + 키로 마스코트 ===== */
+.masthead{position:relative;padding:18px 0 24px;margin-bottom:6px;border-bottom:1px solid var(--line);
+  display:flex;flex-direction:column;align-items:center;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;margin:0 0 6px;justify-content:center;flex-wrap:wrap}
+.eyebrow .geo{font-family:var(--display);font-weight:800;font-size:15px;line-height:1;color:var(--red);letter-spacing:.14em}
+.eyebrow .geo-full{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:700}
+/* 키로 얼굴 — 왕크게 */
+.kiro{width:clamp(150px,26vw,230px);margin:4px auto 2px;cursor:pointer}
+.kiro svg{display:block;width:100%;height:auto;overflow:visible}
+.k-face{fill:var(--surface);stroke:var(--ink);stroke-width:4}
+.k-cheek{fill:var(--red);opacity:.22}
+.k-eyew{fill:var(--surface);stroke:var(--ink);stroke-width:3}
+.k-pupil{fill:var(--ink)}
+.k-glint{fill:#fff}
+.k-mouth{fill:none;stroke:var(--ink);stroke-width:4;stroke-linecap:round;transition:d .2s ease}
+.k-ant{stroke:var(--ink);stroke-width:4;stroke-linecap:round}
+.k-antdot{fill:var(--red)}
+@media (prefers-reduced-motion:no-preference){
+  .k-antdot{animation:kbob 2.6s ease-in-out infinite}
+  .kiro svg{animation:kfloat 5s ease-in-out infinite}
+}
+@keyframes kfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes kbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+/* 아주 작은 제목 */
+.masthead-t{font-family:var(--display);font-weight:700;font-size:clamp(14px,2.2vw,17px);line-height:1.2;margin:6px 0 0;
+  letter-spacing:.04em;text-align:center;color:var(--ink)}
+.dateline{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:9px 16px;margin-top:14px;font-size:12px;color:var(--muted)}
 .dateline .dl-no{font-family:var(--display);font-weight:700;letter-spacing:.1em;color:var(--ink)}
 .dateline label{display:inline-flex;align-items:center;gap:7px;letter-spacing:.08em}
 .dateline input{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:5px 8px}
 .status{font-size:12px;color:var(--muted)}
-/* 메타: 오른쪽 상단에 흩뿌림 */
+/* 메타: 오른쪽 상단 */
 .meta{position:absolute;top:14px;right:0;display:flex;align-items:center;gap:8px;z-index:5}
 .weather{display:inline-flex;align-items:center;gap:10px;background:var(--surface);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:12px;color:var(--ink);box-shadow:var(--shadow-sm);white-space:nowrap}
 .weather .wx-now,.weather .wx-tmr{display:inline-flex;align-items:center;gap:6px}
@@ -118,21 +136,24 @@ button{cursor:pointer}
 .weather.loading .wx-tmr{display:none}
 .weather.loading{color:var(--muted)}
 
-/* 옷차림 토스트 — 들어오면 자동으로 톡 (화면 고정, 안 가림) */
-.wx-pop{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:120;
+/* 옷차림 말풍선 — 날씨 칩 바로 밑(상단 우측)에서 자동으로 톡 */
+.wx-pop{position:fixed;top:calc(54px + env(safe-area-inset-top,0px));right:calc(18px + env(safe-area-inset-right,0px));z-index:120;
   width:max-content;max-width:min(84vw,320px);display:flex;gap:11px;align-items:flex-start;text-align:left;
   background:var(--surface);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   border:1px solid var(--line);border-radius:16px;padding:14px 38px 14px 15px;box-shadow:var(--shadow-md);
   animation:wxpop .4s cubic-bezier(.22,1,.36,1)}
 .wx-pop[hidden]{display:none}
-.wx-pop::after{content:"";position:absolute;left:0;top:14px;bottom:14px;width:3px;border-radius:3px;background:var(--red)}
-.wx-pop-emo{font-size:28px;line-height:1.05;flex:none}
+/* 말풍선 꼬리 — 위(날씨 칩)를 가리킴 */
+.wx-pop::before{content:"";position:absolute;top:-8px;right:30px;width:15px;height:15px;background:var(--surface);
+  border-left:1px solid var(--line);border-top:1px solid var(--line);transform:rotate(45deg)}
+.wx-pop-emo{font-size:30px;line-height:1.05;flex:none}
 .wx-pop-body strong{display:block;font-size:13px;color:var(--ink);margin-bottom:3px}
 .wx-pop-body p{margin:0;font-size:12.5px;line-height:1.55;color:var(--muted);white-space:normal}
 .wx-pop-x{position:absolute;top:8px;right:10px;background:none;border:0;font-size:18px;line-height:1;color:var(--muted);padding:2px}
 .wx-pop-x:hover{color:var(--ink)}
-@keyframes wxpop{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
-@media (max-width:600px){.wx-pop{left:14px;right:14px;bottom:14px;max-width:none}}
+@keyframes wxpop{from{opacity:0;transform:translateY(-12px) scale(.96)}to{opacity:1;transform:none}}
+@media (max-width:600px){.wx-pop{top:auto;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:14px;right:14px;max-width:none}
+  .wx-pop::before{display:none}}
 .themebtn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:999px;border:1px solid var(--line);background:var(--surface);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--ink);box-shadow:var(--shadow-sm);transition:border-color .2s,transform .2s;flex:none}
 .themebtn:hover{border-color:var(--accent);transform:translateY(-1px)}
 .themebtn svg{width:18px;height:18px}
@@ -236,12 +257,11 @@ button{cursor:pointer}
   html{font-size:94%}
   body{font-size:14px;line-height:1.55}
   .wrap{padding-block:12px 44px;gap:14px}
-  /* 모바일 마스트헤드: 메타는 흐름에 넣고, 타이틀은 왼쪽 정렬로 */
-  .masthead{padding:10px 0 20px}
-  .meta{position:static;justify-content:flex-start;margin-bottom:14px}
-  .eyebrow .geo{font-size:clamp(30px,13vw,48px)}
-  .masthead-t{text-align:left;font-size:clamp(34px,15vw,56px)}
-  .dateline{margin-top:14px;font-size:12px}
+  /* 모바일 마스트헤드: 가운데 정렬 유지, 메타는 흐름에 */
+  .masthead{padding:8px 0 18px}
+  .meta{position:static;justify-content:center;margin-bottom:12px}
+  .kiro{width:clamp(130px,44vw,190px)}
+  .dateline{margin-top:12px;font-size:12px}
   .add{padding:12px;gap:9px;border-radius:14px}
   .add form{grid-template-columns:1fr 1fr 84px auto;gap:6px}
   .add form .name{grid-column:1/-1}
@@ -273,7 +293,6 @@ button{cursor:pointer}
 }
 @media (max-width:380px){
   html{font-size:90%}
-  .masthead-t{font-size:clamp(30px,14vw,44px)}
   .weather .wx-desc{display:none}
   .add form{grid-template-columns:1fr 84px auto}
   #fCat{grid-column:1/2}#fTime{grid-column:2/3}.fcand{grid-column:3/4;justify-content:center}
@@ -316,11 +335,29 @@ button{cursor:pointer}
       </button>
     </div>
 
-    <!-- 에디토리얼 타이틀: 세로 라벨 + 큰 명조 -->
+    <!-- 가운데 정렬: 작은 GEO 라벨 → 왕큰 키로 얼굴 → 아주 작은 제목 -->
     <p class="eyebrow"><span class="geo">GEO</span><span class="geo-full">Gangneung Experience Observatory</span></p>
-    <h1 class="masthead-t">강릉<br>여행 계획</h1>
+
+    <div class="kiro" id="kiro" aria-label="키로 마스코트">
+      <svg viewBox="0 0 240 230" role="img" aria-hidden="true">
+        <rect class="k-face" x="24" y="30" width="192" height="168" rx="46" ry="48"/>
+        <ellipse class="k-cheek" cx="66" cy="140" rx="15" ry="9"/>
+        <ellipse class="k-cheek" cx="174" cy="140" rx="15" ry="9"/>
+        <circle class="k-eyew" cx="90" cy="108" r="26"/>
+        <circle class="k-eyew" cx="150" cy="108" r="26"/>
+        <circle class="k-pupil" id="kpL" cx="90" cy="108" r="11"/>
+        <circle class="k-pupil" id="kpR" cx="150" cy="108" r="11"/>
+        <circle class="k-glint" id="kgL" cx="86" cy="104" r="3.4"/>
+        <circle class="k-glint" id="kgR" cx="146" cy="104" r="3.4"/>
+        <path class="k-mouth" id="kMouth" d="M104 158 Q120 172 136 158"/>
+        <line class="k-ant" x1="120" y1="30" x2="120" y2="10"/>
+        <circle class="k-antdot" cx="120" cy="7" r="6"/>
+      </svg>
+    </div>
+
+    <h1 class="masthead-t">강릉 여행 계획</h1>
     <div class="dateline">
-      <span class="dl-no">01 — 02</span>
+      <span class="dl-no">DAY 01 — 02</span>
       <label for="start">DEPART <input type="date" id="start"></label>
       <span class="status" id="status">불러오는 중…</span>
     </div>
@@ -460,6 +497,43 @@ const INK=(function(){
   addEventListener("touchend",()=>{have=false;kick()},{passive:true});
 })();
 
+/* ---- 키로 마스코트: 눈동자가 마우스를 따라 보고, 쓰다듬으면 방긋 ---- */
+(function(){
+  const box=document.getElementById("kiro");if(!box)return;
+  const pL=document.getElementById("kpL"),pR=document.getElementById("kpR"),
+        gL=document.getElementById("kgL"),gR=document.getElementById("kgR"),
+        mouth=document.getElementById("kMouth");
+  const eyes=[{p:pL,g:gL,cx:90,cy:108},{p:pR,g:gR,cx:150,cy:108}];
+  const MAXR=7; // 눈동자 이동 반경
+  let tx=innerWidth/2,ty=0,raf=null,happy=0;
+  function render(){
+    const r=box.getBoundingClientRect();
+    eyes.forEach(e=>{
+      // 눈 중심의 화면 좌표 추정 (viewBox 240x230 기준)
+      const ex=r.left+r.width*(e.cx/240), ey=r.top+r.height*(e.cy/230);
+      const dx=tx-ex, dy=ty-ey, d=Math.hypot(dx,dy)||1;
+      const off=Math.min(MAXR, d/18);
+      const ox=dx/d*off, oy=dy/d*off;
+      e.p.setAttribute("cx",e.cx+ox); e.p.setAttribute("cy",e.cy+oy);
+      e.g.setAttribute("cx",e.cx+ox-4); e.g.setAttribute("cy",e.cy+oy-4);
+    });
+    raf=null;
+  }
+  function kick(){if(!raf)raf=requestAnimationFrame(render)}
+  addEventListener("mousemove",e=>{tx=e.clientX;ty=e.clientY;kick()},{passive:true});
+  addEventListener("touchmove",e=>{const t=e.touches[0];if(t){tx=t.clientX;ty=t.clientY;kick()}},{passive:true});
+  // 쓰다듬기(호버/클릭) → 더 활짝 웃고 배경 번짐
+  function smile(){mouth.setAttribute("d","M100 156 Q120 180 140 156");}
+  function unsmile(){mouth.setAttribute("d","M104 158 Q120 172 136 158");}
+  box.addEventListener("mouseenter",smile);
+  box.addEventListener("mouseleave",unsmile);
+  box.addEventListener("click",()=>{
+    smile();clearTimeout(happy);happy=setTimeout(unsmile,1200);
+    if(INK){const r=box.getBoundingClientRect();const [x,y]=INK.toLocal(r.left+r.width/2,r.top+r.height/2);INK.splash(x,y,1.0,0)}
+  });
+  render();
+})();
+
 /* ---- 다크 / 화이트 모드 토글 ---- */
 (function(){
   const btn=document.getElementById("themeBtn");if(!btn)return;
@@ -550,7 +624,7 @@ const INK=(function(){
       popEmo.textContent=oe;popTitle.textContent=`오늘 ${hi}° · 이렇게 입어요`;popText.textContent=ot;
       pop.hidden=false;                 // 자동 등장
       clearTimeout(pop._t);
-      pop._t=setTimeout(closePop,9000); // 9초 뒤 자동 사라짐
+      pop._t=setTimeout(closePop,16000); // 16초 뒤 자동 사라짐
     }
     el.classList.remove("loading");
   }).catch(()=>{
@@ -559,7 +633,7 @@ const INK=(function(){
   });
   function closePop(){if(pop){clearTimeout(pop._t);pop.hidden=true}}
   // 날씨 칩을 누르면 옷차림 토스트 다시 띄움
-  el.addEventListener("click",()=>{if(pop&&popText.textContent){pop.hidden=false;clearTimeout(pop._t);pop._t=setTimeout(closePop,9000)}});
+  el.addEventListener("click",()=>{if(pop&&popText.textContent){pop.hidden=false;clearTimeout(pop._t);pop._t=setTimeout(closePop,16000)}});
   const popX=document.getElementById("wxPopX");
   if(popX)popX.addEventListener("click",e=>{e.stopPropagation();closePop()});
   addEventListener("keydown",e=>{if(e.key==="Escape")closePop()});
