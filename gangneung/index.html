@@ -1463,7 +1463,7 @@ function makeDb(){
       const q=document.getElementById("curQuest"),qt=document.getElementById("curQuestText"),qb=document.getElementById("curQuestBtn");
       if(!q||!qt)return;
       q.hidden=false;
-      qt.innerHTML=`📻 <b>익명이</b>가 그러는데… "${esc(text)}"`;
+      qt.innerHTML=`📻 <b>무전기 발동:</b> "${esc(text)}"`;
       if(qb){qb.style.display="none";}
     }
     async function poll(){
