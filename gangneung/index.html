@@ -35,9 +35,10 @@ img{max-width:100%}
   /* 민트는 오직 배경 웨시용 (blot1). 전경 색으로는 안 씀 */
   --mint-bg:38,166,154;
   /* 동선(일차) — 농담만 다른 먹 톤 */
-  --d0:#B6B7BA; --d1:#1C1D20; --d2:#6F7175;
-  /* 레퍼런스 보라~민트 유동 그라데이션 (라이트: 파스텔) */
-  --grad:linear-gradient(155deg,#EAE3F6 0%,#E7E0F2 22%,#DCE8F0 46%,#DAEFE4 70%,#E6F3DE 100%);
+  /* 동선: 1일차 연두 / 2일차 보라 (리스트 배경과 맞춤) */
+  --d0:#B6B7BA; --d1:#5FA83C; --d2:#8A5CD8;
+  /* 레퍼런스 보라~연두 유동 그라데이션 (라이트: 파스텔) */
+  --grad:linear-gradient(155deg,#EAE3F6 0%,#E7E0F2 22%,#DEE9EF 46%,#DCEFD6 70%,#E7F3D4 100%);
   --ink-rgb:20,21,23;
   --blot1:38,166,154;   /* 배경 민트 웨시 (아주 옅게) */
   --blot2:226,59,46;    /* 빨강 (클릭 포인트) */
@@ -57,7 +58,7 @@ img{max-width:100%}
   --accent:#ECECEE; --accent-weak:#26272A;
   --red:#FF5648;
   --mint-bg:45,212,191;
-  --d0:#55575C; --d1:#ECECEE; --d2:#9A9CA1;
+  --d0:#55575C; --d1:#8FD46A; --d2:#B79BFF;
   --grad:linear-gradient(155deg,#1A1026 0%,#2A1E3C 30%,#2E2A44 52%,#223A36 78%,#2C4A36 100%);
   --ink-rgb:236,236,238;
   --blot1:45,212,191;
@@ -76,7 +77,7 @@ img{max-width:100%}
   --accent:#ECECEE; --accent-weak:#26272A;
   --red:#FF5648;
   --mint-bg:45,212,191;
-  --d0:#55575C; --d1:#ECECEE; --d2:#9A9CA1;
+  --d0:#55575C; --d1:#8FD46A; --d2:#B79BFF;
   --grad:linear-gradient(155deg,#1A1026 0%,#2A1E3C 30%,#2E2A44 52%,#223A36 78%,#2C4A36 100%);
   --ink-rgb:236,236,238;
   --blot1:45,212,191;
@@ -91,6 +92,10 @@ img{max-width:100%}
 body{background:var(--paper);background-image:var(--grad);background-attachment:fixed;color:var(--ink);font-family:var(--body);font-size:14px;line-height:1.62;-webkit-font-smoothing:antialiased;letter-spacing:0;position:relative;min-height:100vh;transition:background-color .4s ease,color .4s ease}
 /* 먹 번짐 캔버스: 가운데에서 계속 번지고, 마우스/터치에 반응 */
 #ink{position:fixed;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none;opacity:.5}
+/* 전체 배경 노이즈 질감 */
+.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E")}
+:root[data-theme="dark"] .grain{opacity:.1}
 .wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:26px 60px;display:flex;flex-direction:column;gap:20px}
 button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer}
@@ -202,25 +207,36 @@ button{cursor:pointer}
 .board-label em{font-style:normal;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.1em;color:var(--muted)}
 .board{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
 .day{display:flex;flex-direction:column;gap:8px;min-width:0;border-radius:18px;padding:14px 12px;position:relative;overflow:hidden}
-/* 1일차 민트코어 / 2일차 보라코어 배경 그라데이션 (진하게) */
-.day[data-day="1"]{background:linear-gradient(150deg,#9FE6C4 0%,#7FD7C7 40%,#AFE6A8 75%,#CFF0B0 100%)}
-.day[data-day="2"]{background:linear-gradient(150deg,#B9A6F0 0%,#9B86E6 42%,#C79BD8 75%,#E4C2E8 100%)}
-:root[data-theme="dark"] .day[data-day="1"]{background:linear-gradient(150deg,#114A3A 0%,#155A44 45%,#1E5A3A 100%)}
+/* 1일차 연두코어 / 2일차 보라코어 배경 그라데이션 + 노이즈 질감 */
+.day[data-day="1"]{background:linear-gradient(150deg,#B6E88C 0%,#A6E08A 38%,#C4EC98 72%,#D8F0A6 100%)}
+.day[data-day="2"]{background:linear-gradient(150deg,#BBA6F0 0%,#9E88E6 42%,#C79BDC 75%,#E6C6EA 100%)}
+:root[data-theme="dark"] .day[data-day="1"]{background:linear-gradient(150deg,#2A4A1E 0%,#335A26 45%,#2C5424 100%)}
 :root[data-theme="dark"] .day[data-day="2"]{background:linear-gradient(150deg,#2E1F55 0%,#3A2A66 45%,#48306E 100%)}
-.day h2{font-family:var(--display);font-weight:800;font-size:15px;margin:0;display:flex;align-items:baseline;gap:8px;letter-spacing:.01em}
-.day h2 .date{font-family:var(--body);font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.02em}
-.day h2 .n{margin-left:auto;font-family:var(--body);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;font-weight:500}
+/* 노이즈 질감 오버레이 (리스트 카드 영역) */
+.day::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E")}
+.day h2{font-family:var(--display);font-weight:800;font-size:16px;margin:0 0 2px;display:flex;align-items:center;justify-content:center;gap:8px;letter-spacing:.01em;text-align:center;position:relative;z-index:1}
+.day h2 .date{font-family:var(--body);font-size:12px;color:var(--ink);opacity:.72;font-weight:600;letter-spacing:.02em}
+.day h2 .n{font-family:var(--body);font-size:11px;color:var(--ink);opacity:.6;font-variant-numeric:tabular-nums;font-weight:600;border:1px solid color-mix(in srgb,var(--ink) 20%,transparent);border-radius:999px;padding:1px 8px}
 .day.undecided h2{color:var(--muted)}
-.list{display:flex;flex-direction:column;gap:6px;border-left:2px solid var(--line);padding-left:12px;min-height:44px}
+.list{display:flex;flex-direction:column;gap:6px;border-left:2px solid var(--line);padding-left:12px;min-height:44px;position:relative;z-index:1}
 .empty{font-size:13px;color:var(--muted);padding:10px 0}
+/* 지금 시각 마커: 왼쪽 라인 위에서 움직이는 볼드 점 */
+.now-dot{position:absolute;left:-7px;width:12px;height:12px;border-radius:50%;background:var(--ink);
+  border:2px solid var(--surface);box-shadow:0 0 0 3px color-mix(in srgb,var(--ink) 22%,transparent);
+  transition:top .6s ease;z-index:3}
+.now-dot::after{content:"NOW";position:absolute;left:16px;top:50%;transform:translateY(-50%);
+  font-family:var(--display);font-weight:800;font-size:9px;letter-spacing:.14em;color:var(--ink);
+  background:var(--surface);border-radius:6px;padding:1px 5px;white-space:nowrap;box-shadow:var(--shadow-sm)}
 
-.card{background:var(--surface);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:14px;min-width:0;transition:border-color .2s,box-shadow .2s,transform .2s}
+.card{background:var(--surface);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:14px;min-width:0;transition:border-color .2s,box-shadow .2s,transform .2s;position:relative;z-index:1}
 .card:hover{box-shadow:var(--shadow-md);transform:translateY(-1px);border-color:color-mix(in srgb,var(--ink) 28%,var(--line))}
 .card.open{border-color:var(--ink);box-shadow:var(--shadow-md)}
-/* 1일차·2일차 타임라인 — 먹 농담만 다르게 */
-.day[data-day="1"] .list{border-left-color:color-mix(in srgb,var(--ink) 38%,var(--line))}
-.day[data-day="2"] .list{border-left-color:var(--line)}
-.day[data-day="1"] h2 .n,.day[data-day="2"] h2 .n{color:var(--muted)}
+/* 1일차 연두 / 2일차 보라 타임라인 선 */
+.day[data-day="1"] .list{border-left-color:color-mix(in srgb,var(--d1) 70%,var(--line))}
+.day[data-day="2"] .list{border-left-color:color-mix(in srgb,var(--d2) 70%,var(--line))}
+.day[data-day="1"] .now-dot{background:var(--d1)}
+.day[data-day="2"] .now-dot{background:var(--d2)}
 .row{display:flex;align-items:flex-start;gap:8px;padding:7px 10px;width:100%;background:none;border:0;text-align:left}
 .time{font-variant-numeric:tabular-nums;font-size:12px;color:var(--muted);width:38px;flex:none;padding-top:2px}
 .main{flex:1;min-width:0}
@@ -377,6 +393,7 @@ button{cursor:pointer}
 <body>
 
 <canvas id="ink" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
 
 <svg id="line-cursor" aria-hidden="true"><polyline id="lcLine" points=""></polyline><circle id="lcHead" r="3.5" cx="-10" cy="-10"></circle></svg>
 <div id="emo-cursor" aria-hidden="true"></div>
@@ -1000,7 +1017,32 @@ function render(){
   }).join("");
   renderIdeas();
   renderMap();
+  updateNow();
 }
+// 지금 시각 마커: 오늘에 해당하는 일차 리스트에 'NOW' 점을 시간 비율로 배치
+function updateNow(){
+  document.querySelectorAll(".now-dot").forEach(n=>n.remove());
+  if(!trip.start)return;
+  const now=new Date();
+  for(let d=1;d<=2;d++){
+    const x=new Date(trip.start+"T00:00:00");if(isNaN(x))return;
+    x.setDate(x.getDate()+d-1);
+    // 그 일차가 '오늘'인지
+    if(x.getFullYear()!==now.getFullYear()||x.getMonth()!==now.getMonth()||x.getDate()!==now.getDate())continue;
+    const sec=$(`#board .day[data-day="${d}"]`);if(!sec)continue;
+    const list=sec.querySelector(".list");if(!list)continue;
+    // 그날 일정 시간 범위 (없으면 08:00~22:00)
+    const times=places.filter(p=>clampDay(p.day)===d&&p.time).map(p=>{const[hh,mm]=p.time.split(":").map(Number);return hh*60+mm;}).sort((a,b)=>a-b);
+    const startM=times.length?Math.min(times[0]-30,8*60):8*60;
+    const endM=times.length?Math.max(times[times.length-1]+60,14*60):22*60;
+    const nowM=now.getHours()*60+now.getMinutes();
+    const ratio=Math.max(0,Math.min(1,(nowM-startM)/(endM-startM)));
+    const dot=document.createElement("div");dot.className="now-dot";
+    dot.style.top=`calc(${(ratio*100).toFixed(1)}% - 6px)`;
+    list.appendChild(dot);
+  }
+}
+setInterval(updateNow,60000);
 const effDay=p=>clampDay(p.day);
 function routeStops(d){return places.filter(p=>effDay(p)===d&&!p.cand&&okCoord(p.lat,p.lng)).sort((a,b)=>sortKey(a)<sortKey(b)?-1:1)}
 function dayStops(d){return places.filter(p=>effDay(p)===d&&!isStay(p)&&!p.cand&&okCoord(p.lat,p.lng)).sort((a,b)=>sortKey(a)<sortKey(b)?-1:1)}
