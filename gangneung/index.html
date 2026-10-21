@@ -19,53 +19,61 @@ body{margin:0}
 img{max-width:100%}
 [hidden]{display:none!important}
 /* Layout: 한 줄 헤더 + 장소 추가 바 + 일차별 세로 타임라인(넓은 화면에선 열로 나란히) */
-/* ===== 흑백 수묵(먹 번짐) 컨셉 팔레트 — 블랙 & 그레이 그라데이션만 ===== */
+/* ===== v2 · d.school 감각: 베이지/옅은블랙 바탕 + 민트·보라 포인트 ===== */
 :root{
-  /* 화이트 모드 — 한지 위 먹 */
-  --bg:#F4F4F5; --surface:#FFFFFFEC; --ink:#0B0B0C; --muted:#5E6064; --line:#D8D8DB;
-  --sea:#0B0B0C; --sea-soft:#E7E7E9; --pine:#2A2B2E; --pine-soft:#E7E7E9; --sun:#4A4C50; --sun-soft:#ECECEE;
-  --danger:#1A1B1D;
-  --land:#ECECEE; --sea-fill:#DEDEE1; --road:#E8E8EA; --on-dot:#FFFFFF;
-  /* 인터랙션 포인트 = 먹색 */
-  --accent:#17181A; --accent-weak:#E6E6E8;
-  /* 동선(일차) — 농담만 다른 먹 톤 */
-  --d0:#B6B7BA; --d1:#1C1D20; --d2:#6F7175;
-  /* 배경 그라데이션 (라이트) */
-  --grad:linear-gradient(170deg,#FBFBFC 0%,#EFEFF1 48%,#E3E3E6 100%);
-  --ink-rgb:20,21,23; /* 먹 번짐 캔버스 색 */
-  --paper:#F4F4F5;
+  /* 라이트 — 따뜻한 베이지 종이 + 잉크 블랙 텍스트 */
+  --bg:#F4F0E8; --surface:#FBF8F2F2; --ink:#1C1A17; --muted:#6E685E; --line:#E4DCCB;
+  --sea:#1C1A17; --sea-soft:#EAE4D6; --pine:#2F6E5E; --pine-soft:#DDEFE8; --sun:#8A5A2B; --sun-soft:#F0E6D6;
+  --danger:#B4473C;
+  --land:#EFE9DB; --sea-fill:#E2DACB; --road:#EAE3D4; --on-dot:#FBF8F2;
+  /* 포인트 컬러 — 민트 & 보라 (확 터뜨리는 강조) */
+  --mint:#14B8A6; --mint-weak:#CFF3EE; --violet:#7C5CFC; --violet-weak:#E7E0FF;
+  --accent:#7C5CFC; --accent-weak:#E7E0FF;
+  /* 동선(일차): 1=민트, 2=보라 */
+  --d0:#B9B2A2; --d1:#14B8A6; --d2:#7C5CFC;
+  --grad:radial-gradient(130% 120% at 15% 0%,#FBF7EF 0%,#F4EFE6 45%,#EDE6D8 100%);
+  --ink-rgb:28,26,23;  /* 번짐 캔버스 베이스 */
+  --blot1:20,184,166;  /* 민트 */
+  --blot2:124,92,252;  /* 보라 */
+  --paper:#F4F0E8;
   --display:"Gowun Batang","Nanum Myeongjo","Apple SD Gothic Neo",serif;
   --body:"Gowun Batang","Nanum Myeongjo","Apple SD Gothic Neo","Malgun Gothic",serif;
-  --shadow-sm:0 2px 10px rgba(20,21,23,.06);
-  --shadow-md:0 8px 26px rgba(20,21,23,.12);
+  --shadow-sm:0 2px 12px rgba(28,26,23,.06);
+  --shadow-md:0 10px 30px rgba(28,26,23,.12);
 }
-/* 다크 모드 — 먹빛 밤 */
+/* 다크 — 옅은블랙(차콜) 바탕, 같은 민트·보라 포인트 */
 :root[data-theme="dark"]{
-  --bg:#0E0F11; --surface:#1A1B1ECC; --ink:#ECECEE; --muted:#9A9CA1; --line:#2A2B2E;
-  --sea:#ECECEE; --sea-soft:#242528; --pine:#C4C6CA; --pine-soft:#242528; --sun:#9A9CA1; --sun-soft:#202123;
-  --danger:#D8D9DC;
-  --land:#17181A; --sea-fill:#232427; --road:#1D1E20; --on-dot:#0E0F11;
-  --accent:#ECECEE; --accent-weak:#26272A;
-  --d0:#55575C; --d1:#ECECEE; --d2:#9A9CA1;
-  --grad:linear-gradient(170deg,#17181B 0%,#101113 50%,#0A0B0C 100%);
-  --ink-rgb:236,236,238;
-  --paper:#0E0F11;
-  --shadow-sm:0 2px 12px rgba(0,0,0,.4);
-  --shadow-md:0 10px 30px rgba(0,0,0,.55);
+  --bg:#15140F; --surface:#201E19E6; --ink:#F2EEE4; --muted:#A8A192; --line:#34302A;
+  --sea:#F2EEE4; --sea-soft:#2A2720; --pine:#6FD2BE; --pine-soft:#20302C; --sun:#D7A86B; --sun-soft:#2C2418;
+  --danger:#E98A7E;
+  --land:#1D1B16; --sea-fill:#262219; --road:#221F19; --on-dot:#15140F;
+  --mint:#2DD4BF; --mint-weak:#163A37; --violet:#A896FF; --violet-weak:#2A2448;
+  --accent:#A896FF; --accent-weak:#2A2448;
+  --d0:#5C5648; --d1:#2DD4BF; --d2:#A896FF;
+  --grad:radial-gradient(130% 120% at 15% 0%,#1C1A14 0%,#141209 55%,#0E0D08 100%);
+  --ink-rgb:242,238,228;
+  --blot1:45,212,191;
+  --blot2:168,150,255;
+  --paper:#15140F;
+  --shadow-sm:0 2px 14px rgba(0,0,0,.45);
+  --shadow-md:0 12px 34px rgba(0,0,0,.6);
   color-scheme:dark;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0E0F11; --surface:#1A1B1ECC; --ink:#ECECEE; --muted:#9A9CA1; --line:#2A2B2E;
-  --sea:#ECECEE; --sea-soft:#242528; --pine:#C4C6CA; --pine-soft:#242528; --sun:#9A9CA1; --sun-soft:#202123;
-  --danger:#D8D9DC;
-  --land:#17181A; --sea-fill:#232427; --road:#1D1E20; --on-dot:#0E0F11;
-  --accent:#ECECEE; --accent-weak:#26272A;
-  --d0:#55575C; --d1:#ECECEE; --d2:#9A9CA1;
-  --grad:linear-gradient(170deg,#17181B 0%,#101113 50%,#0A0B0C 100%);
-  --ink-rgb:236,236,238;
-  --paper:#0E0F11;
-  --shadow-sm:0 2px 12px rgba(0,0,0,.4);
-  --shadow-md:0 10px 30px rgba(0,0,0,.55);
+  --bg:#15140F; --surface:#201E19E6; --ink:#F2EEE4; --muted:#A8A192; --line:#34302A;
+  --sea:#F2EEE4; --sea-soft:#2A2720; --pine:#6FD2BE; --pine-soft:#20302C; --sun:#D7A86B; --sun-soft:#2C2418;
+  --danger:#E98A7E;
+  --land:#1D1B16; --sea-fill:#262219; --road:#221F19; --on-dot:#15140F;
+  --mint:#2DD4BF; --mint-weak:#163A37; --violet:#A896FF; --violet-weak:#2A2448;
+  --accent:#A896FF; --accent-weak:#2A2448;
+  --d0:#5C5648; --d1:#2DD4BF; --d2:#A896FF;
+  --grad:radial-gradient(130% 120% at 15% 0%,#1C1A14 0%,#141209 55%,#0E0D08 100%);
+  --ink-rgb:242,238,228;
+  --blot1:45,212,191;
+  --blot2:168,150,255;
+  --paper:#15140F;
+  --shadow-sm:0 2px 14px rgba(0,0,0,.45);
+  --shadow-md:0 12px 34px rgba(0,0,0,.6);
   color-scheme:dark;
 }}
 *{box-sizing:border-box}
@@ -78,8 +86,15 @@ button{cursor:pointer}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;border-bottom:1px solid var(--line);padding-bottom:18px}
-h1{font-family:var(--display);font-weight:800;font-size:clamp(19px,2.6vw,23px);line-height:1.3;margin:0;text-wrap:balance;letter-spacing:.01em}
-h1 small{display:block;font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.22em;color:var(--muted);margin-bottom:5px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(19px,2.6vw,23px);line-height:1.3;margin:0;text-wrap:balance;letter-spacing:.01em;display:flex;flex-wrap:wrap;align-items:baseline;gap:0 10px}
+h1 small{flex-basis:100%;display:block;font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.18em;color:var(--violet);margin-bottom:5px}
+:root[data-theme="dark"] h1 small{color:var(--mint)}
+h1 .title-main{color:var(--ink)}
+/* 하슬라 캐릭터 — 본문 제목보다 한 단계 작게, 민트 포인트 */
+h1 .buddy{font-family:var(--display);font-weight:700;font-size:.62em;letter-spacing:.01em;color:var(--mint);
+  display:inline-flex;align-items:center;gap:5px;padding:2px 10px;border-radius:999px;
+  background:var(--mint-weak);border:1px solid color-mix(in srgb,var(--mint) 35%,transparent)}
+h1 .buddy::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 3px color-mix(in srgb,var(--mint) 25%,transparent)}
 .trip{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:13px;color:var(--muted)}
 .trip label{display:flex;align-items:center;gap:6px}
 .trip input{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:5px 8px}
@@ -121,7 +136,7 @@ h1 small{display:block;font-family:var(--display);font-size:10px;font-weight:700
 .ideas{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px}
 .ideas span.lbl{color:var(--muted);margin-right:4px}
 .chip{border:1px solid var(--line);background:none;border-radius:999px;padding:3px 12px;font-size:13px;color:var(--ink);transition:border-color .15s,color .15s,background .15s}
-.chip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-weak)}
+.chip:hover{border-color:var(--mint);color:var(--mint);background:var(--mint-weak);transform:translateY(-1px)}
 @media (max-width:820px){.add form{grid-template-columns:1fr 1fr}.add form .name,.add form .memo{grid-column:1/-1}.add form .btn{grid-column:1/-1}.fcand{padding-block:8px}}
 
 .board{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
@@ -134,8 +149,13 @@ h1 small{display:block;font-family:var(--display);font-size:10px;font-weight:700
 .empty{font-size:13px;color:var(--muted);padding:10px 0}
 
 .card{background:var(--surface);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:14px;min-width:0;transition:border-color .2s,box-shadow .2s,transform .2s}
-.card:hover{box-shadow:var(--shadow-sm);transform:translateY(-1px)}
-.card.open{border-color:var(--accent);box-shadow:var(--shadow-md)}
+.card:hover{box-shadow:0 8px 24px color-mix(in srgb,var(--mint) 22%,transparent);transform:translateY(-2px);border-color:color-mix(in srgb,var(--mint) 55%,var(--line))}
+.card.open{border-color:var(--violet);box-shadow:0 10px 30px color-mix(in srgb,var(--violet) 22%,transparent)}
+/* 1일차 타임라인=민트, 2일차=보라 */
+.day[data-day="1"] .list{border-left-color:color-mix(in srgb,var(--mint) 60%,var(--line))}
+.day[data-day="2"] .list{border-left-color:color-mix(in srgb,var(--violet) 60%,var(--line))}
+.day[data-day="1"] h2 .n{color:var(--mint)}
+.day[data-day="2"] h2 .n{color:var(--violet)}
 .row{display:flex;align-items:flex-start;gap:8px;padding:7px 10px;width:100%;background:none;border:0;text-align:left}
 .time{font-variant-numeric:tabular-nums;font-size:12px;color:var(--muted);width:38px;flex:none;padding-top:2px}
 .main{flex:1;min-width:0}
@@ -143,10 +163,12 @@ h1 small{display:block;font-family:var(--display);font-size:10px;font-weight:700
 .pmemo{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.4}
 .card.open .pmemo{white-space:normal;overflow-wrap:anywhere}
 .cat{flex:none;font-size:11px;font-weight:600;border-radius:6px;padding:2px 7px;margin-top:2px}
-.c-관광{background:var(--sea-soft);color:var(--sea)}
+.c-관광{background:var(--mint-weak);color:color-mix(in srgb,var(--mint) 72%,#000)}
+:root[data-theme="dark"] .c-관광{color:var(--mint)}
 .c-맛집{background:var(--sun-soft);color:var(--sun)}
 .c-카페{background:var(--sun-soft);color:var(--sun)}
-.c-숙소{background:var(--pine-soft);color:var(--pine)}
+.c-숙소{background:var(--violet-weak);color:color-mix(in srgb,var(--violet) 72%,#000)}
+:root[data-theme="dark"] .c-숙소{color:var(--violet)}
 .c-기타{background:var(--land);color:var(--muted)}
 .cand-b{font-size:11px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:0 5px;margin-left:6px;vertical-align:1px}
 .card.cand .pname{color:var(--muted)}
@@ -244,23 +266,37 @@ h1 small{display:block;font-family:var(--display);font-size:10px;font-weight:700
   .add form .btn{grid-column:3/4}
 }
 
-/* ---- 먹방울 트레일 커서: 점들이 졸졸졸 딜레이로 따라옴 (마우스 기기 전용) ---- */
-.cur-trail{position:fixed;inset:0;z-index:9999;pointer-events:none}
-.cur-trail .cd{position:absolute;top:0;left:0;border-radius:50%;background:var(--ink);will-change:transform;opacity:0}
+/* ---- 시선(gaze) 커서: 아이트래커 고정점처럼 요소에 머물고 번짐 ---- */
+.gaze{position:fixed;top:0;left:0;z-index:9998;pointer-events:none;border-radius:50%;
+  width:46px;height:46px;margin:-23px 0 0 -23px;opacity:0;will-change:transform;
+  background:radial-gradient(circle at 50% 50%,rgba(var(--blot2),.22),rgba(var(--blot2),.08) 60%,transparent 72%);
+  border:1.5px solid rgba(var(--blot2),.55);
+  box-shadow:0 0 22px rgba(var(--blot2),.25);
+  transition:width .28s cubic-bezier(.22,1,.36,1),height .28s cubic-bezier(.22,1,.36,1),margin .28s cubic-bezier(.22,1,.36,1),opacity .3s ease,background-color .3s ease,border-color .3s ease}
+.gaze-dot{position:fixed;top:0;left:0;z-index:9999;pointer-events:none;width:7px;height:7px;margin:-3.5px 0 0 -3.5px;border-radius:50%;background:var(--ink);opacity:0;will-change:transform}
 @media (hover:hover) and (pointer:fine){
-  body.has-cursor .cur-trail .cd{opacity:1}
+  body.has-cursor{cursor:none}
+  body.has-cursor a,body.has-cursor button,body.has-cursor input,body.has-cursor select,body.has-cursor textarea,body.has-cursor label,body.has-cursor [role="button"],body.has-cursor .mk,body.has-cursor .chip,body.has-cursor .card{cursor:none}
+  body.has-cursor .gaze,body.has-cursor .gaze-dot{opacity:1}
+  /* 요소에 '고정'될 때: 민트로 커지며 번짐 */
+  body.has-cursor.gaze-lock .gaze{width:var(--gw,72px);height:var(--gh,72px);margin:calc(var(--gh,72px)/-2) 0 0 calc(var(--gw,72px)/-2);
+    background:radial-gradient(circle at 50% 50%,rgba(var(--blot1),.20),rgba(var(--blot1),.07) 62%,transparent 74%);
+    border-color:rgba(var(--blot1),.6);box-shadow:0 0 30px rgba(var(--blot1),.3);border-radius:16px}
+  body.has-cursor.gaze-lock .gaze-dot{opacity:.4}
 }
+@media (prefers-reduced-motion:reduce){.gaze{transition:opacity .3s ease}}
 </style>
 </head>
 <body>
 
 <canvas id="ink" aria-hidden="true"></canvas>
 
-<div class="cur-trail" id="curTrail" aria-hidden="true"></div>
+<div class="gaze" id="gaze" aria-hidden="true"></div>
+<div class="gaze-dot" id="gazeDot" aria-hidden="true"></div>
 
 <div class="wrap">
   <header>
-    <h1><small>GANGNEUNG · GANGWON-DO</small>강릉 여행 계획</h1>
+    <h1><small>GEO · Gaze, Experience, Observation</small><span class="title-main">강릉 여행 계획</span><span class="buddy" aria-label="강릉 캐릭터 하슬라">with 하슬라</span></h1>
     <div class="trip">
       <div class="hbar">
         <span class="weather loading" id="weather" title="강릉 날씨">
@@ -319,36 +355,41 @@ const INK=(function(){
   const ctx=cv.getContext("2d");
   const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
   let W=0,H=0,dpr=1,blobs=[],t=0,raf=null;
-  function inkColor(a){const v=getComputedStyle(document.documentElement).getPropertyValue("--ink-rgb").trim()||"20,21,23";return `rgba(${v},${a})`}
+  function cssVar(n,fb){return (getComputedStyle(document.documentElement).getPropertyValue(n).trim()||fb)}
+  function blotColor(which,a){ // which: 0=민트,1=보라
+    const v=which? cssVar("--blot2","124,92,252") : cssVar("--blot1","20,184,166");
+    return `rgba(${v},${a})`;
+  }
   function resize(){
     dpr=Math.min(devicePixelRatio||1,2);
     W=cv.clientWidth;H=cv.clientHeight;
     cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
   }
-  // 하나의 먹방울: 중심에서 퍼지며 옅어짐
-  function spawn(x,y,r,life){blobs.push({x,y,r0:r*0.2,r,age:0,life:life||1})}
-  function splash(x,y,power){ // 클릭/터치 시 확 번짐
-    const n=5+Math.floor(power*4);
+  // 하나의 색 번짐: 중심에서 퍼지며 옅어짐 (c=0 민트 / 1 보라)
+  function spawn(x,y,r,life,c){blobs.push({x,y,r0:r*0.2,r,age:0,life:life||1,c:c==null?(Math.random()<0.5?0:1):c})}
+  function splash(x,y,power,c){ // 클릭/터치 시 확 번짐
+    const n=5+Math.floor(power*4);const col=c==null?(Math.random()<0.5?0:1):c;
     for(let i=0;i<n;i++){const a=Math.random()*6.283,d=Math.random()*40*power;
-      spawn(x+Math.cos(a)*d,y+Math.sin(a)*d,(20+Math.random()*50)*power,0.9+Math.random()*0.5)}
+      spawn(x+Math.cos(a)*d,y+Math.sin(a)*d,(24+Math.random()*54)*power,0.9+Math.random()*0.5,col)}
   }
   function frame(dt){
     t+=dt;
     ctx.clearRect(0,0,W,H);
-    // 가운데에서 은은하게 계속 피어오르는 먹
-    if(!reduce&&Math.random()<0.04){const cx=W/2+(Math.random()-0.5)*W*0.3,cy=H*0.5+(Math.random()-0.5)*H*0.3;spawn(cx,cy,30+Math.random()*60,1.2+Math.random())}
+    ctx.globalCompositeOperation="source-over";
+    // 가운데에서 은은하게 계속 피어오르는 민트/보라
+    if(!reduce&&Math.random()<0.05){const cx=W/2+(Math.random()-0.5)*W*0.34,cy=H*0.46+(Math.random()-0.5)*H*0.34;spawn(cx,cy,40+Math.random()*80,1.2+Math.random())}
     for(let i=blobs.length-1;i>=0;i--){
-      const b=blobs[i];b.age+=dt/ (reduce?1600:2600) / b.life;
+      const b=blobs[i];b.age+=dt/ (reduce?1600:3000) / b.life;
       if(b.age>=1){blobs.splice(i,1);continue}
       const e=b.age, r=b.r0+(b.r-b.r0)*(1-Math.pow(1-e,2));
-      const alpha=(1-e)*0.10;
+      const alpha=(1-e)*0.16;
       const g=ctx.createRadialGradient(b.x,b.y,0,b.x,b.y,r);
-      g.addColorStop(0,inkColor(alpha));
-      g.addColorStop(0.55,inkColor(alpha*0.5));
-      g.addColorStop(1,inkColor(0));
+      g.addColorStop(0,blotColor(b.c,alpha));
+      g.addColorStop(0.55,blotColor(b.c,alpha*0.45));
+      g.addColorStop(1,blotColor(b.c,0));
       ctx.fillStyle=g;ctx.beginPath();ctx.arc(b.x,b.y,r,0,6.283);ctx.fill();
     }
-    if(blobs.length>140)blobs.splice(0,blobs.length-140);
+    if(blobs.length>150)blobs.splice(0,blobs.length-150);
   }
   let last=performance.now();
   function loop(now){const dt=Math.min(now-last,60);last=now;frame(dt);raf=requestAnimationFrame(loop)}
@@ -360,42 +401,59 @@ const INK=(function(){
   return {spawn,splash,toLocal:(x,y)=>{const r=cv.getBoundingClientRect();return [x-r.left,y-r.top]}};
 })();
 
-/* ---- 먹방울 트레일 커서: 점들이 졸졸졸 딜레이로 따라옴 (마우스 기기 전용) ---- */
+/* ---- 시선(gaze) 커서: 아이트래커 고정점처럼 요소에 머물고 색이 번짐 ---- */
 (function(){
   const fine=matchMedia("(hover:hover) and (pointer:fine)").matches;
-  const wrap=document.getElementById("curTrail");
-  if(!fine||!wrap)return;
+  const gaze=document.getElementById("gaze"),dot=document.getElementById("gazeDot");
+  if(!fine||!gaze||!dot)return;
+  const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
   document.body.classList.add("has-cursor");
-  const N=10;                       // 점 개수 (점점점 따라오는 꼬리)
-  const dots=[];
-  for(let i=0;i<N;i++){
-    const d=document.createElement("div");d.className="cd";
-    const sz=Math.max(2,9-i*0.7);   // 앞쪽이 크고 뒤로 갈수록 작아짐
-    d.style.width=d.style.height=sz+"px";
-    d.style.marginLeft=d.style.marginTop=(-sz/2)+"px";
-    wrap.appendChild(d);
-    dots.push({el:d,x:innerWidth/2,y:innerHeight/2})
+  const body=document.body;
+  const HOT='a,button,input,select,textarea,label,[role="button"],.mk,.chip,.card,.dchip';
+  let mx=innerWidth/2,my=innerHeight/2;      // 실제 마우스
+  let gx=mx,gy=my;                            // 시선 원(지연 추적)
+  let tx=mx,ty=my;                            // 목표점 (요소면 그 중심)
+  let locked=null,raf=null;
+  function targetFor(el){
+    const t=el&&el.closest&&el.closest(HOT);
+    if(!t)return null;
+    const r=t.getBoundingClientRect();
+    // 너무 큰 카드는 커서가 통째로 덮지 않게 크기 상한
+    const gw=Math.min(r.width+16,240),gh=Math.min(r.height+16,120);
+    return {cx:r.left+r.width/2,cy:r.top+r.height/2,gw,gh,el:t};
   }
-  let mx=innerWidth/2,my=innerHeight/2,raf=null;
   function frame(){
-    let px=mx,py=my;
-    for(let i=0;i<N;i++){
-      const d=dots[i];
-      d.x+=(px-d.x)*0.35;d.y+=(py-d.y)*0.35; // 각 점이 앞 점을 지연 추적 → 졸졸졸
-      d.el.style.transform=`translate(${d.x}px,${d.y}px)`;
-      d.el.style.opacity=String(1-i/(N+2));
-      px=d.x;py=d.y;
-    }
-    // 움직임이 남아있으면 계속
-    if(Math.abs(dots[N-1].x-mx)>0.2||Math.abs(dots[N-1].y-my)>0.2){raf=requestAnimationFrame(frame)}else raf=null;
+    // 시선 원은 목표점으로 부드럽게 (saccade→fixation)
+    const k=locked?0.22:0.16;
+    gx+=(tx-gx)*k;gy+=(ty-gy)*k;
+    gaze.style.transform=`translate(${gx}px,${gy}px)`;
+    dot.style.transform=`translate(${mx}px,${my}px)`; // 작은 점은 실제 커서에 딱
+    const moving=Math.abs(tx-gx)>0.3||Math.abs(ty-gy)>0.3||Math.abs(mx-dot._lx)>0.3;
+    dot._lx=mx;
+    if(moving){raf=requestAnimationFrame(frame)}else raf=null;
   }
-  addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY;if(!raf)raf=requestAnimationFrame(frame)},{passive:true});
-  // 클릭하면 먹이 확 번짐
-  addEventListener("mousedown",e=>{if(INK){const [x,y]=INK.toLocal(e.clientX,e.clientY);INK.splash(x,y,1.1)}});
-  document.addEventListener("mouseleave",()=>dots.forEach(d=>d.el.style.opacity="0"));
+  function kick(){if(!raf)raf=requestAnimationFrame(frame)}
+  addEventListener("mousemove",e=>{
+    mx=e.clientX;my=e.clientY;
+    const tgt=targetFor(e.target);
+    if(tgt){
+      locked=tgt.el;tx=tgt.cx;ty=tgt.cy;
+      gaze.style.setProperty("--gw",tgt.gw+"px");
+      gaze.style.setProperty("--gh",tgt.gh+"px");
+      body.classList.add("gaze-lock");
+    }else{
+      locked=null;tx=mx;ty=my;body.classList.remove("gaze-lock");
+    }
+    kick();
+  },{passive:true});
+  // 클릭하면 민트/보라 번짐
+  addEventListener("mousedown",e=>{if(INK){const [x,y]=INK.toLocal(e.clientX,e.clientY);INK.splash(x,y,1.1,locked?0:1)}});
+  document.addEventListener("mouseleave",()=>{gaze.style.opacity=dot.style.opacity="0"});
+  document.addEventListener("mouseenter",()=>{gaze.style.opacity=dot.style.opacity=""});
+  dot._lx=mx;kick();
 })();
 
-/* ---- 모바일: 터치하면 먹이 확 번짐 ---- */
+/* ---- 모바일: 터치하면 색이 확 번짐 ---- */
 addEventListener("touchstart",e=>{
   if(!INK)return;const tt=e.touches[0];if(!tt)return;
   const [x,y]=INK.toLocal(tt.clientX,tt.clientY);INK.splash(x,y,1.3);
