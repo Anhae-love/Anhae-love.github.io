@@ -13,9 +13,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap">
 <style>
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-snap-type:y proximity;scroll-padding-top:12px}
 :root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 body{margin:0}
+/* 토스식 '휙휙' 스크롤 스냅: 주요 섹션이 스냅 지점 */
+.board-label,.masthead{scroll-snap-align:start}
+@media (prefers-reduced-motion:reduce){html{scroll-snap-type:none;scroll-behavior:auto}}
 img{max-width:100%}
 [hidden]{display:none!important}
 /* Layout: 한 줄 헤더 + 장소 추가 바 + 일차별 세로 타임라인(넓은 화면에선 열로 나란히) */
@@ -100,9 +103,9 @@ button{cursor:pointer}
 .eyebrow .geo-full{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:700}
 /* 키로 얼굴 — 둥근 사각형 + 점 두 눈 (심플/둥글둥글) */
 .kiro{width:clamp(130px,22vw,200px);margin:6px auto 2px;cursor:pointer}
-.kiro svg{display:block;width:100%;height:auto;overflow:visible}
-.k-face{fill:var(--surface);stroke:var(--ink);stroke-width:5}
-.k-eye{fill:var(--ink)}
+.kiro svg{display:block;width:100%;height:auto;overflow:visible;filter:drop-shadow(0 10px 26px rgba(120,110,200,.3))}
+.k-face{stroke:none}
+.k-eye{fill:rgba(40,36,60,.78)}
 @media (prefers-reduced-motion:no-preference){
   .kiro svg{animation:kfloat 5s ease-in-out infinite}
 }
@@ -196,7 +199,12 @@ button{cursor:pointer}
 .board-label::after{content:"";height:1px;background:var(--line);flex:1;align-self:center}
 .board-label em{font-style:normal;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.1em;color:var(--muted)}
 .board{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
-.day{display:flex;flex-direction:column;gap:8px;min-width:0}
+.day{display:flex;flex-direction:column;gap:8px;min-width:0;border-radius:18px;padding:14px 12px;position:relative;overflow:hidden}
+/* 1일차 민트코어 / 2일차 보라코어 배경 그라데이션 */
+.day[data-day="1"]{background:linear-gradient(160deg,#E8F6EF 0%,#D6EFD9 45%,#CFE8E4 100%)}
+.day[data-day="2"]{background:linear-gradient(160deg,#EFE7F6 0%,#E3DAF2 45%,#D9D2EC 100%)}
+:root[data-theme="dark"] .day[data-day="1"]{background:linear-gradient(160deg,#16302A 0%,#17382C 50%,#12292F 100%)}
+:root[data-theme="dark"] .day[data-day="2"]{background:linear-gradient(160deg,#241F38 0%,#2A2342 50%,#1E1B33 100%)}
 .day h2{font-family:var(--display);font-weight:800;font-size:15px;margin:0;display:flex;align-items:baseline;gap:8px;letter-spacing:.01em}
 .day h2 .date{font-family:var(--body);font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.02em}
 .day h2 .n{margin-left:auto;font-family:var(--body);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;font-weight:500}
@@ -367,14 +375,14 @@ button{cursor:pointer}
   <header class="masthead">
     <!-- 오른쪽 상단에 흩뿌린 메타 (날씨 · 테마) -->
     <div class="meta">
-      <span class="weather loading" id="weather" title="강릉 날씨">
+      <span class="weather loading" id="weather" title="여행 날짜 강릉 날씨">
         <span class="wx-now">
+          <span class="wx-tl">1일차</span>
           <span class="wx-emo" id="wxEmo">⛅</span>
-          <span class="wx-temp" id="wxTemp">–°</span>
-          <span class="wx-desc" id="wxDesc">날씨…</span>
+          <span class="wx-tt" id="wxTemp">–°/–°</span>
         </span>
         <span class="wx-tmr" id="wxTmr">
-          <span class="wx-tl">내일</span>
+          <span class="wx-tl">2일차</span>
           <span class="wx-emo" id="wxTmEmo">⛅</span>
           <span class="wx-tt" id="wxTmTemp">–°/–°</span>
         </span>
@@ -384,14 +392,14 @@ button{cursor:pointer}
           <div class="wx-pop-row">
             <div class="wx-pop-emo" id="wxPopEmo">🧥</div>
             <div class="wx-pop-body">
-              <strong id="wxPopTitle">오늘의 옷차림</strong>
-              <p id="wxPopText">날씨를 불러오면 추천해 드려요.</p>
+              <strong id="wxPopTitle">1일차 옷차림</strong>
+              <p id="wxPopText">여행 날짜 날씨를 불러오면 추천해 드려요.</p>
             </div>
           </div>
           <div class="wx-pop-row wx-pop-tmr" id="wxPopTmrRow">
             <div class="wx-pop-emo" id="wxPopTmEmo">🧥</div>
             <div class="wx-pop-body">
-              <strong id="wxPopTmTitle">내일</strong>
+              <strong id="wxPopTmTitle">2일차 옷차림</strong>
               <p id="wxPopTmText">—</p>
             </div>
           </div>
@@ -422,11 +430,28 @@ button{cursor:pointer}
 
     <div class="kiro" id="kiro" aria-label="키로 마스코트">
       <svg viewBox="0 0 240 240" role="img" aria-hidden="true">
-        <!-- 둥근 사각형(스퀘클) 얼굴 -->
-        <rect class="k-face" x="20" y="20" width="200" height="200" rx="72" ry="72"/>
-        <!-- 점 두 개 눈 (흰자 없이 심플) -->
-        <circle class="k-eye" id="kpL" cx="92" cy="120" r="17"/>
-        <circle class="k-eye" id="kpR" cx="148" cy="120" r="17"/>
+        <defs>
+          <!-- 몽환 발광 그라데이션: 위 살구빛 → 가운데 블루/퍼플 → 아래 오렌지 -->
+          <radialGradient id="kGlow" cx="50%" cy="34%" r="72%">
+            <stop offset="0%" stop-color="#FFE2C2"/>
+            <stop offset="34%" stop-color="#F6B99A"/>
+            <stop offset="60%" stop-color="#9BA7D8"/>
+            <stop offset="100%" stop-color="#6E79C4"/>
+          </radialGradient>
+          <radialGradient id="kFoot" cx="50%" cy="100%" r="55%">
+            <stop offset="0%" stop-color="#FF7A3C" stop-opacity="0.95"/>
+            <stop offset="55%" stop-color="#FF7A3C" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#FF7A3C" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="kSoft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3"/></filter>
+        </defs>
+        <!-- 바닥 오렌지 발광 -->
+        <ellipse cx="120" cy="214" rx="96" ry="26" fill="url(#kFoot)"/>
+        <!-- 몸통/얼굴 (둥근 사각형, 그라데이션 + 소프트) -->
+        <rect class="k-face" x="22" y="24" width="196" height="196" rx="76" ry="76" fill="url(#kGlow)" filter="url(#kSoft)"/>
+        <!-- 점 두 개 눈 -->
+        <circle class="k-eye" id="kpL" cx="92" cy="120" r="15"/>
+        <circle class="k-eye" id="kpR" cx="148" cy="120" r="15"/>
       </svg>
     </div>
     <div class="dateline">
@@ -655,10 +680,12 @@ const CURSOR=(function(){
     // 다른 이모지 하나를 추천
     const others=CURSOR.SHAPES.filter(s=>s.emoji&&s.id!==CURSOR.shape);
     const pickOne=others[Math.floor(Math.random()*others.length)];
-    qText.innerHTML=`지금 커서는 <b>${cur.emoji} ${cur.label}</b>! ${pickOne.emoji} ${pickOne.label}로 바꿔볼까요?`;
+    // 키로가 1인칭으로 말하는 톤
+    qText.innerHTML=`안녕, 나 <b>키로</b>야! 네 커서를 <b>${cur.emoji} ${cur.label}</b>로 정해봤어. ${pickOne.emoji} ${pickOne.label}가 더 좋으면 바꿔줄게!`;
     quest.hidden=false;
-    qBtn.addEventListener("click",()=>{CURSOR.setShape(pickOne.id);sync();quest.hidden=true;});
-    setTimeout(()=>{quest.hidden=true;},12000);
+    qBtn.textContent=`${pickOne.emoji} 바꾸기`;
+    qBtn.addEventListener("click",()=>{CURSOR.setShape(pickOne.id);sync();qText.innerHTML=`좋아! <b>${pickOne.emoji} ${pickOne.label}</b> 커서로 바꿨어 ✨ 언제든 오른쪽 위에서 또 바꿀 수 있어!`;setTimeout(()=>{quest.hidden=true;},2600);});
+    setTimeout(()=>{quest.hidden=true;},14000);
   }
 })();
 
@@ -721,7 +748,7 @@ const CURSOR=(function(){
 /* ---- 오늘의 강릉 날씨 (Open-Meteo, 키 불필요) ---- */
 (function(){
   const el=document.getElementById("weather");if(!el)return;
-  const emoEl=document.getElementById("wxEmo"),tEl=document.getElementById("wxTemp"),dEl=document.getElementById("wxDesc");
+  const emoEl=document.getElementById("wxEmo"),tEl=document.getElementById("wxTemp");
   // WMO weather code → [이모지, 한국어 설명]
   function wmo(c,isDay){
     const sun=isDay?"☀️":"🌙";
@@ -759,50 +786,47 @@ const CURSOR=(function(){
     else if(rain) o[1]+=" 비 소식 있어요. 우산·방수 아우터 잊지 마세요.";
     return o;
   }
-  // 강릉 좌표 — 오늘+내일
-  const url="https://api.open-meteo.com/v1/forecast?latitude=37.7519&longitude=128.8761&current=temperature_2m,weather_code,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Asia%2FSeoul&forecast_days=2";
-  fetch(url).then(r=>r.ok?r.json():Promise.reject()).then(d=>{
-    const cur=d.current||{},day=d.daily||{};
-    const [emo,desc]=wmo(cur.weather_code,cur.is_day!==0);
-    const t=Math.round(cur.temperature_2m);
-    const hi=day.temperature_2m_max&&Math.round(day.temperature_2m_max[0]);
-    const lo=day.temperature_2m_min&&Math.round(day.temperature_2m_min[0]);
-    emoEl.textContent=emo;
-    tEl.textContent=(isFinite(t)?t:"–")+"°";
-    dEl.textContent=desc+((hi!=null&&lo!=null)?` ${hi}°/${lo}°`:"");
-    // 내일
-    let hi2,lo2,code2;
-    if(day.weather_code&&day.weather_code.length>1){
-      const [emo2,desc2]=wmo(day.weather_code[1],true);
-      hi2=Math.round(day.temperature_2m_max[1]);lo2=Math.round(day.temperature_2m_min[1]);code2=day.weather_code[1];
-      if(tmEmo)tmEmo.textContent=emo2;
-      if(tmT)tmT.textContent=`${hi2}°/${lo2}°`;
-      el.title=`오늘 강릉 ${desc} ${isFinite(t)?t+"°":""} (${hi}°/${lo}°) · 내일 ${desc2} (${hi2}°/${lo2}°)`;
-    }
-    // 옷차림 추천(오늘+내일) 채우고 → 들어오자마자 자동으로 토스트 띄움
-    if(pop&&hi!=null){
-      const [oe,ot]=outfit(hi,cur.weather_code);
-      popEmo.textContent=oe;popTitle.textContent=`오늘 ${hi}° · 이렇게 입어요`;popText.textContent=ot;
-      if(hi2!=null){
-        const [oe2,ot2]=outfit(hi2,code2);
-        popTmEmo.textContent=oe2;popTmTitle.textContent=`내일 ${hi2}° · 이렇게 입어요`;popTmText.textContent=ot2;
-      }
-      if(popSrc)popSrc.href="https://search.naver.com/search.naver?query="+encodeURIComponent("강릉 날씨");
-      pop.hidden=false;                 // 자동 등장
-      clearTimeout(pop._t);
-      pop._t=setTimeout(closePop,22000); // 22초 뒤 자동 사라짐 (오늘+내일 읽을 시간)
-    }
-    el.classList.remove("loading");
-  }).catch(()=>{
-    emoEl.textContent="⛅";tEl.textContent="";dEl.textContent="날씨 정보를 못 받았어요";
-    el.classList.remove("loading");
-  });
   function closePop(){if(pop){clearTimeout(pop._t);pop.hidden=true}}
+  function fmt(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+  let lastKey="";
+  // 여행 날짜(1·2일차) 기준 날씨 + 옷차림
+  window.loadWeather=function(){
+    const start=(window.trip&&trip.start)||"";
+    if(!start){el.classList.add("loading");return;}
+    const d1=new Date(start+"T00:00:00");if(isNaN(d1))return;
+    const d2=new Date(d1);d2.setDate(d2.getDate()+1);
+    const key=fmt(d1)+"_"+fmt(d2);if(key===lastKey)return;lastKey=key;
+    // Open-Meteo는 과거는 archive, 미래는 forecast. 간단히 forecast(과거 포함 일부 지원) 사용, 범위로 요청
+    const today=new Date();today.setHours(0,0,0,0);
+    const past=d1<today;
+    const base=past?"https://archive-api.open-meteo.com/v1/archive":"https://api.open-meteo.com/v1/forecast";
+    const url=base+`?latitude=37.7519&longitude=128.8761&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Asia%2FSeoul&start_date=${fmt(d1)}&end_date=${fmt(d2)}`;
+    el.classList.add("loading");
+    fetch(url).then(r=>r.ok?r.json():Promise.reject()).then(dd=>{
+      const day=dd.daily||{};const codes=day.weather_code||[],mx=day.temperature_2m_max||[],mn=day.temperature_2m_min||[];
+      function fill(i,emoEl,ttEl,popE,popTi,popTx,lbl){
+        if(codes[i]==null){return null;}
+        const [emo,desc]=wmo(codes[i],true);const hi=Math.round(mx[i]),lo=Math.round(mn[i]);
+        if(emoEl)emoEl.textContent=emo; if(ttEl)ttEl.textContent=`${hi}°/${lo}°`;
+        const [oe,ot]=outfit(hi,codes[i]);
+        if(popE)popE.textContent=oe; if(popTi)popTi.textContent=`${lbl} ${hi}° · ${desc}`; if(popTx)popTx.textContent=ot;
+        return {hi,lo,desc};
+      }
+      const a=fill(0,emoEl,tEl,popEmo,popTitle,popText,"1일차");
+      const b=fill(1,tmEmo,tmT,popTmEmo,popTmTitle,popTmText,"2일차");
+      el.title=`1일차 ${a?a.desc+" "+a.hi+"°/"+a.lo+"°":"-"} · 2일차 ${b?b.desc+" "+b.hi+"°/"+b.lo+"°":"-"}`;
+      if(popSrc)popSrc.href="https://search.naver.com/search.naver?query="+encodeURIComponent("강릉 날씨 "+fmt(d1));
+      if(pop&&a){pop.hidden=false;clearTimeout(pop._t);pop._t=setTimeout(closePop,22000);}
+      el.classList.remove("loading");
+    }).catch(()=>{el.classList.remove("loading");if(tEl)tEl.textContent="날씨 못 받음";});
+  };
   // 날씨 칩을 누르면 옷차림 토스트 다시 띄움
   el.addEventListener("click",()=>{if(pop&&popText.textContent){pop.hidden=false;clearTimeout(pop._t);pop._t=setTimeout(closePop,22000)}});
   const popX=document.getElementById("wxPopX");
   if(popX)popX.addEventListener("click",e=>{e.stopPropagation();closePop()});
   addEventListener("keydown",e=>{if(e.key==="Escape")closePop()});
+  // trip.start가 이미 있으면 바로, 없으면 로딩 상태 유지(trip 로드 후 호출됨)
+  if(window.trip&&trip.start)loadWeather();
 })();
 
 const IDEAS=[["경포해변","관광"],["안목해변 커피거리","카페"],["오죽헌","관광"],["정동진","관광"],["주문진 수산시장","맛집"],["초당순두부마을","맛집"],["강문해변","관광"],["경포호","관광"],["강릉중앙시장","맛집"],["선교장","관광"],["하슬라아트월드","관광"],["사천해변","관광"]];
@@ -823,6 +847,7 @@ const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 let db=null, user=null, sample=null, myId=null;
 let places=[], trip={days:2,start:""}, openId=null, busy={}, names={}, readOnly=false;
+window.trip=trip; // 날씨 모듈에서 여행 날짜 참조
 
 function toast(t){const el=$("#toast");el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>el.hidden=true,2600)}
 // 1일차·2일차만 존재. day 값이 1/2가 아니면 1일차로 본다 (미정·3일차 없음)
@@ -1158,7 +1183,7 @@ let tripTimer;
 trip.days=2; // 항상 1·2일차 2단 고정
 function saveTrip(){clearTimeout(tripTimer);tripTimer=setTimeout(async()=>{
   if(!db)return;try{await db.doc("meta/trip").set({days:2,start:$("#start").value||""})}catch(e){handleWriteErr(e)}},500)}
-$("#start").addEventListener("change",()=>{trip.start=$("#start").value;render();saveTrip()});
+$("#start").addEventListener("change",()=>{trip.start=$("#start").value;render();saveTrip();if(window.loadWeather)loadWeather();});
 
 renderForm();render();
 // 화면 크기 바뀌면(회전 등) 지도 마커 크기 재계산
@@ -1285,7 +1310,7 @@ function makeDb(){
   db.doc("meta/trip").onSnapshot(s=>{
     if(s.exists){const d=s.data();trip.days=2;trip.start=d.start||"";
       if(document.activeElement!==$("#start"))$("#start").value=trip.start;}
-    renderForm();render();
+    renderForm();render();if(window.loadWeather)loadWeather();
   });
   db.collection("places").onSnapshot(s=>{
     places=s.docs.map(d=>({id:d.id,...d.data()}));
