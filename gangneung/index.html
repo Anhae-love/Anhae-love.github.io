@@ -98,27 +98,16 @@ button{cursor:pointer}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;margin:0 0 6px;justify-content:center;flex-wrap:wrap}
 .eyebrow .geo{font-family:var(--display);font-weight:800;font-size:15px;line-height:1;color:var(--red);letter-spacing:.14em}
 .eyebrow .geo-full{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:700}
-/* 키로 얼굴 — 왕크게 */
-.kiro{width:clamp(150px,26vw,230px);margin:4px auto 2px;cursor:pointer}
+/* 키로 얼굴 — 둥근 사각형 + 점 두 눈 (심플/둥글둥글) */
+.kiro{width:clamp(130px,22vw,200px);margin:6px auto 2px;cursor:pointer}
 .kiro svg{display:block;width:100%;height:auto;overflow:visible}
-.k-face{fill:var(--surface);stroke:var(--ink);stroke-width:4}
-.k-cheek{fill:var(--red);opacity:.22}
-.k-eyew{fill:var(--surface);stroke:var(--ink);stroke-width:3}
-.k-pupil{fill:var(--ink)}
-.k-glint{fill:#fff}
-.k-mouth{fill:none;stroke:var(--ink);stroke-width:4;stroke-linecap:round;transition:d .2s ease}
-.k-ant{stroke:var(--ink);stroke-width:4;stroke-linecap:round}
-.k-antdot{fill:var(--red)}
+.k-face{fill:var(--surface);stroke:var(--ink);stroke-width:5}
+.k-eye{fill:var(--ink)}
 @media (prefers-reduced-motion:no-preference){
-  .k-antdot{animation:kbob 2.6s ease-in-out infinite}
   .kiro svg{animation:kfloat 5s ease-in-out infinite}
 }
 @keyframes kfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-@keyframes kbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
-/* 아주 작은 제목 */
-.masthead-t{font-family:var(--display);font-weight:700;font-size:clamp(14px,2.2vw,17px);line-height:1.2;margin:6px 0 0;
-  letter-spacing:.04em;text-align:center;color:var(--ink)}
-.dateline{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:9px 16px;margin-top:14px;font-size:12px;color:var(--muted)}
+.dateline{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:9px 16px;margin-top:16px;font-size:12px;color:var(--muted)}
 .dateline .dl-no{font-family:var(--display);font-weight:700;letter-spacing:.1em;color:var(--ink)}
 .dateline label{display:inline-flex;align-items:center;gap:7px;letter-spacing:.08em}
 .dateline input{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:5px 8px}
@@ -180,6 +169,12 @@ button{cursor:pointer}
 .chip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-weak);transform:translateY(-1px)}
 @media (max-width:820px){.add form{grid-template-columns:1fr 1fr}.add form .name,.add form .memo{grid-column:1/-1}.add form .btn{grid-column:1/-1}.fcand{padding-block:8px}}
 
+/* 에디토리얼 섹션 라벨 (지도 아래 '여정') */
+.board-label{display:flex;align-items:center;gap:14px;margin:4px 0 -4px;color:var(--muted)}
+.board-label::before,.board-label::after{content:"";height:1px;background:var(--line);flex:1}
+.board-label span{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.3em;color:var(--ink)}
+/* 지도 히어로 강조 */
+.mapbox.hero{border-radius:22px}
 .board{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
 .day{display:flex;flex-direction:column;gap:8px;min-width:0}
 .day h2{font-family:var(--display);font-weight:800;font-size:15px;margin:0;display:flex;align-items:baseline;gap:8px;letter-spacing:.01em}
@@ -289,7 +284,11 @@ button{cursor:pointer}
   .detail{padding:11px;gap:9px}
   .mapbox{border-radius:16px}
   .maphead h2{font-size:14px}
-  #map svg{max-height:58vh}
+  /* 모바일 지도: 더 키우고 라벨 글자도 크게 */
+  #map svg{max-height:72vh}
+  #map .pl{font-size:17px;stroke-width:5px}
+  #map .ref{font-size:14px}
+  #map .sea-l{font-size:22px}
 }
 @media (max-width:380px){
   html{font-size:90%}
@@ -335,27 +334,18 @@ button{cursor:pointer}
       </button>
     </div>
 
-    <!-- 가운데 정렬: 작은 GEO 라벨 → 왕큰 키로 얼굴 → 아주 작은 제목 -->
+    <!-- 가운데 정렬: 작은 GEO 라벨 → 둥근 키로 얼굴 -->
     <p class="eyebrow"><span class="geo">GEO</span><span class="geo-full">Gangneung Experience Observatory</span></p>
 
     <div class="kiro" id="kiro" aria-label="키로 마스코트">
-      <svg viewBox="0 0 240 230" role="img" aria-hidden="true">
-        <rect class="k-face" x="24" y="30" width="192" height="168" rx="46" ry="48"/>
-        <ellipse class="k-cheek" cx="66" cy="140" rx="15" ry="9"/>
-        <ellipse class="k-cheek" cx="174" cy="140" rx="15" ry="9"/>
-        <circle class="k-eyew" cx="90" cy="108" r="26"/>
-        <circle class="k-eyew" cx="150" cy="108" r="26"/>
-        <circle class="k-pupil" id="kpL" cx="90" cy="108" r="11"/>
-        <circle class="k-pupil" id="kpR" cx="150" cy="108" r="11"/>
-        <circle class="k-glint" id="kgL" cx="86" cy="104" r="3.4"/>
-        <circle class="k-glint" id="kgR" cx="146" cy="104" r="3.4"/>
-        <path class="k-mouth" id="kMouth" d="M104 158 Q120 172 136 158"/>
-        <line class="k-ant" x1="120" y1="30" x2="120" y2="10"/>
-        <circle class="k-antdot" cx="120" cy="7" r="6"/>
+      <svg viewBox="0 0 240 240" role="img" aria-hidden="true">
+        <!-- 둥근 사각형(스퀘클) 얼굴 -->
+        <rect class="k-face" x="20" y="20" width="200" height="200" rx="72" ry="72"/>
+        <!-- 점 두 개 눈 (흰자 없이 심플) -->
+        <circle class="k-eye" id="kpL" cx="92" cy="120" r="17"/>
+        <circle class="k-eye" id="kpR" cx="148" cy="120" r="17"/>
       </svg>
     </div>
-
-    <h1 class="masthead-t">강릉 여행 계획</h1>
     <div class="dateline">
       <span class="dl-no">DAY 01 — 02</span>
       <label for="start">DEPART <input type="date" id="start"></label>
@@ -388,13 +378,15 @@ button{cursor:pointer}
     <div class="ideas" id="ideas"><span class="lbl">강릉에서 많이 가는 곳</span></div>
   </section>
 
-  <main class="board" id="board"></main>
-
-  <section class="mapbox" aria-label="지도">
+  <!-- 지도를 주인공으로 위에, 그 아래 일차 리스트 -->
+  <section class="mapbox hero" aria-label="지도">
     <div class="maphead" id="mapHead"><h2>지도</h2></div>
     <div class="mapwrap" id="map"></div>
     <div class="mapnote" id="mapNote">추가한 장소가 일차별 색으로 표시되고, 같은 날 장소는 시간순으로 이어져요. 거리는 직선 거리예요.</div>
   </section>
+
+  <p class="board-label"><span>ITINERARY</span></p>
+  <main class="board" id="board"></main>
 
 </div>
 <div class="toast" id="toast" hidden></div>
@@ -497,38 +489,32 @@ const INK=(function(){
   addEventListener("touchend",()=>{have=false;kick()},{passive:true});
 })();
 
-/* ---- 키로 마스코트: 눈동자가 마우스를 따라 보고, 쓰다듬으면 방긋 ---- */
+/* ---- 키로 마스코트: 점 눈이 마우스를 따라 움직임, 클릭하면 깜빡 + 번짐 ---- */
 (function(){
   const box=document.getElementById("kiro");if(!box)return;
-  const pL=document.getElementById("kpL"),pR=document.getElementById("kpR"),
-        gL=document.getElementById("kgL"),gR=document.getElementById("kgR"),
-        mouth=document.getElementById("kMouth");
-  const eyes=[{p:pL,g:gL,cx:90,cy:108},{p:pR,g:gR,cx:150,cy:108}];
-  const MAXR=7; // 눈동자 이동 반경
-  let tx=innerWidth/2,ty=0,raf=null,happy=0;
+  const eL=document.getElementById("kpL"),eR=document.getElementById("kpR");
+  if(!eL||!eR)return;
+  // viewBox 240x240 기준 눈 기본 중심
+  const eyes=[{el:eL,cx:92,cy:120},{el:eR,cx:148,cy:120}];
+  const MAXR=10; // 눈 이동 반경
+  let tx=innerWidth/2,ty=0,raf=null;
   function render(){
     const r=box.getBoundingClientRect();
     eyes.forEach(e=>{
-      // 눈 중심의 화면 좌표 추정 (viewBox 240x230 기준)
-      const ex=r.left+r.width*(e.cx/240), ey=r.top+r.height*(e.cy/230);
+      const ex=r.left+r.width*(e.cx/240), ey=r.top+r.height*(e.cy/240);
       const dx=tx-ex, dy=ty-ey, d=Math.hypot(dx,dy)||1;
-      const off=Math.min(MAXR, d/18);
-      const ox=dx/d*off, oy=dy/d*off;
-      e.p.setAttribute("cx",e.cx+ox); e.p.setAttribute("cy",e.cy+oy);
-      e.g.setAttribute("cx",e.cx+ox-4); e.g.setAttribute("cy",e.cy+oy-4);
+      const off=Math.min(MAXR, d/16);
+      e.el.setAttribute("cx",e.cx+dx/d*off); e.el.setAttribute("cy",e.cy+dy/d*off);
     });
     raf=null;
   }
   function kick(){if(!raf)raf=requestAnimationFrame(render)}
   addEventListener("mousemove",e=>{tx=e.clientX;ty=e.clientY;kick()},{passive:true});
   addEventListener("touchmove",e=>{const t=e.touches[0];if(t){tx=t.clientX;ty=t.clientY;kick()}},{passive:true});
-  // 쓰다듬기(호버/클릭) → 더 활짝 웃고 배경 번짐
-  function smile(){mouth.setAttribute("d","M100 156 Q120 180 140 156");}
-  function unsmile(){mouth.setAttribute("d","M104 158 Q120 172 136 158");}
-  box.addEventListener("mouseenter",smile);
-  box.addEventListener("mouseleave",unsmile);
+  // 클릭 → 눈 깜빡(납작) + 민트 번짐
   box.addEventListener("click",()=>{
-    smile();clearTimeout(happy);happy=setTimeout(unsmile,1200);
+    eyes.forEach(e=>e.el.setAttribute("ry","2"));
+    setTimeout(()=>eyes.forEach(e=>e.el.removeAttribute("ry")),150);
     if(INK){const r=box.getBoundingClientRect();const [x,y]=INK.toLocal(r.left+r.width/2,r.top+r.height/2);INK.splash(x,y,1.0,0)}
   });
   render();
@@ -737,6 +723,8 @@ const effDay=p=>clampDay(p.day);
 function routeStops(d){return places.filter(p=>effDay(p)===d&&!p.cand&&okCoord(p.lat,p.lng)).sort((a,b)=>sortKey(a)<sortKey(b)?-1:1)}
 function dayStops(d){return places.filter(p=>effDay(p)===d&&!isStay(p)&&!p.cand&&okCoord(p.lat,p.lng)).sort((a,b)=>sortKey(a)<sortKey(b)?-1:1)}
 function renderMap(){
+  // 모바일에선 지도가 작게 렌더되므로 마커·글자를 키운다
+  const MB=(matchMedia("(max-width:600px)").matches)?1.7:1;
   // 헤더 칩
   let chips=`<h2>지도</h2><button class="dchip" data-md="all" aria-pressed="${mapDay==="all"}">전체</button>`;
   const days=[1,2];
@@ -776,18 +764,20 @@ function renderMap(){
   for(const p of shown){
     const q=pos(p),x=q.x,y=q.y,d=effDay(p),sel=openId===p.id;
     if(q.far){const right=x>W/2,dist=Math.round(km({lat:cLat,lng:cLng},p));
+      const fr=(7*MB).toFixed(1),ffs=(8.5*MB).toFixed(1),foff=(3*MB).toFixed(1),flab=(12*MB).toFixed(0);
       svg+=`<g class="mk" data-pid="${p.id}" tabindex="0" role="button" aria-label="${esc(p.name)} 열기 (지도 밖)">
-      <circle cx="${x}" cy="${y}" r="7" fill="var(--map-bg)" stroke="${d?DAYC(d):"var(--d0)"}" stroke-width="1.4" stroke-dasharray="2 2"/>
-      <text x="${x}" y="${y+3}" text-anchor="middle" font-size="8.5" font-weight="700" fill="${d?DAYC(d):"var(--d0)"}">${isStay(p)?"숙":d?order(p):"?"}</text>
-      <text class="pl" x="${right?x-12:x+12}" y="${y+3}" text-anchor="${right?"end":"start"}">${esc(p.name)} · 약 ${dist}km 밖</text></g>`;continue}
-    if(isStay(p)){svg+=`<g class="mk" data-pid="${p.id}" tabindex="0" role="button" aria-label="숙소 ${esc(p.name)} 열기">
-      <path d="M${x} ${y-9} L${x+8} ${y-1} L${x+6} ${y-1} L${x+6} ${y+7} L${x-6} ${y+7} L${x-6} ${y-1} L${x-8} ${y-1} Z" fill="var(--map-ink)" stroke="var(--map-bg)" stroke-width="1.4" stroke-linejoin="round"/>
-      <text class="pl" x="${x+11}" y="${y+3}">${esc(p.name)}</text></g>`;continue}
-    const r=sel?9:6.5;
+      <circle cx="${x}" cy="${y}" r="${fr}" fill="var(--map-bg)" stroke="${d?DAYC(d):"var(--d0)"}" stroke-width="1.4" stroke-dasharray="2 2"/>
+      <text x="${x}" y="${+y+ +foff}" text-anchor="middle" font-size="${ffs}" font-weight="700" fill="${d?DAYC(d):"var(--d0)"}">${isStay(p)?"숙":d?order(p):"?"}</text>
+      <text class="pl" x="${right?x- +flab:+x+ +flab}" y="${+y+ +foff}" text-anchor="${right?"end":"start"}">${esc(p.name)} · 약 ${dist}km 밖</text></g>`;continue}
+    if(isStay(p)){const sc=MB,hw=8*sc,ht=9*sc,hb=7*sc,lab=(11*sc).toFixed(0),fo=(3*sc).toFixed(1);
+      svg+=`<g class="mk" data-pid="${p.id}" tabindex="0" role="button" aria-label="숙소 ${esc(p.name)} 열기">
+      <path d="M${x} ${y-ht} L${+x+hw} ${y-1} L${+x+hb-1} ${y-1} L${+x+hb-1} ${+y+hb} L${x-hb+1} ${+y+hb} L${x-hb+1} ${y-1} L${x-hw} ${y-1} Z" fill="var(--map-ink)" stroke="var(--map-bg)" stroke-width="1.5" stroke-linejoin="round"/>
+      <text class="pl" x="${+x+ +lab}" y="${+y+ +fo}">${esc(p.name)}</text></g>`;continue}
+    const r=((sel?9:6.5)*MB).toFixed(1),fs=(8.5*MB).toFixed(1),fo=(3*MB).toFixed(1),lab=(11*MB).toFixed(0);
     svg+=`<g class="mk" data-pid="${p.id}" tabindex="0" role="button" aria-label="${esc(p.name)} 열기">
       <circle cx="${x}" cy="${y}" r="${r}" fill="${d&&!p.cand?DAYC(d):"var(--map-bg)"}" stroke="${d?(p.cand?DAYC(d):"#fff"):"var(--d0)"}" stroke-width="1.5" ${p.cand?'stroke-dasharray="2 2"':""}/>
-      <text x="${x}" y="${y+3}" text-anchor="middle" font-size="8.5" font-weight="700" fill="${d&&!p.cand?"#fff":(d?DAYC(d):"var(--d0)")}">${d&&!p.cand?order(p):"?"}</text>
-      ${label||sel?`<text class="pl" x="${x+11}" y="${y+3}">${esc(p.name)}${p.approx?" (대략)":""}</text>`:""}</g>`;
+      <text x="${x}" y="${+y+ +fo}" text-anchor="middle" font-size="${fs}" font-weight="700" fill="${d&&!p.cand?"#fff":(d?DAYC(d):"var(--d0)")}">${d&&!p.cand?order(p):"?"}</text>
+      ${label||sel?`<text class="pl" x="${+x+ +lab}" y="${+y+ +fo}">${esc(p.name)}${p.approx?" (대략)":""}</text>`:""}</g>`;
   }
   // 축척
   const pk=s/111;let sk=[0.5,1,2,5,10].find(v=>v*pk>=60)||10;const bw=sk*pk;
@@ -917,6 +907,8 @@ function saveTrip(){clearTimeout(tripTimer);tripTimer=setTimeout(async()=>{
 $("#start").addEventListener("change",()=>{trip.start=$("#start").value;render();saveTrip()});
 
 renderForm();render();
+// 화면 크기 바뀌면(회전 등) 지도 마커 크기 재계산
+let _mapRz;addEventListener("resize",()=>{clearTimeout(_mapRz);_mapRz=setTimeout(()=>renderMap(),200)},{passive:true});
 
 // ---- 서버 연결 (Supabase REST) ----
 // 라이브러리 없이 fetch 로 Supabase REST API 를 직접 호출합니다. (GitHub Pages 같은 정적 호스팅에 그대로 올라감)
