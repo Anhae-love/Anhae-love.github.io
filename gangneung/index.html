@@ -125,15 +125,16 @@ button{cursor:pointer}
 .weather.loading .wx-tmr{display:none}
 .weather.loading{color:var(--muted)}
 
-/* 옷차림 말풍선 — 날씨 칩 바로 밑(상단 우측)에서 자동으로 톡 */
-.wx-pop{position:fixed;top:calc(54px + env(safe-area-inset-top,0px));right:calc(18px + env(safe-area-inset-right,0px));z-index:120;
-  width:max-content;max-width:min(86vw,330px);display:flex;flex-direction:column;gap:10px;text-align:left;
+/* 옷차림 말풍선 — 날씨 칩 바로 아래, 꼬리가 이모지를 가리킴 (칩은 안 가림) */
+.weather{position:relative}
+.wx-pop{position:absolute;top:calc(100% + 11px);left:0;z-index:120;
+  width:max-content;max-width:min(86vw,320px);display:flex;flex-direction:column;gap:10px;text-align:left;
   background:var(--surface);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   border:1px solid var(--line);border-radius:16px;padding:14px 15px 11px;box-shadow:var(--shadow-md);
   animation:wxpop .4s cubic-bezier(.22,1,.36,1)}
 .wx-pop[hidden]{display:none}
-/* 말풍선 꼬리 — 위(날씨 칩)를 가리킴 */
-.wx-pop::before{content:"";position:absolute;top:-8px;right:30px;width:15px;height:15px;background:var(--surface);
+/* 말풍선 꼬리 — 날씨 이모지(칩 왼쪽) 위치를 가리킴 */
+.wx-pop::before{content:"";position:absolute;top:-8px;left:16px;width:15px;height:15px;background:var(--surface);
   border-left:1px solid var(--line);border-top:1px solid var(--line);transform:rotate(45deg)}
 .wx-pop-row{display:flex;gap:11px;align-items:flex-start}
 .wx-pop-tmr{padding-top:9px;border-top:1px dashed var(--line)}
@@ -240,20 +241,19 @@ button{cursor:pointer}
 .map-toggle{margin-left:auto;display:inline-flex;align-items:center;gap:5px;background:none;border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:12px;color:var(--muted);transition:border-color .2s,color .2s}
 .map-toggle:hover{border-color:var(--accent);color:var(--ink)}
 .map-toggle .arr{display:inline-block;transition:transform .3s ease;font-size:14px;line-height:1}
-.mapbox.compact .map-toggle .arr{transform:rotate(180deg)}
-.mapbox.compact .map-toggle .lbl::after{content:"지도 펼치기"}
-.mapbox:not(.compact) .map-toggle .lbl::after{content:"지도 접기"}
-/* 접힌 상태: 지도+노트 숨기고 헤더만 */
-.mapwrap,.mapnote{transition:max-height .4s ease,opacity .3s ease,padding .3s ease}
-.mapbox.compact .mapwrap{max-height:0;opacity:0;overflow:hidden}
-.mapbox.compact .mapnote{max-height:0;opacity:0;overflow:hidden;padding:0 12px}
+/* 기본(배너) → '크게 보기' / 펼침 → '작게' */
+.mapbox.expanded .map-toggle .arr{transform:rotate(180deg)}
+.mapbox:not(.expanded) .map-toggle .lbl::after{content:"크게 보기"}
+.mapbox.expanded .map-toggle .lbl::after{content:"작게"}
 .dchip{border:1px solid var(--line);background:none;border-radius:999px;padding:4px 11px;font-size:12px;display:inline-flex;gap:6px;align-items:center;color:var(--ink);font-variant-numeric:tabular-nums;transition:border-color .15s,background .15s}
 .dchip:hover{border-color:var(--accent)}
 .dchip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-weak);color:var(--accent);font-weight:600}
 .dchip .km{color:var(--muted);font-weight:400}
 .dot{width:9px;height:9px;border-radius:50%;flex:none}
 .mapwrap{position:relative;background:var(--map-bg);overflow:hidden;touch-action:none}
-#map svg{display:block;width:100%;height:auto;max-height:46vh;transform-origin:0 0;will-change:transform}
+/* 기본은 얇은 배너처럼, 펼치면 크게 */
+#map svg{display:block;width:100%;height:auto;max-height:230px;transform-origin:0 0;will-change:transform;transition:max-height .4s ease}
+.mapbox.expanded #map svg{max-height:62vh}
 #map.zoomed svg{cursor:grab}
 #map .mk{cursor:pointer}
 #map.picking svg{cursor:crosshair;outline:2px solid var(--accent);outline-offset:-2px}
@@ -303,8 +303,9 @@ button{cursor:pointer}
   .detail{padding:11px;gap:9px}
   .mapbox{border-radius:16px}
   .maphead h2{font-size:14px}
-  /* 모바일 지도: 접기 전 기본 높이 + 라벨 글자 크게 */
-  #map svg{max-height:52vh}
+  /* 모바일 지도: 배너 높이 + 펼치면 크게, 라벨 글자 크게 */
+  #map svg{max-height:260px}
+  .mapbox.expanded #map svg{max-height:72vh}
   #map .pl{font-size:17px;stroke-width:5px}
   #map .ref{font-size:14px}
   #map .sea-l{font-size:22px}
@@ -346,6 +347,25 @@ button{cursor:pointer}
           <span class="wx-emo" id="wxTmEmo">⛅</span>
           <span class="wx-tt" id="wxTmTemp">–°/–°</span>
         </span>
+        <!-- 옷차림 말풍선: 날씨 칩 기준으로 아래에 뜨고 꼬리가 이모지를 가리킴 -->
+        <div class="wx-pop" id="wxPop" role="status" hidden>
+          <button class="wx-pop-x" id="wxPopX" type="button" aria-label="닫기">×</button>
+          <div class="wx-pop-row">
+            <div class="wx-pop-emo" id="wxPopEmo">🧥</div>
+            <div class="wx-pop-body">
+              <strong id="wxPopTitle">오늘의 옷차림</strong>
+              <p id="wxPopText">날씨를 불러오면 추천해 드려요.</p>
+            </div>
+          </div>
+          <div class="wx-pop-row wx-pop-tmr" id="wxPopTmrRow">
+            <div class="wx-pop-emo" id="wxPopTmEmo">🧥</div>
+            <div class="wx-pop-body">
+              <strong id="wxPopTmTitle">내일</strong>
+              <p id="wxPopTmText">—</p>
+            </div>
+          </div>
+          <a class="wx-pop-src" id="wxPopSrc" href="https://search.naver.com/search.naver?query=강릉+날씨" target="_blank" rel="noopener">출처 · 기상청·Open-Meteo 기준 · 네이버 날씨</a>
+        </div>
       </span>
       <button class="themebtn" id="themeBtn" type="button" aria-label="화면 테마 전환" title="다크/화이트 모드">
         <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -371,26 +391,6 @@ button{cursor:pointer}
       <span class="status" id="status">불러오는 중…</span>
     </div>
   </header>
-
-  <!-- 옷차림 제안 토스트 (들어오면 자동으로 톡) · 오늘 + 내일 -->
-  <div class="wx-pop" id="wxPop" role="status" hidden>
-    <button class="wx-pop-x" id="wxPopX" type="button" aria-label="닫기">×</button>
-    <div class="wx-pop-row">
-      <div class="wx-pop-emo" id="wxPopEmo">🧥</div>
-      <div class="wx-pop-body">
-        <strong id="wxPopTitle">오늘의 옷차림</strong>
-        <p id="wxPopText">날씨를 불러오면 추천해 드려요.</p>
-      </div>
-    </div>
-    <div class="wx-pop-row wx-pop-tmr" id="wxPopTmrRow">
-      <div class="wx-pop-emo" id="wxPopTmEmo">🧥</div>
-      <div class="wx-pop-body">
-        <strong id="wxPopTmTitle">내일</strong>
-        <p id="wxPopTmText">—</p>
-      </div>
-    </div>
-    <a class="wx-pop-src" id="wxPopSrc" href="https://search.naver.com/search.naver?query=강릉+날씨" target="_blank" rel="noopener">출처 · 기상청·Open-Meteo 기준 · 네이버 날씨</a>
-  </div>
 
   <p class="board-label"><span>THE MAP</span><em>강릉 일대</em></p>
   <section class="mapbox" aria-label="지도">
@@ -491,9 +491,9 @@ const INK=(function(){
   const poly=svg.querySelector("polyline"),head=svg.querySelector(".lc-head");
   if(fine)document.body.classList.add("has-cursor"); // 기본 커서 숨김은 PC만
   const pts=[];            // {x,y,t}
-  const TAIL=14;           // 선을 이루는 최대 꼭짓점 수
-  const LIFE=340;          // 각 점 수명(ms) → 멈추면 선이 짧아짐
-  const MINSEG=6;          // 이 거리 이상 움직였을 때만 새 꼭짓점(각지게)
+  const TAIL=90;           // 선을 이루는 최대 꼭짓점 수 (내 궤적이 길게 남음)
+  const LIFE=1600;         // 각 점 수명(ms) → 멈춰도 한동안 궤적이 남았다 서서히 사라짐
+  const MINSEG=7;          // 이 거리 이상 움직였을 때만 새 꼭짓점(각지게)
   let mx=innerWidth/2,my=innerHeight/2,have=false,raf=null;
   function push(x,y){
     mx=x;my=y;have=true;
@@ -775,7 +775,7 @@ function renderMap(){
     const st=routeStops(d);let dist=0;for(let i=1;i<st.length;i++)dist+=km(st[i-1],st[i]);
     chips+=`<button class="dchip" data-md="${d}" aria-pressed="${mapDay===String(d)}"><span class="dot" style="background:${DAYC(d)}"></span>${dayLabel(d).t}${st.length>1?` <span class="km">${dist.toFixed(1)}km</span>`:""}</button>`;
   }
-  chips+=`<button class="map-toggle" id="mapToggle" type="button" aria-label="지도 접기/펼치기"><span class="arr">⌃</span><span class="lbl"></span></button>`;
+  chips+=`<button class="map-toggle" id="mapToggle" type="button" aria-label="지도 크게/작게"><span class="arr">⌄</span><span class="lbl"></span></button>`;
   $("#mapHead").innerHTML=chips;
   if(mapDay!=="all"&&!days.includes(+mapDay))mapDay="all";
 
@@ -932,7 +932,7 @@ $("#board").addEventListener("change",e=>{
   patch(id,{[f]:v});
 });
 $("#mapHead").addEventListener("click",e=>{
-  if(e.target.closest("#mapToggle")){document.querySelector(".mapbox").classList.toggle("compact");return;}
+  if(e.target.closest("#mapToggle")){const mb=document.querySelector(".mapbox");mb.classList.toggle("expanded");setTimeout(()=>{if(typeof applyZoom==="function")applyZoom()},420);return;}
   const b=e.target.closest("[data-md]");if(b){mapDay=b.dataset.md;renderMap()}});
 function openFromMap(id){openId=id;render();loadNames();const c=document.querySelector(`.card[data-id="${CSS.escape(id)}"]`);c?.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth",block:"center"})}
 $("#map").addEventListener("click",e=>{
