@@ -4,6 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>강릉 여행 계획</title>
+<meta name="theme-color" content="#F7F9FB" media="(prefers-color-scheme:light)">
+<meta name="theme-color" content="#141C22" media="(prefers-color-scheme:dark)">
+<script>
+/* 테마를 CSS 적용 전에 먼저 지정해 깜빡임 방지 */
+(function(){try{var t=localStorage.getItem("gangneung-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
 <style>
@@ -13,40 +19,73 @@ body{margin:0}
 img{max-width:100%}
 [hidden]{display:none!important}
 /* Layout: 한 줄 헤더 + 장소 추가 바 + 일차별 세로 타임라인(넓은 화면에선 열로 나란히) */
+/* ===== 수채화 컨셉 팔레트 ===== */
 :root{
-  /* 흑백 그레이스케일 (토스 grey scale 기반) */
-  --bg:#FAFAFA; --surface:#FFFFFF; --ink:#191F28; --muted:#8B95A1; --line:#E5E8EB;
-  /* 지도/카테고리: 포인트는 모두 그레이, 인터랙션만 토스 블루 */
-  --sea:#191F28; --sea-soft:#F2F4F6; --pine:#4E5968; --pine-soft:#F2F4F6; --sun:#6B7684; --sun-soft:#F2F4F6;
-  --danger:#F04452;
-  --land:#F2F4F6; --sea-fill:#E5E8EB; --road:#EDEFF2; --on-dot:#FFFFFF;
-  /* 토스 인터랙션 블루 */
-  --accent:#0748FF; --accent-weak:#E8F3FF;
-  /* 동선(일차) 색 — 토스 시맨틱 팔레트만 사용 */
-  --d0:#B0B8C1; --d1:#0748FF; --d2:#03B26C; --d3:#F04452; --d4:#A234C7; --d5:#18A5A5;
-  /* 흑백 그라데이션 배경 */
-  --grad:radial-gradient(120% 90% at 50% -10%, #FFFFFF 0%, #F4F5F7 42%, #E9EBEF 100%);
-  --display:"Toss Product Sans","IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
-  --body:"Toss Product Sans","IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  /* 라이트(화이트) 모드 — 종이 위 수채 톤 */
+  --bg:#F7F9FB; --surface:#FFFFFFEE; --ink:#2B3A42; --muted:#7E8C95; --line:#E4ECEF;
+  --sea:#3E7CA6; --sea-soft:#E3EEF5; --pine:#5B8A6B; --pine-soft:#E6F0E8; --sun:#C98A5A; --sun-soft:#F6EBDF;
+  --danger:#C65B5B;
+  --land:#EFF4F2; --sea-fill:#DCEAF1; --road:#E8EEEC; --on-dot:#FFFFFF;
+  /* 인터랙션 포인트 — 수채 블루 */
+  --accent:#3E7CA6; --accent-weak:#E3EEF5;
+  /* 동선(일차) — 번진 수채 색 */
+  --d0:#AEBEC6; --d1:#3E7CA6; --d2:#5B8A6B; --d3:#C65B5B; --d4:#8A6FB0; --d5:#C98A5A;
+  /* 수채 번짐 배경(블롭 색) */
+  --wash1:#CFE3F0; --wash2:#E7D9EE; --wash3:#D8ECDE; --wash4:#F4E6D4;
+  --paper:#F7F9FB;
+  --display:"Gowun Batang","Nanum Myeongjo","Apple SD Gothic Neo",serif;
+  --body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --shadow-sm:0 2px 10px rgba(62,124,166,.07);
+  --shadow-md:0 6px 22px rgba(62,124,166,.12);
+}
+/* 다크 모드 — 깊은 남색 수채 */
+:root[data-theme="dark"]{
+  --bg:#141C22; --surface:#1C262DE6; --ink:#E6EEF2; --muted:#93A4AE; --line:#2B3842;
+  --sea:#7FB3D5; --sea-soft:#1E3240; --pine:#8FC2A0; --pine-soft:#1C3328; --sun:#E0A775; --sun-soft:#352819;
+  --danger:#E58585;
+  --land:#182127; --sea-fill:#1A2C38; --road:#1E2A31; --on-dot:#141C22;
+  --accent:#7FB3D5; --accent-weak:#1E3240;
+  --d0:#5E6E78; --d1:#7FB3D5; --d2:#8FC2A0; --d3:#E58585; --d4:#B79BD6; --d5:#E0A775;
+  --wash1:#1E3A4E; --wash2:#33264A; --wash3:#1F3B2C; --wash4:#3E3320;
+  --paper:#141C22;
+  --shadow-sm:0 2px 12px rgba(0,0,0,.3);
+  --shadow-md:0 8px 28px rgba(0,0,0,.45);
+  color-scheme:dark;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0F1115; --surface:#17191F; --ink:#F2F4F6; --muted:#8B95A1; --line:#292C32;
-  --sea:#F2F4F6; --sea-soft:#22242A; --pine:#B0B8C1; --pine-soft:#22242A; --sun:#8B95A1; --sun-soft:#22242A;
-  --danger:#F04452; --land:#1A1D23; --sea-fill:#22242A; --road:#1F2127; --on-dot:#0F1115;
-  --accent:#4C86FF; --accent-weak:#16233A;
-  --d0:#5A6472; --d1:#4C86FF; --d2:#1FC98A; --d3:#FF6A74; --d4:#C06CE0; --d5:#3CC7C7;
-  --grad:radial-gradient(120% 90% at 50% -10%, #1A1D24 0%, #121419 50%, #0C0E12 100%);
-  color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0F1115; --surface:#17191F; --ink:#F2F4F6; --muted:#8B95A1; --line:#292C32;
-  --sea:#F2F4F6; --sea-soft:#22242A; --pine:#B0B8C1; --pine-soft:#22242A; --sun:#8B95A1; --sun-soft:#22242A;
-  --danger:#F04452; --land:#1A1D23; --sea-fill:#22242A; --road:#1F2127; --on-dot:#0F1115;
-  --accent:#4C86FF; --accent-weak:#16233A;
-  --d0:#5A6472; --d1:#4C86FF; --d2:#1FC98A; --d3:#FF6A74; --d4:#C06CE0; --d5:#3CC7C7;
-  --grad:radial-gradient(120% 90% at 50% -10%, #1A1D24 0%, #121419 50%, #0C0E12 100%);
-  color-scheme:dark}
+  --bg:#141C22; --surface:#1C262DE6; --ink:#E6EEF2; --muted:#93A4AE; --line:#2B3842;
+  --sea:#7FB3D5; --sea-soft:#1E3240; --pine:#8FC2A0; --pine-soft:#1C3328; --sun:#E0A775; --sun-soft:#352819;
+  --danger:#E58585;
+  --land:#182127; --sea-fill:#1A2C38; --road:#1E2A31; --on-dot:#141C22;
+  --accent:#7FB3D5; --accent-weak:#1E3240;
+  --d0:#5E6E78; --d1:#7FB3D5; --d2:#8FC2A0; --d3:#E58585; --d4:#B79BD6; --d5:#E0A775;
+  --wash1:#1E3A4E; --wash2:#33264A; --wash3:#1F3B2C; --wash4:#3E3320;
+  --paper:#141C22;
+  --shadow-sm:0 2px 12px rgba(0,0,0,.3);
+  --shadow-md:0 8px 28px rgba(0,0,0,.45);
+  color-scheme:dark;
+}}
 *{box-sizing:border-box}
-body{background:var(--bg);background-image:var(--grad);background-attachment:fixed;color:var(--ink);font-family:var(--body);font-size:14px;line-height:1.57;-webkit-font-smoothing:antialiased;letter-spacing:-0.01em}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;letter-spacing:-0.005em;position:relative;min-height:100vh;transition:background-color .4s ease,color .4s ease}
+/* 수채 번짐 배경: 부드러운 블롭 여러 개를 흐리게 겹침 */
+.wash{position:fixed;inset:-10% -10% -10% -10%;z-index:-1;overflow:hidden;pointer-events:none}
+.wash::before,.wash::after,.wash i{content:"";position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;mix-blend-mode:multiply}
+:root[data-theme="dark"] .wash::before,:root[data-theme="dark"] .wash::after,:root[data-theme="dark"] .wash i{mix-blend-mode:screen;opacity:.4}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .wash::before,:root:not([data-theme="light"]) .wash::after,:root:not([data-theme="light"]) .wash i{mix-blend-mode:screen;opacity:.4}}
+.wash::before{width:55vw;height:55vw;left:-8vw;top:-6vw;background:radial-gradient(circle at 30% 30%,var(--wash1),transparent 70%)}
+.wash::after{width:50vw;height:50vw;right:-10vw;top:14vh;background:radial-gradient(circle at 60% 40%,var(--wash2),transparent 70%)}
+.wash i{width:60vw;height:60vw;left:20vw;bottom:-20vh;background:radial-gradient(circle at 50% 50%,var(--wash3),transparent 70%)}
+.wash b{content:"";position:absolute;width:40vw;height:40vw;right:5vw;bottom:5vh;border-radius:50%;filter:blur(70px);opacity:.4;background:radial-gradient(circle,var(--wash4),transparent 70%);mix-blend-mode:multiply}
+:root[data-theme="dark"] .wash b{mix-blend-mode:screen;opacity:.35}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .wash b{mix-blend-mode:screen;opacity:.35}}
+@media (prefers-reduced-motion:no-preference){
+  .wash::before{animation:drift1 26s ease-in-out infinite alternate}
+  .wash::after{animation:drift2 32s ease-in-out infinite alternate}
+  .wash i{animation:drift3 38s ease-in-out infinite alternate}
+}
+@keyframes drift1{to{transform:translate(6vw,4vh) scale(1.1)}}
+@keyframes drift2{to{transform:translate(-5vw,6vh) scale(1.08)}}
+@keyframes drift3{to{transform:translate(4vw,-5vh) scale(1.12)}}
 .wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px;display:flex;flex-direction:column;gap:22px}
 button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer}
@@ -57,21 +96,37 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(22px,3.4vw,28px);l
 h1 small{display:block;font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--muted);margin-bottom:6px}
 .trip{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:13px;color:var(--muted)}
 .trip label{display:flex;align-items:center;gap:6px}
-.trip input{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:5px 8px}
+.trip input{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:5px 8px}
 .trip input[type=number]{width:60px}
 .status{font-size:12px;color:var(--muted)}
 
-.add{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px;box-shadow:0 1px 3px rgba(17,31,40,.04)}
+/* 날씨 + 테마 토글 */
+.hbar{display:flex;align-items:center;gap:8px}
+.weather{display:inline-flex;align-items:center;gap:8px;background:var(--surface);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:999px;padding:5px 12px 5px 10px;font-size:13px;color:var(--ink);box-shadow:var(--shadow-sm);white-space:nowrap}
+.weather .wx-emo{font-size:17px;line-height:1}
+.weather .wx-temp{font-weight:700;font-variant-numeric:tabular-nums}
+.weather .wx-desc{color:var(--muted);font-size:12px}
+.weather.loading{color:var(--muted)}
+.themebtn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:999px;border:1px solid var(--line);background:var(--surface);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--ink);box-shadow:var(--shadow-sm);transition:border-color .2s,transform .2s;flex:none}
+.themebtn:hover{border-color:var(--accent);transform:translateY(-1px)}
+.themebtn svg{width:18px;height:18px}
+.themebtn .ic-sun{display:none}
+.themebtn .ic-moon{display:block}
+:root[data-theme="dark"] .themebtn .ic-sun{display:block}
+:root[data-theme="dark"] .themebtn .ic-moon{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .themebtn .ic-sun{display:block}:root:not([data-theme="light"]) .themebtn .ic-moon{display:none}}
+
+.add{background:var(--surface);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--shadow-sm)}
 .add form{display:grid;grid-template-columns:2fr 1fr 1fr 90px 2fr auto auto;gap:8px}
 .fcand{display:flex;align-items:center;gap:6px;font-size:13px;white-space:nowrap;border:1px solid var(--line);border-radius:8px;padding:0 10px;cursor:pointer;transition:border-color .15s,color .15s}
 .fcand:has(input:checked){border-color:var(--accent);color:var(--accent)}
 .add input,.add select{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:9px 10px;min-width:0;transition:border-color .15s}
 .add input:focus,.add select:focus{border-color:var(--accent);outline:none}
-.btn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:9px 16px;font-weight:600;white-space:nowrap;transition:filter .15s}
-.btn:hover:not(:disabled){filter:brightness(.92)}
-.btn:disabled{opacity:.4;cursor:default}
-.ghost{background:none;border:1px solid var(--line);border-radius:8px;padding:5px 10px;font-size:13px;color:var(--ink);transition:border-color .15s,color .15s}
-.ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn{background:var(--accent);color:#fff;border:0;border-radius:10px;padding:9px 18px;font-weight:600;white-space:nowrap;transition:filter .2s,box-shadow .2s;box-shadow:var(--shadow-sm)}
+.btn:hover:not(:disabled){filter:brightness(1.06);box-shadow:var(--shadow-md)}
+.btn:disabled{opacity:.4;cursor:default;box-shadow:none}
+.ghost{background:none;border:1px solid var(--line);border-radius:10px;padding:5px 11px;font-size:13px;color:var(--ink);transition:border-color .2s,color .2s,background .2s}
+.ghost:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-weak)}
 .ideas{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px}
 .ideas span.lbl{color:var(--muted);margin-right:4px}
 .chip{border:1px solid var(--line);background:none;border-radius:999px;padding:3px 12px;font-size:13px;color:var(--ink);transition:border-color .15s,color .15s,background .15s}
@@ -87,9 +142,9 @@ h1 small{display:block;font-family:var(--body);font-size:11px;font-weight:600;le
 .list{display:flex;flex-direction:column;gap:6px;border-left:2px solid var(--line);padding-left:12px;min-height:44px}
 .empty{font-size:13px;color:var(--muted);padding:10px 0}
 
-.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;min-width:0;transition:border-color .15s,box-shadow .15s}
-.card:hover{box-shadow:0 1px 3px rgba(17,31,40,.06)}
-.card.open{border-color:var(--accent);box-shadow:0 2px 8px rgba(7,72,255,.08)}
+.card{background:var(--surface);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:14px;min-width:0;transition:border-color .2s,box-shadow .2s,transform .2s}
+.card:hover{box-shadow:var(--shadow-sm);transform:translateY(-1px)}
+.card.open{border-color:var(--accent);box-shadow:var(--shadow-md)}
 .row{display:flex;align-items:flex-start;gap:8px;padding:7px 10px;width:100%;background:none;border:0;text-align:left}
 .time{font-variant-numeric:tabular-nums;font-size:12px;color:var(--muted);width:38px;flex:none;padding-top:2px}
 .main{flex:1;min-width:0}
@@ -129,7 +184,7 @@ h1 small{display:block;font-family:var(--body);font-size:11px;font-weight:600;le
 .by{font-size:11px;color:var(--muted)}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:10px;font-size:13px;max-width:calc(100% - 32px);box-shadow:0 4px 12px rgba(17,31,40,.16)}
 
-.mapbox{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(17,31,40,.04)}
+.mapbox{background:var(--surface);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-sm)}
 .maphead{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:10px 12px;border-bottom:1px solid var(--line)}
 .maphead h2{font-family:var(--display);font-weight:700;font-size:15px;margin:0 8px 0 0;letter-spacing:-0.01em}
 .dchip{border:1px solid var(--line);background:none;border-radius:999px;padding:4px 11px;font-size:12px;display:inline-flex;gap:6px;align-items:center;color:var(--ink);font-variant-numeric:tabular-nums;transition:border-color .15s,background .15s}
@@ -158,33 +213,51 @@ h1 small{display:block;font-family:var(--body);font-size:11px;font-weight:600;le
   .board .day{flex:0 0 calc(100% - 28px);scroll-snap-align:start;min-width:0}
 }
 @media (max-width:600px){
-  .wrap{padding-block:14px 48px;gap:14px}
-  header{padding-bottom:10px;gap:8px}
-  h1{font-size:21px}
-  h1 small{margin-bottom:2px}
-  .trip{font-size:12px;gap:8px}
-  .add{padding:10px;gap:8px}
+  html{font-size:94%}
+  body{font-size:14px;line-height:1.55}
+  .wrap{padding-block:12px 44px;gap:14px}
+  header{padding-bottom:12px;gap:10px;flex-direction:column;align-items:stretch}
+  h1{font-size:20px}
+  h1 small{margin-bottom:2px;font-size:10px}
+  .trip{font-size:12px;gap:8px;align-items:center}
+  /* 모바일: 날씨·테마 바를 맨 위 한 줄로, 좌우 정렬 */
+  .hbar{order:-1;width:100%;justify-content:space-between}
+  .weather{flex:1;justify-content:flex-start;padding:6px 12px}
+  .trip label{font-size:12px}
+  .add{padding:12px;gap:9px;border-radius:14px}
   .add form{grid-template-columns:1fr 1fr 84px auto;gap:6px}
   .add form .name{grid-column:1/-1}
   #fDay{order:1}#fCat{order:2}#fTime{order:3}.fcand{order:4}.add form .memo{order:5}.add form .btn{order:6}
   .add form .memo{grid-column:1/4}
-  .add form .btn{grid-column:4/5;padding-inline:12px}
-  .add input,.add select{padding:7px 8px;font-size:14px}
-  .fcand{padding:0 8px;font-size:13px}
-  .ideas{flex-wrap:nowrap;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+  .add form .btn{grid-column:4/5;padding-inline:14px}
+  .add input,.add select{padding:8px 9px;font-size:15px}
+  .fcand{padding:0 9px;font-size:13px}
+  .ideas{flex-wrap:nowrap;overflow-x:auto;padding-bottom:2px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .ideas::-webkit-scrollbar{display:none}
   .ideas .chip{flex:none}
   .ideas span.lbl{flex:none}
   .board{gap:14px}
-  .day{gap:4px}
+  .day{gap:6px}
   .day h2{font-size:15px}
-  .list{padding-left:8px}
-  .row{padding:6px 9px;gap:6px}
+  .list{padding-left:10px}
+  .row{padding:8px 11px;gap:8px}
   .pname{font-size:14px}
   .time{width:34px;font-size:11px}
-  .cat{font-size:10px;padding:1px 5px}
-  .detail{padding:10px;gap:8px}
-  }
+  .cat{font-size:10px;padding:2px 6px}
+  .detail{padding:12px;gap:9px}
+  .mapbox{border-radius:16px}
+  .maphead h2{font-size:14px}
+  #map svg{max-height:62vh}
+}
+@media (max-width:380px){
+  html{font-size:90%}
+  h1{font-size:18px}
+  .weather .wx-desc{display:none}
+  .add form{grid-template-columns:1fr 84px auto}
+  #fCat{grid-column:1/2}#fTime{grid-column:2/3}.fcand{grid-column:3/4;justify-content:center}
+  .add form .memo{grid-column:1/3}
+  .add form .btn{grid-column:3/4}
+}
 
 /* ---- 커스텀 커서 인터랙션 (마우스 있는 기기에서만) ---- */
 .cur-dot,.cur-ring{position:fixed;top:0;left:0;z-index:9999;pointer-events:none;border-radius:50%;will-change:transform;opacity:0}
@@ -202,13 +275,26 @@ h1 small{display:block;font-family:var(--body);font-size:11px;font-weight:600;le
 </head>
 <body>
 
+<div class="wash" aria-hidden="true"><i></i><b></b></div>
+
 <div class="cur-ring" id="curRing" aria-hidden="true"></div>
 <div class="cur-dot" id="curDot" aria-hidden="true"></div>
 
 <div class="wrap">
   <header>
-    <h1><small>GANGNEUNG · 동해</small>강릉 여행 계획</h1>
+    <h1><small>GANGNEUNG · GANGWON-DO</small>강릉 여행 계획</h1>
     <div class="trip">
+      <div class="hbar">
+        <span class="weather loading" id="weather" title="오늘 강릉 날씨">
+          <span class="wx-emo" id="wxEmo">⛅</span>
+          <span class="wx-temp" id="wxTemp">–°</span>
+          <span class="wx-desc" id="wxDesc">날씨 불러오는 중…</span>
+        </span>
+        <button class="themebtn" id="themeBtn" type="button" aria-label="화면 테마 전환" title="다크/화이트 모드">
+          <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </div>
       <label for="start">출발일 <input type="date" id="start"></label>
       <label for="days">일정 <input type="number" id="days" min="1" max="10" value="2"> 일</label>
       <span class="status" id="status">불러오는 중…</span>
@@ -269,6 +355,71 @@ h1 small{display:block;font-family:var(--body);font-size:11px;font-weight:600;le
   addEventListener("mouseup",()=>document.body.classList.remove("cur-down"));
   document.addEventListener("mouseleave",()=>{dot.style.opacity=ring.style.opacity="0"});
   document.addEventListener("mouseenter",()=>{dot.style.opacity=ring.style.opacity=""});
+})();
+
+/* ---- 다크 / 화이트 모드 토글 ---- */
+(function(){
+  const btn=document.getElementById("themeBtn");if(!btn)return;
+  const root=document.documentElement,mq=matchMedia("(prefers-color-scheme:dark)");
+  const metaL=document.querySelector('meta[name="theme-color"][media*="light"]');
+  const metaD=document.querySelector('meta[name="theme-color"][media*="dark"]');
+  function stored(){try{return localStorage.getItem("gangneung-theme")}catch{return null}}
+  function isDark(){const t=root.getAttribute("data-theme");return t?t==="dark":mq.matches}
+  function sync(){
+    // 모바일 주소창 색을 현재 테마에 맞춰 강제
+    const dark=isDark();
+    if(metaL)metaL.setAttribute("media",dark?"not all":"(prefers-color-scheme:light)");
+    if(metaD)metaD.setAttribute("media",dark?"all":"(prefers-color-scheme:dark)");
+    btn.setAttribute("aria-pressed",String(dark));
+  }
+  btn.addEventListener("click",()=>{
+    const next=isDark()?"light":"dark";
+    root.setAttribute("data-theme",next);
+    try{localStorage.setItem("gangneung-theme",next)}catch{}
+    sync();
+  });
+  mq.addEventListener&&mq.addEventListener("change",()=>{if(!stored())sync()});
+  sync();
+})();
+
+/* ---- 오늘의 강릉 날씨 (Open-Meteo, 키 불필요) ---- */
+(function(){
+  const el=document.getElementById("weather");if(!el)return;
+  const emoEl=document.getElementById("wxEmo"),tEl=document.getElementById("wxTemp"),dEl=document.getElementById("wxDesc");
+  // WMO weather code → [이모지, 한국어 설명]
+  function wmo(c,isDay){
+    const sun=isDay?"☀️":"🌙";
+    const m={
+      0:[sun,"맑음"],1:[isDay?"🌤️":"🌙","대체로 맑음"],2:["⛅","구름 조금"],3:["☁️","흐림"],
+      45:["🌫️","안개"],48:["🌫️","짙은 안개"],
+      51:["🌦️","약한 이슬비"],53:["🌦️","이슬비"],55:["🌧️","강한 이슬비"],
+      56:["🌧️","언 이슬비"],57:["🌧️","언 이슬비"],
+      61:["🌦️","약한 비"],63:["🌧️","비"],65:["🌧️","강한 비"],
+      66:["🌧️","언 비"],67:["🌧️","언 비"],
+      71:["🌨️","약한 눈"],73:["🌨️","눈"],75:["❄️","강한 눈"],77:["🌨️","싸락눈"],
+      80:["🌦️","소나기"],81:["🌧️","소나기"],82:["⛈️","강한 소나기"],
+      85:["🌨️","소낙눈"],86:["❄️","강한 소낙눈"],
+      95:["⛈️","천둥번개"],96:["⛈️","천둥번개·우박"],99:["⛈️","강한 천둥번개"]
+    };
+    return m[c]||["⛅","-"];
+  }
+  // 강릉 좌표
+  const url="https://api.open-meteo.com/v1/forecast?latitude=37.7519&longitude=128.8761&current=temperature_2m,weather_code,is_day&daily=temperature_2m_max,temperature_2m_min&timezone=Asia%2FSeoul&forecast_days=1";
+  fetch(url).then(r=>r.ok?r.json():Promise.reject()).then(d=>{
+    const cur=d.current||{},day=d.daily||{};
+    const [emo,desc]=wmo(cur.weather_code,cur.is_day!==0);
+    const t=Math.round(cur.temperature_2m);
+    const hi=day.temperature_2m_max&&Math.round(day.temperature_2m_max[0]);
+    const lo=day.temperature_2m_min&&Math.round(day.temperature_2m_min[0]);
+    emoEl.textContent=emo;
+    tEl.textContent=(isFinite(t)?t:"–")+"°";
+    dEl.textContent=desc+((hi!=null&&lo!=null)?` · ${hi}° / ${lo}°`:"");
+    el.classList.remove("loading");
+    el.title=`오늘 강릉 · ${desc} ${isFinite(t)?t+"°":""} (최고 ${hi}° 최저 ${lo}°)`;
+  }).catch(()=>{
+    emoEl.textContent="⛅";tEl.textContent="";dEl.textContent="날씨 정보를 못 받았어요";
+    el.classList.remove("loading");
+  });
 })();
 
 const IDEAS=[["경포해변","관광"],["안목해변 커피거리","카페"],["오죽헌","관광"],["정동진","관광"],["주문진 수산시장","맛집"],["초당순두부마을","맛집"],["강문해변","관광"],["경포호","관광"],["강릉중앙시장","맛집"],["선교장","관광"],["하슬라아트월드","관광"],["사천해변","관광"]];
