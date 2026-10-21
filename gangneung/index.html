@@ -367,6 +367,19 @@ button{cursor:pointer}
     <button class="wx-pop-x" id="wxPopX" type="button" aria-label="닫기">×</button>
   </div>
 
+  <p class="board-label"><span>THE MAP</span><em>강릉 일대</em></p>
+  <section class="mapbox" aria-label="지도">
+    <div class="maphead" id="mapHead"><h2>지도</h2></div>
+    <div class="mapwrap">
+      <div id="map"></div>
+      <div class="mapzoom" aria-hidden="true">
+        <button type="button" id="mzOut" aria-label="축소">−</button>
+        <button type="button" id="mzIn" aria-label="확대">+</button>
+      </div>
+    </div>
+    <div class="mapnote" id="mapNote">추가한 장소가 일차별 색으로 표시되고, 같은 날 장소는 시간순으로 이어져요. 거리는 직선 거리예요. 모바일에선 두 손가락으로 확대·축소돼요.</div>
+  </section>
+
   <p class="board-label"><span>ADD A PLACE</span><em>가고 싶은 곳</em></p>
   <section class="add" aria-label="장소 추가">
     <form id="addForm" autocomplete="off">
@@ -385,19 +398,6 @@ button{cursor:pointer}
 
   <p class="board-label"><span>ITINERARY</span><em>01 — 02</em></p>
   <main class="board" id="board"></main>
-
-  <p class="board-label"><span>THE MAP</span><em>강릉 일대</em></p>
-  <section class="mapbox" aria-label="지도">
-    <div class="maphead" id="mapHead"><h2>지도</h2></div>
-    <div class="mapwrap">
-      <div id="map"></div>
-      <div class="mapzoom" aria-hidden="true">
-        <button type="button" id="mzOut" aria-label="축소">−</button>
-        <button type="button" id="mzIn" aria-label="확대">+</button>
-      </div>
-    </div>
-    <div class="mapnote" id="mapNote">추가한 장소가 일차별 색으로 표시되고, 같은 날 장소는 시간순으로 이어져요. 거리는 직선 거리예요. 모바일에선 두 손가락으로 확대·축소돼요.</div>
-  </section>
 
 </div>
 <div class="toast" id="toast" hidden></div>
