@@ -457,7 +457,7 @@ button{cursor:pointer}
     <p class="eyebrow"><span class="geo">GEO</span><span class="geo-full">Gangneung Experience Observatory</span></p>
 
     <div class="kiro-row">
-    <div class="kiro" id="kiro" aria-label="키로 마스코트">
+    <div class="kiro" id="kiro" aria-label="지야호 마스코트">
       <svg viewBox="0 0 240 240" role="img" aria-hidden="true">
         <defs>
           <!-- 몽환 발광 그라데이션: 위 살구빛 → 가운데 블루/퍼플 → 아래 오렌지 -->
@@ -740,12 +740,12 @@ const CURSOR=(function(){
     const w=window.WEATHER;
     if(mode==="weather"||!w){
       if(w&&w.day1){
-        let html=`🧣 ${w.day1.nag}`;
+        let html=`나 <b>지야호</b>야. 잔소리 좀 할게.<br>🧣 ${w.day1.nag}`;
         if(w.day2)html+=`<br><br>그리고 ${w.day2.nag}`;
         qText.innerHTML=html;
         qBtn.style.display="";qBtn.textContent="알겠어 →";qBtn.onclick=toCursorTalk;
       }else{
-        qText.innerHTML=`출발일부터 골라봐. 날씨 알려줄게, 뭐 입을지도.`;
+        qText.innerHTML=`나 <b>지야호</b>야. 출발일부터 골라봐. 날씨 알려줄게, 뭐 입을지도.`;
         qBtn.style.display="none";
       }
       return;
@@ -1017,7 +1017,7 @@ function render(){
   }).join("");
   renderIdeas();
   renderMap();
-  updateNow();
+  try{updateNow();}catch(e){}
 }
 // 지금 시각 마커: 오늘에 해당하는 일차 리스트에 'NOW' 점을 시간 비율로 배치
 function updateNow(){
@@ -1042,7 +1042,7 @@ function updateNow(){
     list.appendChild(dot);
   }
 }
-setInterval(updateNow,60000);
+setInterval(()=>{try{updateNow();}catch(e){}},60000);
 const effDay=p=>clampDay(p.day);
 function routeStops(d){return places.filter(p=>effDay(p)===d&&!p.cand&&okCoord(p.lat,p.lng)).sort((a,b)=>sortKey(a)<sortKey(b)?-1:1)}
 function dayStops(d){return places.filter(p=>effDay(p)===d&&!isStay(p)&&!p.cand&&okCoord(p.lat,p.lng)).sort((a,b)=>sortKey(a)<sortKey(b)?-1:1)}
