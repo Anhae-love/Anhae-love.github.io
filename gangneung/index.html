@@ -129,7 +129,8 @@ button{cursor:pointer}
 .weather.loading .wx-tmr{display:none}
 .weather.loading{color:var(--muted)}
 
-/* 옷차림 말풍선 — 날씨 칩 바로 아래, 꼬리가 이모지를 가리킴 (칩은 안 가림) */
+/* (구) 옷차림 토스트는 키로 말풍선으로 통합 → 숨김 */
+.wx-pop{display:none!important}
 .weather{position:relative}
 .wx-pop{position:absolute;top:calc(100% + 11px);left:0;z-index:120;
   width:max-content;max-width:min(86vw,320px);display:flex;flex-direction:column;gap:10px;text-align:left;
@@ -691,38 +692,53 @@ const CURSOR=(function(){
   });
   document.addEventListener("click",e=>{if(!pick.hidden&&!pick.contains(e.target)&&e.target!==btn&&!btn.contains(e.target))pick.hidden=true;});
 
-  // 키로 말풍선 퀘스트 — 시크하고 틱틱대는 톤, 멘트 랜덤
+  // 키로 말풍선 — 엄마처럼: 먼저 날씨 잔소리 → 그다음 커서 얘기
   const quest=document.getElementById("curQuest"),qText=document.getElementById("curQuestText"),qBtn=document.getElementById("curQuestBtn");
-  if(quest){
-    const pick=a=>a[Math.floor(Math.random()*a.length)];
-    // 추천 멘트 (지금 커서 cur, 추천 other 를 받음) — 무심·틱틱
-    const ASK=[
-      (c,o)=>`...뭘 봐. 커서 <b>${c.emoji} ${c.label}</b>잖아. ${o.emoji} <b>${o.label}</b>로 바꾸든가 말든가.`,
-      (c,o)=>`굳이? 지금 <b>${c.emoji} ${c.label}</b>도 뭐... 그래도 ${o.emoji} <b>${o.label}</b>가 낫긴 해.`,
-      (c,o)=>`나 키로. 커서 <b>${c.emoji} ${c.label}</b>는 좀 그래. ${o.emoji} <b>${o.label}</b> 해, 그냥.`,
-      (c,o)=>`${c.emoji} ${c.label}? 흐음... 별로. ${o.emoji} <b>${o.label}</b>로 바꿔. 추천임.`,
-      (c,o)=>`하 또 왔네. ${o.emoji} <b>${o.label}</b> 커서 줄 테니까 눌러. 싫음 말고.`
-    ];
-    const DONE=[
-      (o)=>`거봐 ${o.emoji} <b>${o.label}</b>가 낫잖아. 움직여보든가.`,
-      (o)=>`${o.emoji} <b>${o.label}</b>. 됐지? 마우스나 흔들어봐.`,
-      (o)=>`바꿔줬다 ${o.emoji}. 고맙단 말은 됐고.`,
-      (o)=>`뭐 ${o.emoji} ${o.label}... 나쁘진 않네. 흥.`
-    ];
-    const BTN=["바꾸든가","ㅇㅋ 바꿔","...그래","눌러"];
-    function recommend(){
-      const cur=CURSOR.def(CURSOR.shape);
-      const others=CURSOR.SHAPES.filter(s=>s.emoji&&s.id!==CURSOR.shape);
-      const o=pick(others);
-      qText.innerHTML=pick(ASK)(cur,o);
-      qBtn.textContent=`${o.emoji} ${pick(BTN)}`;
-      qBtn.onclick=()=>{CURSOR.setShape(o.id);sync();
-        qText.innerHTML=pick(DONE)(o);
-        qBtn.textContent="딴 거";qBtn.onclick=recommend;};
-    }
-    recommend();
-    quest.hidden=false;
+  const pick=a=>a[Math.floor(Math.random()*a.length)];
+  const ASK=[
+    (c,o)=>`...그리고 뭘 봐. 커서 <b>${c.emoji} ${c.label}</b>잖아. ${o.emoji} <b>${o.label}</b>로 바꾸든가 말든가.`,
+    (c,o)=>`아 커서. 지금 <b>${c.emoji} ${c.label}</b>도 뭐... 그래도 ${o.emoji} <b>${o.label}</b>가 낫긴 해.`,
+    (c,o)=>`커서 <b>${c.emoji} ${c.label}</b>는 좀 그렇다. ${o.emoji} <b>${o.label}</b> 해, 그냥.`,
+    (c,o)=>`${c.emoji} ${c.label}? 흐음 별로. ${o.emoji} <b>${o.label}</b>로 바꿔. 추천임.`
+  ];
+  const DONE=[
+    (o)=>`거봐 ${o.emoji} <b>${o.label}</b>가 낫잖아. 움직여보든가.`,
+    (o)=>`${o.emoji} <b>${o.label}</b>. 됐지? 마우스나 흔들어봐.`,
+    (o)=>`바꿔줬다 ${o.emoji}. 고맙단 말은 됐고.`
+  ];
+  const BTN=["바꾸든가","ㅇㅋ 바꿔","...그래","눌러"];
+  function toCursorTalk(){
+    if(!quest)return;
+    const cur=CURSOR.def(CURSOR.shape);
+    const others=CURSOR.SHAPES.filter(s=>s.emoji&&s.id!==CURSOR.shape);
+    const o=pick(others);
+    qText.innerHTML=pick(ASK)(cur,o);
+    qBtn.style.display="";qBtn.textContent=`${o.emoji} ${pick(BTN)}`;
+    qBtn.onclick=()=>{CURSOR.setShape(o.id);sync();qText.innerHTML=pick(DONE)(o);qBtn.textContent="딴 거";qBtn.onclick=toCursorTalk;};
   }
+  // 날씨 잔소리부터
+  window.kiroSay=function(mode){
+    if(!quest)return;
+    quest.hidden=false;
+    const w=window.WEATHER;
+    if(mode==="weather"||!w){
+      if(w&&w.day1){
+        let html=`🧣 ${w.day1.nag}`;
+        if(w.day2)html+=`<br><br>그리고 ${w.day2.nag}`;
+        qText.innerHTML=html;
+        qBtn.style.display="";qBtn.textContent="알겠어 →";qBtn.onclick=toCursorTalk;
+      }else{
+        qText.innerHTML=`출발일부터 골라봐. 날씨 알려줄게, 뭐 입을지도.`;
+        qBtn.style.display="none";
+      }
+      return;
+    }
+    toCursorTalk();
+  };
+  window.kiroWeatherReady=function(){window.kiroSay("weather");};
+  // 날씨가 이미 준비됐으면 날씨부터, 아니면 잠깐 대기 멘트(날씨 오면 교체)
+  if(window.WEATHER){window.kiroSay("weather");}
+  else if(quest){quest.hidden=false;qText.innerHTML="잠깐, 날씨부터 보고 올게...";qBtn.style.display="none";}
 })();
 
 /* ---- 키로 마스코트: 점 눈이 마우스를 따라 움직임, 클릭하면 깜빡 + 번짐 ---- */
@@ -825,6 +841,23 @@ const CURSOR=(function(){
     else if(rain) o[1]+=" 비 소식 있어요. 우산·방수 아우터 잊지 마세요.";
     return o;
   }
+  // 엄마 잔소리 버전 (키로가 말함)
+  function nag(lbl,hi,code){
+    const rain=[51,53,55,56,57,61,63,65,66,67,80,81,82].includes(code);
+    const snow=[71,73,75,77,85,86].includes(code);
+    let t;
+    if(hi>=28) t=`${lbl} ${hi}도. 덥다고 반팔만 입지 말고 선크림 꼭 발라, 나중에 따가워도 난 몰라.`;
+    else if(hi>=23) t=`${lbl} ${hi}도. 딱 좋네. 그래도 바닷바람 분다, 얇은 거 하나 챙겨 가.`;
+    else if(hi>=20) t=`${lbl} ${hi}도. 긴팔이나 가디건 하나는 들고 가. 저녁엔 쌀쌀해.`;
+    else if(hi>=17) t=`${lbl} ${hi}도. 선선해. 니트에 자켓 걸쳐, 멋 부린다고 얇게 입지 말고.`;
+    else if(hi>=12) t=`${lbl} ${hi}도, 쌀쌀해. 니트 무조건 입고 코트 챙겨. 바닷가라 더 추워, 안 입으면 너 후회한다.`;
+    else if(hi>=8)  t=`${lbl} ${hi}도. 춥다 춥다. 코트에 목도리까지 해, 감기 걸리면 네 손해야.`;
+    else if(hi>=2)  t=`${lbl} ${hi}도. 많이 추워! 패딩에 장갑·목도리 다 챙겨. 멋은 무슨 멋이야.`;
+    else            t=`${lbl} ${hi}도. 강추위다. 롱패딩 입어 무조건. 안 입고 나가면 알아서 해.`;
+    if(snow) t+=" 눈 온다니까 미끄러운 신발 신지 말고.";
+    else if(rain) t+=" 비 온다니까 우산 꼭 챙겨, 또 맞고 다니지 말고.";
+    return t;
+  }
   function closePop(){if(pop){clearTimeout(pop._t);pop.hidden=true}}
   function fmt(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
   let lastKey="";
@@ -855,12 +888,17 @@ const CURSOR=(function(){
       const b=fill(1,tmEmo,tmT,popTmEmo,popTmTitle,popTmText,"2일차");
       el.title=`1일차 ${a?a.desc+" "+a.hi+"°/"+a.lo+"°":"-"} · 2일차 ${b?b.desc+" "+b.hi+"°/"+b.lo+"°":"-"}`;
       if(popSrc)popSrc.href="https://search.naver.com/search.naver?query="+encodeURIComponent("강릉 날씨 "+fmt(d1));
-      if(pop&&a){pop.hidden=false;clearTimeout(pop._t);pop._t=setTimeout(closePop,22000);}
+      // 키로 말풍선에서 쓸 '엄마 잔소리' 저장 + 알림
+      window.WEATHER={
+        day1:a?{hi:a.hi,lo:a.lo,desc:a.desc,nag:nag("1일차",a.hi,codes[0])}:null,
+        day2:b?{hi:b.hi,lo:b.lo,desc:b.desc,nag:nag("2일차",b.hi,codes[1])}:null
+      };
+      if(window.kiroWeatherReady)window.kiroWeatherReady();
       el.classList.remove("loading");
     }).catch(()=>{el.classList.remove("loading");if(tEl)tEl.textContent="날씨 못 받음";});
   };
-  // 날씨 칩을 누르면 옷차림 토스트 다시 띄움
-  el.addEventListener("click",()=>{if(pop&&popText.textContent){pop.hidden=false;clearTimeout(pop._t);pop._t=setTimeout(closePop,22000)}});
+  // 날씨 칩 누르면 키로가 날씨부터 다시 잔소리
+  el.addEventListener("click",()=>{if(window.kiroSay)window.kiroSay("weather");});
   const popX=document.getElementById("wxPopX");
   if(popX)popX.addEventListener("click",e=>{e.stopPropagation();closePop()});
   addEventListener("keydown",e=>{if(e.key==="Escape")closePop()});
