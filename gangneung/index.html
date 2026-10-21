@@ -37,6 +37,7 @@ img{max-width:100%}
   --ink-rgb:20,21,23;
   --blot1:38,166,154;   /* 배경 민트 웨시 (아주 옅게) */
   --blot2:226,59,46;    /* 빨강 (클릭 포인트) */
+  --map-bg:#EAF6F3; --map-land:#EAF6F3; --map-sea:#D6EFEA; --map-ink:#2A3B38; --map-line:#CDE7E1;
   --paper:#F4F4F5;
   --display:"Gowun Batang","Nanum Myeongjo","Apple SD Gothic Neo",serif;
   --body:"Gowun Batang","Nanum Myeongjo","Apple SD Gothic Neo","Malgun Gothic",serif;
@@ -57,6 +58,7 @@ img{max-width:100%}
   --ink-rgb:236,236,238;
   --blot1:45,212,191;
   --blot2:255,86,72;
+  --map-bg:#15302C; --map-land:#15302C; --map-sea:#0F2420; --map-ink:#CFEAE3; --map-line:#234B44;
   --paper:#0E0F11;
   --shadow-sm:0 2px 12px rgba(0,0,0,.4);
   --shadow-md:0 10px 30px rgba(0,0,0,.55);
@@ -75,6 +77,7 @@ img{max-width:100%}
   --ink-rgb:236,236,238;
   --blot1:45,212,191;
   --blot2:255,86,72;
+  --map-bg:#15302C; --map-land:#15302C; --map-sea:#0F2420; --map-ink:#CFEAE3; --map-line:#234B44;
   --paper:#0E0F11;
   --shadow-sm:0 2px 12px rgba(0,0,0,.4);
   --shadow-md:0 10px 30px rgba(0,0,0,.55);
@@ -112,6 +115,22 @@ h1 .title-main{color:var(--ink)}
 .weather .wx-desc{color:var(--muted)}
 .weather.loading .wx-tmr{display:none}
 .weather.loading{color:var(--muted)}
+.weather{position:relative;cursor:pointer}
+.wx-chevron{color:var(--muted);transform:rotate(90deg);font-size:15px;line-height:1;transition:transform .25s ease;margin-left:2px}
+.weather.pop-open .wx-chevron{transform:rotate(-90deg)}
+/* 옷차림 팝업 — 채팅 말풍선 */
+.wx-pop{position:absolute;top:calc(100% + 10px);left:0;z-index:60;width:max-content;max-width:min(78vw,300px);
+  display:flex;gap:10px;align-items:flex-start;text-align:left;
+  background:var(--surface);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid var(--line);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow-md);
+  animation:wxpop .28s cubic-bezier(.22,1,.36,1)}
+.wx-pop[hidden]{display:none}
+.wx-pop::before{content:"";position:absolute;top:-7px;left:22px;width:12px;height:12px;background:var(--surface);
+  border-left:1px solid var(--line);border-top:1px solid var(--line);transform:rotate(45deg)}
+.wx-pop-emo{font-size:26px;line-height:1.1;flex:none}
+.wx-pop-body strong{display:block;font-size:13px;color:var(--ink);margin-bottom:3px}
+.wx-pop-body p{margin:0;font-size:12.5px;line-height:1.5;color:var(--muted);white-space:normal}
+@keyframes wxpop{from{opacity:0;transform:translateY(-6px) scale(.97)}to{opacity:1;transform:none}}
 .themebtn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:999px;border:1px solid var(--line);background:var(--surface);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--ink);box-shadow:var(--shadow-sm);transition:border-color .2s,transform .2s;flex:none}
 .themebtn:hover{border-color:var(--accent);transform:translateY(-1px)}
 .themebtn svg{width:18px;height:18px}
@@ -201,15 +220,15 @@ h1 .title-main{color:var(--ink)}
 .dchip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-weak);color:var(--accent);font-weight:600}
 .dchip .km{color:var(--muted);font-weight:400}
 .dot{width:9px;height:9px;border-radius:50%;flex:none}
-.mapwrap{position:relative;background:var(--land)}
+.mapwrap{position:relative;background:var(--map-bg)}
 #map svg{display:block;width:100%;height:auto;max-height:72vh}
 #map .mk{cursor:pointer}
 #map.picking svg{cursor:crosshair;outline:2px solid var(--accent);outline-offset:-2px}
 .mapnote button{margin-left:6px}
 #map .mk:focus-visible circle{stroke:var(--accent);stroke-width:3}
-#map .pl{font-size:12px;font-weight:600;fill:var(--ink);paint-order:stroke;stroke:var(--land);stroke-width:4px;stroke-linejoin:round;letter-spacing:-0.01em}
-#map .ref{font-size:11px;fill:var(--muted)}
-#map .sea-l{font-family:var(--display);font-weight:700;font-size:18px;fill:var(--muted);opacity:.45;letter-spacing:.3em}
+#map .pl{font-size:11px;font-weight:600;fill:var(--map-ink);paint-order:stroke;stroke:var(--map-bg);stroke-width:3px;stroke-linejoin:round;letter-spacing:-0.01em}
+#map .ref{font-size:10px;fill:var(--map-ink);opacity:.5}
+#map .sea-l{font-family:var(--display);font-weight:700;font-size:16px;fill:var(--map-ink);opacity:.35;letter-spacing:.3em}
 .mapnote{font-size:12px;color:var(--muted);padding:8px 12px;border-top:1px solid var(--line)}
 @media (max-width:600px){
   html{font-size:94%}
@@ -277,7 +296,7 @@ h1 .title-main{color:var(--ink)}
 
 <div class="wrap">
   <header>
-    <h1><small>GEO · Gaze, Experience, Observation</small><span class="title-main">강릉 여행 계획</span></h1>
+    <h1><small>GEO · Gangneung Experience Observatory</small><span class="title-main">강릉 여행 계획</span></h1>
     <div class="trip">
       <div class="hbar">
         <span class="weather loading" id="weather" title="강릉 날씨">
@@ -291,6 +310,14 @@ h1 .title-main{color:var(--ink)}
             <span class="wx-emo" id="wxTmEmo">⛅</span>
             <span class="wx-tt" id="wxTmTemp">–°/–°</span>
           </span>
+          <span class="wx-chevron" aria-hidden="true">›</span>
+          <div class="wx-pop" id="wxPop" role="status" hidden>
+            <div class="wx-pop-emo" id="wxPopEmo">🧥</div>
+            <div class="wx-pop-body">
+              <strong id="wxPopTitle">오늘의 옷차림</strong>
+              <p id="wxPopText">날씨를 불러오면 추천해 드려요.</p>
+            </div>
+          </div>
         </span>
         <button class="themebtn" id="themeBtn" type="button" aria-label="화면 테마 전환" title="다크/화이트 모드">
           <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -473,6 +500,24 @@ const INK=(function(){
     return m[c]||["⛅","-"];
   }
   const tmEmo=document.getElementById("wxTmEmo"),tmT=document.getElementById("wxTmTemp");
+  const pop=document.getElementById("wxPop"),popEmo=document.getElementById("wxPopEmo"),popTitle=document.getElementById("wxPopTitle"),popText=document.getElementById("wxPopText");
+  // 기온별 옷차림 제안 (최고기온 기준)
+  function outfit(hi,code){
+    const rain=[51,53,55,56,57,61,63,65,66,67,80,81,82].includes(code);
+    const snow=[71,73,75,77,85,86].includes(code);
+    let o;
+    if(hi>=28) o=["🩳","28도 넘어요! 반팔·반바지에 선크림 챙기세요. 바닷바람엔 얇은 셔츠 하나면 충분합니다."];
+    else if(hi>=23) o=["👕","따뜻해요. 반팔·얇은 셔츠면 딱 좋아요. 아침저녁엔 얇은 겉옷 하나 챙겨요."];
+    else if(hi>=20) o=["👔","활동하기 좋은 날씨. 긴팔이나 얇은 니트에 가디건이면 충분합니다."];
+    else if(hi>=17) o=["🧥","살짝 선선해요. 니트나 맨투맨에 가벼운 자켓을 더하세요."];
+    else if(hi>=12) o=["🧥","쌀쌀해요. 니트에 트렌치·자켓 꼭 챙기세요. 바닷가는 더 춥게 느껴져요."];
+    else if(hi>=8)  o=["🧣","춥습니다. 코트에 니트, 목도리까지 있으면 든든해요."];
+    else if(hi>=2)  o=["🧤","많이 추워요. 두꺼운 패딩에 목도리·장갑 챙기세요."];
+    else            o=["❄️","강추위예요! 롱패딩에 기모·장갑·모자까지 완전무장 추천합니다."];
+    if(snow) o[1]+=" 눈 소식 있어요. 미끄럼 방지 신발이 좋아요.";
+    else if(rain) o[1]+=" 비 소식 있어요. 우산·방수 아우터 잊지 마세요.";
+    return o;
+  }
   // 강릉 좌표 — 오늘+내일
   const url="https://api.open-meteo.com/v1/forecast?latitude=37.7519&longitude=128.8761&current=temperature_2m,weather_code,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Asia%2FSeoul&forecast_days=2";
   fetch(url).then(r=>r.ok?r.json():Promise.reject()).then(d=>{
@@ -492,11 +537,21 @@ const INK=(function(){
       if(tmT)tmT.textContent=`${hi2}°/${lo2}°`;
       el.title=`오늘 강릉 ${desc} ${isFinite(t)?t+"°":""} (${hi}°/${lo}°) · 내일 ${desc2} (${hi2}°/${lo2}°)`;
     }
+    // 옷차림 추천 채우기 (오늘 최고기온 기준)
+    if(pop&&hi!=null){const [oe,ot]=outfit(hi,cur.weather_code);popEmo.textContent=oe;popTitle.textContent=`오늘 ${hi}° · 이렇게 입어요`;popText.textContent=ot;}
     el.classList.remove("loading");
   }).catch(()=>{
     emoEl.textContent="⛅";tEl.textContent="";dEl.textContent="날씨 정보를 못 받았어요";
     el.classList.remove("loading");
   });
+  // 날씨 클릭 → 옷차림 말풍선 토글
+  function closePop(){if(pop){pop.hidden=true;el.classList.remove("pop-open")}}
+  el.addEventListener("click",e=>{
+    if(!pop)return;e.stopPropagation();
+    const open=pop.hidden;pop.hidden=!open;el.classList.toggle("pop-open",open);
+  });
+  document.addEventListener("click",e=>{if(pop&&!pop.hidden&&!el.contains(e.target))closePop()});
+  addEventListener("keydown",e=>{if(e.key==="Escape")closePop()});
 })();
 
 const IDEAS=[["경포해변","관광"],["안목해변 커피거리","카페"],["오죽헌","관광"],["정동진","관광"],["주문진 수산시장","맛집"],["초당순두부마을","맛집"],["강문해변","관광"],["경포호","관광"],["강릉중앙시장","맛집"],["선교장","관광"],["하슬라아트월드","관광"],["사천해변","관광"]];
@@ -619,40 +674,40 @@ function renderMap(){
   const pos=p=>{const x=X(p.lng),y=Y(p.lat),dx=x-W/2,dy=y-H/2,m=28;const t=Math.min(dx?(W/2-m)/Math.abs(dx):Infinity,dy?(H/2-m)/Math.abs(dy):Infinity);return t<1?{x:+(W/2+dx*t).toFixed(1),y:+(H/2+dy*t).toFixed(1),far:true}:{x,y,far:false}};
   const P=pts=>pts.map(([a,g])=>X(g)+","+Y(a)).join(" ");
   let svg=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="강릉 지도에 표시한 장소">
-    <rect width="${W}" height="${H}" fill="var(--land)"/>
-    <polyline points="${P(RIVER)}" fill="none" stroke="var(--sea-fill)" stroke-width="${Math.max(3,s*0.0012)}" stroke-linecap="round"/>
-    <ellipse cx="${X(128.8985)}" cy="${Y(37.7955)}" rx="${(0.0065*k*s).toFixed(1)}" ry="${(0.0045*s).toFixed(1)}" fill="var(--sea-fill)"/>
-    <polygon points="${P([...COAST,[37.3,130.5],[38.3,130.5],[38.3,128.6]])}" fill="var(--sea-fill)"/>
-    <polyline points="${P(COAST)}" fill="none" stroke="var(--sea)" stroke-opacity=".35" stroke-width="1.5"/>`;
-  // 바다 라벨: 해안선 동쪽 화면 안쪽
+    <rect width="${W}" height="${H}" fill="var(--map-land)"/>
+    <polyline points="${P(RIVER)}" fill="none" stroke="var(--map-sea)" stroke-width="${Math.max(2,s*0.0009)}" stroke-linecap="round"/>
+    <ellipse cx="${X(128.8985)}" cy="${Y(37.7955)}" rx="${(0.0065*k*s).toFixed(1)}" ry="${(0.0045*s).toFixed(1)}" fill="var(--map-sea)"/>
+    <polygon points="${P([...COAST,[37.3,130.5],[38.3,130.5],[38.3,128.6]])}" fill="var(--map-sea)"/>
+    <polyline points="${P(COAST)}" fill="none" stroke="var(--map-ink)" stroke-opacity=".22" stroke-width="1"/>`;
+  // 바다 라벨
   svg+=`<text class="sea-l" x="${W-30}" y="${H*0.5}" text-anchor="end">동해</text>`;
-  for(const [n,a,g] of REFS){const x=X(g),y=Y(a);if(x>-20&&x<W+20&&y>-10&&y<H+10)svg+=`<circle cx="${x}" cy="${y}" r="2.5" fill="var(--muted)"/><text class="ref" x="${x+6}" y="${y-5}">${n}</text>`}
-  // 동선
+  for(const [n,a,g] of REFS){const x=X(g),y=Y(a);if(x>-20&&x<W+20&&y>-10&&y<H+10)svg+=`<circle cx="${x}" cy="${y}" r="1.8" fill="var(--map-ink)" opacity=".4"/><text class="ref" x="${x+6}" y="${y-5}">${n}</text>`}
+  // 동선 — 얇은 점선 (미니멀)
   const dl=mapDay==="all"?days.filter(d=>d):[+mapDay].filter(d=>d);
-  for(const d of dl){const st=routeStops(d);if(st.length>1)svg+=`<polyline points="${st.map(p=>{const q=pos(p);return q.x+","+q.y}).join(" ")}" fill="none" stroke="${DAYC(d)}" stroke-width="2.5" stroke-dasharray="6 5" stroke-linejoin="round" opacity=".85"/>`}
-  // 마커
+  for(const d of dl){const st=routeStops(d);if(st.length>1)svg+=`<polyline points="${st.map(p=>{const q=pos(p);return q.x+","+q.y}).join(" ")}" fill="none" stroke="${DAYC(d)}" stroke-width="1.4" stroke-dasharray="3 4" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>`}
+  // 마커 — 작게
   const order=p=>{const d=effDay(p);return d?dayStops(d).indexOf(p)+1:""};
   const label=shown.length<=14;
   for(const p of shown){
     const q=pos(p),x=q.x,y=q.y,d=effDay(p),sel=openId===p.id;
     if(q.far){const right=x>W/2,dist=Math.round(km({lat:cLat,lng:cLng},p));
       svg+=`<g class="mk" data-pid="${p.id}" tabindex="0" role="button" aria-label="${esc(p.name)} 열기 (지도 밖)">
-      <circle cx="${x}" cy="${y}" r="11" fill="var(--land)" stroke="${d?DAYC(d):"var(--d0)"}" stroke-width="2.5" stroke-dasharray="3 2"/>
-      <text x="${x}" y="${y+4}" text-anchor="middle" font-size="12" font-weight="700" fill="${d?DAYC(d):"var(--d0)"}">${isStay(p)?"숙":d?order(p):"?"}</text>
-      <text class="pl" x="${right?x-16:x+16}" y="${y+4}" text-anchor="${right?"end":"start"}">${esc(p.name)} · 약 ${dist}km 밖</text></g>`;continue}
+      <circle cx="${x}" cy="${y}" r="7" fill="var(--map-bg)" stroke="${d?DAYC(d):"var(--d0)"}" stroke-width="1.4" stroke-dasharray="2 2"/>
+      <text x="${x}" y="${y+3}" text-anchor="middle" font-size="8.5" font-weight="700" fill="${d?DAYC(d):"var(--d0)"}">${isStay(p)?"숙":d?order(p):"?"}</text>
+      <text class="pl" x="${right?x-12:x+12}" y="${y+3}" text-anchor="${right?"end":"start"}">${esc(p.name)} · 약 ${dist}km 밖</text></g>`;continue}
     if(isStay(p)){svg+=`<g class="mk" data-pid="${p.id}" tabindex="0" role="button" aria-label="숙소 ${esc(p.name)} 열기">
-      <path d="M${x} ${y-15} L${x+14} ${y-2} L${x+10} ${y-2} L${x+10} ${y+11} L${x-10} ${y+11} L${x-10} ${y-2} L${x-14} ${y-2} Z" fill="var(--ink)" stroke="var(--land)" stroke-width="2" stroke-linejoin="round"/>
-      <rect x="${x-3}" y="${y+3}" width="6" height="8" fill="var(--land)"/>
-      <text class="pl" x="${x+17}" y="${y+4}">${esc(p.name)}</text></g>`;continue}
+      <path d="M${x} ${y-9} L${x+8} ${y-1} L${x+6} ${y-1} L${x+6} ${y+7} L${x-6} ${y+7} L${x-6} ${y-1} L${x-8} ${y-1} Z" fill="var(--map-ink)" stroke="var(--map-bg)" stroke-width="1.4" stroke-linejoin="round"/>
+      <text class="pl" x="${x+11}" y="${y+3}">${esc(p.name)}</text></g>`;continue}
+    const r=sel?9:6.5;
     svg+=`<g class="mk" data-pid="${p.id}" tabindex="0" role="button" aria-label="${esc(p.name)} 열기">
-      <circle cx="${x}" cy="${y}" r="${sel?14:11}" fill="${d&&!p.cand?DAYC(d):"var(--surface)"}" stroke="${d?(p.cand?DAYC(d):"var(--on-dot)"):"var(--d0)"}" stroke-width="2" ${p.cand?'stroke-dasharray="3 2"':""}/>
-      <text x="${x}" y="${y+4}" text-anchor="middle" font-size="12" font-weight="700" fill="${d?(p.cand?DAYC(d):"var(--on-dot)"):"var(--d0)"}">${d&&!p.cand?order(p):"?"}</text>
-      ${label||sel?`<text class="pl" x="${x+16}" y="${y+4}">${esc(p.name)}${p.approx?" (대략)":""}</text>`:""}</g>`;
+      <circle cx="${x}" cy="${y}" r="${r}" fill="${d&&!p.cand?DAYC(d):"var(--map-bg)"}" stroke="${d?(p.cand?DAYC(d):"#fff"):"var(--d0)"}" stroke-width="1.5" ${p.cand?'stroke-dasharray="2 2"':""}/>
+      <text x="${x}" y="${y+3}" text-anchor="middle" font-size="8.5" font-weight="700" fill="${d&&!p.cand?"#fff":(d?DAYC(d):"var(--d0)")}">${d&&!p.cand?order(p):"?"}</text>
+      ${label||sel?`<text class="pl" x="${x+11}" y="${y+3}">${esc(p.name)}${p.approx?" (대략)":""}</text>`:""}</g>`;
   }
   // 축척
   const pk=s/111;let sk=[0.5,1,2,5,10].find(v=>v*pk>=60)||10;const bw=sk*pk;
-  svg+=`<g transform="translate(16 ${H-18})"><rect x="-6" y="-18" width="${bw+48}" height="26" rx="4" fill="var(--land)" opacity=".85"/><line x1="0" y1="0" x2="${bw}" y2="0" stroke="var(--ink)" stroke-width="2"/><line x1="0" y1="-4" x2="0" y2="0" stroke="var(--ink)" stroke-width="2"/><line x1="${bw}" y1="-4" x2="${bw}" y2="0" stroke="var(--ink)" stroke-width="2"/><text x="${bw+6}" y="4" font-size="12" fill="var(--ink)">${sk} km</text></g>`;
-  if(!shown.length)svg+=`<text x="${W/2}" y="${H/2+60}" text-anchor="middle" font-size="14" fill="var(--muted)">${places.length?"이 날에는 위치가 확인된 장소가 없어요":"장소를 추가하면 여기에 표시돼요"}</text>`;
+  svg+=`<g transform="translate(16 ${H-16})"><rect x="-6" y="-15" width="${bw+46}" height="23" rx="5" fill="var(--map-bg)" opacity=".8"/><line x1="0" y1="0" x2="${bw}" y2="0" stroke="var(--map-ink)" stroke-width="1.5"/><line x1="0" y1="-3" x2="0" y2="0" stroke="var(--map-ink)" stroke-width="1.5"/><line x1="${bw}" y1="-3" x2="${bw}" y2="0" stroke="var(--map-ink)" stroke-width="1.5"/><text x="${bw+6}" y="3.5" font-size="11" fill="var(--map-ink)">${sk} km</text></g>`;
+  if(!shown.length)svg+=`<text x="${W/2}" y="${H/2+60}" text-anchor="middle" font-size="13" fill="var(--map-ink)" opacity=".6">${places.length?"이 날에는 위치가 확인된 장소가 없어요":"장소를 추가하면 여기에 표시돼요"}</text>`;
   $("#map").innerHTML=svg+"</svg>";
   $("#map").classList.toggle("picking",!!pickId);
   const pp=pickId&&places.find(p=>p.id===pickId);
